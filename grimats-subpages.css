@@ -5,3 +5,15 @@
 .evolution-page .brand-mode,.evolution-page .capability-num,.evolution-page .approach-card span{color:#075fc8}.business-page .brand-mode,.business-page .capability-num,.business-page .approach-card span{color:#5d26b5}.academy-page .brand-mode,.academy-page .capability-num,.academy-page .approach-card span{color:#df5c08}.business-page .hero-aside{background:linear-gradient(145deg,#4a1894,#1e2c7c)}.academy-page .hero-aside{background:linear-gradient(145deg,#8a3006,#e25a00)}
 @media(max-width:960px){.product-hero-grid{grid-template-columns:1fr}.hero-aside{max-width:570px}.capability-grid,.approach-grid{grid-template-columns:1fr}.program-grid{grid-template-columns:1fr}}
 @media(max-width:780px){.container{width:min(100% - 34px,1160px)}.nav-inner{min-height:68px}.nav-links{gap:13px}.nav-links a:not(.nav-book){display:none}.nav-links .nav-book{font-size:.77rem;padding:9px 10px}.section{padding:70px 0}.product-hero{padding:67px 0 62px}.product-hero h1{font-size:clamp(2.55rem,12vw,4.1rem)}.product-logo{margin-top:18px;margin-bottom:18px}.hero-aside{padding:26px}.footer-inner{align-items:flex-start;flex-direction:column}}
+
+/* Course pages: responsive poster and layout */
+.course-hero{display:flex;align-items:center;gap:28px;padding:28px 0}
+.course-poster{max-width:560px;width:100%;height:auto;box-shadow:0 8px 24px rgba(0,0,0,.12);border-radius:6px}
+.course-info{flex:1}
+@media (max-width:780px){
+	.course-hero{flex-direction:column;align-items:flex-start}
+	.course-poster{width:100%;max-width:100%;margin-bottom:18px}
+}
+
+/* Active nav link styling for in-page anchors */
+.nav-links a.active{color:var(--blue);font-weight:800;border-bottom:3px solid var(--blue);padding-bottom:6px}

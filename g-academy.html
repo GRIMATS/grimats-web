@@ -45,15 +45,15 @@
       <span class="nav-word">GRIMATS</span>
     </a>
     <div class="nav-links">
-      <a href="grimats.html#productos">Nuestras marcas</a>
-      <a href="grimats.html#casos">Casos de éxito</a>
-      <a href="grimats.html#socios">Socios</a>
+      <a href="#programas">Programas</a>
+      <a href="#approach">Enfoque</a>
+      <a href="#cta">Contacto</a>
       <a href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" class="nav-book" target="_blank" rel="noopener">Agenda con un experto</a>
     </div>
   </div>
 </nav>
 <main>
-  <section class="product-hero">
+  <section id="hero" class="product-hero">
     <div class="container product-hero-grid">
       <div>
         <div class="brand-mode">GROW · Desarrollar las capacidades de las personas</div>
@@ -62,9 +62,7 @@
         <p>G-Academy™ es la unidad de formación de GRIMATS dedicada al desarrollo continuo de personas y organizaciones. Su objetivo es preparar líderes y equipos para enfrentar los desafíos del nuevo entorno digital mediante programas prácticos en inteligencia de negocios, inteligencia artificial, automatización, análisis de datos y transformación digital, fomentando una cultura de aprendizaje permanente e innovación.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda una conversación <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href="grimats.html#productos">Ver nuestras marcas</a>
         </div>
-      </div>
       <aside class="hero-aside">
         <div class="hero-aside-label">G-Academy™</div>
         <strong>Aprender para evolucionar.</strong>
@@ -72,7 +70,7 @@
       </aside>
     </div>
   </section>
-  <section class="section capabilities">
+  <section id="capabilities" class="section capabilities">
     <div class="container">
       <div class="eyebrow">Cómo generamos valor</div>
       <h2 class="section-title">Capacidades diseñadas para avanzar con claridad.</h2>
@@ -81,7 +79,7 @@
 <article class="capability-card"><div class="capability-num">03</div><h3>Evolución sostenible</h3><p>Impulsamos una cultura de aprendizaje continuo para que el conocimiento se convierta en resultados.</p></article></div>
     </div>
   </section>
-  <section class="section approach">
+  <section id="approach" class="section approach">
     <div class="container">
       <div class="eyebrow">Nuestro enfoque</div>
       <h2 class="section-title">De la intención a la ejecución sostenible.</h2>
@@ -90,7 +88,7 @@
 <article class="approach-card"><span>03</span><h3>Evolucionar</h3><p>Fortalecemos la confianza y la adopción para sostener nuevas capacidades dentro de la organización.</p></article></div>
     </div>
   </section>
-  <section class="section academy-programs">
+  <section id="programas" class="section academy-programs">
     <div class="container">
       <div class="eyebrow">Programas disponibles</div>
       <h2 class="section-title">Formación que se conecta con los retos reales del negocio.</h2>
@@ -105,7 +103,10 @@
             <li>Preparación, modelado y visualización de información.</li>
             <li>DAX, análisis, storytelling y automatización.</li>
           </ul>
-          <a class="btn btn-primary" href="afiche-curso-analista-bi.pdf" download>Descargar información del curso <span aria-hidden="true">↓</span></a>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="curso-analista.html">Ver subpágina del curso <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="g-academy.html">Ver subpágina G-Academy</a>
+          </div>
         </article>
         <article class="program-card">
           <div class="program-label">Para líderes</div>
@@ -116,12 +117,15 @@
             <li>Decisiones, prioridades y gestión del desempeño.</li>
             <li>Uso estratégico de inteligencia de negocios.</li>
           </ul>
-          <a class="btn btn-outline" href="afiche-curso-ejecutivo-bi.pdf" download>Descargar información del curso <span aria-hidden="true">↓</span></a>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="curso-ejecutivo.html">Ver subpágina del curso <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="g-academy.html">Ver subpágina G-Academy</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
-  <section class="section cta">
+  <section id="cta" class="section cta">
     <div class="container">
       <div class="eyebrow">Hablemos de resultados</div>
       <h2 class="section-title">Desarrolla las capacidades que tu organización necesita para seguir avanzando.</h2>
@@ -147,5 +151,28 @@
     <div class="footer-copy">© 2026 GRIMATS · Santo Domingo, República Dominicana</div>
   </div>
 </footer>
+</footer>
+<script>
+  (function(){
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if(!sections.length) return;
+    const idToLink = {};
+    navLinks.forEach(a=> idToLink[a.getAttribute('href').slice(1)] = a);
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const id = e.target.id;
+        const link = idToLink[id];
+        if(!link) return;
+        if(e.isIntersecting && e.intersectionRatio > 0.4){
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    },{threshold:[0.45,0.6]});
+    sections.forEach(s=> obs.observe(s));
+  })();
+</script>
 </body>
 </html>

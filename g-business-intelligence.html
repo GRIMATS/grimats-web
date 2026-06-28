@@ -45,15 +45,15 @@
       <span class="nav-word">GRIMATS</span>
     </a>
     <div class="nav-links">
-      <a href="grimats.html#productos">Nuestras marcas</a>
-      <a href="grimats.html#casos">Casos de éxito</a>
-      <a href="grimats.html#socios">Socios</a>
+      <a href="#capabilities">Capacidades</a>
+      <a href="#approach">Enfoque</a>
+      <a href="#cta">Contacto</a>
       <a href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" class="nav-book" target="_blank" rel="noopener">Agenda con un experto</a>
     </div>
   </div>
 </nav>
 <main>
-  <section class="product-hero">
+  <section id="hero" class="product-hero">
     <div class="container product-hero-grid">
       <div>
         <div class="brand-mode">BUILD · Diseñar y construir soluciones basadas en datos, analítica y tecnología</div>
@@ -62,7 +62,6 @@
         <p>G-Business Intelligence™ integra analítica avanzada, inteligencia artificial, visualización de información y soluciones tecnológicas para convertir los datos en una ventaja competitiva. Su objetivo es proporcionar información confiable, oportuna y accionable que permita optimizar operaciones, fortalecer la toma de decisiones y acelerar el crecimiento del negocio mediante una combinación de experiencia consultiva y tecnología.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda una conversación <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href="grimats.html#productos">Ver nuestras marcas</a>
         </div>
       </div>
       <aside class="hero-aside">
@@ -72,7 +71,7 @@
       </aside>
     </div>
   </section>
-  <section class="section capabilities">
+  <section id="capabilities" class="section capabilities">
     <div class="container">
       <div class="eyebrow">Cómo generamos valor</div>
       <h2 class="section-title">Capacidades diseñadas para avanzar con claridad.</h2>
@@ -81,7 +80,7 @@
 <article class="capability-card"><div class="capability-num">03</div><h3>IA y soluciones tecnológicas</h3><p>Aplicamos inteligencia artificial, automatización e integraciones para acelerar capacidades con impacto práctico.</p></article></div>
     </div>
   </section>
-  <section class="section approach">
+  <section id="approach" class="section approach">
     <div class="container">
       <div class="eyebrow">Nuestro enfoque</div>
       <h2 class="section-title">De la intención a la ejecución sostenible.</h2>
@@ -91,7 +90,7 @@
     </div>
   </section>
   
-  <section class="section cta">
+  <section id="cta" class="section cta">
     <div class="container">
       <div class="eyebrow">Hablemos de resultados</div>
       <h2 class="section-title">Convirtamos los datos de tu organización en una ventaja competitiva.</h2>
@@ -117,5 +116,27 @@
     <div class="footer-copy">© 2026 GRIMATS · Santo Domingo, República Dominicana</div>
   </div>
 </footer>
+<script>
+  (function(){
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if(!sections.length) return;
+    const idToLink = {};
+    navLinks.forEach(a=> idToLink[a.getAttribute('href').slice(1)] = a);
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const id = e.target.id;
+        const link = idToLink[id];
+        if(!link) return;
+        if(e.isIntersecting && e.intersectionRatio > 0.4){
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    },{threshold:[0.45,0.6]});
+    sections.forEach(s=> obs.observe(s));
+  })();
+</script>
 </body>
 </html>
