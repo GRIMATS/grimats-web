@@ -28,6 +28,15 @@
     @media (max-width: 960px) {
       .product-logo { width: min(100%, clamp(250px, 60vw, 560px)) !important; max-height: min(27vh, 205px) !important; }
     }
+    .product-hero-grid.single-hero { grid-template-columns: 1fr !important; gap: 30px; align-items: start; }
+    .product-hero-grid.single-hero h1,
+    .product-hero-grid.single-hero p {
+      max-width: none !important;
+    }
+    .hero-note { margin: 32px 0 0; padding: 0; border-radius: 0; background: transparent; box-shadow: none; border: none; }
+    .hero-note-label { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-size: .75rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-note strong { display: block; margin: 0 0 10px; font-size: 1.25rem; line-height: 1.16; letter-spacing: -.03em; color: var(--ink); }
+    .hero-note p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
     @media (max-width: 780px) {
       .nav-mark { width: 38px; height: 38px; }
       .nav-word { font-size: .96rem; }
@@ -54,21 +63,21 @@
 </nav>
 <main>
   <section id="hero" class="product-hero">
-    <div class="container product-hero-grid">
+    <div class="container product-hero-grid single-hero">
       <div>
         <div class="brand-mode">GROW · Desarrollar las capacidades de las personas</div>
         <img class="product-logo academy" src="G-Academy.png" alt="G-Academy™">
         <h1>Desarrollamos las capacidades que impulsan la evolución del negocio.</h1>
         <p>G-Academy™ es la unidad de formación de GRIMATS dedicada al desarrollo continuo de personas y organizaciones. Su objetivo es preparar líderes y equipos para enfrentar los desafíos del nuevo entorno digital mediante programas prácticos en inteligencia de negocios, inteligencia artificial, automatización, análisis de datos y transformación digital, fomentando una cultura de aprendizaje permanente e innovación.</p>
+        <div class="hero-note">
+          <div class="hero-note-label">G-Academy™</div>
+          <strong>Aprender para evolucionar.</strong>
+          <p>Formación práctica para que líderes y equipos puedan aplicar nuevas capacidades en los desafíos que enfrentan todos los días.</p>
+        </div>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda una conversación <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <aside class="hero-aside">
-        <div class="hero-aside-label">G-Academy™</div>
-        <strong>Aprender para evolucionar.</strong>
-        <p>Formación práctica para que líderes y equipos puedan aplicar nuevas capacidades en los desafíos que enfrentan todos los días.</p>
-      </aside>
     </div>
   </section>
   <section id="capabilities" class="section capabilities">

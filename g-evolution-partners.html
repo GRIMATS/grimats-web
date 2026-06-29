@@ -28,6 +28,15 @@
     @media (max-width: 960px) {
       .product-logo { width: min(100%, clamp(250px, 60vw, 560px)) !important; max-height: min(27vh, 205px) !important; }
     }
+    .product-hero-grid.single-hero { grid-template-columns: 1fr !important; gap: 30px; align-items: start; }
+    .product-hero-grid.single-hero h1,
+    .product-hero-grid.single-hero p {
+      max-width: none !important;
+    }
+    .hero-note { margin: 32px 0 0; padding: 0; border-radius: 0; background: transparent; box-shadow: none; border: none; }
+    .hero-note-label { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-size: .75rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-note strong { display: block; margin: 0 0 10px; font-size: 1.25rem; line-height: 1.16; letter-spacing: -.03em; color: var(--ink); }
+    .hero-note p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
     @media (max-width: 780px) {
       .nav-mark { width: 38px; height: 38px; }
       .nav-word { font-size: .96rem; }
@@ -54,21 +63,21 @@
 </nav>
 <main>
   <section id="hero" class="product-hero">
-    <div class="container product-hero-grid">
+    <div class="container product-hero-grid single-hero">
       <div>
         <div class="brand-mode">THINK · Pensar y evolucionar el negocio</div>
         <img class="product-logo evolution" src="G-Evolution-Partners.png" alt="G-Evolution Partners™">
         <h1>Operatividad continua de innovación y evolución tecnológica.</h1>
         <p>G-Evolution Partners™ es el servicio insignia de GRIMATS, diseñado para convertirse en un aliado estratégico permanente de nuestros clientes. Su objetivo es impulsar la innovación, la transformación digital y la mejora continua mediante un modelo de acompañamiento que conecta estrategia, procesos, tecnología y resultados, ayudando a las organizaciones a evolucionar de forma ordenada, sostenible y con alto impacto para el negocio.</p>
+        <div class="hero-note">
+          <div class="hero-note-label">G-Evolution Partners™</div>
+          <strong>Un aliado estratégico permanente.</strong>
+          <p>Acompañamiento continuo para conectar las prioridades del negocio con la evolución tecnológica y la mejora de la operación.</p>
+        </div>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda una conversación <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <aside class="hero-aside">
-        <div class="hero-aside-label">G-Evolution Partners™</div>
-        <strong>Un aliado estratégico permanente.</strong>
-        <p>Acompañamiento continuo para conectar las prioridades del negocio con la evolución tecnológica y la mejora de la operación.</p>
-      </aside>
     </div>
   </section>
   <section id="capabilities" class="section capabilities">
