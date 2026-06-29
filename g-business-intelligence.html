@@ -28,6 +28,15 @@
     @media (max-width: 960px) {
       .product-logo { width: min(100%, clamp(250px, 60vw, 560px)) !important; max-height: min(27vh, 205px) !important; }
     }
+    .product-hero-grid.single-hero { grid-template-columns: 1fr !important; gap: 30px; align-items: start; }
+    .product-hero-grid.single-hero h1,
+    .product-hero-grid.single-hero p {
+      max-width: none !important;
+    }
+    .hero-note { margin: 32px 0 0; padding: 0; border-radius: 0; background: transparent; box-shadow: none; border: none; }
+    .hero-note-label { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-size: .75rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-note strong { display: block; margin: 0 0 10px; font-size: 1.25rem; line-height: 1.16; letter-spacing: -.03em; color: var(--ink); }
+    .hero-note p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
     @media (max-width: 780px) {
       .nav-mark { width: 38px; height: 38px; }
       .nav-word { font-size: .96rem; }
@@ -54,21 +63,21 @@
 </nav>
 <main>
   <section id="hero" class="product-hero">
-    <div class="container product-hero-grid">
+    <div class="container product-hero-grid single-hero">
       <div>
         <div class="brand-mode">BUILD · Diseñar y construir soluciones basadas en datos, analítica y tecnología</div>
         <img class="product-logo business" src="G-Business_Intelligence.png" alt="G-Business Intelligence™">
         <h1>Transformamos datos en decisiones que generan resultados.</h1>
         <p>G-Business Intelligence™ integra analítica avanzada, inteligencia artificial, visualización de información y soluciones tecnológicas para convertir los datos en una ventaja competitiva. Su objetivo es proporcionar información confiable, oportuna y accionable que permita optimizar operaciones, fortalecer la toma de decisiones y acelerar el crecimiento del negocio mediante una combinación de experiencia consultiva y tecnología.</p>
+        <div class="hero-note">
+          <div class="hero-note-label">G-Business Intelligence™</div>
+          <strong>Datos confiables. Decisiones accionables.</strong>
+          <p>Combinamos consultoría, analítica, visualización e IA para que la información llegue a las personas correctas en el momento correcto.</p>
+        </div>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda una conversación <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <aside class="hero-aside">
-        <div class="hero-aside-label">G-Business Intelligence™</div>
-        <strong>Datos confiables. Decisiones accionables.</strong>
-        <p>Combinamos consultoría, analítica, visualización e IA para que la información llegue a las personas correctas en el momento correcto.</p>
-      </aside>
     </div>
   </section>
   <section id="capabilities" class="section capabilities">
