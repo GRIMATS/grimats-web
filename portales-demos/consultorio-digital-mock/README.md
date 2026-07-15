@@ -1,23 +1,18 @@
-# Consultorio Digital — mock visual
+# Consultorio Digital — mock visual completo
 
-Prototipo estático y navegable basado en el listado de funcionalidades de GRIMATS.
+Prototipo estático con datos ficticios. Abra `index.html` o `dashboard.html`.
 
-## Abrir
-1. Descomprime la carpeta.
-2. Abre `index.html` en Chrome, Edge o Firefox.
-3. Presiona **Acceder al portal**. Las credenciales mostradas son ilustrativas.
+## Vistas
+- `dashboard.html`: resumen y mapa funcional.
+- `agenda.html`: agenda, agendamiento online, confirmaciones y tareas.
+- `paciente.html`, `historial-medico.html`, `estudios.html`: expediente clínico.
+- `documentos.html`: consentimientos, recetas y documentos personalizables.
+- `seguimiento.html`: seguimiento de casos y telemedicina.
+- `comunicaciones.html`: correo, WhatsApp, chat, automatizaciones y encuestas.
+- `operaciones.html`: inventario, laboratorios, convenios y sucursales.
+- `finanzas.html`: facturación, caja, gastos, nómina, remuneraciones y apoyo contable.
+- `analitica.html`: reportes, flujo de caja, encuestas y desempeño por sucursal.
+- `ia.html`: asistente clínico y operativo.
+- `configuracion.html`: usuarios, roles, seguridad, integraciones, backups y auditoría.
 
-## Vistas incluidas
-- Portal de acceso general
-- Inicio / tablero general
-- Agenda médica
-- Ficha clínica del paciente
-- Centro de operaciones
-- Finanzas y caja
-- Reportes y analítica
-- Asistente IA
-
-## Notas
-- No existe backend ni almacenamiento de datos.
-- Todos los pacientes, indicadores y valores son ficticios.
-- El objetivo es validar dirección visual, arquitectura de información y experiencia general.
+No contiene backend ni datos reales.
