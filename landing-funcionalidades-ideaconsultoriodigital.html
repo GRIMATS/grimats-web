@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https:; object-src 'none'; upgrade-insecure-requests">
+  <title>Posibles funcionalidades | GRIMATS</title>
+  <style>
+    :root {
+      --ink:#0a2346; --navy:#003b73; --blue:#0077c8; --sky:#16ace4; --cyan:#27c7e8; --line:#dce9f3; --muted:#5c6f82; --white:#fff; --night:#06182e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;background:linear-gradient(140deg,#f8fcff 0%,#eef8fd 100%);color:var(--ink);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(4,59,111,.09)}
+    .nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px;max-width:100%;margin:0 auto;padding:0 8px}
+    .nav-brand{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-mark{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .nav-mark img{width:100%;height:100%;object-fit:contain;display:block}
+    .nav-word{color:var(--navy);font-size:1.05rem;letter-spacing:.16em;font-weight:900}
+    .page{max-width:100%;margin:0 auto;padding:6px 8px 32px}
+    .content{margin-top:2px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 12px;box-shadow:0 8px 20px rgba(0,64,117,.03)}
+    .panel h2{margin:0 0 6px;font-size:1rem;letter-spacing:-.02em;color:var(--navy)}
+    .panel p{margin:0 0 8px;color:var(--muted);font-size:.9rem}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:.9rem}
+    th,td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:#f7fbfe;color:var(--navy);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;text-align:left}
+    td:first-child{white-space:nowrap;font-weight:700;color:var(--ink);width:34%}
+    td:last-child{color:var(--muted)}
+    tbody tr:hover{background:#fbfdff}
+    .meta{margin-top:10px;padding:10px 12px;border-radius:12px;background:#eef8fd;color:#0b5d8b;font-size:.9rem;border:1px solid #dceff8;grid-column:1 / -1}
+    .footer{max-width:100%;margin:0 auto;padding:0 8px 24px;color:#6e7f90;font-size:.84rem}
+    @media (max-width:1100px){.content{grid-template-columns:repeat(2,minmax(0,1fr))}.meta{grid-column:1 / -1}}
+    @media (max-width:720px){.page{padding:6px 8px 24px}.nav-inner{padding:0 8px}.content{grid-template-columns:1fr}.panel{padding:12px 10px}th,td{padding:7px 8px;font-size:.84rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="Ir al inicio de GRIMATS">
+        <span class="nav-mark" aria-hidden="true"><img src="assets/images/GRIMATS_isotipo_Transparent.png" alt=""></span>
+        <span class="nav-word">GRIMATS</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="content" aria-label="Detalle de funcionalidades">
+      <article class="panel">
+        <h2>Gestión clínica y atención al paciente</h2>
+        <p>Funciones orientadas a mejorar la experiencia del paciente, la organización clínica y la operatividad del negocio.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
+            <tbody>
+              <tr><td>Agendamiento online</td><td>Asignación directa de citas por parte del paciente.</td></tr>
+              <tr><td>Confirmaciones de citas</td><td>Recordatorios por correo/WhatsApp a 24 h y 2 h antes.</td></tr>
+              <tr><td>Ficha clínica</td><td>Historial personal y clínico centralizado.</td></tr>
+              <tr><td>Consentimientos informados</td><td>Firma digital de documentos de consentimiento.</td></tr>
+              <tr><td>Recetario digital - General</td><td>Emisión de recetas con firma electrónica.</td></tr>
+              <tr><td>Recetario digital - Controlados</td><td>Recetas controladas con sustitución de formulario especial.</td></tr>
+              <tr><td>Documentos personalizables</td><td>Gestión ágil de documentos clínicos.</td></tr>
+              <tr><td>Telemedicina</td><td>Consulta remota con el paciente desde cualquier lugar.</td></tr>
+              <tr><td>Agenda médica</td><td>Control de citas, cirugías, eventos y visitadores.</td></tr>
+              <tr><td>Seguimiento de casos</td><td>Seguimiento y programación postquirúrgica.</td></tr>
+              <tr><td>Facturación electrónica</td><td>Integración con procesos de facturación electrónica.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Gestión clínica y operaciones</h2>
+        <p>Funciones enfocadas en la administración interna, control financiero y operativa del centro.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
+            <tbody>
+              <tr><td>Inventario</td><td>Control digital de inventarios para clínicas y centros.</td></tr>
+              <tr><td>Pagos y gastos</td><td>Registro y seguimiento del detalle de gastos.</td></tr>
+              <tr><td>Nómina</td><td>Gestión del personal conforme a requisitos de TSS.</td></tr>
+              <tr><td>Nómina / remuneraciones</td><td>Cálculo y pago de nóminas alineado con TSS local.</td></tr>
+              <tr><td>Laboratorios y exámenes</td><td>Gestión interna y externa de solicitudes.</td></tr>
+              <tr><td>Convenios</td><td>Administración de convenios con empresas y entidades.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Control de operaciones y analítica</h2>
+        <p>Herramientas para automatizar procesos, monitorear rendimiento y potenciar la toma de decisiones.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
+            <tbody>
+              <tr><td>Tareas automáticas de citas</td><td>Automatización de procesos de agenda y seguimiento.</td></tr>
+              <tr><td>Reportes</td><td>Indicadores actualizados para decisiones de negocio.</td></tr>
+              <tr><td>Chat interno</td><td>Comunicación ágil entre miembros del equipo.</td></tr>
+              <tr><td>Flujo de caja automático</td><td>Visualización de ventas, gastos e inversiones.</td></tr>
+              <tr><td>Gestión de sucursales</td><td>Vista unificada de múltiples ubicaciones.</td></tr>
+              <tr><td>Recaudación y cajas</td><td>Control del movimiento de efectivo y caja.</td></tr>
+              <tr><td>Encuestas de satisfacción</td><td>Monitoreo de percepción de pacientes.</td></tr>
+              <tr><td>AI integrada</td><td>Asistente de IA para recursos, casos y análisis.</td></tr>
+              <tr><td>Apoyo contable</td><td>Revisión trimestral y soporte normativo contable.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 GRIMATS · Documento interno sin indexación
+  </footer>
+</body>
+</html>
