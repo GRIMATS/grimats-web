@@ -1,0 +1,14 @@
+ACTUALIZACIÓN: REPORTES REGULATORIOS
+
+Colocar estos archivos en:
+/portales-demos/consultorio-digital-mock/
+
+REEMPLAZAR:
+- operaciones.html
+- styles.css
+
+AGREGAR:
+- cumplimiento.html
+- generador-reportes.html
+
+No es necesario modificar app.js ni los demás archivos.

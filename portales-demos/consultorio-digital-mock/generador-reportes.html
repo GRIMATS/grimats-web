@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prototipo visual de Consultorio Digital">
+  <title>Generador de reportes · Consultorio Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <a class="brand" href="dashboard.html"><div class="brand-mark">C+</div><div class="brand-copy"><strong>Consultorio Digital</strong><span>por GRIMATS</span></div></a>
+  <nav><div class="nav-caption">General</div><a class="nav-link" href="dashboard.html"><span data-icon="home"></span>Inicio</a><div class="nav-caption">Atención al paciente</div><a class="nav-link" href="agenda.html"><span data-icon="calendar"></span>Agenda y citas</a><a class="nav-link" href="paciente.html"><span data-icon="users"></span>Pacientes</a><a class="nav-link" href="documentos.html"><span data-icon="file"></span>Documentos clínicos</a><a class="nav-link" href="seguimiento.html"><span data-icon="activity"></span>Seguimiento y telemedicina</a><div class="nav-caption">Gestión y operaciones</div><a class="nav-link" href="comunicaciones.html"><span data-icon="mail"></span>Comunicaciones</a><a class="nav-link active" href="operaciones.html"><span data-icon="package"></span>Operaciones</a><a class="nav-link" href="finanzas.html"><span data-icon="wallet"></span>Finanzas y nómina</a><div class="nav-caption">Control y administración</div><a class="nav-link" href="analitica.html"><span data-icon="chart"></span>Reportes y analítica</a><a class="nav-link" href="ia.html"><span data-icon="spark"></span>Asistente IA<span class="nav-badge">IA</span></a><a class="nav-link" href="configuracion.html"><span data-icon="settings"></span>Configuración</a></nav>
+  <div class="sidebar-bottom">
+    <a class="nav-link" href="index.html"><span data-icon="logout"></span>Cerrar sesión</a>
+    <div class="user-mini"><div class="avatar">DM</div><div><strong>Dra. María Santos</strong><span>Administradora clínica</span></div></div>
+  </div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div class="topbar-left"><button class="mobile-menu"><span data-icon="menu"></span></button><div class="breadcrumb">Consultorio Digital / Operaciones / <strong>Preparar reporte</strong></div></div>
+  <div class="top-actions">
+    <div class="facility-switcher"><span data-icon="building"></span><span>Centro Médico Naco</span><span data-icon="chevron"></span></div>
+    <button class="icon-btn" data-demo="Búsqueda global del sistema"><span data-icon="search"></span></button>
+    <button class="icon-btn" data-demo="3 notificaciones pendientes"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div><span class="eyebrow">Cumplimiento regulatorio</span><h1>Preparar y validar reporte</h1><p>Flujo visual para seleccionar el formulario, consolidar datos y generar el archivo requerido.</p></div>
+  <div class="page-actions"><a class="btn btn-secondary" href="cumplimiento.html"><span data-icon="chevron"></span>Volver al tablero</a><button class="btn btn-primary" data-demo="Reporte guardado como borrador"><span data-icon="check"></span>Guardar borrador</button></div>
+</section>
+
+<section class="report-builder-layout">
+  <aside class="card card-pad report-builder-steps">
+    <span class="eyebrow">Flujo de preparación</span>
+    <div class="builder-step active"><span>1</span><div><strong>Tipo de reporte</strong><small>Institución y formulario</small></div></div>
+    <div class="builder-step active"><span>2</span><div><strong>Período y origen</strong><small>Datos a consolidar</small></div></div>
+    <div class="builder-step"><span>3</span><div><strong>Validación</strong><small>Errores y advertencias</small></div></div>
+    <div class="builder-step"><span>4</span><div><strong>Exportación</strong><small>Archivo y evidencia</small></div></div>
+    <div class="security-note" style="margin-top:18px"><span data-icon="info"></span><div><strong>Mock visual</strong><p>Los nombres, montos y estados son datos ilustrativos que pueden reemplazarse.</p></div></div>
+  </aside>
+
+  <div class="report-builder-main">
+    <section class="card card-pad">
+      <div class="card-header"><div><h3>1. Configuración del reporte</h3><p>Ejemplo seleccionado: DGII 607 · Ventas de bienes y servicios.</p></div><span class="status-pill status-info">Borrador</span></div>
+      <div class="builder-form-grid">
+        <div class="form-group"><label>Institución</label><div class="select-mock"><span class="institution-chip dgii">DGII</span><strong>Dirección General de Impuestos Internos</strong><span data-icon="chevron"></span></div></div>
+        <div class="form-group"><label>Formulario</label><div class="select-mock"><strong>607 · Ventas de bienes y servicios</strong><span data-icon="chevron"></span></div></div>
+        <div class="form-group"><label>Período</label><div class="select-mock"><strong>Junio 2026</strong><span data-icon="calendar"></span></div></div>
+        <div class="form-group"><label>Fuente de datos</label><div class="select-mock"><strong>Facturación y caja · Todas las sucursales</strong><span data-icon="building"></span></div></div>
+      </div>
+      <div class="builder-actions"><button class="btn btn-secondary" data-demo="Datos actualizados desde facturación"><span data-icon="activity"></span>Actualizar datos</button><button class="btn btn-primary" data-demo="Validación ejecutada: 3 observaciones"><span data-icon="check"></span>Validar reporte</button></div>
+    </section>
+
+    <section class="card card-pad" style="margin-top:18px">
+      <div class="card-header"><div><h3>2. Vista previa consolidada</h3><p>Registros incluidos antes de generar el archivo.</p></div><div class="preview-totals"><span>492 comprobantes</span><strong>RD$ 2,486,750.00</strong></div></div>
+      <div class="table-wrap"><table class="data-table regulatory-table preview-table"><thead><tr><th>RNC/Cédula</th><th>NCF</th><th>Fecha</th><th>Cliente</th><th>Monto</th><th>ITBIS</th><th>Validación</th></tr></thead><tbody>
+        <tr><td>001-1849273-6</td><td>B0100001842</td><td>03/06/2026</td><td>Servicios Altavista, SRL</td><td>RD$ 18,500.00</td><td>RD$ 2,822.03</td><td><span class="status-pill status-confirmed">Correcto</span></td></tr>
+        <tr><td>402-2178465-1</td><td>B0200000761</td><td>05/06/2026</td><td>María Hernández</td><td>RD$ 3,200.00</td><td>RD$ 488.14</td><td><span class="status-pill status-confirmed">Correcto</span></td></tr>
+        <tr><td>—</td><td>B0200000769</td><td>06/06/2026</td><td>Consumidor final</td><td>RD$ 2,800.00</td><td>RD$ 427.12</td><td><span class="status-pill status-pending">Revisar ID</span></td></tr>
+        <tr><td>101-5548392-4</td><td>B0100001851</td><td>07/06/2026</td><td>Inversiones Médicas, SRL</td><td>RD$ 41,000.00</td><td>RD$ 6,254.24</td><td><span class="status-pill status-confirmed">Correcto</span></td></tr>
+        <tr><td>001-9082345-0</td><td>B0200000788</td><td>09/06/2026</td><td>Carlos Jiménez</td><td>RD$ 5,600.00</td><td>RD$ 854.24</td><td><span class="status-pill status-pending">Tipo de ingreso</span></td></tr>
+      </tbody></table></div>
+      <div class="table-footer-mock"><span>Mostrando 5 de 492 registros</span><button class="btn btn-soft" data-demo="Vista completa ilustrativa">Ver todos</button></div>
+    </section>
+  </div>
+
+  <aside class="report-builder-side">
+    <section class="card card-pad validation-card">
+      <div class="card-header"><div><h3>Resultado de validación</h3><p>Control previo a la exportación.</p></div></div>
+      <div class="validation-score"><div class="score-circle regulatory-score"></div><div><strong>99.4% válido</strong><span>489 de 492 registros</span></div></div>
+      <div class="validation-summary"><div><span class="validation-dot ok"></span><p><strong>0 errores críticos</strong><small>No bloquean la exportación.</small></p></div><div><span class="validation-dot warning"></span><p><strong>3 advertencias</strong><small>Requieren revisión manual.</small></p></div></div>
+      <button class="btn btn-secondary btn-block" data-demo="Se muestran 3 observaciones">Ver observaciones</button>
+    </section>
+
+    <section class="card card-pad" style="margin-top:18px">
+      <div class="card-header"><div><h3>Generar archivo</h3><p>Formatos ilustrativos según reporte.</p></div></div>
+      <div class="export-options"><button data-demo="Archivo TXT generado"><span data-icon="file"></span><div><strong>Archivo TXT</strong><small>Formato para carga</small></div><span data-icon="download"></span></button><button data-demo="Vista PDF generada"><span data-icon="file"></span><div><strong>Resumen PDF</strong><small>Revisión y archivo</small></div><span data-icon="download"></span></button><button data-demo="Hoja de trabajo generada"><span data-icon="chart"></span><div><strong>Excel de soporte</strong><small>Detalle consolidado</small></div><span data-icon="download"></span></button></div>
+      <button class="btn btn-primary btn-block" style="margin-top:12px" data-demo="Reporte marcado como listo para envío"><span data-icon="check"></span>Marcar listo para envío</button>
+    </section>
+
+    <section class="card card-pad" style="margin-top:18px">
+      <div class="card-header"><div><h3>Trazabilidad</h3><p>Actividad del borrador.</p></div></div>
+      <div class="timeline compact"><div class="timeline-item"><div class="timeline-dot"></div><div><h4>Datos actualizados</h4><p>Hoy · 11:06 a. m. · Laura Méndez</p></div></div><div class="timeline-item"><div class="timeline-dot"></div><div><h4>Período seleccionado</h4><p>Hoy · 10:58 a. m. · Laura Méndez</p></div></div><div class="timeline-item"><div class="timeline-dot"></div><div><h4>Borrador creado</h4><p>Hoy · 10:55 a. m. · Sistema</p></div></div></div>
+    </section>
+  </aside>
+</section>
+
+</main>
+</div>
+<div class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

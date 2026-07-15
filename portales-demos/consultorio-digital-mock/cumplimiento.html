@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prototipo visual de Consultorio Digital">
+  <title>Cumplimiento regulatorio · Consultorio Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <a class="brand" href="dashboard.html"><div class="brand-mark">C+</div><div class="brand-copy"><strong>Consultorio Digital</strong><span>por GRIMATS</span></div></a>
+  <nav><div class="nav-caption">General</div><a class="nav-link" href="dashboard.html"><span data-icon="home"></span>Inicio</a><div class="nav-caption">Atención al paciente</div><a class="nav-link" href="agenda.html"><span data-icon="calendar"></span>Agenda y citas</a><a class="nav-link" href="paciente.html"><span data-icon="users"></span>Pacientes</a><a class="nav-link" href="documentos.html"><span data-icon="file"></span>Documentos clínicos</a><a class="nav-link" href="seguimiento.html"><span data-icon="activity"></span>Seguimiento y telemedicina</a><div class="nav-caption">Gestión y operaciones</div><a class="nav-link" href="comunicaciones.html"><span data-icon="mail"></span>Comunicaciones</a><a class="nav-link active" href="operaciones.html"><span data-icon="package"></span>Operaciones</a><a class="nav-link" href="finanzas.html"><span data-icon="wallet"></span>Finanzas y nómina</a><div class="nav-caption">Control y administración</div><a class="nav-link" href="analitica.html"><span data-icon="chart"></span>Reportes y analítica</a><a class="nav-link" href="ia.html"><span data-icon="spark"></span>Asistente IA<span class="nav-badge">IA</span></a><a class="nav-link" href="configuracion.html"><span data-icon="settings"></span>Configuración</a></nav>
+  <div class="sidebar-bottom">
+    <a class="nav-link" href="index.html"><span data-icon="logout"></span>Cerrar sesión</a>
+    <div class="user-mini"><div class="avatar">DM</div><div><strong>Dra. María Santos</strong><span>Administradora clínica</span></div></div>
+  </div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div class="topbar-left"><button class="mobile-menu"><span data-icon="menu"></span></button><div class="breadcrumb">Consultorio Digital / Operaciones / <strong>Cumplimiento regulatorio</strong></div></div>
+  <div class="top-actions">
+    <div class="facility-switcher"><span data-icon="building"></span><span>Centro Médico Naco</span><span data-icon="chevron"></span></div>
+    <button class="icon-btn" data-demo="Búsqueda global del sistema"><span data-icon="search"></span></button>
+    <button class="icon-btn" data-demo="3 notificaciones pendientes"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div><span class="eyebrow">Gestión clínica y operaciones</span><h1>Cumplimiento y reportes regulatorios</h1><p>Vista centralizada para preparar, validar y dar seguimiento a obligaciones del MSP, SINAVE y DGII.</p></div>
+  <div class="page-actions"><a class="btn btn-secondary" href="operaciones.html"><span data-icon="chevron"></span>Volver a operaciones</a><a class="btn btn-primary" href="generador-reportes.html"><span data-icon="plus"></span>Preparar reporte</a></div>
+</section>
+
+<section class="card module-hero regulatory-hero">
+  <span class="eyebrow" style="color:var(--lime)">Control regulatorio integrado</span>
+  <h2>Obligaciones clínicas, epidemiológicas y fiscales en un mismo espacio.</h2>
+  <p>El mock muestra el seguimiento de períodos, validaciones, responsables y evidencias de envío. La información es ilustrativa y podrá sustituirse por los datos reales del centro.</p>
+  <div class="module-stats"><div class="module-stat"><strong>14</strong><span>Obligaciones del período</span></div><div class="module-stat"><strong>11</strong><span>Preparadas o enviadas</span></div><div class="module-stat"><strong>3</strong><span>Pendientes de revisión</span></div></div>
+</section>
+
+<section class="regulatory-grid" style="margin-top:18px">
+  <article class="card card-pad regulatory-card msp-card">
+    <div class="regulatory-card-head"><div class="regulatory-logo">MSP</div><div><span class="eyebrow">Ministerio de Salud Pública</span><h3>Reportes MSP</h3></div><span class="status-pill status-pending">2 pendientes</span></div>
+    <p class="regulatory-desc">Preparación periódica de formularios institucionales y consolidación de datos de atención.</p>
+    <div class="report-list">
+      <a href="generador-reportes.html"><div><strong>EPI-1</strong><span>Resumen epidemiológico semanal</span></div><span class="status-pill status-confirmed">Listo</span></a>
+      <a href="generador-reportes.html"><div><strong>EPI-2</strong><span>Consolidado de vigilancia</span></div><span class="status-pill status-pending">Revisar</span></a>
+      <a href="generador-reportes.html"><div><strong>67-A</strong><span>Producción y servicios</span></div><span class="status-pill status-info">Borrador</span></a>
+      <a href="generador-reportes.html"><div><strong>67-B</strong><span>Detalle complementario</span></div><span class="status-pill status-confirmed">Listo</span></a>
+    </div>
+    <div class="regulatory-footer"><span>Próximo vencimiento: <strong>18 jul. 2026</strong></span><a class="card-link" href="generador-reportes.html">Preparar →</a></div>
+  </article>
+
+  <article class="card card-pad regulatory-card sinave-card">
+    <div class="regulatory-card-head"><div class="regulatory-logo">SV</div><div><span class="eyebrow">Vigilancia epidemiológica</span><h3>SINAVE</h3></div><span class="status-pill status-attention">1 alerta</span></div>
+    <p class="regulatory-desc">Registro y seguimiento de eventos sujetos a vigilancia, con control de oportunidad y trazabilidad.</p>
+    <div class="mini-stat-row regulatory-mini"><div><strong>4</strong><span>Eventos del mes</span></div><div><strong>3</strong><span>Notificados</span></div><div><strong>1</strong><span>Por completar</span></div></div>
+    <div class="report-list compact-reports">
+      <a href="generador-reportes.html"><div><strong>Notificación individual</strong><span>Caso sospechoso · Código SV-00248</span></div><span class="status-pill status-pending">Pendiente</span></a>
+      <a href="generador-reportes.html"><div><strong>Consolidado semanal</strong><span>Semana epidemiológica 28</span></div><span class="status-pill status-confirmed">Enviado</span></a>
+    </div>
+    <div class="regulatory-footer"><span>Última sincronización: <strong>Hoy, 10:42 a. m.</strong></span><a class="card-link" href="generador-reportes.html">Gestionar →</a></div>
+  </article>
+
+  <article class="card card-pad regulatory-card dgii-card">
+    <div class="regulatory-card-head"><div class="regulatory-logo">DGII</div><div><span class="eyebrow">Obligaciones fiscales</span><h3>Reportes DGII</h3></div><span class="status-pill status-info">Julio 2026</span></div>
+    <p class="regulatory-desc">Consolidación de comprobantes, retenciones y declaraciones a partir de movimientos financieros.</p>
+    <div class="report-tag-grid">
+      <a href="generador-reportes.html"><strong>606</strong><span>Compras</span></a><a href="generador-reportes.html"><strong>607</strong><span>Ventas</span></a><a href="generador-reportes.html"><strong>608</strong><span>Anulados</span></a><a href="generador-reportes.html"><strong>IR-17</strong><span>Retenciones</span></a><a href="generador-reportes.html"><strong>IT-1</strong><span>ITBIS</span></a><a href="generador-reportes.html"><strong>IR-1</strong><span>Renta anual</span></a>
+    </div>
+    <div class="regulatory-footer"><span>Comprobantes validados: <strong>487 de 492</strong></span><a class="card-link" href="generador-reportes.html">Preparar →</a></div>
+  </article>
+</section>
+
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card card-pad span-2">
+    <div class="card-header"><div><h3>Calendario de obligaciones</h3><p>Períodos, responsables y próximos vencimientos.</p></div><button class="btn btn-soft" data-demo="Filtros por institución y período">Filtrar período</button></div>
+    <div class="table-wrap"><table class="data-table regulatory-table"><thead><tr><th>Institución</th><th>Reporte</th><th>Período</th><th>Responsable</th><th>Vencimiento</th><th>Estado</th></tr></thead><tbody>
+      <tr><td><span class="institution-chip msp">MSP</span></td><td>EPI-2</td><td>Semana 28</td><td>Dra. María Santos</td><td>18 jul. 2026</td><td><span class="status-pill status-pending">Revisión</span></td></tr>
+      <tr><td><span class="institution-chip sinave">SINAVE</span></td><td>Notificación individual</td><td>Julio 2026</td><td>Lic. Ana Gómez</td><td>Hoy</td><td><span class="status-pill status-attention">Prioridad</span></td></tr>
+      <tr><td><span class="institution-chip dgii">DGII</span></td><td>606</td><td>Junio 2026</td><td>Administración</td><td>20 jul. 2026</td><td><span class="status-pill status-info">Borrador</span></td></tr>
+      <tr><td><span class="institution-chip dgii">DGII</span></td><td>607</td><td>Junio 2026</td><td>Administración</td><td>20 jul. 2026</td><td><span class="status-pill status-confirmed">Validado</span></td></tr>
+      <tr><td><span class="institution-chip msp">MSP</span></td><td>67-A</td><td>2.º trimestre</td><td>Coordinación clínica</td><td>31 jul. 2026</td><td><span class="status-pill status-info">En preparación</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card card-pad">
+    <div class="card-header"><div><h3>Control y seguridad</h3><p>Aplicado al ciclo del reporte.</p></div></div>
+    <div class="check-list">
+      <div><span data-icon="lock"></span><p><strong>Acceso por institución y rol</strong><small>Solo usuarios autorizados preparan o aprueban.</small></p></div>
+      <div><span data-icon="check"></span><p><strong>Validaciones antes de exportar</strong><small>Campos requeridos, duplicados y totales.</small></p></div>
+      <div><span data-icon="activity"></span><p><strong>Historial de cambios</strong><small>Usuario, fecha, versión y evidencia.</small></p></div>
+      <div><span data-icon="file"></span><p><strong>Resguardo de archivos</strong><small>Conservación de borradores y acuses.</small></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="card card-pad" style="margin-top:18px">
+  <div class="card-header"><div><h3>Historial reciente de reportes</h3><p>Exportaciones y envíos registrados en el mock.</p></div><a class="card-link" href="generador-reportes.html">Ver generador →</a></div>
+  <div class="table-wrap"><table class="data-table regulatory-table"><thead><tr><th>Fecha</th><th>Reporte</th><th>Período</th><th>Archivo</th><th>Preparado por</th><th>Resultado</th></tr></thead><tbody>
+    <tr><td>15 jul. 2026</td><td>DGII 607</td><td>Junio 2026</td><td>607_202606.txt</td><td>Laura Méndez</td><td><span class="status-pill status-confirmed">Validado</span></td></tr>
+    <tr><td>14 jul. 2026</td><td>SINAVE semanal</td><td>Semana 28</td><td>SINAVE_SE28.pdf</td><td>Dra. María Santos</td><td><span class="status-pill status-confirmed">Enviado</span></td></tr>
+    <tr><td>12 jul. 2026</td><td>MSP EPI-1</td><td>Semana 27</td><td>EPI1_SE27.xlsx</td><td>Lic. Ana Gómez</td><td><span class="status-pill status-confirmed">Archivado</span></td></tr>
+    <tr><td>10 jul. 2026</td><td>DGII 606</td><td>Junio 2026</td><td>606_202606.txt</td><td>Laura Méndez</td><td><span class="status-pill status-pending">Con observaciones</span></td></tr>
+  </tbody></table></div>
+</section>
+
+</main>
+</div>
+<div class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
