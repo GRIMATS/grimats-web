@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prototipo visual de historial médico longitudinal">
+  <title>Historial médico · Clínica Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar"><a class="brand" href="dashboard.html"><div class="brand-mark">C+</div><div class="brand-copy"><strong>Clínica Digital</strong><span>Fase 2 · por GRIMATS</span></div></a><nav><div class="nav-caption">General</div><a class="nav-link" href="dashboard.html"><span data-icon="home"></span>Inicio</a><div class="nav-caption">Base clínica</div><a class="nav-link" href="agenda.html"><span data-icon="calendar"></span>Agenda y citas</a><a class="nav-link" href="paciente.html"><span data-icon="users"></span>Pacientes</a><a class="nav-link" href="documentos.html"><span data-icon="file"></span>Documentos clínicos</a><a class="nav-link" href="seguimiento.html"><span data-icon="activity"></span>Seguimiento</a><div class="nav-caption">Operación clínica</div><a class="nav-link" href="seguros-ars.html"><span data-icon="wallet"></span>Seguros / ARS<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="admision-triage.html"><span data-icon="activity"></span>Admisión y triage</a><a class="nav-link" href="farmacia.html"><span data-icon="medicine"></span>Farmacia interna</a><a class="nav-link" href="hospitalizacion.html"><span data-icon="building"></span>Hospitalización<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="imagenologia.html"><span data-icon="search"></span>Imagenología PACS</a><a class="nav-link" href="compras.html"><span data-icon="package"></span>Compras</a><div class="nav-caption">Gestión ampliada</div><a class="nav-link" href="portal-paciente.html"><span data-icon="users"></span>Portal del paciente</a><a class="nav-link" href="honorarios.html"><span data-icon="cash"></span>Honorarios médicos</a><a class="nav-link" href="mantenimiento.html"><span data-icon="settings"></span>Equipos médicos</a><a class="nav-link" href="referidos.html"><span data-icon="branches"></span>Red de referidos</a><a class="nav-link" href="turismo-medico.html"><span data-icon="building"></span>Turismo médico</a><a class="nav-link" href="crm.html"><span data-icon="heart"></span>CRM y retención</a><a class="nav-link" href="reputacion.html"><span data-icon="smile"></span>Reputación</a><div class="nav-caption">Tecnología y control</div><a class="nav-link" href="interoperabilidad.html"><span data-icon="branches"></span>Interoperabilidad<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="seguridad.html"><span data-icon="lock"></span>Seguridad y auditoría</a><a class="nav-link" href="app-movil.html"><span data-icon="phone"></span>App móvil</a><a class="nav-link" href="operaciones.html"><span data-icon="package"></span>Operaciones base</a><a class="nav-link" href="finanzas.html"><span data-icon="wallet"></span>Finanzas</a><a class="nav-link" href="analitica.html"><span data-icon="chart"></span>Analítica</a></nav><div class="sidebar-bottom"><a class="nav-link" href="../../landing-funcionalidades-ideaconsultoriodigital.html"><span data-icon="chevron"></span>Volver a funcionalidades</a><a class="nav-link" href="index.html"><span data-icon="logout"></span>Cerrar sesión</a><div class="user-mini"><div class="avatar">AN</div><div><strong>Lic. Andrea Núñez</strong><span>Dirección de operaciones</span></div></div></div></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left"><button class="mobile-menu"><span data-icon="menu"></span></button><div class="breadcrumb">Clínica Digital / Pacientes / <strong>Historial médico</strong></div></div>
+      <div class="top-actions"><a class="topbar-back" href="dashboard.html">Todos los módulos</a>
+        <div class="facility-switcher"><span data-icon="building"></span><span>Clínica Metropolitana</span><span data-icon="chevron"></span></div>
+        <button class="icon-btn" data-demo="Búsqueda global del sistema"><span data-icon="search"></span></button>
+        <button class="icon-btn" data-demo="3 notificaciones pendientes"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div><span class="eyebrow">Atención al paciente</span><h1>Historial médico longitudinal</h1><p>Consultas, diagnósticos, tratamientos y eventos clínicos en una sola línea de tiempo.</p></div>
+      <div class="page-actions"><button class="btn btn-secondary" data-demo="Exportación del historial ilustrativa"><span data-icon="download"></span>Exportar historial</button><button class="btn btn-primary" data-demo="Nueva nota clínica ilustrativa"><span data-icon="plus"></span>Nueva nota</button></div>
+    </section>
+
+    <section class="card patient-hero">
+      <div class="patient-profile"><div class="patient-photo">LC</div><div><h2>Laura Castillo Méndez</h2><div class="patient-meta"><span>32 años</span><span>•</span><span>O+ positivo</span><span>•</span><span>ARS Humano</span><span>•</span><span>ID CD-001248</span></div></div></div>
+      <div class="patient-actions"><span class="status-pill status-confirmed">Expediente actualizado</span><button class="btn btn-secondary" data-demo="Impresión ilustrativa"><span data-icon="file"></span>Imprimir resumen</button></div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <div class="tabbar"><a class="tab" href="paciente.html">Resumen clínico</a><a class="tab active" href="historial-medico.html">Historial médico</a><a class="tab" href="estudios.html">Estudios</a><a class="tab" href="documentos.html">Recetas y documentos</a><a class="tab" href="seguimiento.html">Seguimiento</a><a class="tab" href="finanzas.html">Facturación</a></div>
+
+      <div class="grid grid-3" style="padding:20px">
+        <div class="span-2">
+          <div class="card card-pad" style="box-shadow:none;background:linear-gradient(135deg,#f9fdfc,#effbfa)">
+            <div class="card-header">
+              <div><h3>Resumen longitudinal</h3><p>Vista automática de los principales antecedentes y cambios clínicos.</p></div>
+              <span class="status-pill status-info">Actualizado hoy</span>
+            </div>
+            <div class="grid grid-4">
+              <div><span class="eyebrow">Primera consulta</span><strong style="display:block;font-size:18px;margin-top:4px">Mar 2022</strong></div>
+              <div><span class="eyebrow">Consultas</span><strong style="display:block;font-size:18px;margin-top:4px">18</strong></div>
+              <div><span class="eyebrow">Diagnósticos activos</span><strong style="display:block;font-size:18px;margin-top:4px">2</strong></div>
+              <div><span class="eyebrow">Última atención</span><strong style="display:block;font-size:18px;margin-top:4px">15 Jul 2026</strong></div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+            <div class="card-header">
+              <div><h3>Línea de tiempo clínica</h3><p>Historia consolidada, ordenada de la más reciente a la más antigua.</p></div>
+              <div style="display:flex;gap:8px"><button class="btn btn-secondary" data-demo="Filtro por especialidad ilustrativo"><span data-icon="filter"></span>Especialidad</button><button class="btn btn-secondary" data-demo="Filtro por fecha ilustrativo"><span data-icon="calendar"></span>Fecha</button></div>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><h4>Consulta de seguimiento · Medicina interna</h4><p>La paciente refiere disminución de la frecuencia de migrañas. Examen físico sin hallazgos relevantes. Se mantiene manejo preventivo y hábitos de sueño.</p></div><span class="status-pill status-confirmed">Evolución favorable</span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin:10px 0"><span class="status-pill status-info">Migraña sin aura</span><span class="status-pill status-neutral">Control en 30 días</span><span class="status-pill status-neutral">PA 118/76</span></div>
+                <time>15 JUL 2026 · DRA. MARÍA SANTOS · CONSULTORIO 03</time>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-dot" style="border-color:var(--blue)"></span>
+                <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><h4>Resultados diagnósticos incorporados</h4><p>Hemograma, perfil lipídico y química sanguínea dentro de rangos esperados. Vitamina D con insuficiencia leve.</p></div><a class="card-link" href="estudios.html">Abrir estudios →</a></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin:10px 0"><span class="status-pill status-confirmed">12 resultados normales</span><span class="status-pill status-pending">1 por revisar</span></div>
+                <time>11 JUL 2026 · LABORATORIO REFERENCIA</time>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-dot" style="border-color:var(--amber)"></span>
+                <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><h4>Consulta por episodio de migraña</h4><p>Cefalea pulsátil de 8 horas, acompañada de fotofobia y náuseas. Sin signos de alarma neurológica. Se indicó tratamiento de rescate.</p></div><span class="status-pill status-attention">Episodio agudo</span></div>
+                <div style="padding:12px 14px;border-radius:12px;background:#fff9eb;border:1px solid #f8e4ac;margin:10px 0;font-size:11px"><strong>Tratamiento:</strong> Sumatriptán 50 mg al inicio del episodio; repetir una vez después de 2 horas si persiste. Máximo 100 mg/día.</div>
+                <time>26 JUN 2026 · DRA. MARÍA SANTOS · TELECONSULTA</time>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <h4>Evaluación preventiva anual</h4>
+                <p>Examen general normal. Se actualizaron antecedentes familiares, esquema de vacunación y objetivos preventivos para 2026.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin:10px 0"><span class="status-pill status-confirmed">Vacunación al día</span><span class="status-pill status-neutral">Mamografía desde los 40</span><span class="status-pill status-neutral">Control anual</span></div>
+                <time>08 ENE 2026 · DRA. MARÍA SANTOS</time>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-dot" style="border-color:var(--violet)"></span>
+                <h4>Diagnóstico de rinitis alérgica estacional</h4>
+                <p>Congestión nasal, prurito y estornudos asociados a exposición ambiental. Se inició manejo antihistamínico y medidas de control.</p>
+                <time>03 ABR 2025 · DR. ANDRÉS PEÑA · ALERGOLOGÍA</time>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-dot" style="border-color:var(--red)"></span>
+                <h4>Alergia medicamentosa documentada</h4>
+                <p>Exantema generalizado posterior al uso de amoxicilina. Se registra alerta de alergia a penicilinas en el expediente.</p>
+                <time>19 SEP 2023 · URGENCIAS · CENTRO MÉDICO NACO</time>
+              </div>
+
+              <div class="timeline-item" style="padding-bottom:0">
+                <span class="timeline-dot"></span>
+                <h4>Apertura de expediente</h4>
+                <p>Primera evaluación clínica. Sin enfermedades crónicas conocidas. Antecedente familiar de hipertensión arterial materna.</p>
+                <time>14 MAR 2022 · DRA. MARÍA SANTOS</time>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card card-pad" style="box-shadow:none">
+            <div class="card-header"><div><h3>Problemas activos</h3><p>Condiciones bajo seguimiento.</p></div></div>
+            <div class="kpi-list">
+              <div class="kpi-item"><div><strong>Migraña sin aura</strong><span>Diagnóstico: junio 2024</span></div><span class="status-pill status-info">Controlada</span></div>
+              <div class="kpi-item"><div><strong>Rinitis alérgica</strong><span>Diagnóstico: abril 2025</span></div><span class="status-pill status-neutral">Estacional</span></div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+            <div class="card-header"><div><h3>Medicamentos activos</h3><p>Última conciliación: 15/07/2026.</p></div></div>
+            <div class="kpi-list">
+              <div class="kpi-item"><div><strong>Propranolol 40 mg</strong><span>1 tableta cada 12 horas</span></div><span class="status-pill status-confirmed">Activo</span></div>
+              <div class="kpi-item"><div><strong>Sumatriptán 50 mg</strong><span>Según necesidad</span></div><span class="status-pill status-info">Rescate</span></div>
+              <div class="kpi-item"><div><strong>Loratadina 10 mg</strong><span>1 tableta al día por 10 días</span></div><span class="status-pill status-neutral">Estacional</span></div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+            <div class="card-header"><div><h3>Alertas clínicas</h3><p>Información prioritaria.</p></div></div>
+            <div class="risk-item"><span data-icon="alert"></span><div><strong>Alergia a penicilina</strong><span>Reacción cutánea moderada documentada en septiembre de 2023.</span></div></div>
+            <div style="padding:13px;border-radius:13px;background:#f4f8ff;border:1px solid #dbe6fb;display:flex;gap:10px;margin-top:10px"><span data-icon="info" style="color:var(--blue);width:18px"></span><div><strong style="font-size:11px;display:block">Antecedente familiar</strong><span style="font-size:9px;color:var(--muted)">Madre con hipertensión arterial.</span></div></div>
+          </div>
+
+          <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+            <div class="card-header"><div><h3>Antecedentes</h3></div></div>
+            <p style="font-size:11px;margin:7px 0"><strong>Quirúrgicos:</strong> Apendicectomía, 2014.</p>
+            <p style="font-size:11px;margin:7px 0"><strong>Obstétricos:</strong> G1 P1 A0.</p>
+            <p style="font-size:11px;margin:7px 0"><strong>Hábitos:</strong> No fumadora; alcohol ocasional.</p>
+            <p style="font-size:11px;margin:7px 0"><strong>Actividad:</strong> Caminata 3 veces por semana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prototipo visual de analíticas y estudios de imágenes">
+  <title>Estudios diagnósticos · Clínica Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar"><a class="brand" href="dashboard.html"><div class="brand-mark">C+</div><div class="brand-copy"><strong>Clínica Digital</strong><span>Fase 2 · por GRIMATS</span></div></a><nav><div class="nav-caption">General</div><a class="nav-link" href="dashboard.html"><span data-icon="home"></span>Inicio</a><div class="nav-caption">Base clínica</div><a class="nav-link" href="agenda.html"><span data-icon="calendar"></span>Agenda y citas</a><a class="nav-link" href="paciente.html"><span data-icon="users"></span>Pacientes</a><a class="nav-link" href="documentos.html"><span data-icon="file"></span>Documentos clínicos</a><a class="nav-link" href="seguimiento.html"><span data-icon="activity"></span>Seguimiento</a><div class="nav-caption">Operación clínica</div><a class="nav-link" href="seguros-ars.html"><span data-icon="wallet"></span>Seguros / ARS<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="admision-triage.html"><span data-icon="activity"></span>Admisión y triage</a><a class="nav-link" href="farmacia.html"><span data-icon="medicine"></span>Farmacia interna</a><a class="nav-link" href="hospitalizacion.html"><span data-icon="building"></span>Hospitalización<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="imagenologia.html"><span data-icon="search"></span>Imagenología PACS</a><a class="nav-link" href="compras.html"><span data-icon="package"></span>Compras</a><div class="nav-caption">Gestión ampliada</div><a class="nav-link" href="portal-paciente.html"><span data-icon="users"></span>Portal del paciente</a><a class="nav-link" href="honorarios.html"><span data-icon="cash"></span>Honorarios médicos</a><a class="nav-link" href="mantenimiento.html"><span data-icon="settings"></span>Equipos médicos</a><a class="nav-link" href="referidos.html"><span data-icon="branches"></span>Red de referidos</a><a class="nav-link" href="turismo-medico.html"><span data-icon="building"></span>Turismo médico</a><a class="nav-link" href="crm.html"><span data-icon="heart"></span>CRM y retención</a><a class="nav-link" href="reputacion.html"><span data-icon="smile"></span>Reputación</a><div class="nav-caption">Tecnología y control</div><a class="nav-link" href="interoperabilidad.html"><span data-icon="branches"></span>Interoperabilidad<span class="nav-badge">Nuevo</span></a><a class="nav-link" href="seguridad.html"><span data-icon="lock"></span>Seguridad y auditoría</a><a class="nav-link" href="app-movil.html"><span data-icon="phone"></span>App móvil</a><a class="nav-link" href="operaciones.html"><span data-icon="package"></span>Operaciones base</a><a class="nav-link" href="finanzas.html"><span data-icon="wallet"></span>Finanzas</a><a class="nav-link" href="analitica.html"><span data-icon="chart"></span>Analítica</a></nav><div class="sidebar-bottom"><a class="nav-link" href="../../landing-funcionalidades-ideaconsultoriodigital.html"><span data-icon="chevron"></span>Volver a funcionalidades</a><a class="nav-link" href="index.html"><span data-icon="logout"></span>Cerrar sesión</a><div class="user-mini"><div class="avatar">AN</div><div><strong>Lic. Andrea Núñez</strong><span>Dirección de operaciones</span></div></div></div></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left"><button class="mobile-menu"><span data-icon="menu"></span></button><div class="breadcrumb">Clínica Digital / Pacientes / <strong>Estudios</strong></div></div>
+      <div class="top-actions"><a class="topbar-back" href="dashboard.html">Todos los módulos</a>
+        <div class="facility-switcher"><span data-icon="building"></span><span>Clínica Metropolitana</span><span data-icon="chevron"></span></div>
+        <button class="icon-btn" data-demo="Búsqueda global del sistema"><span data-icon="search"></span></button>
+        <button class="icon-btn" data-demo="3 notificaciones pendientes"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div><span class="eyebrow">Atención al paciente</span><h1>Analíticas y estudios de imágenes</h1><p>Resultados de laboratorio, tendencias, informes radiológicos y archivos diagnósticos.</p></div>
+      <div class="page-actions"><button class="btn btn-secondary" data-demo="Carga de resultado ilustrativa"><span data-icon="plus"></span>Cargar resultado</button><button class="btn btn-primary" data-demo="Nueva orden médica ilustrativa"><span data-icon="clipboard"></span>Nueva orden</button></div>
+    </section>
+
+    <section class="card patient-hero">
+      <div class="patient-profile"><div class="patient-photo">LC</div><div><h2>Laura Castillo Méndez</h2><div class="patient-meta"><span>32 años</span><span>•</span><span>O+ positivo</span><span>•</span><span>ARS Humano</span><span>•</span><span>ID CD-001248</span></div></div></div>
+      <div class="patient-actions"><span class="status-pill status-pending">1 resultado por revisar</span><button class="btn btn-secondary" data-demo="Compartir resultados ilustrativo"><span data-icon="send"></span>Compartir</button></div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <div class="tabbar"><a class="tab" href="paciente.html">Resumen clínico</a><a class="tab" href="historial-medico.html">Historial médico</a><a class="tab active" href="estudios.html">Estudios</a><a class="tab" href="documentos.html">Recetas y documentos</a><a class="tab" href="seguimiento.html">Seguimiento</a><a class="tab" href="finanzas.html">Facturación</a></div>
+
+      <div style="padding:20px">
+        <div class="grid grid-4">
+          <div class="card metric-card" style="box-shadow:none"><div class="metric-top"><div class="metric-icon"><span data-icon="flask"></span></div><span class="metric-trend">+4 este año</span></div><div class="metric-value">13</div><div class="metric-label">Analíticas registradas</div></div>
+          <div class="card metric-card" style="box-shadow:none"><div class="metric-top"><div class="metric-icon"><span data-icon="check"></span></div><span class="status-pill status-confirmed">Normal</span></div><div class="metric-value">12</div><div class="metric-label">Resultados dentro de rango</div></div>
+          <div class="card metric-card" style="box-shadow:none"><div class="metric-top"><div class="metric-icon"><span data-icon="alert"></span></div><span class="status-pill status-pending">Revisar</span></div><div class="metric-value">1</div><div class="metric-label">Resultado fuera de rango</div></div>
+          <div class="card metric-card" style="box-shadow:none"><div class="metric-top"><div class="metric-icon"><span data-icon="file"></span></div><span class="metric-trend">2 nuevos</span></div><div class="metric-value">6</div><div class="metric-label">Estudios de imágenes</div></div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top:18px">
+          <div class="span-2">
+            <div class="card card-pad" style="box-shadow:none">
+              <div class="card-header">
+                <div><h3>Resultados de laboratorio</h3><p>Muestra tomada el 10 de julio de 2026 · Laboratorio Referencia.</p></div>
+                <div style="display:flex;gap:8px"><button class="btn btn-secondary" data-demo="Filtro de analíticas ilustrativo"><span data-icon="filter"></span>Filtrar</button><button class="btn btn-secondary" data-demo="Descarga de resultados ilustrativa"><span data-icon="download"></span>PDF</button></div>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Prueba</th><th>Resultado</th><th>Unidad</th><th>Rango de referencia</th><th>Estado</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Hemoglobina</strong><br><span style="font-size:10px;color:var(--muted)">Hemograma</span></td><td><strong>13.4</strong></td><td>g/dL</td><td>12.0 – 15.5</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr><td><strong>Leucocitos</strong><br><span style="font-size:10px;color:var(--muted)">Hemograma</span></td><td><strong>6.8</strong></td><td>10³/µL</td><td>4.0 – 10.0</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr><td><strong>Glucosa en ayunas</strong><br><span style="font-size:10px;color:var(--muted)">Química sanguínea</span></td><td><strong>91</strong></td><td>mg/dL</td><td>70 – 99</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr><td><strong>Creatinina</strong><br><span style="font-size:10px;color:var(--muted)">Función renal</span></td><td><strong>0.78</strong></td><td>mg/dL</td><td>0.50 – 0.90</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr><td><strong>Colesterol total</strong><br><span style="font-size:10px;color:var(--muted)">Perfil lipídico</span></td><td><strong>184</strong></td><td>mg/dL</td><td>&lt; 200</td><td><span class="status-pill status-confirmed">Deseable</span></td></tr>
+                    <tr><td><strong>LDL calculado</strong><br><span style="font-size:10px;color:var(--muted)">Perfil lipídico</span></td><td><strong>106</strong></td><td>mg/dL</td><td>&lt; 116</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr><td><strong>TSH</strong><br><span style="font-size:10px;color:var(--muted)">Función tiroidea</span></td><td><strong>2.10</strong></td><td>µUI/mL</td><td>0.40 – 4.00</td><td><span class="status-pill status-confirmed">Normal</span></td></tr>
+                    <tr style="background:#fffaf0"><td><strong>Vitamina D, 25-OH</strong><br><span style="font-size:10px;color:var(--muted)">Vitaminas</span></td><td><strong style="color:#9d6c0e">24</strong></td><td>ng/mL</td><td>30 – 100</td><td><span class="status-pill status-pending">Baja</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+              <div class="card-header"><div><h3>Tendencia de indicadores</h3><p>Comparación de los últimos cuatro controles.</p></div><select style="height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:white;font-size:11px"><option>Vitamina D</option><option>Glucosa</option><option>Colesterol total</option></select></div>
+              <div style="display:grid;grid-template-columns:100px 1fr;gap:18px;align-items:center">
+                <div><strong style="font-family:Manrope;font-size:32px">24</strong><span style="display:block;font-size:10px;color:var(--muted)">ng/mL · Jul 2026</span><span class="status-pill status-pending" style="margin-top:8px">Insuficiencia leve</span></div>
+                <div style="height:150px;border-left:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;padding:10px 10px 0">
+                  <svg viewBox="0 0 600 130" width="100%" height="125" preserveAspectRatio="none" aria-label="Gráfico ilustrativo de vitamina D">
+                    <path d="M0 30H600M0 75H600M0 115H600" stroke="#e5edef" stroke-width="1" stroke-dasharray="5 5" fill="none"/>
+                    <path d="M30 96 C120 84,150 68,220 70 S360 52,420 58 S520 82,570 88" stroke="#0f9f91" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <circle cx="30" cy="96" r="7" fill="#fff" stroke="#0f9f91" stroke-width="4"/><circle cx="220" cy="70" r="7" fill="#fff" stroke="#0f9f91" stroke-width="4"/><circle cx="420" cy="58" r="7" fill="#fff" stroke="#0f9f91" stroke-width="4"/><circle cx="570" cy="88" r="7" fill="#fff" stroke="#f7b731" stroke-width="4"/>
+                  </svg>
+                  <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);padding:0 8px"><span>Mar 2024</span><span>Sep 2024</span><span>Ene 2026</span><span>Jul 2026</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+              <div class="card-header"><div><h3>Estudios de imágenes</h3><p>Informes e imágenes diagnósticas asociadas al expediente.</p></div><button class="btn btn-secondary" data-demo="Visor radiológico ilustrativo"><span data-icon="search"></span>Abrir visor</button></div>
+
+              <div style="display:grid;gap:12px">
+                <div style="display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:15px">
+                  <div style="height:82px;border-radius:12px;background:radial-gradient(circle at 50% 42%,#dfe7eb 0 13%,#8c9aa2 14% 23%,#1d2f39 24% 58%,#0d2431 59%);display:grid;place-items:center;color:white"><span style="font-size:9px;background:rgba(0,0,0,.45);padding:4px 6px;border-radius:6px">RM CEREBRAL</span></div>
+                  <div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><strong>Resonancia magnética cerebral</strong><span class="status-pill status-confirmed">Sin hallazgos</span></div><p style="font-size:11px;color:var(--muted);margin:6px 0">Estudio sin contraste. No se observan lesiones focales, efecto de masa ni alteraciones vasculares significativas.</p><span style="font-size:9px;color:#92a2aa">05 JUL 2026 · CENTRO DE DIAGNÓSTICO AVANZADO</span></div>
+                  <button class="btn btn-secondary" data-demo="Vista del estudio ilustrativa">Ver estudio</button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:15px">
+                  <div style="height:82px;border-radius:12px;background:linear-gradient(145deg,#111,#586168 45%,#e2e7e9 46% 52%,#2b353b 53%);display:grid;place-items:center;color:white"><span style="font-size:9px;background:rgba(0,0,0,.45);padding:4px 6px;border-radius:6px">SONOGRAFÍA</span></div>
+                  <div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><strong>Sonografía abdominal completa</strong><span class="status-pill status-confirmed">Normal</span></div><p style="font-size:11px;color:var(--muted);margin:6px 0">Hígado, vesícula, páncreas, bazo y riñones de tamaño y ecogenicidad conservados.</p><span style="font-size:9px;color:#92a2aa">18 ENE 2026 · IMÁGENES MÉDICAS NACO</span></div>
+                  <button class="btn btn-secondary" data-demo="Vista del estudio ilustrativa">Ver estudio</button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:15px">
+                  <div style="height:82px;border-radius:12px;background:linear-gradient(90deg,#13232c,#eff4f5 48%,#13232c 52%);display:grid;place-items:center;color:white"><span style="font-size:9px;background:rgba(0,0,0,.45);padding:4px 6px;border-radius:6px">RX TÓRAX</span></div>
+                  <div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><strong>Radiografía de tórax PA</strong><span class="status-pill status-confirmed">Normal</span></div><p style="font-size:11px;color:var(--muted);margin:6px 0">Campos pulmonares bien expandidos. Silueta cardiomediastínica de tamaño normal.</p><span style="font-size:9px;color:#92a2aa">21 SEP 2023 · CENTRO MÉDICO NACO</span></div>
+                  <button class="btn btn-secondary" data-demo="Vista del estudio ilustrativa">Ver estudio</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-pad" style="box-shadow:none;background:linear-gradient(145deg,#0d2431,#163f4d);color:white">
+              <div class="card-header"><div><h3 style="color:white">Resumen inteligente</h3><p style="color:rgba(255,255,255,.6)">Lectura automática de resultados.</p></div><span data-icon="spark" style="color:var(--lime);width:24px"></span></div>
+              <p style="font-size:11px;color:rgba(255,255,255,.78)">No se identifican hallazgos de urgencia. Los perfiles hematológico, renal, tiroideo y metabólico se mantienen estables.</p>
+              <div style="padding:12px;border-radius:12px;background:rgba(255,255,255,.08);margin-top:12px"><strong style="font-size:11px;color:var(--lime)">Punto de atención</strong><p style="font-size:10px;color:rgba(255,255,255,.72);margin:5px 0 0">Vitamina D en 24 ng/mL. Considerar correlación clínica, suplementación y control posterior.</p></div>
+              <button class="btn btn-block" style="margin-top:14px;background:white;color:var(--navy);border:0" data-demo="Análisis con IA ilustrativo">Analizar con asistente IA</button>
+            </div>
+
+            <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+              <div class="card-header"><div><h3>Órdenes y pendientes</h3><p>Seguimiento diagnóstico.</p></div></div>
+              <div class="kpi-list">
+                <div class="kpi-item"><div><strong>Vitamina D de control</strong><span>Programada para octubre 2026</span></div><span class="status-pill status-pending">Pendiente</span></div>
+                <div class="kpi-item"><div><strong>Perfil metabólico anual</strong><span>Próximo control: enero 2027</span></div><span class="status-pill status-neutral">Planificado</span></div>
+                <div class="kpi-item"><div><strong>RM cerebral</strong><span>Informe revisado 08/07/2026</span></div><span class="status-pill status-confirmed">Revisado</span></div>
+              </div>
+            </div>
+
+            <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+              <div class="card-header"><div><h3>Documentos recientes</h3><p>Archivos asociados.</p></div></div>
+              <div style="display:grid;gap:10px">
+                <a href="#" data-demo="Apertura del PDF ilustrativa" style="display:flex;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px"><span data-icon="file" style="width:18px;color:var(--teal)"></span><div><strong style="display:block;font-size:11px">Resultados laboratorio.pdf</strong><span style="font-size:9px;color:var(--muted)">1.8 MB · 11/07/2026</span></div></a>
+                <a href="#" data-demo="Apertura del informe ilustrativa" style="display:flex;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px"><span data-icon="file" style="width:18px;color:var(--blue)"></span><div><strong style="display:block;font-size:11px">Informe RM cerebral.pdf</strong><span style="font-size:9px;color:var(--muted)">842 KB · 05/07/2026</span></div></a>
+                <a href="#" data-demo="Apertura del archivo DICOM ilustrativa" style="display:flex;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px"><span data-icon="file" style="width:18px;color:var(--violet)"></span><div><strong style="display:block;font-size:11px">Serie DICOM RM.zip</strong><span style="font-size:9px;color:var(--muted)">148 MB · 05/07/2026</span></div></a>
+              </div>
+            </div>
+
+            <div class="card card-pad" style="box-shadow:none;margin-top:18px">
+              <div class="card-header"><div><h3>Centros diagnósticos</h3></div></div>
+              <p style="font-size:11px;margin:7px 0"><strong>Laboratorio Referencia</strong><br><span style="color:var(--muted)">Resultados integrados automáticamente.</span></p>
+              <p style="font-size:11px;margin:12px 0 7px"><strong>Centro de Diagnóstico Avanzado</strong><br><span style="color:var(--muted)">Informes e imágenes DICOM.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
