@@ -1,129 +1,40 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https:; object-src 'none'; upgrade-insecure-requests">
-  <title>Posibles funcionalidades | GRIMATS</title>
-  <style>
-    :root {
-      --ink:#0a2346; --navy:#003b73; --blue:#0077c8; --sky:#16ace4; --cyan:#27c7e8; --line:#dce9f3; --muted:#5c6f82; --white:#fff; --night:#06182e;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;background:linear-gradient(140deg,#f8fcff 0%,#eef8fd 100%);color:var(--ink);line-height:1.55}
-    a{color:inherit;text-decoration:none}
-    .nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(4,59,111,.09)}
-    .nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px;max-width:100%;margin:0 auto;padding:0 8px}
-    .nav-brand{display:flex;align-items:center;gap:8px;text-decoration:none}
-    .nav-mark{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
-    .nav-mark img{width:100%;height:100%;object-fit:contain;display:block}
-    .nav-word{color:var(--navy);font-size:1.05rem;letter-spacing:.16em;font-weight:900}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .nav-btn{display:inline-flex;align-items:center;justify-content:center;padding:7px 12px;border-radius:999px;background:var(--navy);color:var(--white);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 6px 16px rgba(0,59,115,.16)}
-    .nav-btn:hover{background:var(--blue)}
-    .page{max-width:100%;margin:0 auto;padding:6px 8px 32px}
-    .content{margin-top:2px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
-    .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 12px;box-shadow:0 8px 20px rgba(0,64,117,.03)}
-    .panel h2{margin:0 0 6px;font-size:1rem;letter-spacing:-.02em;color:var(--navy)}
-    .panel p{margin:0 0 8px;color:var(--muted);font-size:.9rem}
-    .table-wrap{overflow-x:auto}
-    table{width:100%;border-collapse:collapse;font-size:.9rem}
-    th,td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
-    th{background:#f7fbfe;color:var(--navy);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;text-align:left}
-    td:first-child{white-space:nowrap;font-weight:700;color:var(--ink);width:34%}
-    td:last-child{color:var(--muted)}
-    tbody tr:hover{background:#fbfdff}
-    .meta{margin-top:10px;padding:10px 12px;border-radius:12px;background:#eef8fd;color:#0b5d8b;font-size:.9rem;border:1px solid #dceff8;grid-column:1 / -1}
-    .footer{max-width:100%;margin:0 auto;padding:0 8px 24px;color:#6e7f90;font-size:.84rem}
-    @media (max-width:1100px){.content{grid-template-columns:repeat(2,minmax(0,1fr))}.meta{grid-column:1 / -1}}
-    @media (max-width:720px){.page{padding:6px 8px 24px}.nav-inner{padding:0 8px}.content{grid-template-columns:1fr}.panel{padding:12px 10px}th,td{padding:7px 8px;font-size:.84rem}}
-  </style>
-</head>
-<body>
-  <nav class="nav" aria-label="Navegación principal">
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html" aria-label="Ir al inicio de GRIMATS">
-        <span class="nav-mark" aria-hidden="true"><img src="assets/images/GRIMATS_isotipo_Transparent.png" alt=""></span>
-        <span class="nav-word">GRIMATS</span>
-      </a>
-      <div class="nav-actions">
-        <a class="nav-btn" href="portales-demos/consultorio-digital-mock/index.html" target="_self" rel="noopener">Ver demo</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="page">
-    <section class="content" aria-label="Detalle de funcionalidades">
-      <article class="panel">
-        <h2>Gestión clínica y atención al paciente</h2>
-        <p>Funciones orientadas a mejorar la experiencia del paciente, la organización clínica y la operatividad del negocio.</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
-            <tbody>
-              <tr><td>Agendamiento online</td><td>Asignación directa de citas por parte del paciente.</td></tr>
-              <tr><td>Confirmaciones de citas</td><td>Recordatorios por correo/WhatsApp a 24 h y 2 h antes.</td></tr>
-              <tr><td>Ficha clínica</td><td>Historial personal y clínico centralizado.</td></tr>
-              <tr><td>Consentimientos informados</td><td>Firma digital de documentos de consentimiento.</td></tr>
-              <tr><td>Recetario digital - General</td><td>Emisión de recetas con firma electrónica.</td></tr>
-              <tr><td>Recetario digital - Controlados</td><td>Recetas controladas con sustitución de formulario especial.</td></tr>
-              <tr><td>Documentos personalizables</td><td>Gestión ágil de documentos clínicos.</td></tr>
-              <tr><td>Telemedicina</td><td>Consulta remota con el paciente desde cualquier lugar.</td></tr>
-              <tr><td>Agenda médica</td><td>Control de citas, cirugías, eventos y visitadores.</td></tr>
-              <tr><td>Seguimiento de casos</td><td>Seguimiento y programación postquirúrgica.</td></tr>
-              <tr><td>Facturación electrónica</td><td>Integración con procesos de facturación electrónica.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="panel">
-        <h2>Gestión clínica y operaciones</h2>
-        <p>Funciones enfocadas en la administración interna, control financiero y operativa del centro.</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
-            <tbody>
-              <tr><td>Inventario</td><td>Control digital de inventarios para clínicas y centros.</td></tr>
-              <tr><td>Pagos y gastos</td><td>Registro y seguimiento del detalle de gastos.</td></tr>
-              <tr><td>Nómina</td><td>Gestión del personal conforme a requisitos de TSS.</td></tr>
-              <tr><td>Nómina / remuneraciones</td><td>Cálculo y pago de nóminas alineado con TSS local.</td></tr>
-              <tr><td>Laboratorios y exámenes</td><td>Gestión interna y externa de solicitudes.</td></tr>
-              <tr><td>Convenios</td><td>Administración de convenios con empresas y entidades.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="panel">
-        <h2>Control de operaciones y analítica</h2>
-        <p>Herramientas para automatizar procesos, monitorear rendimiento y potenciar la toma de decisiones.</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Función</th><th>Descripción breve</th></tr></thead>
-            <tbody>
-              <tr><td>Tareas automáticas de citas</td><td>Automatización de procesos de agenda y seguimiento.</td></tr>
-              <tr><td>Reportes</td><td>Indicadores actualizados para decisiones de negocio.</td></tr>
-              <tr><td>Chat interno</td><td>Comunicación ágil entre miembros del equipo.</td></tr>
-              <tr><td>Flujo de caja automático</td><td>Visualización de ventas, gastos e inversiones.</td></tr>
-              <tr><td>Gestión de sucursales</td><td>Vista unificada de múltiples ubicaciones.</td></tr>
-              <tr><td>Recaudación y cajas</td><td>Control del movimiento de efectivo y caja.</td></tr>
-              <tr><td>Encuestas de satisfacción</td><td>Monitoreo de percepción de pacientes.</td></tr>
-              <tr><td>Reportes Regulatorios</td><td>Gestión de los reportes de MSP (EPI-1, EPI-2, 67-A, 67-B), SINAVE y reportes fiscales de la DGII (606/607/608, IR-17, IT-1, IR-1) para cumplimiento y control interno.</td></tr>
-              <tr><td>AI integrada</td><td>Asistente de IA para recursos, casos y análisis.</td></tr>
-              <tr><td>Apoyo contable</td><td>Revisión trimestral y soporte normativo contable.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    © 2026 GRIMATS · Documento interno sin indexación
-  </footer>
-</body>
-</html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Evolución funcional de Consultorio Digital y Clínica Digital"><title>Funcionalidades · Consultorio y Clínica Digital</title><link rel="stylesheet" href="landing-funcionalidades.css"></head><body>
+<header class="topbar"><a class="brand" href="#"><div class="brand-mark">C+</div><div class="brand-copy"><strong>Consultorio Digital</strong><span>Una iniciativa de GRIMATS</span></div></a><div class="top-actions"><a class="btn btn-secondary" href="portales-demos/consultorio-digital-mock/index.html">Demo consultorios</a><a class="btn btn-primary" href="portales-demos/clinica-digital-mock/index.html">Demo clínicas</a></div></header>
+<main><section class="hero"><div><span class="eyebrow">Plataforma de salud en evolución</span><h1>Del consultorio individual a la gestión integral de clínicas.</h1><p>Una visión modular para digitalizar la atención, la operación, el cumplimiento y la experiencia del paciente en República Dominicana.</p><div class="hero-actions"><a class="btn btn-primary" href="portales-demos/consultorio-digital-mock/index.html">Demo consultorios</a><a class="btn btn-secondary" href="portales-demos/clinica-digital-mock/index.html">Demo clínicas</a></div></div><aside class="hero-visual"><div class="visual-header"><strong>Visión de plataforma</strong><span class="live-pill">Prototipo conceptual</span></div><div class="visual-metrics"><div class="visual-card"><span>Fase actual</span><strong>Consultorios</strong></div><div class="visual-card"><span>Siguiente fase</span><strong>Clínicas</strong></div></div><div class="visual-flow"><div class="flow-row"><span class="flow-dot"></span><div><strong>Atención conectada</strong><span>Agenda, expediente y comunicación</span></div></div><div class="flow-row"><span class="flow-dot blue"></span><div><strong>Operación clínica</strong><span>ARS, hospitalización, farmacia y compras</span></div></div><div class="flow-row"><span class="flow-dot violet"></span><div><strong>Ecosistema interoperable</strong><span>Paciente, proveedores, reguladores y API</span></div></div></div></aside></section>
+<section class="phase"><div class="phase-header"><div><span class="phase-kicker">Fase 1</span><h2>Gestión de consultorios</h2><p>Funcionalidades orientadas a la gestión clínica, la atención al paciente, la operación y el control del consultorio.</p></div><div class="phase-number">01</div></div><div class="group-grid consultorio-groups">
+<article class="group-card"><h3>Gestión clínica y atención al paciente</h3><p class="group-description">Funciones orientadas a mejorar la experiencia del paciente, la organización clínica y la operatividad del negocio.</p><div class="function-list">
+<div class="function-item"><strong>Agendamiento online</strong><span>Asignación directa de citas por parte del paciente.</span></div>
+<div class="function-item"><strong>Confirmaciones de citas</strong><span>Recordatorios por correo/WhatsApp a 24 h y 2 h antes.</span></div>
+<div class="function-item"><strong>Ficha clínica</strong><span>Historial personal y clínico centralizado.</span></div>
+<div class="function-item"><strong>Consentimientos informados</strong><span>Firma digital de documentos de consentimiento.</span></div>
+<div class="function-item"><strong>Recetario digital - General</strong><span>Emisión de recetas con firma electrónica.</span></div>
+<div class="function-item"><strong>Recetario digital - Controlados</strong><span>Recetas controladas con sustitución de formulario especial.</span></div>
+<div class="function-item"><strong>Documentos personalizables</strong><span>Gestión ágil de documentos clínicos.</span></div>
+<div class="function-item"><strong>Telemedicina</strong><span>Consulta remota con el paciente desde cualquier lugar.</span></div>
+<div class="function-item"><strong>Agenda médica</strong><span>Control de citas, cirugías, eventos y visitadores.</span></div>
+<div class="function-item"><strong>Seguimiento de casos</strong><span>Seguimiento y programación postquirúrgica.</span></div>
+<div class="function-item"><strong>Facturación electrónica</strong><span>Integración con procesos de facturación electrónica.</span></div>
+</div></article>
+<article class="group-card"><h3>Gestión clínica y operaciones</h3><p class="group-description">Funciones enfocadas en la administración interna, control financiero y operativa del centro.</p><div class="function-list">
+<div class="function-item"><strong>Inventario</strong><span>Control digital de inventarios para clínicas y centros.</span></div>
+<div class="function-item"><strong>Pagos y gastos</strong><span>Registro y seguimiento del detalle de gastos.</span></div>
+<div class="function-item"><strong>Nómina</strong><span>Gestión del personal conforme a requisitos de TSS.</span></div>
+<div class="function-item"><strong>Nómina / remuneraciones</strong><span>Cálculo y pago de nóminas alineado con TSS local.</span></div>
+<div class="function-item"><strong>Laboratorios y exámenes</strong><span>Gestión interna y externa de solicitudes.</span></div>
+<div class="function-item"><strong>Convenios</strong><span>Administración de convenios con empresas y entidades.</span></div>
+</div></article>
+<article class="group-card"><h3>Control de operaciones y analítica</h3><p class="group-description">Herramientas para automatizar procesos, monitorear rendimiento y potenciar la toma de decisiones.</p><div class="function-list">
+<div class="function-item"><strong>Tareas automáticas de citas</strong><span>Automatización de procesos de agenda y seguimiento.</span></div>
+<div class="function-item"><strong>Reportes</strong><span>Indicadores actualizados para decisiones de negocio.</span></div>
+<div class="function-item"><strong>Chat interno</strong><span>Comunicación ágil entre miembros del equipo.</span></div>
+<div class="function-item"><strong>Flujo de caja automático</strong><span>Visualización de ventas, gastos e inversiones.</span></div>
+<div class="function-item"><strong>Gestión de sucursales</strong><span>Vista unificada de múltiples ubicaciones.</span></div>
+<div class="function-item"><strong>Recaudación y cajas</strong><span>Control del movimiento de efectivo y caja.</span></div>
+<div class="function-item"><strong>Encuestas de satisfacción</strong><span>Monitoreo de percepción de pacientes.</span></div>
+<div class="function-item"><strong>Reportes Regulatorios</strong><span>Gestión de los reportes de MSP (EPI-1, EPI-2, 67-A, 67-B), SINAVE y reportes fiscales de la DGII (606/607/608, IR-17, IT-1, IR-1) para cumplimiento y control interno.</span></div>
+<div class="function-item"><strong>AI integrada</strong><span>Asistente de IA para recursos, casos y análisis.</span></div>
+<div class="function-item"><strong>Apoyo contable</strong><span>Revisión trimestral y soporte normativo contable.</span></div>
+</div></article>
+</div><div class="phase-actions"><a class="btn btn-primary" href="portales-demos/consultorio-digital-mock/index.html">Demo consultorios</a></div></section>
+<section class="phase alt"><div class="phase-inner"><div class="phase-header"><div><span class="phase-kicker">Fase 2</span><h2>Gestión de clínicas</h2><p>Una expansión para organizaciones con aseguradoras, farmacia, camas, quirófanos, equipos, integraciones y una experiencia digital más completa.</p></div><div class="phase-number">02</div></div><div class="modules-grid"><article class="module-card module-card-value"><div class="module-number">00</div><h3>Gestión de consultorios</h3><p>Gestión de los consultorios individuales de los médicos de la clínica, disponible con un fee especial por consultorio.</p></article><article class="module-card"><div class="module-number">01</div><h3>Facturación a seguros / ARS</h3><p>Elegibilidad, autorizaciones, reclamaciones y gestión de glosas.</p></article><article class="module-card"><div class="module-number">02</div><h3>Portal del paciente</h3><p>Resultados, documentos, pagos y mensajería en autoservicio.</p></article><article class="module-card"><div class="module-number">03</div><h3>Admisión, recepción y triage</h3><p>Check-in, turnos, sala de espera y evaluación inicial.</p></article><article class="module-card"><div class="module-number">04</div><h3>Farmacia interna</h3><p>Dispensación, controlados, interacciones y vencimientos.</p></article><article class="module-card"><div class="module-number">05</div><h3>Quirófano y hospitalización</h3><p>ADT, cirugía, camas, equipo e insumos por procedimiento.</p></article><article class="module-card"><div class="module-number">06</div><h3>Imagenología PACS-DICOM</h3><p>Almacenamiento, visualización e integración de estudios.</p></article><article class="module-card"><div class="module-number">07</div><h3>Compras y proveedores</h3><p>Cotizaciones, órdenes de compra y evaluación de suplidores.</p></article><article class="module-card"><div class="module-number">08</div><h3>Seguridad, roles y auditoría</h3><p>Permisos, bitácora y controles de protección de datos.</p></article><article class="module-card"><div class="module-number">09</div><h3>CRM y retención</h3><p>Reactivación, controles periódicos, cumpleaños y campañas.</p></article><article class="module-card"><div class="module-number">10</div><h3>Interoperabilidad / API</h3><p>HL7/FHIR e integraciones con laboratorios, farmacias y reguladores.</p></article><article class="module-card"><div class="module-number">11</div><h3>Honorarios médicos</h3><p>Liquidaciones por consulta, procedimiento, porcentaje o ARS.</p></article><article class="module-card"><div class="module-number">12</div><h3>Mantenimiento de equipos</h3><p>Calibración, vida útil y mantenimiento preventivo.</p></article><article class="module-card"><div class="module-number">13</div><h3>Red de referidos</h3><p>Trazabilidad, retorno clínico y conversión de referencias.</p></article><article class="module-card"><div class="module-number">14</div><h3>Turismo médico</h3><p>Multi-moneda, coordinación logística y seguimiento internacional.</p></article><article class="module-card"><div class="module-number">15</div><h3>App móvil nativa</h3><p>Push de citas, resultados y recordatorios de medicación.</p></article><article class="module-card"><div class="module-number">16</div><h3>Reputación y reseñas</h3><p>Monitoreo de Google y redes, respuestas y percepción pública.</p></article></div><div class="phase-actions"><a class="btn btn-primary" href="portales-demos/clinica-digital-mock/index.html">Demo clínicas</a></div></div></section></main>
+<footer class="footer"><strong>GRIMATS · Tecnología que realmente te da resultados.</strong><span>Prototipo visual con datos simulados.</span></footer></body></html>
