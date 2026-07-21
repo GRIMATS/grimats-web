@@ -2,17 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Deploy: staging a main",
-      "type": "shell",
-      "command": "powershell",
+      "label": "Desarrollo: iniciar servidor local",
+      "type": "process",
+      "command": "pwsh.exe",
       "args": [
         "-NoProfile",
         "-ExecutionPolicy",
         "Bypass",
         "-File",
-        "${workspaceFolder}\\scripts\\deploy-staging.ps1",
-        "-CommitMessage",
-        "${input:commitMessage}"
+        "${workspaceFolder}\\scripts\\start-local-webservertry.ps1"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -25,8 +23,44 @@
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
+        "focus": true,
         "clear": true,
         "showReuseMessage": false
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "Deploy: staging a main",
+      "type": "process",
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\scripts\\deploy-staging-prod.ps1",
+        "-CommitMessage",
+        "${input:commitMessage}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "runOptions": {
+        "instanceLimit": 1
       }
     }
   ],
