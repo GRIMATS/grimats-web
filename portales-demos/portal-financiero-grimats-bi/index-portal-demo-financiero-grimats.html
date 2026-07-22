@@ -147,11 +147,14 @@
     }
 
     .brand-mark {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      position: relative;
-      z-index: 2;
+      justify-content: center;
+      padding: 16px 22px;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      margin-bottom: 34px;
     }
 
     .brand-mark .mark {
@@ -1282,6 +1285,14 @@
         display: none;
       }
     }
+
+    .login-brand-logo {
+      display: block;
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   </style>
 </head>
 
@@ -1291,8 +1302,8 @@
   <div id="login-screen">
     <div class="login-brand">
       <div class="brand-mark">
-        <div class="mark">G</div>
-        <div class="word">GRIMATS</div>
+        <img src="../../assets/images/G-Business_Intelligence.png" alt="GRIMATS Business Intelligence"
+          class="login-brand-logo">
       </div>
       <div>
         <h1>Portal de Reportería Financiera</h1>
@@ -1355,19 +1366,19 @@
       <div id="nav-modules"></div>
 
       <div class="sidebar-footer">
-  <button class="exit" onclick="exitPortal()">← Salir del demo</button>
-  <div class="version">Portal demo v1.0 · datos ficticios</div>
+        <button class="exit" onclick="exitPortal()">← Salir del demo</button>
+        <div class="version">Portal demo v1.0 · datos ficticios</div>
 
-  <a href="../../politica-privacidad.html" target="_blank" rel="noopener" style="
+        <a href="../../politica-privacidad.html" target="_blank" rel="noopener" style="
     display:block;
     margin-top:10px;
     font-size:11.5px;
     color:#9FB2CE;
     text-decoration:none;
   ">
-    Política de Privacidad
-  </a>
-</div>
+          Política de Privacidad
+        </a>
+      </div>
     </aside>
 
     <main class="main">
@@ -2088,10 +2099,10 @@
       buildNav();
     });
   </script>
-</script>
+  </script>
 
-<!-- GRIMATS - Aviso simple de cookies -->
-<div id="grimats-cookie-notice" style="
+  <!-- GRIMATS - Aviso simple de cookies -->
+  <div id="grimats-cookie-notice" style="
   position: fixed;
   left: 18px;
   right: 18px;
@@ -2108,20 +2119,20 @@
   padding: 18px 20px;
   font-family: Arial, sans-serif;
 ">
-  <div style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-    <div style="flex:1 1 620px;">
-      <strong style="font-size:16px;">Uso de cookies</strong>
-      <p style="margin:6px 0 0; line-height:1.45; color:#dbe7ff;">
-        Este sitio utiliza cookies y herramientas de medición para analizar el tráfico,
-        mejorar la experiencia y entender el interés en nuestros servicios. Al continuar
-        navegando en grimats.com, aceptas su uso conforme a nuestra
-        <a href="../../politica-privacidad.html" style="color:#ff8a00; text-decoration:underline;">
-          Política de Privacidad
-        </a>.
-      </p>
-    </div>
+    <div style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div style="flex:1 1 620px;">
+        <strong style="font-size:16px;">Uso de cookies</strong>
+        <p style="margin:6px 0 0; line-height:1.45; color:#dbe7ff;">
+          Este sitio utiliza cookies y herramientas de medición para analizar el tráfico,
+          mejorar la experiencia y entender el interés en nuestros servicios. Al continuar
+          navegando en grimats.com, aceptas su uso conforme a nuestra
+          <a href="../../politica-privacidad.html" style="color:#ff8a00; text-decoration:underline;">
+            Política de Privacidad
+          </a>.
+        </p>
+      </div>
 
-    <button type="button" onclick="grimatsAcceptCookieNotice()" style="
+      <button type="button" onclick="grimatsAcceptCookieNotice()" style="
       border:0;
       background:linear-gradient(90deg, #005cff, #ff6a00);
       color:#ffffff;
@@ -2130,27 +2141,28 @@
       cursor:pointer;
       font-weight:800;
     ">
-      Entendido
-    </button>
+        Entendido
+      </button>
+    </div>
   </div>
-</div>
 
-<script>
-  function grimatsAcceptCookieNotice() {
-    localStorage.setItem("grimats_cookie_notice", "accepted");
-    document.getElementById("grimats-cookie-notice").style.display = "none";
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const notice = localStorage.getItem("grimats_cookie_notice");
-
-    if (notice !== "accepted") {
-      document.getElementById("grimats-cookie-notice").style.display = "block";
+  <script>
+    function grimatsAcceptCookieNotice() {
+      localStorage.setItem("grimats_cookie_notice", "accepted");
+      document.getElementById("grimats-cookie-notice").style.display = "none";
     }
-  });
-</script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const notice = localStorage.getItem("grimats_cookie_notice");
+
+      if (notice !== "accepted") {
+        document.getElementById("grimats-cookie-notice").style.display = "block";
+      }
+    });
+  </script>
 
 </body>
+
 </html>
 </body>
 
