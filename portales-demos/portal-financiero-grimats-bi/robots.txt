@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Este portal demo es propiedad de GRIMATS y no debe ser indexado.

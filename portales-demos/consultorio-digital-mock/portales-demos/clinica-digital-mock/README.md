@@ -1,6 +1,6 @@
 # Consultorio Digital — mock visual completo
 
-Prototipo estático con datos ficticios. Abra `index.html` o `dashboard.html`.
+Prototipo estático con datos ficticios. Abra `portal-clinica.html` o `dashboard.html`.
 
 ## Vistas
 - `dashboard.html`: resumen y mapa funcional.

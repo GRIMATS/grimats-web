@@ -1,12 +1,15 @@
- <!doctype html>
+<!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https:; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https: data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https:; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), interest-cohort=()">
-  <meta name="description" content="GRIMATS impulsa resultados con estrategia, datos, automatización y tecnología aplicada.">
+  <meta name="description"
+    content="GRIMATS impulsa resultados con estrategia, datos, automatización y tecnología aplicada.">
   <title>GRIMATS | Estrategia, tecnología y resultados</title>
 
   <!-- Identidad de la aplicación -->
@@ -17,583 +20,1985 @@
   <meta name="theme-color" content="#04163F">
   <meta name="msapplication-TileColor" content="#04163F">
   <!-- agregado para que no duplique index como pagina y se indice todo bien -->
-  <link rel="canonical" href="https://grimats.com/"> 
+  <link rel="canonical" href="https://grimats.com/">
   <!-- Favicon principal para navegadores -->
-  <link
-    rel="icon"
-    href="/assets/favicon/favicon.ico"
-    sizes="any"
-  >
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
 
   <!-- Favicons PNG -->
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="/assets/favicon/favicon-16x16.png"
-  >
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="/assets/favicon/favicon-32x32.png"
-  >
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="48x48"
-    href="/assets/favicon/favicon-48x48.png"
-  >
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48x48.png">
 
   <!-- Ícono para iPhone y iPad -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="/assets/favicon/apple-touch-icon.png"
-  >
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
 
   <!-- Configuración para Android y aplicaciones instalables -->
-  <link
-    rel="manifest"
-    href="/assets/favicon/site.webmanifest"
-  >
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
   <!-- Configuración para Microsoft -->
-  <meta
-    name="msapplication-config"
-    content="/assets/favicon/browserconfig.xml"
-  >
+  <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
 
   <style>
-:root {
-  --ink: #0a2346;
-  --navy: #003b73;
-  --blue: #0077c8;
-  --sky: #16ace4;
-  --cyan: #27c7e8;
-  --soft-blue: #eff8fd;
-  --pale-blue: #f7fbfe;
-  --line: #dce9f3;
-  --muted: #5c6f82;
-  --white: #ffffff;
-  --night: #06182e;
-  --success: #0f9d8a;
-  --shadow: 0 20px 50px rgba(0, 50, 95, .12);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--white);
-  color: var(--ink);
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-a { color: inherit; }
-.container { width: min(1600px, calc(100% - clamp(48px, 8vw, 160px))); margin: 0 auto; }
-.section { padding: 98px 0; }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 9px;
-  color: var(--blue); font-size: .72rem; font-weight: 800;
-  letter-spacing: .16em; text-transform: uppercase;
-}
-.eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--sky); }
-.section-title {
-  margin: 12px 0 0; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.06;
-  letter-spacing: -.04em; font-weight: 820;
-}
-.section-intro { max-width: 650px; margin: 20px 0 0; color: var(--muted); font-size: 1.04rem; }
-.btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-  min-height: 48px; padding: 0 19px; border-radius: 12px;
-  text-decoration: none; font-weight: 750; font-size: .9rem;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.btn:hover { transform: translateY(-2px); box-shadow: 0 13px 25px rgba(0, 61, 117, .18); }
-.btn-primary { color: white; background: linear-gradient(135deg, var(--blue), #00549f); }
-.btn-light { color: var(--navy); background: white; border: 1px solid rgba(0, 80, 139, .14); }
-.btn-outline { color: var(--blue); border: 1px solid rgba(0, 119, 200, .34); background: transparent; }
-.nav {
-  position: sticky; top: 0; z-index: 30;
-  background: rgba(255,255,255,.94); backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(4, 59, 111, .09);
-}
-.nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-.nav-brand { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.nav-mark { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
-.nav-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.nav-word { color: var(--navy); font-size: 1.05rem; letter-spacing: .16em; font-weight: 900; }
-.nav-links { display: flex; align-items: center; gap: 23px; }
-.nav-links a { color: #46617c; text-decoration: none; font-size: .86rem; font-weight: 700; }
-.nav-links a:hover { color: var(--blue); }
-.nav-links .nav-book { color: white; background: var(--navy); padding: 10px 14px; border-radius: 10px; }
-.nav-links .nav-book:hover { color: white; background: var(--blue); }
-.hero { position: relative; overflow: hidden; background: linear-gradient(115deg, #ffffff 0%, #f5fbff 58%, #e9f7fd 100%); }
-.hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,119,200,.065) 1px, transparent 1px), linear-gradient(90deg, rgba(0,119,200,.065) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(90deg, #000, transparent 75%); }
-.hero::after { content: ''; position: absolute; width: 660px; height: 660px; border-radius: 50%; border: 1px solid rgba(22,172,228,.18); right: -330px; bottom: -420px; box-shadow: 0 0 0 75px rgba(22,172,228,.035), 0 0 0 150px rgba(22,172,228,.025); }
-.hero-inner { min-height: 655px; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 40px; position: relative; z-index: 1; }
-.hero-content { padding: 56px 0; }
-.logo-wrap { display: inline-block; max-width: 620px; padding: 0; margin-bottom: 29px; }
-.hero-logo { display: block; width: min(620px, 100%); height: auto; }
-.hero-kicker { color: var(--blue); font-weight: 850; letter-spacing: .14em; font-size: .73rem; text-transform: uppercase; margin-bottom: 13px; }
-.hero h1 { max-width: 650px; margin: 0; font-size: clamp(2.25rem, 4.6vw, 4.2rem); line-height: 1.01; letter-spacing: -.055em; font-weight: 850; }
-.hero h1 strong { color: var(--blue); }
-.hero-copy { max-width: 590px; margin: 21px 0 29px; color: #4c637c; font-size: 1.08rem; }
-.hero-panel { justify-self: end; width: min(415px, 100%); background: rgba(4, 59, 111, .96); border-radius: 26px; padding: 34px; color: white; box-shadow: 0 27px 65px rgba(0, 55, 105, .23); transform: rotate(1.1deg); }
-.hero-panel > * { transform: rotate(-1.1deg); }
-.panel-label { color: #75dcf6; text-transform: uppercase; font-size: .71rem; letter-spacing: .16em; font-weight: 800; }
-.panel-title { margin: 13px 0 18px; font-size: 1.6rem; line-height: 1.1; font-weight: 800; letter-spacing: -.035em; }
-.panel-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
-.panel-list li { padding-left: 22px; position: relative; color: rgba(255,255,255,.75); font-size: .92rem; }
-.panel-list li::before { content: '✓'; color: var(--cyan); position: absolute; left: 0; font-weight: 900; }
-.panel-line { height: 1px; background: rgba(255,255,255,.16); margin: 25px 0; }
-.panel-quote { margin: 0; color: #fff; font-size: 1rem; font-weight: 650; }
-.trust-strip { background: var(--night); color: white; }
-.trust-grid { min-height: 122px; display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; }
-.trust-item { padding: 21px 32px; border-left: 1px solid rgba(255,255,255,.11); }
-.trust-item:first-child { border-left: 0; }
-.trust-number { color: var(--cyan); font-weight: 900; letter-spacing: -.04em; font-size: 1.65rem; }
-.trust-label { color: rgba(255,255,255,.64); font-size: .82rem; margin-top: 3px; }
-.impact { background: var(--pale-blue); }
-.impact-grid { margin-top: 43px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.impact-card { min-height: 206px; background: white; border: 1px solid var(--line); border-radius: 18px; padding: 27px; box-shadow: 0 8px 25px rgba(3, 67, 117, .035); }
-.impact-icon { width: 42px; height: 42px; border-radius: 13px; background: linear-gradient(135deg, #e3f5fd, #c9ebf8); display: grid; place-items: center; color: var(--blue); font-weight: 900; font-size: 1.05rem; }
-.impact-card h3 { margin: 18px 0 8px; color: var(--ink); font-size: 1.07rem; letter-spacing: -.02em; }
-.impact-card p { margin: 0; color: var(--muted); font-size: .91rem; }
-.case-header { display: flex; justify-content: space-between; gap: 40px; align-items: end; }
-.case-header .section-intro { margin-bottom: 0; }
-.cases { background: white; }
-.cases-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.case-card { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: white; display: flex; flex-direction: column; box-shadow: 0 11px 30px rgba(0, 55, 105, .055); }
-.case-top { min-height: 140px; padding: 23px 25px; background: linear-gradient(135deg, var(--navy), #075a9e); color: white; position: relative; overflow: hidden; }
-.case-top::after { content: ''; position: absolute; width: 150px; height: 150px; border: 1px solid rgba(95,225,250,.25); border-radius: 50%; right: -55px; top: -45px; }
-.case-number { font-size: .72rem; letter-spacing: .16em; color: #7ee1fa; font-weight: 800; text-transform: uppercase; }
-.case-title { position: relative; z-index: 1; margin: 10px 0 0; font-size: 1.31rem; line-height: 1.12; letter-spacing: -.03em; }
-.case-body { padding: 25px; display: flex; flex-direction: column; flex: 1; }
-.case-body p { color: var(--muted); font-size: .92rem; margin: 0; }
-.case-result { margin: 20px 0 0; padding: 14px; border-radius: 12px; background: #f0faff; color: #075b98; font-size: .86rem; font-weight: 750; }
-.case-points { margin: 17px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-.case-points li { position: relative; padding-left: 17px; font-size: .84rem; color: #476078; }
-.case-points li::before { content: '•'; position: absolute; left: 0; color: var(--sky); font-weight: 900; }
-.courses { background: linear-gradient(125deg, #f5fbff 0%, white 58%, #eaf8fd 100%); }
-.course-grid { margin-top: 39px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-.course-card { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 29px; box-shadow: 0 13px 32px rgba(0, 64, 117, .055); position: relative; overflow: hidden; }
-.course-card::after { content: ''; position: absolute; width: 140px; height: 140px; border-radius: 50%; background: rgba(22,172,228,.07); right: -52px; top: -55px; }
-.course-badge { display: inline-block; padding: 7px 10px; border-radius: 99px; background: #eaf8fd; color: #0070ba; font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; font-weight: 850; }
-.course-card h3 { position: relative; z-index: 1; margin: 18px 0 9px; font-size: 1.45rem; line-height: 1.08; letter-spacing: -.035em; }
-.course-card p { margin: 0; color: var(--muted); max-width: 460px; }
-.course-card .btn { margin-top: 23px; }
-.partners { background: var(--night); color: white; }
-.partners .eyebrow { color: #71d9f3; }
-.partners .eyebrow::before { background: #71d9f3; }
-.partners .section-title { color: white; max-width: 670px; }
-.partners .section-intro { color: rgba(255,255,255,.63); }
-.partner-grid { margin-top: 47px; display: grid; grid-template-columns: minmax(0, .85fr) minmax(320px, 1.1fr) minmax(0, .85fr); gap: 20px; align-items: center; }
-.partner-placeholder { min-height: 390px; }
-.partner-card { border-radius: 22px; padding: 31px; background: linear-gradient(150deg, rgba(19, 93, 153, .98), rgba(0, 46, 92, .98)); border: 1px solid rgba(135,228,255,.28); box-shadow: 0 22px 48px rgba(0,0,0,.23); }
-.partner-monogram { width: 69px; height: 69px; border-radius: 20px; display: grid; place-items: center; background: linear-gradient(135deg, #43c8eb, #0078c8); font-size: 1.25rem; font-weight: 900; letter-spacing: -.04em; }
-.partner-photo { width: 100%; max-width: 160px; height: auto; border-radius: 12px; object-fit: cover; display: block; box-shadow: 0 12px 30px rgba(0,0,0,.18); float: left; margin-right: 18px; }
-.partner-role { margin-top: 20px; color: #82e3fb; text-transform: uppercase; font-size: .72rem; font-weight: 800; letter-spacing: .13em; }
-.partner-name { margin: 7px 0 10px; font-size: 1.72rem; line-height: 1.05; letter-spacing: -.045em; }
-.partner-description { margin: 0; color: rgba(255,255,255,.78); font-size: .93rem; }
-.partner-quote { margin: 22px 0 0; padding: 15px 17px; background: rgba(255,255,255,.08); border-left: 3px solid var(--cyan); color: white; font-size: .92rem; font-style: italic; border-radius: 0 10px 10px 0; }
-.partner-card .btn { margin-top: 24px; }
-.contact { position: relative; overflow: hidden; background: linear-gradient(135deg, #003b73, #001b3d); color: white; }
-.contact::after { content: 'GRIMATS'; position: absolute; right: -6px; bottom: -76px; font-weight: 900; font-size: clamp(6rem, 17vw, 15rem); letter-spacing: -.1em; color: rgba(255,255,255,.03); }
-.contact-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .92fr; gap: 52px; align-items: start; }
-.contact .eyebrow { color: #7de1f7; }
-.contact .eyebrow::before { background: #7de1f7; }
-.contact .section-title { color: white; }
-.contact-copy { color: rgba(255,255,255,.73); font-size: 1.04rem; margin: 20px 0 29px; max-width: 550px; }
-.contact-card { background: white; color: var(--ink); padding: 28px; border-radius: 20px; box-shadow: 0 23px 54px rgba(0,0,0,.23); }
-.contact-card h3 { margin: 0 0 18px; font-size: 1.25rem; letter-spacing: -.02em; }
-.contact-socials { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-.contact-socials a { width: 42px; height: 42px; border-radius: 50%; background: #eaf7fc; color: var(--blue); display: inline-flex; align-items: center; justify-content: center; transition: transform .2s ease, background .2s ease; }
-.contact-socials a:hover { transform: translateY(-2px); background: #d9f0f8; }
-.contact-socials svg { width: 20px; height: 20px; display: block; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.contact-list { display: grid; gap: 14px; }
-.contact-item { display: grid; grid-template-columns: 38px 1fr; gap: 11px; align-items: start; text-decoration: none; border-top: 1px solid #ebf1f5; padding-top: 14px; }
-.contact-item:first-child { border-top: none; padding-top: 0; }
-.contact-icon { width: 35px; height: 35px; border-radius: 11px; display: grid; place-items: center; background: #eaf7fc; color: var(--blue); font-weight: 900; }
-.contact-item strong { display: block; font-size: .8rem; color: #60758a; letter-spacing: .04em; text-transform: uppercase; }
-.contact-item span { display: block; color: var(--navy); font-weight: 780; margin-top: 2px; word-break: break-word; }
-.footer { background: #041326; color: rgba(255,255,255,.58); padding: 29px 0; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
-.footer-brand { color: white; font-size: 1rem; font-weight: 900; letter-spacing: .16em; }
-.footer-copy { font-size: .78rem; }
-.footer-links { display: flex; gap: 16px; }
-.footer-links a { color: rgba(255,255,255,.72); font-size: .78rem; text-decoration: none; }
-.footer-links a:hover { color: white; }
-.subhero { padding: 95px 0 77px; background: linear-gradient(125deg, #f6fbfe, #ecf8fd); position: relative; overflow: hidden; }
-.subhero::after { content: ''; position: absolute; width: 560px; height: 560px; border-radius: 50%; border: 1px solid rgba(0,119,200,.13); right: -240px; top: -330px; box-shadow: 0 0 0 60px rgba(0,119,200,.025), 0 0 0 120px rgba(0,119,200,.02); }
-.subhero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .85fr; gap: 40px; align-items: center; }
-.subhero h1 { margin: 14px 0 0; font-size: clamp(2.6rem, 5vw, 4.7rem); line-height: .98; letter-spacing: -.065em; max-width: 760px; }
-.subhero p { max-width: 680px; color: var(--muted); font-size: 1.05rem; margin: 23px 0 0; }
-.subhero-card { background: var(--navy); color: white; padding: 28px; border-radius: 21px; box-shadow: var(--shadow); }
-.subhero-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
-.subhero-card p { color: rgba(255,255,255,.7); font-size: .91rem; margin: 0; }
-.subhero-card .btn { margin-top: 20px; }
-.product-list { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.product-card { padding: 33px; border: 1px solid var(--line); border-radius: 20px; background: white; display: flex; flex-direction: column; min-height: 385px; box-shadow: 0 13px 32px rgba(0, 64, 117, .05); }
-.product-num { color: var(--sky); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; }
-.product-card h2 { margin: 14px 0 14px; font-size: 1.72rem; line-height: 1.04; letter-spacing: -.045em; }
-.product-card p { color: var(--muted); margin: 0; }
-.product-card ul { list-style: none; padding: 0; margin: 19px 0 26px; display: grid; gap: 8px; }
-.product-card li { color: #48627b; font-size: .88rem; padding-left: 18px; position: relative; }
-.product-card li::before { content: '•'; color: var(--sky); position: absolute; left: 0; font-weight: 900; }
-.product-card .btn { margin-top: auto; align-self: flex-start; }
-.course-hero { padding: 96px 0 70px; background: radial-gradient(circle at 89% 18%, rgba(22,172,228,.17), transparent 24%), linear-gradient(125deg, #031b38, #074f83); color: white; position: relative; overflow: hidden; }
-.course-hero::after { content: ''; position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(116,225,247,.26) 1px, transparent 1px), linear-gradient(90deg, rgba(116,225,247,.26) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(90deg, transparent, #000 48%, transparent); }
-.course-hero-inner { position: relative; z-index: 1; max-width: 860px; }
-.course-hero .eyebrow { color: #89e7fb; }
-.course-hero .eyebrow::before { background: #89e7fb; }
-.course-hero h1 { margin: 15px 0 0; font-size: clamp(2.8rem, 5.8vw, 5.2rem); line-height: .95; letter-spacing: -.07em; max-width: 850px; }
-.course-hero p { margin: 22px 0 30px; max-width: 690px; font-size: 1.11rem; color: rgba(255,255,255,.74); }
-.course-hero .btn-primary { background: white; color: var(--navy); }
-.course-hero .btn-light { background: transparent; color: white; border-color: rgba(255,255,255,.28); }
-.outcomes { background: var(--pale-blue); }
-.outcome-grid { margin-top: 42px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
-.outcome-card { background: white; padding: 24px; border-radius: 17px; border: 1px solid var(--line); }
-.outcome-card span { color: var(--blue); font-size: .79rem; font-weight: 900; }
-.outcome-card h3 { margin: 13px 0 7px; font-size: 1.05rem; letter-spacing: -.02em; }
-.outcome-card p { margin: 0; color: var(--muted); font-size: .9rem; }
-.module-grid { margin-top: 43px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.module { display: grid; grid-template-columns: 49px 1fr; gap: 15px; padding: 19px; border: 1px solid var(--line); border-radius: 15px; background: white; }
-.module-num { width: 42px; height: 42px; border-radius: 12px; background: #eaf7fc; color: var(--blue); display: grid; place-items: center; font-size: .78rem; font-weight: 900; }
-.module h3 { margin: 0; font-size: 1rem; letter-spacing: -.015em; }
-.module p { margin: 5px 0 0; color: var(--muted); font-size: .86rem; }
-.learning { background: var(--night); color: white; }
-.learning .section-title { color: white; }
-.learning .section-intro { color: rgba(255,255,255,.62); }
-.learning-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.learning-card { padding: 25px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.045); }
-.learning-card h3 { margin: 0 0 9px; color: #80e5fb; font-size: 1.05rem; }
-.learning-card p { margin: 0; color: rgba(255,255,255,.64); font-size: .9rem; }
-.course-cta { background: linear-gradient(130deg, #0a72b9, #003c73); color: white; }
-.course-cta .section-title { color: white; max-width: 720px; }
-.course-cta .section-intro { color: rgba(255,255,255,.71); }
-.course-cta .btn-primary { background: white; color: var(--navy); }
-.course-cta .btn-light { color: white; background: transparent; border-color: rgba(255,255,255,.3); }
-@media (max-width: 960px) {
-  .hero-inner, .subhero-grid, .contact-grid { grid-template-columns: 1fr; }
-  .impact-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-panel { justify-self: start; transform: none; width: 100%; max-width: 560px; }
-  .hero-panel > * { transform: none; }
-  .partner-grid { grid-template-columns: 1fr; }
-  .partner-placeholder { display: none; }
-  .partner-card { max-width: 560px; }
-}
-@media (max-width: 780px) {
-  .partner-photo { float: none; display: block; margin: 0 0 18px; max-width: 220px; }
-}
-@media (max-width: 780px) {
-  .container { width: min(100% - 34px, 1160px); }
-  .nav-inner { min-height: 68px; }
-  .nav-links { gap: 13px; }
-  .nav-links a:not(.nav-book) { display: none; }
-  .nav-links .nav-book { font-size: .77rem; padding: 9px 10px; }
-  .section { padding: 70px 0; }
-  .hero-inner { min-height: auto; padding: 61px 0 68px; }
-  .hero-content { padding: 0; }
-  .hero-panel { padding: 28px; }
-  .trust-grid, .impact-grid, .cases-grid, .course-grid, .product-list, .outcome-grid, .learning-grid { grid-template-columns: 1fr; }
-  .trust-grid { padding: 12px 0; }
-  .trust-item { border-left: none; border-top: 1px solid rgba(255,255,255,.11); padding: 17px 0; }
-  .trust-item:first-child { border-top: 0; }
-  .case-header { display: block; }
-  .module-grid { grid-template-columns: 1fr; }
-  .footer-inner { align-items: flex-start; flex-direction: column; }
-}
+    :root {
+      --ink: #0a2346;
+      --navy: #003b73;
+      --blue: #0077c8;
+      --sky: #16ace4;
+      --cyan: #27c7e8;
+      --soft-blue: #eff8fd;
+      --pale-blue: #f7fbfe;
+      --line: #dce9f3;
+      --muted: #5c6f82;
+      --white: #ffffff;
+      --night: #06182e;
+      --success: #0f9d8a;
+      --shadow: 0 20px 50px rgba(0, 50, 95, .12);
+    }
 
-/* Hero block */
-.hero-block { min-height: auto; }
-.hero-block .hero-inner { min-height: 430px; grid-template-columns: 1fr; gap: 0; }
-.hero-block .hero-content { width: 100%; padding: 48px 0; }
-.hero-block .hero-kicker { margin-bottom: 14px; }
-.hero-block h1 { max-width: 1120px; font-size: clamp(3rem, 5.4vw, 5.5rem); line-height: .95; letter-spacing: -.07em; }
-.hero-block h1 strong { color: var(--blue); }
-.hero-actions { margin-top: 30px; }
-.products { background: linear-gradient(125deg, #f7fbfe 0%, #ffffff 58%, #eff9fd 100%); }
-.products-map-wrap { margin-top: 37px; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 14px 38px rgba(0,64,117,.06); }
-.products-map { display: block; width: 100%; height: auto; }
-.products-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.product-brand-card { min-height: 420px; padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: #fff; display: flex; flex-direction: column; box-shadow: 0 13px 32px rgba(0,64,117,.055); overflow: hidden; }
-.product-brand-logo-wrap { height: 118px; display: flex; align-items: center; justify-content: flex-start; }
-.product-brand-logo-wrap img { display: block; max-width: 100%; max-height: 108px; width: auto; height: auto; object-fit: contain; object-position: left center; }
-.product-brand-mode { margin-top: 15px; font-size: .71rem; line-height: 1.35; font-weight: 850; letter-spacing: .075em; text-transform: uppercase; }
-.product-brand-card h3 { margin: 13px 0 9px; color: var(--ink); font-size: 1.24rem; line-height: 1.1; letter-spacing: -.035em; }
-.product-brand-card p { margin: 0; color: var(--muted); font-size: .91rem; }
-.product-brand-card .btn { margin-top: auto; align-self: flex-start; padding-left: 15px; padding-right: 15px; }
-.evolution-card { border-top: 4px solid #0866d7; }
-.evolution-card .product-brand-mode { color: #075ecb; }
-.business-card { border-top: 4px solid #5827b5; }
-.business-card .product-brand-mode { color: #6425b5; }
-.academy-card { border-top: 4px solid #f36c16; }
-.academy-card .product-brand-mode { color: #dd5b0a; }
-@media (max-width: 960px) {
-  .hero-block .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 58px 0 54px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .product-brand-card { min-height: 350px; }
-}
-@media (max-width: 780px) {
-  .hero-block h1 { font-size: clamp(2.75rem, 13.5vw, 4.3rem); }
-  .hero-actions { margin-top: 28px; }
-  .products-map-wrap { display: none; }
-  .products-grid { margin-top: 34px; }
-}
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1600px, calc(100% - clamp(48px, 8vw, 160px)));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 98px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--blue);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--sky);
+    }
+
+    .section-title {
+      margin: 12px 0 0;
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 1.06;
+      letter-spacing: -.04em;
+      font-weight: 820;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 19px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 750;
+      font-size: .9rem;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 13px 25px rgba(0, 61, 117, .18);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #00549f);
+    }
+
+    .btn-light {
+      color: var(--navy);
+      background: white;
+      border: 1px solid rgba(0, 80, 139, .14);
+    }
+
+    .btn-outline {
+      color: var(--blue);
+      border: 1px solid rgba(0, 119, 200, .34);
+      background: transparent;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(4, 59, 111, .09);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .nav-brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-mark {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .nav-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-word {
+      color: var(--navy);
+      font-size: 1.05rem;
+      letter-spacing: .16em;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      color: #46617c;
+      text-decoration: none;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .nav-book {
+      color: white;
+      background: var(--navy);
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .nav-links .nav-book:hover {
+      color: white;
+      background: var(--blue);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(115deg, #ffffff 0%, #f5fbff 58%, #e9f7fd 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(0, 119, 200, .065) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 119, 200, .065) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(90deg, #000, transparent 75%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 660px;
+      height: 660px;
+      border-radius: 50%;
+      border: 1px solid rgba(22, 172, 228, .18);
+      right: -330px;
+      bottom: -420px;
+      box-shadow: 0 0 0 75px rgba(22, 172, 228, .035), 0 0 0 150px rgba(22, 172, 228, .025);
+    }
+
+    .hero-inner {
+      min-height: 655px;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      padding: 56px 0;
+    }
+
+    .logo-wrap {
+      display: inline-block;
+      max-width: 620px;
+      padding: 0;
+      margin-bottom: 29px;
+    }
+
+    .hero-logo {
+      display: block;
+      width: min(620px, 100%);
+      height: auto;
+    }
+
+    .hero-kicker {
+      color: var(--blue);
+      font-weight: 850;
+      letter-spacing: .14em;
+      font-size: .73rem;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(2.25rem, 4.6vw, 4.2rem);
+      line-height: 1.01;
+      letter-spacing: -.055em;
+      font-weight: 850;
+    }
+
+    .hero h1 strong {
+      color: var(--blue);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin: 21px 0 29px;
+      color: #4c637c;
+      font-size: 1.08rem;
+    }
+
+    .hero-panel {
+      justify-self: end;
+      width: min(415px, 100%);
+      background: rgba(4, 59, 111, .96);
+      border-radius: 26px;
+      padding: 34px;
+      color: white;
+      box-shadow: 0 27px 65px rgba(0, 55, 105, .23);
+      transform: rotate(1.1deg);
+    }
+
+    .hero-panel>* {
+      transform: rotate(-1.1deg);
+    }
+
+    .panel-label {
+      color: #75dcf6;
+      text-transform: uppercase;
+      font-size: .71rem;
+      letter-spacing: .16em;
+      font-weight: 800;
+    }
+
+    .panel-title {
+      margin: 13px 0 18px;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .panel-list li {
+      padding-left: 22px;
+      position: relative;
+      color: rgba(255, 255, 255, .75);
+      font-size: .92rem;
+    }
+
+    .panel-list li::before {
+      content: '✓';
+      color: var(--cyan);
+      position: absolute;
+      left: 0;
+      font-weight: 900;
+    }
+
+    .panel-line {
+      height: 1px;
+      background: rgba(255, 255, 255, .16);
+      margin: 25px 0;
+    }
+
+    .panel-quote {
+      margin: 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    .trust-strip {
+      background: var(--night);
+      color: white;
+    }
+
+    .trust-grid {
+      min-height: 122px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+    }
+
+    .trust-item {
+      padding: 21px 32px;
+      border-left: 1px solid rgba(255, 255, 255, .11);
+    }
+
+    .trust-item:first-child {
+      border-left: 0;
+    }
+
+    .trust-number {
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 1.65rem;
+    }
+
+    .trust-label {
+      color: rgba(255, 255, 255, .64);
+      font-size: .82rem;
+      margin-top: 3px;
+    }
+
+    .impact {
+      background: var(--pale-blue);
+    }
+
+    .impact-grid {
+      margin-top: 43px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .impact-card {
+      min-height: 206px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 27px;
+      box-shadow: 0 8px 25px rgba(3, 67, 117, .035);
+    }
+
+    .impact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #e3f5fd, #c9ebf8);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .impact-card h3 {
+      margin: 18px 0 8px;
+      color: var(--ink);
+      font-size: 1.07rem;
+      letter-spacing: -.02em;
+    }
+
+    .impact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .case-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .case-header .section-intro {
+      margin-bottom: 0;
+    }
+
+    .cases {
+      background: white;
+    }
+
+    .cases-grid {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .case-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 11px 30px rgba(0, 55, 105, .055);
+    }
+
+    .case-top {
+      min-height: 140px;
+      padding: 23px 25px;
+      background: linear-gradient(135deg, var(--navy), #075a9e);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-top::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 1px solid rgba(95, 225, 250, .25);
+      border-radius: 50%;
+      right: -55px;
+      top: -45px;
+    }
+
+    .case-number {
+      font-size: .72rem;
+      letter-spacing: .16em;
+      color: #7ee1fa;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .case-title {
+      position: relative;
+      z-index: 1;
+      margin: 10px 0 0;
+      font-size: 1.31rem;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    .case-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .case-body p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 0;
+    }
+
+    .case-result {
+      margin: 20px 0 0;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f0faff;
+      color: #075b98;
+      font-size: .86rem;
+      font-weight: 750;
+    }
+
+    .case-points {
+      margin: 17px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .case-points li {
+      position: relative;
+      padding-left: 17px;
+      font-size: .84rem;
+      color: #476078;
+    }
+
+    .case-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--sky);
+      font-weight: 900;
+    }
+
+    .courses {
+      background: linear-gradient(125deg, #f5fbff 0%, white 58%, #eaf8fd 100%);
+    }
+
+    .course-grid {
+      margin-top: 39px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 29px;
+      box-shadow: 0 13px 32px rgba(0, 64, 117, .055);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(22, 172, 228, .07);
+      right: -52px;
+      top: -55px;
+    }
+
+    .course-badge {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 99px;
+      background: #eaf8fd;
+      color: #0070ba;
+      font-size: .7rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+
+    .course-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 18px 0 9px;
+      font-size: 1.45rem;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .course-card p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 460px;
+    }
+
+    .course-card .btn {
+      margin-top: 23px;
+    }
+
+    .partners {
+      background: var(--night);
+      color: white;
+    }
+
+    .partners .eyebrow {
+      color: #71d9f3;
+    }
+
+    .partners .eyebrow::before {
+      background: #71d9f3;
+    }
+
+    .partners .section-title {
+      color: white;
+      max-width: 670px;
+    }
+
+    .partners .section-intro {
+      color: rgba(255, 255, 255, .63);
+    }
+
+    .partner-grid {
+      margin-top: 47px;
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(320px, 1.1fr) minmax(0, .85fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .partner-placeholder {
+      min-height: 390px;
+    }
+
+    .partner-card {
+      border-radius: 22px;
+      padding: 31px;
+      background: linear-gradient(150deg, rgba(19, 93, 153, .98), rgba(0, 46, 92, .98));
+      border: 1px solid rgba(135, 228, 255, .28);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, .23);
+    }
+
+    .partner-monogram {
+      width: 69px;
+      height: 69px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #43c8eb, #0078c8);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .partner-photo {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+      float: left;
+      margin-right: 18px;
+    }
+
+    .partner-role {
+      margin-top: 20px;
+      color: #82e3fb;
+      text-transform: uppercase;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .partner-name {
+      margin: 7px 0 10px;
+      font-size: 1.72rem;
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .partner-description {
+      margin: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: .93rem;
+    }
+
+    .partner-quote {
+      margin: 22px 0 0;
+      padding: 15px 17px;
+      background: rgba(255, 255, 255, .08);
+      border-left: 3px solid var(--cyan);
+      color: white;
+      font-size: .92rem;
+      font-style: italic;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .partner-card .btn {
+      margin-top: 24px;
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #003b73, #001b3d);
+      color: white;
+    }
+
+    .contact::after {
+      content: 'GRIMATS';
+      position: absolute;
+      right: -6px;
+      bottom: -76px;
+      font-weight: 900;
+      font-size: clamp(6rem, 17vw, 15rem);
+      letter-spacing: -.1em;
+      color: rgba(255, 255, 255, .03);
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .contact .eyebrow {
+      color: #7de1f7;
+    }
+
+    .contact .eyebrow::before {
+      background: #7de1f7;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact-copy {
+      color: rgba(255, 255, 255, .73);
+      font-size: 1.04rem;
+      margin: 20px 0 29px;
+      max-width: 550px;
+    }
+
+    .contact-card {
+      background: white;
+      color: var(--ink);
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 23px 54px rgba(0, 0, 0, .23);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 18px;
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
+
+    .contact-socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .contact-socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #eaf7fc;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .contact-socials a:hover {
+      transform: translateY(-2px);
+      background: #d9f0f8;
+    }
+
+    .contact-socials svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 11px;
+      align-items: start;
+      text-decoration: none;
+      border-top: 1px solid #ebf1f5;
+      padding-top: 14px;
+    }
+
+    .contact-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .contact-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: #eaf7fc;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: .8rem;
+      color: #60758a;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .contact-item span {
+      display: block;
+      color: var(--navy);
+      font-weight: 780;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+
+    .footer {
+      background: #041326;
+      color: rgba(255, 255, 255, .58);
+      padding: 29px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+
+    .footer-copy {
+      font-size: .78rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, .72);
+      font-size: .78rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .subhero {
+      padding: 95px 0 77px;
+      background: linear-gradient(125deg, #f6fbfe, #ecf8fd);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subhero::after {
+      content: '';
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 119, 200, .13);
+      right: -240px;
+      top: -330px;
+      box-shadow: 0 0 0 60px rgba(0, 119, 200, .025), 0 0 0 120px rgba(0, 119, 200, .02);
+    }
+
+    .subhero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .subhero h1 {
+      margin: 14px 0 0;
+      font-size: clamp(2.6rem, 5vw, 4.7rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 760px;
+    }
+
+    .subhero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 23px 0 0;
+    }
+
+    .subhero-card {
+      background: var(--navy);
+      color: white;
+      padding: 28px;
+      border-radius: 21px;
+      box-shadow: var(--shadow);
+    }
+
+    .subhero-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .subhero-card p {
+      color: rgba(255, 255, 255, .7);
+      font-size: .91rem;
+      margin: 0;
+    }
+
+    .subhero-card .btn {
+      margin-top: 20px;
+    }
+
+    .product-list {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      padding: 33px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 385px;
+      box-shadow: 0 13px 32px rgba(0, 64, 117, .05);
+    }
+
+    .product-num {
+      color: var(--sky);
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .product-card h2 {
+      margin: 14px 0 14px;
+      font-size: 1.72rem;
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .product-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 19px 0 26px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .product-card li {
+      color: #48627b;
+      font-size: .88rem;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .product-card li::before {
+      content: '•';
+      color: var(--sky);
+      position: absolute;
+      left: 0;
+      font-weight: 900;
+    }
+
+    .product-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .course-hero {
+      padding: 96px 0 70px;
+      background: radial-gradient(circle at 89% 18%, rgba(22, 172, 228, .17), transparent 24%), linear-gradient(125deg, #031b38, #074f83);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .22;
+      background-image: linear-gradient(rgba(116, 225, 247, .26) 1px, transparent 1px), linear-gradient(90deg, rgba(116, 225, 247, .26) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(90deg, transparent, #000 48%, transparent);
+    }
+
+    .course-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .course-hero .eyebrow {
+      color: #89e7fb;
+    }
+
+    .course-hero .eyebrow::before {
+      background: #89e7fb;
+    }
+
+    .course-hero h1 {
+      margin: 15px 0 0;
+      font-size: clamp(2.8rem, 5.8vw, 5.2rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+      max-width: 850px;
+    }
+
+    .course-hero p {
+      margin: 22px 0 30px;
+      max-width: 690px;
+      font-size: 1.11rem;
+      color: rgba(255, 255, 255, .74);
+    }
+
+    .course-hero .btn-primary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .course-hero .btn-light {
+      background: transparent;
+      color: white;
+      border-color: rgba(255, 255, 255, .28);
+    }
+
+    .outcomes {
+      background: var(--pale-blue);
+    }
+
+    .outcome-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .outcome-card {
+      background: white;
+      padding: 24px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+    }
+
+    .outcome-card span {
+      color: var(--blue);
+      font-size: .79rem;
+      font-weight: 900;
+    }
+
+    .outcome-card h3 {
+      margin: 13px 0 7px;
+      font-size: 1.05rem;
+      letter-spacing: -.02em;
+    }
+
+    .outcome-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .module-grid {
+      margin-top: 43px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .module {
+      display: grid;
+      grid-template-columns: 49px 1fr;
+      gap: 15px;
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .module-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eaf7fc;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .module h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: -.015em;
+    }
+
+    .module p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .learning {
+      background: var(--night);
+      color: white;
+    }
+
+    .learning .section-title {
+      color: white;
+    }
+
+    .learning .section-intro {
+      color: rgba(255, 255, 255, .62);
+    }
+
+    .learning-grid {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .learning-card {
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, .045);
+    }
+
+    .learning-card h3 {
+      margin: 0 0 9px;
+      color: #80e5fb;
+      font-size: 1.05rem;
+    }
+
+    .learning-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, .64);
+      font-size: .9rem;
+    }
+
+    .course-cta {
+      background: linear-gradient(130deg, #0a72b9, #003c73);
+      color: white;
+    }
+
+    .course-cta .section-title {
+      color: white;
+      max-width: 720px;
+    }
+
+    .course-cta .section-intro {
+      color: rgba(255, 255, 255, .71);
+    }
+
+    .course-cta .btn-primary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .course-cta .btn-light {
+      color: white;
+      background: transparent;
+      border-color: rgba(255, 255, 255, .3);
+    }
+
+    @media (max-width: 960px) {
+
+      .hero-inner,
+      .subhero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-panel {
+        justify-self: start;
+        transform: none;
+        width: 100%;
+        max-width: 560px;
+      }
+
+      .hero-panel>* {
+        transform: none;
+      }
+
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partner-placeholder {
+        display: none;
+      }
+
+      .partner-card {
+        max-width: 560px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .partner-photo {
+        float: none;
+        display: block;
+        margin: 0 0 18px;
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        width: min(100% - 34px, 1160px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a:not(.nav-book) {
+        display: none;
+      }
+
+      .nav-links .nav-book {
+        font-size: .77rem;
+        padding: 9px 10px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 61px 0 68px;
+      }
+
+      .hero-content {
+        padding: 0;
+      }
+
+      .hero-panel {
+        padding: 28px;
+      }
+
+      .trust-grid,
+      .impact-grid,
+      .cases-grid,
+      .course-grid,
+      .product-list,
+      .outcome-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-grid {
+        padding: 12px 0;
+      }
+
+      .trust-item {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, .11);
+        padding: 17px 0;
+      }
+
+      .trust-item:first-child {
+        border-top: 0;
+      }
+
+      .case-header {
+        display: block;
+      }
+
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    /* Hero block */
+    .hero-block {
+      min-height: auto;
+    }
+
+    .hero-block .hero-inner {
+      min-height: 430px;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .hero-block .hero-content {
+      width: 100%;
+      padding: 48px 0;
+    }
+
+    .hero-block .hero-kicker {
+      margin-bottom: 14px;
+    }
+
+    .hero-block h1 {
+      max-width: 1120px;
+      font-size: clamp(3rem, 5.4vw, 5.5rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .hero-block h1 strong {
+      color: var(--blue);
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+    }
+
+    .products {
+      background: linear-gradient(125deg, #f7fbfe 0%, #ffffff 58%, #eff9fd 100%);
+    }
+
+    .products-map-wrap {
+      margin-top: 37px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 14px 38px rgba(0, 64, 117, .06);
+    }
+
+    .products-map {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .products-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product-brand-card {
+      min-height: 420px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 13px 32px rgba(0, 64, 117, .055);
+      overflow: hidden;
+    }
+
+    .product-brand-logo-wrap {
+      height: 118px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .product-brand-logo-wrap img {
+      display: block;
+      max-width: 100%;
+      max-height: 108px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .product-brand-mode {
+      margin-top: 15px;
+      font-size: .71rem;
+      line-height: 1.35;
+      font-weight: 850;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+
+    .product-brand-card h3 {
+      margin: 13px 0 9px;
+      color: var(--ink);
+      font-size: 1.24rem;
+      line-height: 1.1;
+      letter-spacing: -.035em;
+    }
+
+    .product-brand-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .product-brand-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .evolution-card {
+      border-top: 4px solid #0866d7;
+    }
+
+    .evolution-card .product-brand-mode {
+      color: #075ecb;
+    }
+
+    .business-card {
+      border-top: 4px solid #5827b5;
+    }
+
+    .business-card .product-brand-mode {
+      color: #6425b5;
+    }
+
+    .academy-card {
+      border-top: 4px solid #f36c16;
+    }
+
+    .academy-card .product-brand-mode {
+      color: #dd5b0a;
+    }
+
+    @media (max-width: 960px) {
+      .hero-block .hero-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 58px 0 54px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-brand-card {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-block h1 {
+        font-size: clamp(2.75rem, 13.5vw, 4.3rem);
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+      }
+
+      .products-map-wrap {
+        display: none;
+      }
+
+      .products-grid {
+        margin-top: 34px;
+      }
+    }
 
 
 
-/* Responsive logo sizing: each brand mark uses all available space without stretching or clipping. */
-.nav-mark {
-  width: clamp(38px, 3vw, 56px);
-  height: clamp(38px, 3vw, 56px);
-}
-.nav-word { font-size: clamp(.92rem, 1.05vw, 1.15rem); }
-.products-map-wrap { width: 100%; }
-.products-map {
-  width: 100%;
-  height: auto;
-  max-height: min(68vh, 850px);
-  object-fit: contain;
-  object-position: center;
-}
-.product-brand-logo-wrap {
-  width: 100%;
-  height: clamp(106px, 9vw, 170px);
-  min-height: clamp(106px, 9vw, 170px);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.product-brand-logo-wrap img {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: contain;
-  object-position: left center;
-}
-@media (max-width: 960px) {
-  .product-brand-logo-wrap { height: clamp(112px, 20vw, 160px); min-height: clamp(112px, 20vw, 160px); }
-}
-@media (max-width: 780px) {
-  .nav-mark { width: 38px; height: 38px; }
-  .nav-word { font-size: .96rem; }
-  .products-map { max-height: none; }
-  .product-brand-logo-wrap { height: clamp(96px, 30vw, 145px); min-height: clamp(96px, 30vw, 145px); }
-  .product-brand-logo-wrap img { object-position: left center; }
-}
+    /* Responsive logo sizing: each brand mark uses all available space without stretching or clipping. */
+    .nav-mark {
+      width: clamp(38px, 3vw, 56px);
+      height: clamp(38px, 3vw, 56px);
+    }
 
-</style>
+    .nav-word {
+      font-size: clamp(.92rem, 1.05vw, 1.15rem);
+    }
+
+    .products-map-wrap {
+      width: 100%;
+    }
+
+    .products-map {
+      width: 100%;
+      height: auto;
+      max-height: min(68vh, 850px);
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .product-brand-logo-wrap {
+      width: 100%;
+      height: clamp(106px, 9vw, 170px);
+      min-height: clamp(106px, 9vw, 170px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .product-brand-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    @media (max-width: 960px) {
+      .product-brand-logo-wrap {
+        height: clamp(112px, 20vw, 160px);
+        min-height: clamp(112px, 20vw, 160px);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-word {
+        font-size: .96rem;
+      }
+
+      .products-map {
+        max-height: none;
+      }
+
+      .product-brand-logo-wrap {
+        height: clamp(96px, 30vw, 145px);
+        min-height: clamp(96px, 30vw, 145px);
+      }
+
+      .product-brand-logo-wrap img {
+        object-position: left center;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Ir al inicio de GRIMATS">
-      <span class="nav-mark" aria-hidden="true"><img src="assets/images/GRIMATS_isotipo_Transparent.png" alt=""></span>
-      <span class="nav-word">GRIMATS</span>
-    </a>
-    <div class="nav-links">
-      <a href="#productos">Nuestras marcas</a>
-      <a href="#casos">Casos de éxito</a>
-      <a href="#socios">Socios</a>
-      <a href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" class="nav-book" target="_blank" rel="noopener">Agenda con un experto</a>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="Ir al inicio de GRIMATS">
+        <span class="nav-mark" aria-hidden="true"><img src="assets/images/GRIMATS_isotipo_Transparent.png"
+            alt=""></span>
+        <span class="nav-word">GRIMATS</span>
+      </a>
+      <div class="nav-links">
+        <a href="#productos">Nuestras marcas</a>
+        <a href="#casos">Casos de éxito</a>
+        <a href="#socios">Socios</a>
+        <a href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard"
+          class="nav-book" target="_blank" rel="noopener">Agenda con un experto</a>
+      </div>
     </div>
-  </div>
-</nav>
-<main>
-  <section class="hero hero-block" aria-labelledby="inicio-title">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <div class="hero-kicker">Estrategia · Datos · Tecnología</div>
-        <h1 id="inicio-title">Tecnología que <strong>realmente</strong> te da resultados.</h1>
-        <div class="btn-row hero-actions">
-          <a class="btn btn-primary" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda un espacio con nuestro experto <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href="https://forms.office.com/Pages/ResponsePage.aspx?id=c-hUGmGU-k-BfZfZGuFW6-8JsGUdb-pDjokYbGPz2UVUN1ZHWUZESEpSMDJJQVc0UkNXRENLVTlaUS4u" target="_blank" rel="noopener">Comparte tu necesidad</a>
+  </nav>
+  <main>
+    <section class="hero hero-block" aria-labelledby="inicio-title">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-kicker">Estrategia · Datos · Tecnología</div>
+          <h1 id="inicio-title">Tecnología que <strong>realmente</strong> te da resultados.</h1>
+          <div class="btn-row hero-actions">
+            <a class="btn btn-primary"
+              href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard"
+              target="_blank" rel="noopener">Agenda un espacio con nuestro experto <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=c-hUGmGU-k-BfZfZGuFW6-8JsGUdb-pDjokYbGPz2UVUN1ZHWUZESEpSMDJJQVc0UkNXRENLVTlaUS4u"
+              target="_blank" rel="noopener">Comparte tu necesidad</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="trust-strip" aria-label="Compromisos de GRIMATS">
-    <div class="container trust-grid">
-      <div class="trust-item"><div class="trust-number">Estrategia</div><div class="trust-label">Prioridades conectadas con los resultados del negocio.</div></div>
-      <div class="trust-item"><div class="trust-number">Tecnología</div><div class="trust-label">Soluciones prácticas, escalables y adecuadas a cada proceso.</div></div>
-      <div class="trust-item"><div class="trust-number">Resultados</div><div class="trust-label">Impacto medible, mayor visibilidad y ejecución más eficiente.</div></div>
-    </div>
-  </section>
-
-  <section class="section impact">
-    <div class="container">
-      <div class="eyebrow">Cómo ayudamos</div>
-      <h2 class="section-title">De la complejidad operativa a una forma más clara de decidir y ejecutar.</h2>
-      <p class="section-intro">Combinamos conocimiento de negocio, mejora de procesos y arquitectura tecnológica para construir soluciones que las organizaciones puedan usar, sostener y escalar.</p>
-      <div class="impact-grid">
-        <article class="impact-card"><div class="impact-icon">01</div><h3>Conectamos información</h3><p>Organizamos datos dispersos para que cada área pueda trabajar con una fuente de información confiable.</p></article>
-        <article class="impact-card"><div class="impact-icon">02</div><h3>Evaluación de madurez de BI y AI</h3><p>Diagnosticamos capacidades, brechas y oportunidades en datos, inteligencia de negocios e inteligencia artificial para definir prioridades de mejora.</p></article>
-        <article class="impact-card"><div class="impact-icon">03</div><h3>Convertimos ideas en adopción</h3><p>Aterrizamos la estrategia en soluciones simples, medibles y alineadas con las personas que las usarán cada día.</p></article>
-        <article class="impact-card"><div class="impact-icon">04</div><h3>Optimización y creación de soluciones de BI y AI</h3><p>Diseñamos, mejoramos y escalamos soluciones de Business Intelligence e Inteligencia Artificial enfocadas en eficiencia, confiabilidad y resultados medibles.</p></article>
+    <section class="trust-strip" aria-label="Compromisos de GRIMATS">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-number">Estrategia</div>
+          <div class="trust-label">Prioridades conectadas con los resultados del negocio.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">Tecnología</div>
+          <div class="trust-label">Soluciones prácticas, escalables y adecuadas a cada proceso.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">Resultados</div>
+          <div class="trust-label">Impacto medible, mayor visibilidad y ejecución más eficiente.</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section cases" id="casos">
-    <div class="container">
-      <div class="case-header">
+    <section class="section impact">
+      <div class="container">
+        <div class="eyebrow">Cómo ayudamos</div>
+        <h2 class="section-title">De la complejidad operativa a una forma más clara de decidir y ejecutar.</h2>
+        <p class="section-intro">Combinamos conocimiento de negocio, mejora de procesos y arquitectura tecnológica para
+          construir soluciones que las organizaciones puedan usar, sostener y escalar.</p>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-icon">01</div>
+            <h3>Conectamos información</h3>
+            <p>Organizamos datos dispersos para que cada área pueda trabajar con una fuente de información confiable.
+            </p>
+          </article>
+          <article class="impact-card">
+            <div class="impact-icon">02</div>
+            <h3>Evaluación de madurez de BI y AI</h3>
+            <p>Diagnosticamos capacidades, brechas y oportunidades en datos, inteligencia de negocios e inteligencia
+              artificial para definir prioridades de mejora.</p>
+          </article>
+          <article class="impact-card">
+            <div class="impact-icon">03</div>
+            <h3>Convertimos ideas en adopción</h3>
+            <p>Aterrizamos la estrategia en soluciones simples, medibles y alineadas con las personas que las usarán
+              cada día.</p>
+          </article>
+          <article class="impact-card">
+            <div class="impact-icon">04</div>
+            <h3>Optimización y creación de soluciones de BI y AI</h3>
+            <p>Diseñamos, mejoramos y escalamos soluciones de Business Intelligence e Inteligencia Artificial enfocadas
+              en eficiencia, confiabilidad y resultados medibles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cases" id="casos">
+      <div class="container">
+        <div class="case-header">
+          <div>
+            <div class="eyebrow">Casos de éxito</div>
+            <h2 class="section-title">Resultados que demuestran lo que una solución bien diseñada puede cambiar.</h2>
+          </div>
+          <p class="section-intro">Cada caso parte de un reto real: información difícil de aprovechar, tiempo perdido en
+            actividades manuales o tecnología que cuesta más de lo que aporta.</p>
+        </div>
+        <div class="cases-grid">
+          <article class="case-card">
+            <div class="case-top">
+              <div class="case-number">Caso 01</div>
+              <h3 class="case-title">Información técnica convertida en conocimiento para reducir fallas.</h3>
+            </div>
+            <div class="case-body">
+              <p>Diseñamos una plataforma para capturar y estructurar la información técnica generada en campo,
+                consolidando el historial de equipos e intervenciones.</p>
+              <div class="case-result">Base técnica confiable para detectar tendencias y causas recurrentes.</div>
+              <ul class="case-points">
+                <li>Historial centralizado de equipos e intervenciones.</li>
+                <li>Mejor seguimiento y soporte a clientes.</li>
+                <li>Mayor capacidad de análisis preventivo y mejora continua.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-top">
+              <div class="case-number">Caso 02</div>
+              <h3 class="case-title">Más tiempo para generar valor, menos tiempo construyendo reportes.</h3>
+            </div>
+            <div class="case-body">
+              <p>Implementamos una plataforma de Business Intelligence que automatizó indicadores y entregó a cada área
+                la información que necesitaba para operar.</p>
+              <div class="case-result">Productividad mejorada con información disponible en el momento correcto.</div>
+              <ul class="case-points">
+                <li><strong>22.85 %</strong> más disponibilidad de tiempo en posiciones gerenciales.</li>
+                <li><strong>45 %</strong> más productividad en posiciones comerciales y administrativas.</li>
+                <li><strong>30 %</strong> más productividad en posiciones operativas.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-top">
+              <div class="case-number">Caso 03</div>
+              <h3 class="case-title">90 % menos costo y mayor confiabilidad con una arquitectura inteligente de IA.</h3>
+            </div>
+            <div class="case-body">
+              <p>Rediseñamos un proceso combinando 20 % de Inteligencia Artificial y 80 % de automatización tradicional,
+                usando cada tecnología donde agregaba más valor.</p>
+              <div class="case-result">Costo anual reducido de USD 25,000 a aproximadamente USD 2,500.</div>
+              <ul class="case-points">
+                <li>Confiabilidad elevada de un rango de 90–96 % a 97–98 %.</li>
+                <li>Procesos más estables, escalables y predecibles.</li>
+                <li>Menor dependencia de consumo de IA y mejor retorno de inversión.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="productos">
+      <div class="container">
+        <div class="eyebrow">Nuestras marcas</div>
+        <h2 class="section-title">Un ecosistema para pensar, construir y hacer crecer el negocio.</h2>
+        <p class="section-intro">GRIMATS integra acompañamiento estratégico, soluciones basadas en datos y desarrollo de
+          capacidades para convertir la evolución en resultados sostenibles.</p>
+        <div class="products-map-wrap">
+          <img class="products-map" src="assets/images/grimats-products-services.png"
+            alt="Ecosistema de marcas GRIMATS: G-Evolution Partners, G-Business Intelligence y G-Academy.">
+        </div>
+        <div class="products-grid">
+          <article class="product-brand-card evolution-card">
+            <div class="product-brand-logo-wrap"><img src="assets/images/G-Evolution-Partners.png"
+                alt="G-Evolution Partners"></div>
+            <div class="product-brand-mode">THINK · Pensar y evolucionar el negocio</div>
+            <h3>Operatividad continua de innovación y evolución tecnológica.</h3>
+            <p>Un aliado estratégico permanente para conectar estrategia, procesos, tecnología y resultados.</p>
+            <a class="btn btn-outline" href="g-evolution-partners.html">Conocer G-Evolution Partners <span
+                aria-hidden="true">→</span></a>
+          </article>
+          <article class="product-brand-card business-card">
+            <div class="product-brand-logo-wrap"><img src="assets/images/G-Business Intelligence.png"
+                alt="G-Business Intelligence"></div>
+            <div class="product-brand-mode">BUILD · Soluciones basadas en datos y tecnología</div>
+            <h3>Transformamos datos en decisiones que generan resultados.</h3>
+            <p>Analítica, inteligencia artificial y soluciones tecnológicas para convertir información en ventaja
+              competitiva.</p>
+            <a class="btn btn-outline" href="g-business-intelligence.html">Conocer G-Business Intelligence <span
+                aria-hidden="true">→</span></a>
+          </article>
+          <article class="product-brand-card academy-card">
+            <div class="product-brand-logo-wrap"><img src="assets/images/G-Academy.png" alt="G-Academy"></div>
+            <div class="product-brand-mode">GROW · Desarrollar las capacidades de las personas</div>
+            <h3>Desarrollamos las capacidades que impulsan la evolución del negocio.</h3>
+            <p>Programas prácticos para líderes y equipos que necesitan evolucionar con datos, IA y automatización.</p>
+            <a class="btn btn-outline" href="g-academy.html">Conocer G-Academy <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners" id="socios">
+      <div class="container">
+        <div class="eyebrow">Nuestros socios</div>
+        <h2 class="section-title">Experiencia para llevar la estrategia a la ejecución.</h2>
+        <p class="section-intro">GRIMATS combina visión de negocio, capacidad analítica y ejecución tecnológica para
+          acompañar desafíos que requieren resultados concretos.</p>
+        <div class="partner-grid">
+          <div class="partner-placeholder" aria-hidden="true"></div>
+          <article class="partner-card">
+            <img class="partner-photo" src="assets/images/foto-principal-stefano.png" alt="Stefano Grimaldi">
+            <div class="partner-role">Consultor Principal · Fundador de GRIMATS</div>
+            <h3 class="partner-name">Stefano Grimaldi</h3>
+            <p class="partner-description">Ingeniero Industrial y MBA especializado en estrategia, inteligencia de
+              negocios y transformación digital. Con más de 10 años de experiencia, ayuda a las organizaciones a
+              convertir datos y procesos complejos en resultados medibles mediante Business Intelligence, automatización
+              e integración de sistemas.</p>
+            <blockquote class="partner-quote">“La evolución se sostiene cuando la estrategia, los datos y la tecnología
+              avanzan juntos.”</blockquote>
+            <a class="btn btn-light"
+              href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard"
+              target="_blank" rel="noopener">Conversar con Stefano <span aria-hidden="true">→</span></a>
+          </article>
+          <div class="partner-placeholder" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="container contact-grid">
         <div>
-          <div class="eyebrow">Casos de éxito</div>
-          <h2 class="section-title">Resultados que demuestran lo que una solución bien diseñada puede cambiar.</h2>
+          <div class="eyebrow">Conversemos</div>
+          <h2 class="section-title">El próximo resultado puede comenzar con una conversación.</h2>
+          <p class="contact-copy">Cuéntanos qué proceso, dato o reto tecnológico quieres transformar. Agenda un espacio
+            con nuestro experto o comparte los detalles para que podamos prepararnos mejor.</p>
+          <div class="btn-row">
+            <a class="btn btn-light"
+              href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard"
+              target="_blank" rel="noopener">Agenda un espacio con nuestro experto <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,.42);"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=c-hUGmGU-k-BfZfZGuFW6-8JsGUdb-pDjokYbGPz2UVUN1ZHWUZESEpSMDJJQVc0UkNXRENLVTlaUS4u"
+              target="_blank" rel="noopener">Formulario de interés</a>
+          </div>
         </div>
-        <p class="section-intro">Cada caso parte de un reto real: información difícil de aprovechar, tiempo perdido en actividades manuales o tecnología que cuesta más de lo que aporta.</p>
-      </div>
-      <div class="cases-grid">
-        <article class="case-card">
-          <div class="case-top"><div class="case-number">Caso 01</div><h3 class="case-title">Información técnica convertida en conocimiento para reducir fallas.</h3></div>
-          <div class="case-body">
-            <p>Diseñamos una plataforma para capturar y estructurar la información técnica generada en campo, consolidando el historial de equipos e intervenciones.</p>
-            <div class="case-result">Base técnica confiable para detectar tendencias y causas recurrentes.</div>
-            <ul class="case-points"><li>Historial centralizado de equipos e intervenciones.</li><li>Mejor seguimiento y soporte a clientes.</li><li>Mayor capacidad de análisis preventivo y mejora continua.</li></ul>
+        <aside class="contact-card" aria-label="Datos de contacto">
+          <h3>Canales de contacto</h3>
+          <div class="contact-socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/grimats.srl/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+                <circle cx="12" cy="12" r="4.25"></circle>
+                <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"></circle>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/people/Grimats/100037207346053/" target="_blank" rel="noopener"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V8Z"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/company/grimats" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4.5" y="4.5" width="15" height="15" rx="2"></rect>
+                <path d="M8 10v6"></path>
+                <path d="M8 8.2v.1"></path>
+                <path d="M11.5 16v-3.5a1.5 1.5 0 0 1 3 0V16"></path>
+                <path d="M11.5 10.5v5.5"></path>
+              </svg>
+            </a>
           </div>
-        </article>
-        <article class="case-card">
-          <div class="case-top"><div class="case-number">Caso 02</div><h3 class="case-title">Más tiempo para generar valor, menos tiempo construyendo reportes.</h3></div>
-          <div class="case-body">
-            <p>Implementamos una plataforma de Business Intelligence que automatizó indicadores y entregó a cada área la información que necesitaba para operar.</p>
-            <div class="case-result">Productividad mejorada con información disponible en el momento correcto.</div>
-            <ul class="case-points"><li><strong>22.85 %</strong> más disponibilidad de tiempo en posiciones gerenciales.</li><li><strong>45 %</strong> más productividad en posiciones comerciales y administrativas.</li><li><strong>30 %</strong> más productividad en posiciones operativas.</li></ul>
+          <div class="contact-list">
+            <a class="contact-item" href="https://wa.me/18099949227" target="_blank" rel="noopener"><span
+                class="contact-icon" aria-hidden="true">◔</span><span><strong>WhatsApp</strong><span>809 994
+                  9227</span></span></a>
+            <a class="contact-item" href="mailto:Ventas@grimats.com"><span class="contact-icon"
+                aria-hidden="true">✉</span><span><strong>Email
+                  comercial</strong><span>Ventas@grimats.com</span></span></a>
+            <a class="contact-item" href="mailto:stefano.grimaldi@grimats.com"><span class="contact-icon"
+                aria-hidden="true">✉</span><span><strong>Email
+                  directo</strong><span>stefano.grimaldi@grimats.com</span></span></a>
           </div>
-        </article>
-        <article class="case-card">
-          <div class="case-top"><div class="case-number">Caso 03</div><h3 class="case-title">90 % menos costo y mayor confiabilidad con una arquitectura inteligente de IA.</h3></div>
-          <div class="case-body">
-            <p>Rediseñamos un proceso combinando 20 % de Inteligencia Artificial y 80 % de automatización tradicional, usando cada tecnología donde agregaba más valor.</p>
-            <div class="case-result">Costo anual reducido de USD 25,000 a aproximadamente USD 2,500.</div>
-            <ul class="case-points"><li>Confiabilidad elevada de un rango de 90–96 % a 97–98 %.</li><li>Procesos más estables, escalables y predecibles.</li><li>Menor dependencia de consumo de IA y mejor retorno de inversión.</li></ul>
-          </div>
-        </article>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="section products" id="productos">
-    <div class="container">
-      <div class="eyebrow">Nuestras marcas</div>
-      <h2 class="section-title">Un ecosistema para pensar, construir y hacer crecer el negocio.</h2>
-      <p class="section-intro">GRIMATS integra acompañamiento estratégico, soluciones basadas en datos y desarrollo de capacidades para convertir la evolución en resultados sostenibles.</p>
-      <div class="products-map-wrap">
-        <img class="products-map" src="assets/images/grimats-products-services.png" alt="Ecosistema de marcas GRIMATS: G-Evolution Partners, G-Business Intelligence y G-Academy.">
-      </div>
-      <div class="products-grid">
-        <article class="product-brand-card evolution-card">
-          <div class="product-brand-logo-wrap"><img src="assets/images/G-Evolution-Partners.png" alt="G-Evolution Partners"></div>
-          <div class="product-brand-mode">THINK · Pensar y evolucionar el negocio</div>
-          <h3>Operatividad continua de innovación y evolución tecnológica.</h3>
-          <p>Un aliado estratégico permanente para conectar estrategia, procesos, tecnología y resultados.</p>
-          <a class="btn btn-outline" href="g-evolution-partners.html">Conocer G-Evolution Partners <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="product-brand-card business-card">
-          <div class="product-brand-logo-wrap"><img src="assets/images/G-Business Intelligence.png" alt="G-Business Intelligence"></div>
-          <div class="product-brand-mode">BUILD · Soluciones basadas en datos y tecnología</div>
-          <h3>Transformamos datos en decisiones que generan resultados.</h3>
-          <p>Analítica, inteligencia artificial y soluciones tecnológicas para convertir información en ventaja competitiva.</p>
-          <a class="btn btn-outline" href="g-business-intelligence.html">Conocer G-Business Intelligence <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="product-brand-card academy-card">
-          <div class="product-brand-logo-wrap"><img src="assets/images/G-Academy.png" alt="G-Academy"></div>
-          <div class="product-brand-mode">GROW · Desarrollar las capacidades de las personas</div>
-          <h3>Desarrollamos las capacidades que impulsan la evolución del negocio.</h3>
-          <p>Programas prácticos para líderes y equipos que necesitan evolucionar con datos, IA y automatización.</p>
-          <a class="btn btn-outline" href="g-academy.html">Conocer G-Academy <span aria-hidden="true">→</span></a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section partners" id="socios">
-    <div class="container">
-      <div class="eyebrow">Nuestros socios</div>
-      <h2 class="section-title">Experiencia para llevar la estrategia a la ejecución.</h2>
-      <p class="section-intro">GRIMATS combina visión de negocio, capacidad analítica y ejecución tecnológica para acompañar desafíos que requieren resultados concretos.</p>
-      <div class="partner-grid">
-        <div class="partner-placeholder" aria-hidden="true"></div>
-        <article class="partner-card">
-          <img class="partner-photo" src="assets/images/foto-principal-stefano.png" alt="Stefano Grimaldi">
-          <div class="partner-role">Consultor Principal · Fundador de GRIMATS</div>
-          <h3 class="partner-name">Stefano Grimaldi</h3>
-          <p class="partner-description">Ingeniero Industrial y MBA especializado en estrategia, inteligencia de negocios y transformación digital. Con más de 10 años de experiencia, ayuda a las organizaciones a convertir datos y procesos complejos en resultados medibles mediante Business Intelligence, automatización e integración de sistemas.</p>
-          <blockquote class="partner-quote">“La evolución se sostiene cuando la estrategia, los datos y la tecnología avanzan juntos.”</blockquote>
-          <a class="btn btn-light" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Conversar con Stefano <span aria-hidden="true">→</span></a>
-        </article>
-        <div class="partner-placeholder" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contacto">
-    <div class="container contact-grid">
+  <footer class="footer">
+    <div class="container footer-inner">
       <div>
-        <div class="eyebrow">Conversemos</div>
-        <h2 class="section-title">El próximo resultado puede comenzar con una conversación.</h2>
-        <p class="contact-copy">Cuéntanos qué proceso, dato o reto tecnológico quieres transformar. Agenda un espacio con nuestro experto o comparte los detalles para que podamos prepararnos mejor.</p>
-        <div class="btn-row">
-          <a class="btn btn-light" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Agenda un espacio con nuestro experto <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,.42);" href="https://forms.office.com/Pages/ResponsePage.aspx?id=c-hUGmGU-k-BfZfZGuFW6-8JsGUdb-pDjokYbGPz2UVUN1ZHWUZESEpSMDJJQVc0UkNXRENLVTlaUS4u" target="_blank" rel="noopener">Formulario de interés</a>
-        </div>
+        <div class="footer-brand">GRIMATS</div>
+        <div class="footer-copy">Tecnología que realmente te da resultados.</div>
       </div>
-      <aside class="contact-card" aria-label="Datos de contacto">
-        <h3>Canales de contacto</h3>
-        <div class="contact-socials" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/grimats.srl/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
-              <circle cx="12" cy="12" r="4.25"></circle>
-              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"></circle>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/people/Grimats/100037207346053/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V8Z"></path>
-            </svg>
-          </a>
-          <a href="https://linkedin.com/company/grimats" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4.5" y="4.5" width="15" height="15" rx="2"></rect>
-              <path d="M8 10v6"></path>
-              <path d="M8 8.2v.1"></path>
-              <path d="M11.5 16v-3.5a1.5 1.5 0 0 1 3 0V16"></path>
-              <path d="M11.5 10.5v5.5"></path>
-            </svg>
-          </a>
-        </div>
-        <div class="contact-list">
-          <a class="contact-item" href="https://wa.me/18099949227" target="_blank" rel="noopener"><span class="contact-icon" aria-hidden="true">◔</span><span><strong>WhatsApp</strong><span>809 994 9227</span></span></a>
-          <a class="contact-item" href="mailto:Ventas@grimats.com"><span class="contact-icon" aria-hidden="true">✉</span><span><strong>Email comercial</strong><span>Ventas@grimats.com</span></span></a>
-          <a class="contact-item" href="mailto:stefano.grimaldi@grimats.com"><span class="contact-icon" aria-hidden="true">✉</span><span><strong>Email directo</strong><span>stefano.grimaldi@grimats.com</span></span></a>
-        </div>
-      </aside>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/grupogrimats/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/18099949227" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:Ventas@grimats.com">Ventas@grimats.com</a>
+      </div>
+      <div class="footer-copy">© 2026 GRIMATS · Santo Domingo, República Dominicana</div>
     </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <div>
-      <div class="footer-brand">GRIMATS</div>
-      <div class="footer-copy">Tecnología que realmente te da resultados.</div>
-    </div>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/grupogrimats/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://wa.me/18099949227" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="mailto:Ventas@grimats.com">Ventas@grimats.com</a>
-    </div>
-    <div class="footer-copy">© 2026 GRIMATS · Santo Domingo, República Dominicana</div>
+  </footer>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/grupogrimats/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/18099949227" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:Ventas@grimats.com">Ventas@grimats.com</a>
+    <a href="politica-privacidad.html">Política de Privacidad</a>
   </div>
-</footer>
+  <!-- Aviso de privacidad -->
+  </footer>
+
+  <!-- GRIMATS - Aviso simple de cookies -->
+  <div id="grimats-cookie-notice" style="
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99999;
+  display: none;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #06142f;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  padding: 18px 20px;
+  font-family: Arial, sans-serif;
+">
+    <div style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div style="flex:1 1 620px;">
+        <strong style="font-size:16px;">Uso de cookies</strong>
+        <p style="margin:6px 0 0; line-height:1.45; color:#dbe7ff;">
+          Este sitio utiliza cookies y herramientas de medición para analizar el tráfico,
+          mejorar la experiencia y entender el interés en nuestros servicios. Al continuar
+          navegando en grimats.com, aceptas su uso conforme a nuestra
+          <a href="politica-privacidad.html" style="color:#ff8a00; text-decoration:underline;">
+            Política de Privacidad
+          </a>.
+        </p>
+      </div>
+
+      <button type="button" onclick="grimatsAcceptCookieNotice()" style="
+      border:0;
+      background:linear-gradient(90deg, #005cff, #ff6a00);
+      color:#ffffff;
+      padding:11px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:800;
+    ">
+        Entendido
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function grimatsAcceptCookieNotice() {
+      localStorage.setItem("grimats_cookie_notice", "accepted");
+      document.getElementById("grimats-cookie-notice").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const notice = localStorage.getItem("grimats_cookie_notice");
+
+      if (notice !== "accepted") {
+        document.getElementById("grimats-cookie-notice").style.display = "block";
+      }
+    });
+  </script>
+
 </body>
+
+</html>
+</body>
+
 </html>

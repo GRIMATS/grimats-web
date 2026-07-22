@@ -1,5 +1,6 @@
 # ==========================================================
 # GRIMATS - Servidor local de desarrollo
+# Permite elegir desde qué página HTML abrir la prueba
 # ==========================================================
 
 $ErrorActionPreference = "Stop"
@@ -10,7 +11,6 @@ $OutputEncoding = [System.Text.UTF8Encoding]::new()
 
 $Port = 5500
 $HostAddress = "127.0.0.1"
-$Url = "http://localhost:$Port/"
 
 # El script está dentro de /scripts.
 # Esta línea sube un nivel hasta grimats-web.
@@ -35,17 +35,58 @@ Write-Host ""
 # Entrar a la raíz real del proyecto
 Set-Location $ProjectRoot
 
-# Verificar index.html
-$IndexPath = Join-Path $ProjectRoot "index.html"
+# Buscar páginas HTML existentes
+$HtmlFiles = Get-ChildItem -Path $ProjectRoot -Filter "*.html" -Recurse |
+    Where-Object {
+        $_.FullName -notmatch "\\node_modules\\" -and
+        $_.FullName -notmatch "\\.git\\"
+    } |
+    Sort-Object FullName
 
-if (-not (Test-Path $IndexPath)) {
-    Write-Host "ERROR: No se encontro index.html." -ForegroundColor Red
+if (-not $HtmlFiles -or $HtmlFiles.Count -eq 0) {
+    Write-Host "ERROR: No se encontraron archivos .html en el proyecto." -ForegroundColor Red
     Write-Host "Ruta revisada:" -ForegroundColor Yellow
-    Write-Host $IndexPath
+    Write-Host $ProjectRoot
     exit 1
 }
 
-Write-Host "index.html encontrado correctamente." -ForegroundColor Green
+Write-Host "Paginas HTML disponibles:" -ForegroundColor Cyan
+Write-Host ""
+
+for ($i = 0; $i -lt $HtmlFiles.Count; $i++) {
+    $RelativePath = $HtmlFiles[$i].FullName.Replace($ProjectRoot, "").TrimStart("\")
+    Write-Host ("[{0}] {1}" -f ($i + 1), $RelativePath) -ForegroundColor White
+}
+
+Write-Host ""
+Write-Host "Selecciona el numero de la pagina que quieres abrir." -ForegroundColor Yellow
+Write-Host "Presiona ENTER para abrir la primera pagina de la lista." -ForegroundColor DarkGray
+Write-Host ""
+
+$Selection = Read-Host "Numero"
+
+if ([string]::IsNullOrWhiteSpace($Selection)) {
+    $SelectedIndex = 0
+}
+elseif ($Selection -match "^\d+$" -and [int]$Selection -ge 1 -and [int]$Selection -le $HtmlFiles.Count) {
+    $SelectedIndex = [int]$Selection - 1
+}
+else {
+    Write-Host ""
+    Write-Host "ERROR: Seleccion invalida." -ForegroundColor Red
+    exit 1
+}
+
+$SelectedFile = $HtmlFiles[$SelectedIndex]
+$SelectedRelativePath = $SelectedFile.FullName.Replace($ProjectRoot, "").TrimStart("\")
+
+# Convertir ruta Windows a URL
+$SelectedUrlPath = $SelectedRelativePath -replace "\\", "/"
+$Url = "http://localhost:$Port/$SelectedUrlPath"
+
+Write-Host ""
+Write-Host "Pagina seleccionada:" -ForegroundColor Green
+Write-Host $SelectedRelativePath
 Write-Host ""
 
 # Verificar si el puerto ya está ocupado
@@ -76,12 +117,13 @@ else {
 }
 
 Write-Host "Python encontrado: $PythonCommand" -ForegroundColor Green
-Write-Host "Servidor: $Url" -ForegroundColor Green
+Write-Host "Servidor: http://localhost:$Port/" -ForegroundColor Green
+Write-Host "Abriendo: $Url" -ForegroundColor Green
 Write-Host ""
 Write-Host "Para detener el servidor, presiona Ctrl + C." -ForegroundColor Yellow
 Write-Host ""
 
-# Abrir el navegador un segundo después
+# Abrir el navegador un segundo después en la página elegida
 $BrowserCommand = "Start-Sleep -Seconds 1; Start-Process '$Url'"
 
 Start-Process `

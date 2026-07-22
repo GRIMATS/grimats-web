@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- No indexar: portal privado de evaluación GRIMATS -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+  <title>GRIMATS · Portal Demo de Reportería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0B1F3A;
+      --ink-2: #122A4D;
+      --azul: #1E5FA8;
+      --azul-2: #2E77CC;
+      --verde: #0F9D6E;
+      --ambar: #E8A33D;
+      --rojo: #D64545;
+      --arena: #F6F4EF;
+      --niebla: #E7E9EE;
+      --grafito: #33404F;
+      --grafito-suave: #66748A;
+      --blanco: #FFFFFF;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--arena);
+      color: var(--grafito);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    .display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* ---------- DEMO WATERMARK ---------- */
+    .demo-watermark {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(-28deg,
+          rgba(11, 31, 58, 0.045) 0px,
+          rgba(11, 31, 58, 0.045) 1px,
+          transparent 1px,
+          transparent 220px);
+      z-index: 1;
+    }
+
+    .demo-watermark-text {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: space-around;
+      transform: rotate(-18deg) scale(1.3);
+      opacity: 0.05;
+    }
+
+    .demo-watermark-text span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--ink);
+      white-space: nowrap;
+      margin: 18px 26px;
+      letter-spacing: 2px;
+    }
+
+    /* ---------- LOGIN SCREEN ---------- */
+    #login-screen {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    .login-brand {
+      background: linear-gradient(155deg, var(--ink) 0%, var(--ink-2) 55%, #0A3A66 100%);
+      color: #fff;
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-brand::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(46, 119, 204, 0.35), transparent 70%);
+    }
+
+    .login-brand::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: -140px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 60% 60%, rgba(15, 157, 110, 0.28), transparent 70%);
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand-mark .mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--azul-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+    }
+
+    .brand-mark .word {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .login-brand h1 {
+      font-size: 40px;
+      line-height: 1.15;
+      font-weight: 600;
+      max-width: 460px;
+      position: relative;
+      z-index: 2;
+      margin: 40px 0 16px;
+    }
+
+    .login-brand p.tag {
+      color: #B9CBE6;
+      font-size: 15px;
+      max-width: 420px;
+      position: relative;
+      z-index: 2;
+      line-height: 1.6;
+    }
+
+    .login-brand .pillars {
+      display: flex;
+      gap: 28px;
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .pillars div {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8FA9CC;
+    }
+
+    .pillars strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 4px;
+    }
+
+    .login-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .demo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FDF1DD;
+      color: #9A6414;
+      border: 1px solid #F0D6A6;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-bottom: 22px;
+    }
+
+    .demo-pill::before {
+      content: "●";
+      color: var(--ambar);
+      font-size: 9px;
+    }
+
+    .login-card h2 {
+      font-size: 24px;
+      margin: 0 0 8px;
+    }
+
+    .login-card .sub {
+      color: var(--grafito-suave);
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--grafito-suave);
+      margin-bottom: 6px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1.5px solid var(--niebla);
+      font-size: 14px;
+      background: #FBFBFA;
+      color: var(--grafito-suave);
+    }
+
+    .field input:disabled {
+      cursor: not-allowed;
+    }
+
+    .enter-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: var(--azul);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background .15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .enter-btn:hover {
+      background: var(--azul-2);
+    }
+
+    .login-note {
+      font-size: 12px;
+      color: var(--grafito-suave);
+      margin-top: 18px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .login-note b {
+      color: var(--grafito);
+    }
+
+    /* ---------- APP SHELL ---------- */
+    #app-shell {
+      display: none;
+      min-height: 100vh;
+      grid-template-columns: 250px 1fr;
+    }
+
+    #app-shell.active {
+      display: grid;
+    }
+
+    .sidebar {
+      background: var(--ink);
+      color: #CBD8EC;
+      padding: 22px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar .brand-mark {
+      margin-bottom: 26px;
+      padding-left: 4px;
+    }
+
+    .sidebar .brand-mark .word {
+      font-size: 16px;
+    }
+
+    .sidebar .brand-mark .mark {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    .nav-section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #5E7397;
+      margin: 18px 10px 8px;
+    }
+
+    .nav-module {
+      margin-bottom: 2px;
+    }
+
+    .nav-module>button {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #D6E1F2;
+      padding: 11px 10px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .nav-module>button:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-module.open>button {
+      background: rgba(46, 119, 204, 0.18);
+      color: #fff;
+    }
+
+    .nav-module .chev {
+      transition: transform .15s ease;
+      font-size: 10px;
+      color: #5E7397;
+    }
+
+    .nav-module.open .chev {
+      transform: rotate(90deg);
+    }
+
+    .nav-tabs {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .18s ease;
+      padding-left: 8px;
+    }
+
+    .nav-module.open .nav-tabs {
+      max-height: 200px;
+    }
+
+    .nav-tabs button {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #9FB2CE;
+      padding: 8px 10px 8px 26px;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .nav-tabs button::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #4A6488;
+      transform: translateY(-50%);
+    }
+
+    .nav-tabs button:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    .nav-tabs button.active {
+      color: #fff;
+      background: rgba(46, 119, 204, 0.25);
+      font-weight: 600;
+    }
+
+    .nav-tabs button.active::before {
+      background: var(--azul-2);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sidebar-footer .exit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #9FB2CE;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 0;
+    }
+
+    .sidebar-footer .exit:hover {
+      color: #fff;
+    }
+
+    .sidebar-footer .version {
+      font-size: 10.5px;
+      color: #4A6488;
+      margin-top: 6px;
+    }
+
+    .main {
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--niebla);
+      padding: 14px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--grafito-suave);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .demo-pill.small {
+      margin: 0;
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+
+    .client-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--arena);
+      border: 1px solid var(--niebla);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      color: var(--grafito);
+    }
+
+    .client-chip .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--verde);
+    }
+
+    .content {
+      padding: 26px 30px 60px;
+    }
+
+    .module-header {
+      margin-bottom: 20px;
+    }
+
+    .module-header h2 {
+      font-size: 24px;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+
+    .module-header .desc {
+      font-size: 13.5px;
+      color: var(--grafito-suave);
+    }
+
+    .filters-row {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0 24px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      background: #fff;
+      border: 1px solid var(--niebla);
+      padding: 7px 14px;
+      border-radius: 9px;
+      font-size: 12.5px;
+      color: var(--grafito-suave);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip svg {
+      width: 12px;
+      height: 12px;
+      opacity: .6;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .kpi-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--azul);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card.pos {
+      border-left-color: var(--verde);
+    }
+
+    .kpi-card.neg {
+      border-left-color: var(--rojo);
+    }
+
+    .kpi-card.warn {
+      border-left-color: var(--ambar);
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      color: var(--grafito-suave);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 23px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .kpi-delta {
+      font-size: 11.5px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--grafito-suave);
+    }
+
+    .kpi-delta.up {
+      color: var(--verde);
+    }
+
+    .kpi-delta.down {
+      color: var(--rojo);
+    }
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .panel {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .panel h3 {
+      font-size: 14.5px;
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .panel-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    table.data-table th {
+      text-align: left;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--grafito-suave);
+      padding: 9px 10px;
+      border-bottom: 2px solid var(--niebla);
+      font-weight: 600;
+    }
+
+    table.data-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--niebla);
+      color: var(--grafito);
+    }
+
+    table.data-table tr.total td {
+      font-weight: 700;
+      color: var(--ink);
+      background: #F7FAFD;
+    }
+
+    .tag-up {
+      color: var(--verde);
+      font-weight: 600;
+    }
+
+    .tag-down {
+      color: var(--rojo);
+      font-weight: 600;
+    }
+
+    .alerts-panel .alert-item {
+      display: flex;
+      gap: 10px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--niebla);
+      font-size: 13px;
+      align-items: flex-start;
+    }
+
+    .alerts-panel .alert-item:last-child {
+      border-bottom: none;
+    }
+
+    .sev-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .sev-critica {
+      background: var(--rojo);
+    }
+
+    .sev-alta {
+      background: var(--ambar);
+    }
+
+    .sev-media {
+      background: var(--azul-2);
+    }
+
+    .sev-baja {
+      background: #9AA7B8;
+    }
+
+    .savings-case {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(231, 233, 238, 0.95);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .savings-case::before {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46, 119, 204, 0.13), transparent 70%);
+    }
+
+    .savings-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .savings-head h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .savings-head p {
+      margin: 6px 0 0;
+      color: var(--grafito-suave);
+      font-size: 13.5px;
+      line-height: 1.55;
+      max-width: 720px;
+    }
+
+    .savings-badge {
+      background: #EAF3FF;
+      color: var(--azul);
+      border: 1px solid #CFE4FF;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .savings-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .savings-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .saving-card {
+      border: 1px solid var(--niebla);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: #FBFCFE;
+    }
+
+    .saving-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--grafito-suave);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .saving-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      line-height: 1.1;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .saving-value.good {
+      color: var(--verde);
+    }
+
+    .saving-value.warn {
+      color: var(--ambar);
+    }
+
+    .saving-caption {
+      font-size: 12px;
+      color: var(--grafito-suave);
+      margin-top: 5px;
+      line-height: 1.35;
+    }
+
+    .savings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--niebla);
+    }
+
+    .savings-table th {
+      background: #F3F6FA;
+      color: var(--ink);
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 12px;
+    }
+
+    .savings-table td {
+      padding: 10px 12px;
+      border-top: 1px solid var(--niebla);
+    }
+
+    .savings-table td:nth-child(2),
+    .savings-table td:nth-child(3) {
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: right;
+      color: var(--ink);
+    }
+
+    .savings-side {
+      border: 1px solid #DCE9F7;
+      background: #F7FBFF;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .savings-side h4 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .savings-side ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--grafito);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .savings-note {
+      margin-top: 14px;
+      font-size: 11.8px;
+      color: var(--grafito-suave);
+      line-height: 1.55;
+    }
+
+    .ownership-note {
+      margin-top: 12px;
+      background: #F7FAFF;
+      border: 1px solid #CFE4FF;
+      color: #163F6C;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12.2px;
+      line-height: 1.55;
+    }
+
+    .ownership-note b {
+      color: var(--ink);
+    }
+
+    .disclaimer-strip {
+      margin-top: 30px;
+      background: #FDF1DD;
+      border: 1px solid #F0D6A6;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 12.5px;
+      color: #7A5511;
+      line-height: 1.55;
+    }
+
+    .disclaimer-strip b {
+      color: #5C3F0C;
+    }
+
+    .cta-band {
+      margin-top: 36px;
+      background: var(--ink);
+      border-radius: var(--radius);
+      padding: 26px 30px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h4 {
+      margin: 0 0 4px;
+      font-size: 17px;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: #AFC3E0;
+      font-size: 13px;
+      max-width: 440px;
+    }
+
+    .cta-btn {
+      background: var(--azul-2);
+      color: #fff;
+      border: none;
+      padding: 11px 20px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cta-btn:hover {
+      background: #3D85DA;
+    }
+
+    /* ---------- SLIDESHOW: REPORTES EJEMPLOS VISUALES ---------- */
+    .gallery-panel {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 24px 26px;
+      margin-bottom: 26px;
+    }
+
+    .gallery-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .gallery-head h3 {
+      font-size: 16.5px;
+      margin: 0;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gallery-head .count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--grafito-suave);
+    }
+
+    .slideshow {
+      position: relative;
+      background: var(--ink);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .slide-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0A1830;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .35s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .slide-demo-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 4;
+      background: rgba(232, 163, 61, 0.95);
+      color: #3D2A08;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .slide-demo-tag::before {
+      content: "●";
+      font-size: 8px;
+    }
+
+    .slide-watermark-text {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: space-around;
+      transform: rotate(-20deg) scale(1.4);
+      opacity: 0.14;
+    }
+
+    .slide-watermark-text span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+      white-space: nowrap;
+      margin: 10px 18px;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+      background: linear-gradient(0deg, rgba(11, 31, 58, 0.92), rgba(11, 31, 58, 0));
+      padding: 34px 20px 14px;
+      color: #fff;
+    }
+
+    .slide-caption .cat {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9FC0EA;
+      margin-bottom: 3px;
+    }
+
+    .slide-caption .title {
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    .slide-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .slide-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .slide-prev {
+      left: 14px;
+    }
+
+    .slide-next {
+      right: 14px;
+    }
+
+    .slide-counter {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 5;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      font-size: 11.5px;
+      font-family: 'IBM Plex Mono', monospace;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .slide-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 0 4px;
+    }
+
+    .slide-dots button {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: none;
+      background: var(--niebla);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .slide-dots button.active {
+      background: var(--azul);
+      width: 20px;
+      border-radius: 5px;
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px 2px;
+    }
+
+    .thumb-strip img {
+      width: 78px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0.55;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+      transition: opacity .15s ease, border-color .15s ease;
+    }
+
+    .thumb-strip img.active {
+      opacity: 1;
+      border-color: var(--azul);
+    }
+
+    .thumb-strip img:hover {
+      opacity: 0.9;
+    }
+
+    .gallery-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-tab {
+      background: var(--arena);
+      border: 1px solid var(--niebla);
+      color: var(--grafito-suave);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .gallery-tab.active {
+      background: var(--azul);
+      border-color: var(--azul);
+      color: #fff;
+    }
+
+    @media (max-width:980px) {
+      .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .charts-row,
+      .panel-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      #login-screen {
+        grid-template-columns: 1fr;
+      }
+
+      .login-brand {
+        padding: 40px 30px;
+      }
+
+      #app-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== LOGIN / ENTRY SCREEN ===================== -->
+  <div id="login-screen">
+    <div class="login-brand">
+      <div class="brand-mark">
+        <div class="mark">G</div>
+        <div class="word">GRIMATS</div>
+      </div>
+      <div>
+        <h1>Portal de Reportería Financiera</h1>
+        <p class="tag">Así es como tus equipos verían sus estados financieros dentro de un servicio de Business
+          Intelligence empaquetado por GRIMATS: KPIs, tendencias, alertas y detalle transaccional en un solo lugar.</p>
+      </div>
+      <div class="pillars">
+        <div>Estrategia<strong>Prioridades claras</strong></div>
+        <div>Datos<strong>Una sola verdad</strong></div>
+        <div>Tecnología<strong>Escalable</strong></div>
+      </div>
+    </div>
+    <div class="login-panel">
+      <div class="login-card">
+        <div class="demo-pill">PORTAL DEMO — DATOS DE EJEMPLO</div>
+        <h2>Acceso de exploración</h2>
+        <div class="sub">Este acceso simulado te permite navegar el portal tal como lo vería un cliente real. No se
+          requiere contraseña: es un ambiente de demostración.</div>
+        <div class="field">
+          <label>Empresa</label>
+          <input type="text" value="GRIMATS Sandbox, S.A. (cliente demo)" disabled>
+        </div>
+        <div class="field">
+          <label>Usuario</label>
+          <input type="text" value="demo@cliente-ejemplo.com" disabled>
+        </div>
+        <button class="enter-btn" onclick="enterPortal()">Entrar al portal demo →</button>
+        <div class="login-note">
+          Todas las cifras, alertas y nombres mostrados dentro del portal son <b>ilustrativos</b> y no corresponden a
+          información financiera real de ningún cliente de GRIMATS.
+          <br><br>
+          <b>Propiedad de GRIMATS:</b> este portal, sus diseños, estructura visual y contenidos de referencia son
+          propiedad de GRIMATS. Su uso es únicamente para evaluación de opinión y no autoriza copia, redistribución,
+          reproducción o implementación sin autorización expresa.
+          <br><br>
+          <a href="../../politica-privacidad.html" target="_blank" rel="noopener"
+            style="color:var(--azul);font-weight:700;text-decoration:none;">
+            Política de Privacidad
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== APP SHELL ===================== -->
+  <div id="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">
+        <div class="mark">G</div>
+        <div class="word">GRIMATS</div>
+      </div>
+      <div class="nav-section-label">Explorar</div>
+      <div class="nav-module" id="navmod-gallery">
+        <button onclick="selectGallery()">
+          <span>📷 Reportes Ejemplos Visuales</span>
+        </button>
+      </div>
+
+      <div class="nav-section-label">Reportería interactiva</div>
+      <div id="nav-modules"></div>
+
+      <div class="sidebar-footer">
+  <button class="exit" onclick="exitPortal()">← Salir del demo</button>
+  <div class="version">Portal demo v1.0 · datos ficticios</div>
+
+  <a href="../../politica-privacidad.html" target="_blank" rel="noopener" style="
+    display:block;
+    margin-top:10px;
+    font-size:11.5px;
+    color:#9FB2CE;
+    text-decoration:none;
+  ">
+    Política de Privacidad
+  </a>
+</div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="breadcrumb">
+          Reportería / <b id="crumb-module">Estado de Resultados</b> / <span id="crumb-tab">Resumen Ejecutivo</span>
+        </div>
+        <div class="topbar-right">
+          <div class="demo-pill small">DEMO</div>
+          <div class="client-chip"><span class="dot"></span> GRIMATS Sandbox, S.A.</div>
+        </div>
+      </div>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+
+  <script>
+    /* ============================================================
+       DATA MODEL — cifras ficticias, solo para fines ilustrativos
+       ============================================================ */
+    const MODULES = {
+      er: {
+        name: "Estado de Resultados",
+        desc: "Ingresos, costos, gastos, EBITDA y utilidad — vista tipo servicio empaquetado GRIMATS.",
+        tabs: {
+          resumen: {
+            label: "Resumen Ejecutivo",
+            kpis: [
+              { label: "Ingresos Netos", value: "RD$ 1,238.4 M", delta: "▲ 12.6% vs. presupuesto", up: true },
+              { label: "EBITDA", value: "RD$ 312.9 M", delta: "▲ 9.2% vs. presupuesto", up: true },
+              { label: "Utilidad Neta", value: "RD$ 142.3 M", delta: "▲ 8.6% vs. presupuesto", up: true },
+              { label: "Cumplimiento Presupuesto", value: "106.8%", delta: "Meta 100%", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Ingresos", color: "var(--azul)", data: [980, 1045, 1162, 1211, 1238] },
+                { name: "EBITDA", color: "var(--verde)", data: [233, 248, 277, 298, 313] },
+              ]
+            },
+            bars: {
+              title: "Rentabilidad por unidad (% de ingresos)", items: [
+                { label: "Banca Personas", value: 15.1 },
+                { label: "Tarjetas de Crédito", value: 12.7 },
+                { label: "Banca Empresas", value: 9.8 },
+                { label: "Leasing", value: 7.2 },
+                { label: "Inversiones", value: 5.5 },
+              ]
+            },
+            table: {
+              headers: ["Concepto", "Real", "Presupuesto", "Var %"],
+              rows: [
+                ["Ingresos Netos", "1,238.4", "1,098.9", "+12.6%"],
+                ["Costo de Ventas", "(595.7)", "(553.2)", "+7.7%"],
+                ["Utilidad Bruta", "642.7", "545.7", "+17.8%"],
+                ["Gastos Operativos", "(329.8)", "(305.2)", "+8.1%"],
+                ["EBITDA", "312.9", "286.6", "+9.2%"],
+                ["Utilidad Neta", "142.3", "131.6", "+8.6%"],
+              ], totalRow: 4
+            },
+            alerts: [
+              { sev: "alta", text: "Los gastos operativos superan el presupuesto en RD$ 24.6 M (8.1%)." },
+              { sev: "media", text: "El margen bruto (51.9%) está por debajo de la meta (53.0%)." },
+              { sev: "baja", text: "Leasing presenta una caída de 1.2 p.p. en rentabilidad vs. mes anterior." },
+            ]
+          },
+          detalle: {
+            label: "Detalle Financiero",
+            kpis: [
+              { label: "Movimientos", value: "12,846", delta: "▲ 6.4% vs. mes anterior", up: true },
+              { label: "Monto Neto", value: "RD$ 1,238.4 M", delta: "▲ 12.6% vs. presupuesto", up: true },
+              { label: "Partidas con Desviación", value: "184", delta: "▲ 18.9% vs. meta", up: false },
+              { label: "Registros Conciliados", value: "98.2%", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Monto Neto", color: "var(--azul)", data: [980, 1045, 1162, 1211, 1238] },
+              ]
+            },
+            bars: {
+              title: "Variación por cuenta contable (RD$ M)", items: [
+                { label: "Gastos Operativos", value: 24.6 },
+                { label: "Costo de Ventas", value: 42.5 },
+                { label: "Ingresos Netos", value: 139.5 },
+                { label: "Depreciación", value: 7.1 },
+              ]
+            },
+            table: {
+              headers: ["Centro de costo", "Real", "Presupuesto", "Var %"],
+              rows: [
+                ["Administración", "256.8", "240.0", "+7.0%"],
+                ["Comercial", "312.5", "278.0", "+12.4%"],
+                ["Operaciones", "401.2", "352.0", "+14.0%"],
+                ["TI", "78.4", "72.0", "+8.9%"],
+                ["Total", "1,238.4", "1,121.0", "+10.5%"],
+              ], totalRow: 4
+            },
+            alerts: [
+              { sev: "critica", text: "Gastos Operativos supera presupuesto en RD$ 24.6 M." },
+              { sev: "alta", text: "Operaciones concentra 31% del exceso de gasto." },
+              { sev: "media", text: "12 documentos sin centro de costo asignado." },
+            ]
+          },
+          alertas: {
+            label: "Alertas y Excepciones",
+            kpis: [
+              { label: "Alertas Activas", value: "184", delta: "▲ 18.9% vs. meta", up: false },
+              { label: "Alertas Críticas", value: "23", delta: "9 nuevas esta semana", up: false },
+              { label: "Exposición Financiera", value: "RD$ 896.0 M", delta: "▲ 12.4% vs. mes anterior", up: false },
+              { label: "Cumplimiento SLA", value: "92.4%", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Críticas", color: "var(--rojo)", data: [14, 16, 19, 21, 23] },
+                { name: "Resueltas", color: "var(--azul)", data: [28, 31, 34, 37, 61] },
+              ]
+            },
+            bars: {
+              title: "Impacto financiero por tipo de excepción (RD$ M)", items: [
+                { label: "Gastos Operativos", value: 286.4 },
+                { label: "Costo de Ventas", value: 212.8 },
+                { label: "Ingresos Netos", value: 139.5 },
+                { label: "Publicidad", value: 98.6 },
+              ]
+            },
+            table: {
+              headers: ["Área", "Crítica", "Alta", "Media", "Total"],
+              rows: [
+                ["Operaciones", "8", "22", "17", "57"],
+                ["Comercial", "6", "18", "15", "44"],
+                ["Administración", "5", "12", "9", "30"],
+                ["Total", "23", "67", "71", "184"],
+              ], totalRow: 3
+            },
+            alerts: [
+              { sev: "critica", text: "Centro de costo sin asignar — impacto RD$ 156.0 M." },
+              { sev: "critica", text: "Gasto de publicidad excede presupuesto en RD$ 88.5 M." },
+              { sev: "alta", text: "Reclasificación de gastos pendiente por RD$ 62.3 M." },
+            ]
+          }
+        }
+      },
+      bg: {
+        name: "Balance General",
+        desc: "Activos, pasivos, patrimonio, liquidez y capital de trabajo.",
+        tabs: {
+          resumen: {
+            label: "Resumen Ejecutivo",
+            kpis: [
+              { label: "Activos Totales", value: "RD$ 2,845.6 M", delta: "▲ 2.0% vs. mes anterior", up: true },
+              { label: "Pasivos Totales", value: "RD$ 1,623.4 M", delta: "▼ 0.4% vs. mes anterior", up: true },
+              { label: "Patrimonio", value: "RD$ 1,222.2 M", delta: "▲ 5.3% vs. mes anterior", up: true },
+              { label: "Razón Corriente", value: "1.64x", delta: "▲ 0.08x vs. mes anterior", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Patrimonio", color: "var(--verde)", data: [1095, 1122, 1148, 1160, 1222] },
+                { name: "Deuda", color: "var(--azul)", data: [1020, 995, 970, 948, 926] },
+              ]
+            },
+            bars: {
+              title: "Razón corriente por unidad", items: [
+                { label: "Banca Personas", value: 1.92 },
+                { label: "Tarjetas de Crédito", value: 1.58 },
+                { label: "Banca Empresas", value: 1.42 },
+                { label: "Leasing", value: 1.18 },
+              ]
+            },
+            table: {
+              headers: ["Concepto", "Real May", "Real Abr", "Var %"],
+              rows: [
+                ["Activos Corrientes", "1,428.6", "1,389.2", "+2.8%"],
+                ["Activos No Corrientes", "1,417.0", "1,401.6", "+1.1%"],
+                ["Total Activos", "2,845.6", "2,790.8", "+2.0%"],
+                ["Total Pasivos", "(1,623.4)", "(1,630.6)", "-0.4%"],
+                ["Patrimonio", "1,222.2", "1,160.2", "+5.3%"],
+              ], totalRow: 4
+            },
+            alerts: [
+              { sev: "alta", text: "La cartera vencida >60 días representa 18.4% de las cuentas por cobrar." },
+              { sev: "media", text: "Inventario lento concentra RD$ 86.5 M y requiere revisión." },
+              { sev: "baja", text: "La deuda de corto plazo representa 62% de la deuda total." },
+            ]
+          },
+          detalle: {
+            label: "Detalle Financiero",
+            kpis: [
+              { label: "Movimientos", value: "14,286", delta: "▲ 5.8% vs. mes anterior", up: true },
+              { label: "Saldo Neto", value: "RD$ 2,845.6 M", delta: "▲ 8.6% vs. año anterior", up: true },
+              { label: "Partidas Vencidas", value: "216", delta: "▲ 14.2% vs. meta", up: false },
+              { label: "Registros Conciliados", value: "97.4%", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Saldo Neto", color: "var(--azul)", data: [2621, 2700, 2750, 2790, 2846] },
+              ]
+            },
+            bars: {
+              title: "Variación por cuenta de balance (RD$ M)", items: [
+                { label: "Efectivo", value: 25.9 },
+                { label: "Inventarios", value: 9.6 },
+                { label: "Cuentas por Pagar", value: 12.5 },
+                { label: "Patrimonio", value: 62.0 },
+              ]
+            },
+            table: {
+              headers: ["Unidad", "Real", "Mes Anterior", "Var %"],
+              rows: [
+                ["Banca Personas", "845.2", "826.4", "+2.3%"],
+                ["Tarjetas de Crédito", "524.6", "511.8", "+2.5%"],
+                ["Banca Empresas", "692.1", "674.0", "+2.7%"],
+                ["Total", "2,845.6", "2,790.8", "+2.0%"],
+              ], totalRow: 3
+            },
+            alerts: [
+              { sev: "critica", text: "Cartera vencida >60 días representa 18.4% de las cuentas por cobrar." },
+              { sev: "alta", text: "Leasing presenta partidas vencidas y caída en activos corrientes." },
+              { sev: "media", text: "31 partidas de balance están pendientes de conciliación." },
+            ]
+          },
+          alertas: {
+            label: "Alertas y Excepciones",
+            kpis: [
+              { label: "Alertas Activas", value: "216", delta: "▲ 14.2% vs. meta", up: false },
+              { label: "Alertas Críticas", value: "31", delta: "12 nuevas este mes", up: false },
+              { label: "Exposición Financiera", value: "RD$ 742.0 M", delta: "▲ 9.8% vs. mes anterior", up: false },
+              { label: "Cumplimiento SLA", value: "93.8%", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Críticas", color: "var(--rojo)", data: [18, 20, 24, 27, 31] },
+                { name: "Resueltas", color: "var(--azul)", data: [30, 33, 38, 44, 74] },
+              ]
+            },
+            bars: {
+              title: "Impacto financiero por tipo de excepción (RD$ M)", items: [
+                { label: "CxC Vencidas", value: 182.4 },
+                { label: "Inventario Lento", value: 126.8 },
+                { label: "Deuda Corto Plazo", value: 118.5 },
+                { label: "Partidas sin Conciliar", value: 95.2 },
+              ]
+            },
+            table: {
+              headers: ["Área", "Crítica", "Alta", "Media", "Total"],
+              rows: [
+                ["Operaciones", "8", "24", "18", "60"],
+                ["Comercial", "7", "19", "16", "48"],
+                ["Finanzas", "6", "9", "12", "32"],
+                ["Total", "31", "78", "73", "216"],
+              ], totalRow: 3
+            },
+            alerts: [
+              { sev: "critica", text: "Cartera vencida >60 días — clientes varios, impacto RD$ 95.4 M." },
+              { sev: "alta", text: "Inventario sin movimiento >180 días, impacto RD$ 62.3 M." },
+              { sev: "alta", text: "Préstamo bancario próximo a vencer, impacto RD$ 58.0 M." },
+            ]
+          }
+        }
+      },
+      fe: {
+        name: "Flujo de Efectivo",
+        desc: "Generación de caja, inversión, financiamiento y cobertura de deuda.",
+        tabs: {
+          resumen: {
+            label: "Resumen y Generación de Caja",
+            kpis: [
+              { label: "Caja Final", value: "RD$ 351.6 M", delta: "▲ 11.4% vs. mes anterior", up: true },
+              { label: "Flujo Operativo", value: "RD$ 214.8 M", delta: "▲ 9.6% vs. presupuesto", up: true },
+              { label: "Flujo Libre de Caja", value: "RD$ 118.5 M", delta: "▲ 8.1% vs. presupuesto", up: true },
+              { label: "Cumplimiento Caja", value: "104.6%", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Caja Final", color: "var(--azul)", data: [286, 294, 318, 315, 352] },
+                { name: "Flujo Operativo", color: "var(--verde)", data: [168, 176, 198, 205, 215] },
+              ]
+            },
+            bars: {
+              title: "Generación de caja por unidad (RD$ M)", items: [
+                { label: "Banca Personas", value: 82.4 },
+                { label: "Tarjetas de Crédito", value: 64.8 },
+                { label: "Banca Empresas", value: 41.6 },
+                { label: "Inversiones", value: 55.3 },
+              ]
+            },
+            table: {
+              headers: ["Unidad", "Flujo Operativo", "CAPEX", "Flujo Neto"],
+              rows: [
+                ["Banca Personas", "95.0", "28.0", "67.0"],
+                ["Tarjetas de Crédito", "71.0", "19.0", "52.0"],
+                ["Banca Empresas", "63.0", "27.0", "36.0"],
+                ["Total", "304.0", "119.0", "185.0"],
+              ], totalRow: 3
+            },
+            alerts: [
+              { sev: "critica", text: "Leasing presenta la menor generación neta de caja y requiere revisión." },
+              { sev: "media", text: "Banca Empresas muestra presión por capital de trabajo." },
+              { sev: "baja", text: "La caja final creció 11.4% vs. mes anterior y supera la meta consolidada." },
+            ]
+          },
+          detalle: {
+            label: "Inversión y Financiamiento",
+            kpis: [
+              { label: "CAPEX", value: "RD$ 68.5 M", delta: "▲ 7.4% vs. presupuesto", up: false },
+              { label: "Flujo de Inversión", value: "RD$ -92.4 M", delta: "▼ 5.8% vs. mes anterior", up: true },
+              { label: "Flujo de Financiamiento", value: "RD$ 73.8 M", delta: "▲ 9.1% vs. presupuesto", up: true },
+              { label: "Cobertura de Deuda", value: "1.86x", delta: "vs. objetivo", up: true },
+            ],
+            trend: {
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"], series: [
+                { name: "Caja Proyectada", color: "var(--azul)", data: [302, 309, 321, 330, 338] },
+              ]
+            },
+            bars: {
+              title: "Vencimientos de deuda por unidad (RD$ M)", items: [
+                { label: "Banca Personas", value: 18.4 },
+                { label: "Tarjetas de Crédito", value: 12.6 },
+                { label: "Banca Empresas", value: 34.2 },
+                { label: "Leasing", value: 29.8 },
+              ]
+            },
+            table: {
+              headers: ["Unidad", "Tipo", "Descripción", "Impacto"],
+              rows: [
+                ["Banca Empresas", "Inversión", "Equipos para sucursales", "(25,000,000)"],
+                ["Tecnología", "Inversión", "Licencias de software", "(14,800,000)"],
+                ["Corporativo", "Financiamiento", "Pago de dividendos", "(15,000,000)"],
+                ["Total", "", "", "36,100,000"],
+              ], totalRow: 3
+            },
+            alerts: [
+              { sev: "critica", text: "2 proyectos de inversión presentan atraso en retorno esperado." },
+              { sev: "alta", text: "Servicio de deuda de Banca Empresas vence en 12 días." },
+              { sev: "media", text: "3 movimientos requieren reclasificación contable." },
+            ]
+          }
+        }
+      }
+    };
+
+    const MODULE_ORDER = ["er", "bg", "fe"];
+    let currentModule = "er";
+    let currentTab = "resumen";
+    let currentView = "gallery"; // "gallery" | "module"
+
+    /* ============================================================
+       GALERÍA — capturas exactas de los reportes de referencia
+       ============================================================ */
+    const GALLERY_CATEGORIES = [
+      { key: "todos", label: "Todos" },
+      { key: "er", label: "Estado de Resultados" },
+      { key: "bg", label: "Balance General" },
+      { key: "fe", label: "Flujo de Efectivo" },
+    ];
+
+    const GALLERY_SLIDES = [
+      { cat: "er", title: "Estado de Resultados · Resumen Ejecutivo", file: "images/er-resumen-ejecutivo.jpg" },
+      { cat: "er", title: "Estado de Resultados · Ingresos + Costo y Margen", file: "images/er-venta-costo.jpg" },
+      { cat: "er", title: "Estado de Resultados · Gastos Operativos + EBITDA y Utilidad", file: "images/er-gastos-ebitda.jpg" },
+      { cat: "er", title: "Estado de Resultados · Detalle Financiero", file: "images/er-detalle-financiero.jpg" },
+      { cat: "er", title: "Estado de Resultados · Alertas y Excepciones", file: "images/er-alertas-excepciones.jpg" },
+      { cat: "bg", title: "Balance General · Resumen Ejecutivo", file: "images/bg-resumen-ejecutivo.jpg" },
+      { cat: "bg", title: "Balance General · Activos, Liquidez y Capital de Trabajo", file: "images/bg-activos-liquidez.jpg" },
+      { cat: "bg", title: "Balance General · Pasivos, Deuda y Patrimonio", file: "images/bg-pasivos-deuda-patrimonio.jpg" },
+      { cat: "bg", title: "Balance General · Detalle Financiero", file: "images/bg-detalle-financiero.jpg" },
+      { cat: "bg", title: "Balance General · Alertas y Excepciones", file: "images/bg-alertas-excepciones.jpg" },
+      { cat: "fe", title: "Flujo de Efectivo · Resumen Ejecutivo y Generación de Caja", file: "images/fe-resumen-ejecutivo.jpg" },
+      { cat: "fe", title: "Flujo de Efectivo · Inversión, Financiamiento, Detalle y Alertas", file: "images/fe-inversion-financiamiento.jpg" },
+    ];
+
+    let galleryFilter = "todos";
+    let slideIndex = 0;
+
+    function filteredSlides() {
+      return galleryFilter === "todos" ? GALLERY_SLIDES : GALLERY_SLIDES.filter(s => s.cat === galleryFilter);
+    }
+
+    function setGalleryFilter(cat) {
+      galleryFilter = cat; slideIndex = 0; renderGallery();
+    }
+
+    function goToSlide(i) {
+      const slides = filteredSlides();
+      slideIndex = (i + slides.length) % slides.length;
+      updateSlideDom();
+    }
+
+    function nextSlide() { goToSlide(slideIndex + 1); }
+    function prevSlide() { goToSlide(slideIndex - 1); }
+
+    function updateSlideDom() {
+      document.querySelectorAll(".slide").forEach((el, i) => el.classList.toggle("active", i === slideIndex));
+      document.querySelectorAll(".slide-dots button").forEach((el, i) => el.classList.toggle("active", i === slideIndex));
+      document.querySelectorAll(".thumb-strip img").forEach((el, i) => el.classList.toggle("active", i === slideIndex));
+      const strip = document.querySelector(".thumb-strip");
+      const activeThumb = strip && strip.children[slideIndex];
+      if (activeThumb) activeThumb.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      const counter = document.querySelector(".slide-counter");
+      const slides = filteredSlides();
+      if (counter) counter.textContent = `${slideIndex + 1} / ${slides.length}`;
+      const titleEl = document.getElementById("slide-caption-title");
+      if (titleEl && slides[slideIndex]) titleEl.textContent = slides[slideIndex].title;
+    }
+
+    const WATERMARK_REPEAT = Array(14).fill("GRIMATS · DEMO").map(t => `<span>${t}</span>`).join("");
+
+    function renderGallery() {
+      currentView = "gallery";
+      document.getElementById("crumb-module").textContent = "Reportes Ejemplos Visuales";
+      document.getElementById("crumb-tab").textContent = "Galería de referencia";
+      document.getElementById("navmod-gallery").classList.add("open");
+      document.querySelectorAll(".nav-module").forEach(m => { if (m.id !== "navmod-gallery") m.classList.remove("open"); });
+
+      const slides = filteredSlides();
+
+      document.getElementById("content").innerHTML = `
+    <div class="module-header">
+      <h2>Reportes Ejemplos Visuales</h2>
+      <div class="desc">Capturas de referencia de la reportería GRIMATS — así lucen los tableros reales que recibirías dentro de tu portal (con tus datos, no los de ejemplo).</div>
+    </div>
+
+    <div class="savings-case">
+      <div class="savings-head">
+        <div>
+          <h3>💡 Caso de ahorro: de licencias por usuario a portal analítico</h3>
+          <p>Ejemplo estimado para una empresa con 66 usuarios Power BI PPU que no requiere consumo 24/7, pero necesita mantener 5 usuarios para desarrollo interno y administración de reportes.</p>
+        </div>
+        <div class="savings-badge">Ejemplo antes de impuestos</div>
+      </div>
+
+      <div class="savings-grid">
+        <div>
+          <div class="savings-metrics">
+            <div class="saving-card">
+              <div class="saving-label">Costo actual</div>
+              <div class="saving-value">US$1,584</div>
+              <div class="saving-caption">66 usuarios Power BI PPU</div>
+            </div>
+            <div class="saving-card">
+              <div class="saving-label">Portal GRIMATS</div>
+              <div class="saving-value good">US$520–1,170</div>
+              <div class="saving-caption">Rango estimado mensual</div>
+            </div>
+            <div class="saving-card">
+              <div class="saving-label">Usuarios PPU retenidos</div>
+              <div class="saving-value warn">5</div>
+              <div class="saving-caption">Desarrollo interno y gobierno</div>
+            </div>
+          </div>
+
+          <table class="savings-table">
+            <thead><tr><th>Concepto</th><th>Modelo actual</th><th>Con Portal GRIMATS</th></tr></thead>
+            <tbody>
+              <tr><td>Usuarios con licencia PPU</td><td>66</td><td>5 internos</td></tr>
+              <tr><td>Consumo de reportes</td><td>Por usuario licenciado</td><td>Portal con capacidad compartida</td></tr>
+              <tr><td>Actualización horario laboral</td><td>Cada 30 min</td><td>Cada 30 min</td></tr>
+              <tr><td>Actualización fuera de horario</td><td>Cada 3 horas</td><td>Cada 3 horas</td></tr>
+              <tr><td>Supuesto conservador</td><td>100% uso laboral</td><td>Capacidad disponible según demanda</td></tr>
+              <tr><td>Costo mensual estimado</td><td>US$1,584</td><td>US$520–US$1,170</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="savings-side">
+          <h4>Modalidades posibles</h4>
+          <ul>
+            <li><b>Reportes personalizados:</b> el cliente mantiene sus modelos y reportes, usando el portal GRIMATS como capa de distribución.</li>
+            <li><b>Reportes prefabricados GRIMATS:</b> usa dashboards financieros empaquetados, reduciendo tiempo de implementación y costo de uso.</li>
+            <li><b>Capacidad ajustable:</b> el uso puede adaptarse al horario real de operación y demanda del negocio.</li>
+          </ul>
+          <div class="savings-note">Los valores son estimaciones referenciales antes de impuestos. El costo real puede variar según usuarios concurrentes, horarios de uso, frecuencia de actualización, complejidad de reportes, tamaño de modelos y capacidad Embedded requerida.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-panel">
+      <div class="gallery-head">
+        <h3>🖼️ Reportes Ejemplos Visuales <span class="count">${slides.length} reportes</span></h3>
+        <div class="gallery-tabs">
+          ${GALLERY_CATEGORIES.map(c => `<button class="gallery-tab ${galleryFilter === c.key ? 'active' : ''}" onclick="setGalleryFilter('${c.key}')">${c.label}</button>`).join("")}
+        </div>
+      </div>
+
+      <div class="slideshow">
+        <div class="slide-viewport">
+          ${slides.map((s, i) => `
+            <div class="slide ${i === 0 ? 'active' : ''}">
+              <img src="${s.file}" alt="${s.title}">
+              <div class="slide-watermark-text">${WATERMARK_REPEAT}</div>
+              <div class="slide-demo-tag">EJEMPLO — DATOS FICTICIOS</div>
+            </div>
+          `).join("")}
+          <div class="slide-counter">1 / ${slides.length}</div>
+          <button class="slide-nav-btn slide-prev" onclick="prevSlide()">‹</button>
+          <button class="slide-nav-btn slide-next" onclick="nextSlide()">›</button>
+          <div class="slide-caption">
+            <div class="cat">Reporte de referencia</div>
+            <div class="title" id="slide-caption-title">${slides[0].title}</div>
+          </div>
+        </div>
+        <div class="slide-dots">
+          ${slides.map((_, i) => `<button class="${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></button>`).join("")}
+        </div>
+      </div>
+
+      <div class="thumb-strip">
+        ${slides.map((s, i) => `<img src="${s.file}" class="${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})" alt="${s.title}">`).join("")}
+      </div>
+    </div>
+
+    <div class="disclaimer-strip">
+      ⚠️ <div><b>Estas imágenes son ejemplos ilustrativos.</b> Corresponden a un set de reportes de referencia usados para mostrar el formato y nivel de detalle del servicio de reportería GRIMATS. Las cifras, nombres y responsables no representan información real de ningún cliente. <br><br><b>Propiedad intelectual:</b> este portal, sus diseños, estructura visual, flujos de navegación, contenidos de referencia y propuesta gráfica son propiedad de GRIMATS. Su uso es únicamente para evaluación de opinión y no autoriza copia, redistribución, reproducción, modificación o implementación sin autorización expresa de GRIMATS.</div>
+    </div>
+
+    <div class="cta-band">
+      <div>
+        <h4>¿Quieres explorar estas mismas vistas de forma interactiva?</h4>
+        <p>En el menú de la izquierda, bajo "Reportería interactiva", puedes navegar cada módulo con KPIs y gráficos que puedes filtrar en vivo.</p>
+      </div>
+      <button class="cta-btn" onclick="selectTab('er','resumen')">Ir a la versión interactiva →</button>
+    </div>
+  `;
+
+      // click en la imagen grande avanza al siguiente slide, para exploración rápida
+      document.querySelectorAll(".slide img").forEach(img => img.addEventListener("click", nextSlide));
+    }
+
+    // navegación por teclado cuando la galería está activa
+    document.addEventListener("keydown", (e) => {
+      if (currentView !== "gallery") return;
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    /* ============================================================
+       RENDER HELPERS — pequeños gráficos SVG inline
+       ============================================================ */
+    function svgLineChart(trend) {
+      const w = 560, h = 170, padL = 30, padR = 10, padT = 14, padB = 24;
+      const allVals = trend.series.flatMap(s => s.data);
+      const max = Math.max(...allVals) * 1.15, min = 0;
+      const n = trend.labels.length;
+      const x = i => padL + (i * (w - padL - padR) / (n - 1));
+      const y = v => h - padB - ((v - min) / (max - min)) * (h - padT - padB);
+      let lines = trend.series.map(s => {
+        const pts = s.data.map((v, i) => `${x(i)},${y(v)}`).join(" ");
+        const dots = s.data.map((v, i) => `<circle cx="${x(i)}" cy="${y(v)}" r="3.2" fill="${s.color}"/>`).join("");
+        return `<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="2.5"/>` + dots;
+      }).join("");
+      let labels = trend.labels.map((l, i) => `<text x="${x(i)}" y="${h - 6}" font-size="10.5" fill="var(--grafito-suave)" text-anchor="middle">${l}</text>`).join("");
+      let legend = trend.series.map((s, i) => `<span style="display:inline-flex;align-items:center;gap:5px;margin-right:14px;font-size:11.5px;color:var(--grafito-suave)"><span style="width:9px;height:9px;border-radius:50%;background:${s.color};display:inline-block"></span>${s.name}</span>`).join("");
+      return `<div style="margin-bottom:8px">${legend}</div>
+  <svg viewBox="0 0 ${w} ${h}" style="width:100%;height:170px">${lines}${labels}</svg>`;
+    }
+
+    function svgBarChart(bars) {
+      const w = 340, barH = 26, gap = 14, padL = 110, padR = 46;
+      const max = Math.max(...bars.items.map(i => i.value)) * 1.15;
+      const h = bars.items.length * (barH + gap);
+      let rows = bars.items.map((it, i) => {
+        const y = i * (barH + gap);
+        const bw = ((w - padL - padR) * it.value / max);
+        return `
+      <text x="0" y="${y + barH / 2 + 4}" font-size="11.5" fill="var(--grafito)">${it.label}</text>
+      <rect x="${padL}" y="${y}" width="${bw}" height="${barH}" rx="6" fill="var(--azul-2)"/>
+      <text x="${padL + bw + 8}" y="${y + barH / 2 + 4}" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">${it.value}</text>
+    `;
+      }).join("");
+      return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:${h}px">${rows}</svg>`;
+    }
+
+    function renderKpis(kpis) {
+      return `<div class="kpi-row">${kpis.map(k => {
+        const cls = k.up === true ? "pos" : (k.up === false ? "neg" : "");
+        const deltaCls = k.delta.startsWith("▲") ? "up" : (k.delta.startsWith("▼") ? "down" : "");
+        return `<div class="kpi-card ${cls}">
+      <div class="kpi-label">${k.label}</div>
+      <div class="kpi-value">${k.value}</div>
+      <div class="kpi-delta ${deltaCls}">${k.delta}</div>
+    </div>`;
+      }).join("")}</div>`;
+    }
+
+    function renderTable(t) {
+      const rows = t.rows.map((r, i) => `<tr class="${i === t.totalRow ? 'total' : ''}">${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("");
+      return `<table class="data-table">
+    <thead><tr>${t.headers.map(h => `<th>${h}</th>`).join("")}</tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+    }
+
+    function renderAlerts(alerts) {
+      return `<div class="alerts-panel">${alerts.map(a => `
+    <div class="alert-item"><span class="sev-dot sev-${a.sev}"></span><span>${a.text}</span></div>
+  `).join("")}</div>`;
+    }
+
+    function renderContent() {
+      const mod = MODULES[currentModule];
+      const tab = mod.tabs[currentTab];
+      document.getElementById("crumb-module").textContent = mod.name;
+      document.getElementById("crumb-tab").textContent = tab.label;
+
+      document.getElementById("content").innerHTML = `
+    <div class="module-header">
+      <h2>${mod.name} · ${tab.label}</h2>
+      <div class="desc">${mod.desc}</div>
+    </div>
+    <div class="filters-row">
+      <div class="chip">📅 Periodo: Ene 2026 – May 2026 (demo)</div>
+      <div class="chip">🏢 Empresa: GRIMATS Sandbox, S.A.</div>
+      <div class="chip">💱 Moneda: RD$</div>
+      <div class="chip">🎛️ Escenario: Ilustrativo</div>
+    </div>
+
+    ${renderKpis(tab.kpis)}
+
+    <div class="charts-row">
+      <div class="panel">
+        <div class="demo-watermark"></div>
+        <h3>Tendencia mensual</h3>
+        ${svgLineChart(tab.trend)}
+      </div>
+      <div class="panel">
+        <div class="demo-watermark"></div>
+        <h3>${tab.bars.title}</h3>
+        ${svgBarChart(tab.bars)}
+      </div>
+    </div>
+
+    <div class="panel-grid-2">
+      <div class="panel">
+        <div class="demo-watermark"></div>
+        <h3>Detalle resumido</h3>
+        ${renderTable(tab.table)}
+      </div>
+      <div class="panel">
+        <div class="demo-watermark"></div>
+        <h3>Alertas y hallazgos</h3>
+        ${renderAlerts(tab.alerts)}
+      </div>
+    </div>
+
+    <div class="disclaimer-strip">
+      ⚠️ <div><b>Estás viendo un portal demo.</b> Las cifras, alertas, nombres de responsables y clientes mostrados en esta pantalla son ficticios y se generaron únicamente para ilustrar cómo luce un servicio de reportería financiera empaquetado por GRIMATS. Ningún dato representa información real de una empresa cliente. <br><br><b>Propiedad de GRIMATS:</b> este portal, sus diseños, estructura visual y contenidos de referencia son propiedad de GRIMATS. Su uso es únicamente para evaluación de opinión y no autoriza copia, redistribución, reproducción o implementación sin autorización expresa.</div>
+    </div>
+
+    <div class="cta-band">
+      <div>
+        <h4>¿Te gustaría ver esto con los datos de tu empresa?</h4>
+        <p>Agenda un espacio con nuestro equipo y te mostramos cómo se vería tu propio portal de reportería con G-Business Intelligence.</p>
+      </div>
+      <button class="cta-btn" onclick="window.open('https://grimats.com/g-business-intelligence.html','_blank')">Conocer G-Business Intelligence →</button>
+    </div>
+  `;
+    }
+
+    /* ============================================================
+       NAV BUILD + INTERACTIONS
+       ============================================================ */
+    function buildNav() {
+      const nav = document.getElementById("nav-modules");
+      nav.innerHTML = MODULE_ORDER.map(key => {
+        const mod = MODULES[key];
+        const tabKeys = Object.keys(mod.tabs);
+        return `
+      <div class="nav-module ${key === currentModule ? 'open' : ''}" id="navmod-${key}">
+        <button onclick="toggleModule('${key}')">
+          <span>${mod.name}</span><span class="chev">›</span>
+        </button>
+        <div class="nav-tabs">
+          ${tabKeys.map(tk => `<button class="${key === currentModule && tk === currentTab ? 'active' : ''}" id="navtab-${key}-${tk}" onclick="selectTab('${key}','${tk}')">${mod.tabs[tk].label}</button>`).join("")}
+        </div>
+      </div>
+    `;
+      }).join("");
+    }
+
+    function toggleModule(key) {
+      const el = document.getElementById("navmod-" + key);
+      const isOpen = el.classList.contains("open");
+      document.querySelectorAll(".nav-module").forEach(m => m.classList.remove("open"));
+      if (!isOpen) el.classList.add("open");
+    }
+
+    function selectTab(modKey, tabKey) {
+      currentView = "module";
+      currentModule = modKey; currentTab = tabKey;
+      document.querySelectorAll(".nav-tabs button").forEach(b => b.classList.remove("active"));
+      document.getElementById(`navtab-${modKey}-${tabKey}`).classList.add("active");
+      document.querySelectorAll(".nav-module").forEach(m => m.classList.remove("open"));
+      document.getElementById("navmod-" + modKey).classList.add("open");
+      renderContent();
+      document.querySelector(".main").scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function selectGallery() {
+      document.querySelectorAll(".nav-tabs button").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".nav-module").forEach(m => m.classList.remove("open"));
+      slideIndex = 0;
+      renderGallery();
+      document.querySelector(".main").scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function enterPortal() {
+      document.getElementById("login-screen").style.display = "none";
+      document.getElementById("app-shell").classList.add("active");
+      buildNav();
+      selectGallery();
+    }
+    function exitPortal() {
+      document.getElementById("app-shell").classList.remove("active");
+      document.getElementById("login-screen").style.display = "grid";
+    }
+
+    // watermark text fill (once DOM ready, added dynamically for each panel via CSS pseudo is simpler,
+    // but we add a floating global watermark text layer for extra clarity)
+    document.addEventListener("DOMContentLoaded", () => {
+      buildNav();
+    });
+  </script>
+</script>
+
+<!-- GRIMATS - Aviso simple de cookies -->
+<div id="grimats-cookie-notice" style="
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99999;
+  display: none;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #06142f;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  padding: 18px 20px;
+  font-family: Arial, sans-serif;
+">
+  <div style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+    <div style="flex:1 1 620px;">
+      <strong style="font-size:16px;">Uso de cookies</strong>
+      <p style="margin:6px 0 0; line-height:1.45; color:#dbe7ff;">
+        Este sitio utiliza cookies y herramientas de medición para analizar el tráfico,
+        mejorar la experiencia y entender el interés en nuestros servicios. Al continuar
+        navegando en grimats.com, aceptas su uso conforme a nuestra
+        <a href="../../politica-privacidad.html" style="color:#ff8a00; text-decoration:underline;">
+          Política de Privacidad
+        </a>.
+      </p>
+    </div>
+
+    <button type="button" onclick="grimatsAcceptCookieNotice()" style="
+      border:0;
+      background:linear-gradient(90deg, #005cff, #ff6a00);
+      color:#ffffff;
+      padding:11px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:800;
+    ">
+      Entendido
+    </button>
+  </div>
+</div>
+
+<script>
+  function grimatsAcceptCookieNotice() {
+    localStorage.setItem("grimats_cookie_notice", "accepted");
+    document.getElementById("grimats-cookie-notice").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const notice = localStorage.getItem("grimats_cookie_notice");
+
+    if (notice !== "accepted") {
+      document.getElementById("grimats-cookie-notice").style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
+</body>
+
+</html>
