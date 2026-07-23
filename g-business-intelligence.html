@@ -12,6 +12,205 @@
   <style>
     /* Wider desktop layout; kept here so only HTML files are changed. */
     .container { width: min(1600px, calc(100% - clamp(48px, 8vw, 160px))); }
+    /* Producto: Portal de Dashboards Financieros */
+    .financial-product {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(30, 95, 168, .18), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(255, 106, 0, .12), transparent 28%),
+        linear-gradient(135deg, #06142f 0%, #0b2d68 58%, #0e3f7a 100%);
+      color: #fff;
+    }
+
+    .financial-product .eyebrow,
+    .financial-product .section-title,
+    .financial-product .section-intro {
+      color: #fff;
+    }
+
+    .financial-product .section-intro {
+      max-width: 980px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .financial-product-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .financial-product-hero,
+    .financial-product-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      border-radius: 26px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.24);
+      backdrop-filter: blur(10px);
+    }
+
+    .financial-product-hero {
+      padding: clamp(26px, 3vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .financial-product-badge {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.88);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .financial-product-hero h3 {
+      margin: 24px 0 14px;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      color: #fff;
+    }
+
+    .financial-product-hero p {
+      margin: 0;
+      max-width: 780px;
+      color: rgba(255,255,255,.78);
+      font-size: 1.04rem;
+      line-height: 1.75;
+    }
+
+    .financial-product-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .financial-mini {
+      padding: 15px 16px;
+      border-radius: 17px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .financial-mini span {
+      display: block;
+      color: rgba(255,255,255,.62);
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .financial-mini strong {
+      display: block;
+      color: #fff;
+      font-size: .98rem;
+      line-height: 1.25;
+    }
+
+    .financial-product-cards {
+      display: grid;
+      gap: 18px;
+    }
+
+    .financial-product-card {
+      position: relative;
+      padding: 26px;
+    }
+
+    .financial-product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 26px;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 36%);
+    }
+
+    .financial-product-card .card-num {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #005cff, #ff6a00);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .financial-product-card h3 {
+      position: relative;
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1.27rem;
+      letter-spacing: -.025em;
+    }
+
+    .financial-product-card p {
+      position: relative;
+      margin: 0;
+      color: rgba(255,255,255,.76);
+      line-height: 1.65;
+    }
+
+    .financial-product-card ul {
+      position: relative;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .financial-product-card li {
+      color: rgba(255,255,255,.84);
+      font-size: .94rem;
+      line-height: 1.45;
+    }
+
+    .financial-product-card li::before {
+      content: "✓";
+      color: #ff8a00;
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .financial-product .btn-row {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 980px) {
+      .financial-product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .financial-product-hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .financial-product-stack {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 780px) { .container { width: min(100% - 34px, 1600px); } }
   
 
@@ -58,6 +257,7 @@
     </a>
     <div class="nav-links">
       <a href="#capabilities">Capacidades</a>
+      <a href="#dashboard-financiero">Dashboard financiero</a>
       <a href="#approach">Enfoque</a>
       <a href="#cta">Contacto</a>
       <a href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" class="nav-book" target="_blank" rel="noopener">Agenda con un experto</a>
@@ -92,6 +292,88 @@
 <article class="capability-card"><div class="capability-num">03</div><h3>IA y soluciones tecnológicas</h3><p>Aplicamos inteligencia artificial, automatización e integraciones para acelerar capacidades con impacto práctico.</p></article></div>
     </div>
   </section>
+
+  <section id="dashboard-financiero" class="section financial-product">
+    <div class="container">
+      <div class="eyebrow">Producto destacado</div>
+      <h2 class="section-title">Portal de Dashboards Financieros GRIMATS.</h2>
+      <p class="section-intro">
+        Una solución empaquetada de reportería financiera para llevar Estado de Resultados,
+        Balance General, Flujo de Efectivo, KPIs, alertas y vistas ejecutivas a un portal
+        moderno, seguro y preparado para crecer con el negocio.
+      </p>
+
+      <div class="financial-product-grid">
+        <article class="financial-product-hero">
+          <div>
+            <div class="financial-product-badge">Financial BI · Producto empaquetado</div>
+            <h3>Reportería financiera lista para operar, comparar y decidir.</h3>
+            <p>
+              Diseñado para empresas que necesitan pasar de reportes manuales o dispersos a
+              un modelo visual, recurrente y accionable. También sirve como capa de distribución
+              para organizaciones con muchos usuarios, reduciendo dependencia de licencias fijas
+              por persona y ajustando el consumo según la demanda real.
+            </p>
+          </div>
+
+          <div class="financial-product-stack">
+            <div class="financial-mini">
+              <span>Incluye</span>
+              <strong>EERR, Balance, Flujo de Efectivo y KPIs ejecutivos</strong>
+            </div>
+            <div class="financial-mini">
+              <span>Entrega</span>
+              <strong>Portal web, dashboards, alertas y navegación ejecutiva</strong>
+            </div>
+            <div class="financial-mini">
+              <span>Enfoque</span>
+              <strong>Implementación rápida con modelo financiero estándar</strong>
+            </div>
+            <div class="financial-mini">
+              <span>Escala</span>
+              <strong>Distribución dinámica para muchos usuarios</strong>
+            </div>
+          </div>
+        </article>
+
+        <div class="financial-product-cards">
+          <article class="financial-product-card">
+            <div class="card-num">01</div>
+            <h3>Para clientes sin reportería estructurada</h3>
+            <p>
+              Una forma rápida y estándar de comenzar con Business Intelligence financiero,
+              sin partir desde cero ni depender de múltiples archivos desconectados.
+            </p>
+            <ul>
+              <li>Modelo inicial de indicadores financieros y vistas ejecutivas.</li>
+              <li>Dashboards listos para interpretar resultados, variaciones y tendencias.</li>
+              <li>Base escalable para luego incorporar áreas, unidades, centros de costo o presupuestos.</li>
+            </ul>
+          </article>
+
+          <article class="financial-product-card">
+            <div class="card-num">02</div>
+            <h3>Para clientes con alto volumen de usuarios</h3>
+            <p>
+              Una alternativa para reducir de forma dinámica el gasto fijo de licenciamiento,
+              usando el portal como capa de consumo y distribución de reportes.
+            </p>
+            <ul>
+              <li>Menor dependencia de licencias individuales para usuarios de solo consulta.</li>
+              <li>Consumo ajustable según horarios, demanda y concurrencia real.</li>
+              <li>Distribución ejecutiva más simple, controlada y orientada al uso del negocio.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="portales-demos/portal-financiero-grimats-bi/index-portal-demo-financiero-grimats.html">Ver demo financiero <span aria-hidden="true">→</span></a>
+        <a class="btn btn-light" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Evaluar mi escenario</a>
+      </div>
+    </div>
+  </section>
+
   <section id="approach" class="section approach">
     <div class="container">
       <div class="eyebrow">Nuestro enfoque</div>
@@ -124,6 +406,7 @@
       <a href="https://www.instagram.com/grupogrimats/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://wa.me/18099949227" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:Ventas@grimats.com">Ventas@grimats.com</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
     </div>
     <div class="footer-copy">© 2026 GRIMATS · Santo Domingo, República Dominicana</div>
   </div>
