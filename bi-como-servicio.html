@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BI como Servicio de GRIMATS: una unidad de inteligencia de negocios, analítica, automatización y acompañamiento continuo para generar resultados medibles.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow">
+  <link rel="canonical" href="https://grimats.com/bi-como-servicio.html">
+  <title>BI como Servicio | GRIMATS</title>
+  <link rel="stylesheet" href="css/grimats-subpages.css">
+
+  <style>
+    :root{
+      --g-navy:#06142f;
+      --g-blue:#005cff;
+      --g-blue-2:#0b63ce;
+      --g-cyan:#27b7ff;
+      --g-orange:#ff6a00;
+      --g-orange-2:#ff9b1a;
+      --g-violet:#5425b8;
+      --g-ink:#081832;
+      --g-text:#344052;
+      --g-muted:#667085;
+      --g-line:#e3e8f2;
+      --g-soft:#f5f8ff;
+      --g-card:#ffffff;
+      --g-radius:24px;
+      --g-shadow:0 24px 70px rgba(6,20,47,.13);
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:#f6f8fc;
+      color:var(--g-text);
+      font-family:Inter,Arial,Helvetica,sans-serif;
+    }
+
+    .container{
+      width:min(1600px,calc(100% - clamp(36px,7vw,140px)));
+      margin-inline:auto;
+    }
+
+    .nav{
+      backdrop-filter:saturate(160%) blur(14px);
+      background:rgba(255,255,255,.9);
+      border-bottom:1px solid rgba(6,20,47,.08);
+    }
+    .nav-mark{
+      width:clamp(38px,3vw,56px);
+      height:clamp(38px,3vw,56px);
+    }
+    .nav-word{font-size:clamp(.95rem,1.05vw,1.15rem);}
+    .nav-links a{font-weight:750;}
+
+    .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      border-radius:999px;
+      padding:14px 20px;
+      font-weight:850;
+      text-decoration:none;
+      transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+    }
+    .btn:hover{transform:translateY(-2px);}
+    .btn-primary{
+      background:linear-gradient(90deg,var(--g-blue),var(--g-orange));
+      color:#fff;
+      box-shadow:0 16px 34px rgba(0,92,255,.22);
+    }
+    .btn-light{
+      background:#fff;
+      color:var(--g-navy);
+      border:1px solid rgba(6,20,47,.12);
+      box-shadow:0 12px 26px rgba(6,20,47,.08);
+    }
+    .btn-ghost{
+      color:#fff;
+      border:1px solid rgba(255,255,255,.24);
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero-baas{
+      position:relative;
+      overflow:hidden;
+      padding:142px 0 92px;
+      background:
+        radial-gradient(circle at 12% 15%,rgba(39,183,255,.28),transparent 32%),
+        radial-gradient(circle at 88% 22%,rgba(255,106,0,.20),transparent 28%),
+        linear-gradient(135deg,#06142f 0%,#09245a 54%,#120b38 100%);
+      color:#fff;
+      isolation:isolate;
+    }
+    .hero-baas::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(0deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:58px 58px;
+      mask-image:linear-gradient(180deg,#000 0%,transparent 86%);
+      z-index:-2;
+    }
+    .hero-baas::after{
+      content:"";
+      position:absolute;
+      right:-160px;
+      bottom:-180px;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(255,106,0,.18),transparent 68%);
+      z-index:-1;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:54px;
+      align-items:center;
+    }
+    .brand-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:#bfe5ff;
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    .brand-chip::before{
+      content:"";
+      width:38px;
+      height:3px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--g-blue),var(--g-orange));
+    }
+    .hero-baas h1{
+      margin:0;
+      max-width:980px;
+      color:#fff;
+      font-size:clamp(2.75rem,5.6vw,6.25rem);
+      line-height:.94;
+      letter-spacing:-.07em;
+    }
+    .hero-baas .lead{
+      max-width:760px;
+      margin:24px 0 0;
+      color:#d7e6ff;
+      font-size:clamp(1.05rem,1.35vw,1.28rem);
+      line-height:1.75;
+    }
+    .hero-actions{margin-top:34px;}
+    .hero-proof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:34px;
+      max-width:780px;
+    }
+    .proof-item{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.075);
+      border-radius:18px;
+      padding:16px;
+    }
+    .proof-item strong{
+      display:block;
+      color:#fff;
+      font-size:1rem;
+      margin-bottom:5px;
+    }
+    .proof-item span{color:#bdd0ec;font-size:.88rem;line-height:1.4;}
+
+    .hero-card{
+      position:relative;
+      padding:34px;
+      border-radius:32px;
+      background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 30px 90px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:radial-gradient(circle at 0 0,rgba(39,183,255,.28),transparent 35%),radial-gradient(circle at 100% 0,rgba(255,106,0,.18),transparent 32%);
+      pointer-events:none;
+    }
+    .hero-card > *{position:relative;}
+    .mini-logo{
+      width:min(100%,360px);
+      height:auto;
+      display:block;
+      margin-bottom:22px;
+      filter:drop-shadow(0 18px 26px rgba(0,0,0,.25));
+    }
+    .mini-logo-link{
+      display:inline-block;
+      line-height:0;
+      margin-bottom:22px;
+    }
+    .mini-logo-link .mini-logo{margin-bottom:0;}
+    .footer-brand a{color:#fff;text-decoration:none;}
+    .footer-brand a:hover{color:#ff9b1a;}
+    .hero-card h2{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:clamp(1.6rem,2.4vw,2.35rem);
+      line-height:1.03;
+      letter-spacing:-.045em;
+    }
+    .hero-card p{color:#d7e6ff;line-height:1.7;margin:0;}
+    .flow-list{display:grid;gap:12px;margin-top:24px;}
+    .flow-item{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:12px;
+      align-items:start;
+      padding:15px;
+      border-radius:18px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .flow-dot{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      color:#fff;font-weight:900;
+      background:linear-gradient(135deg,var(--g-blue),var(--g-orange));
+    }
+    .flow-item strong{display:block;color:#fff;margin-bottom:3px;}
+    .flow-item span{display:block;color:#c7d8f2;font-size:.9rem;line-height:1.45;}
+
+    .section{padding:90px 0;}
+    .section.soft{background:linear-gradient(180deg,#fff,#f4f7ff);}
+    .section.dark{
+      background:
+        radial-gradient(circle at 80% 15%,rgba(255,106,0,.16),transparent 28%),
+        linear-gradient(135deg,#06142f,#071d45 62%,#160d35);
+      color:#fff;
+    }
+    .eyebrow{
+      color:var(--g-blue);
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .section.dark .eyebrow{color:#77d8ff;}
+    .section-title{
+      margin:0;
+      max-width:980px;
+      color:var(--g-ink);
+      font-size:clamp(2rem,3.5vw,4rem);
+      line-height:1.02;
+      letter-spacing:-.055em;
+    }
+    .section.dark .section-title{color:#fff;}
+    .section-intro{
+      max-width:840px;
+      margin:18px 0 0;
+      color:var(--g-muted);
+      font-size:1.08rem;
+      line-height:1.75;
+    }
+    .section.dark .section-intro{color:#d4e2f8;}
+
+    .value-grid,.plans-grid,.compare-grid,.process-grid{
+      display:grid;
+      gap:22px;
+      margin-top:38px;
+    }
+    .value-grid{grid-template-columns:repeat(3,1fr);}
+    .plans-grid{grid-template-columns:repeat(3,1fr);align-items:stretch;}
+    .compare-grid{grid-template-columns:1fr 1fr;}
+    .process-grid{grid-template-columns:repeat(4,1fr);}
+
+    .value-card,.plan-card,.compare-card,.process-card,.included-card{
+      position:relative;
+      background:#fff;
+      border:1px solid rgba(6,20,47,.09);
+      border-radius:var(--g-radius);
+      box-shadow:0 16px 42px rgba(6,20,47,.08);
+      overflow:hidden;
+    }
+    .value-card{padding:30px;}
+    .value-card::before,.plan-card::before,.included-card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:5px;
+      background:linear-gradient(90deg,var(--g-blue),var(--g-orange));
+    }
+    .value-num{
+      color:var(--g-orange);
+      font-weight:950;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      margin-bottom:14px;
+    }
+    .value-card h3,.plan-card h3,.compare-card h3,.process-card h3,.included-card h3{
+      margin:0 0 10px;
+      color:var(--g-ink);
+      font-size:1.35rem;
+      letter-spacing:-.03em;
+    }
+    .value-card p,.plan-card p,.compare-card p,.process-card p,.included-card p{
+      margin:0;
+      color:var(--g-muted);
+      line-height:1.7;
+    }
+
+    .compare-card{
+      padding:34px;
+      display:grid;
+      gap:20px;
+    }
+    .compare-card.featured{
+      background:linear-gradient(135deg,#06142f,#0b2d68);
+      color:#fff;
+      border-color:rgba(255,255,255,.14);
+    }
+    .compare-card.featured h3{color:#fff;}
+    .compare-card.featured p,.compare-card.featured li{color:#d6e5ff;}
+    .compare-card ul{margin:0;padding-left:20px;color:var(--g-muted);line-height:1.8;}
+    .compare-label{
+      display:inline-flex;
+      width:max-content;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:.74rem;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      background:#eff5ff;
+      color:var(--g-blue);
+    }
+    .compare-card.featured .compare-label{
+      background:rgba(255,106,0,.16);
+      color:#ffbf7a;
+    }
+
+    .included-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      margin-top:38px;
+    }
+    .included-card{padding:34px;}
+    .included-list{display:grid;gap:12px;margin-top:22px;}
+    .included-item{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:12px;
+      align-items:start;
+      padding:14px;
+      border-radius:16px;
+      background:#f7f9ff;
+      border:1px solid #e3e8f2;
+    }
+    .check{
+      width:28px;height:28px;border-radius:50%;
+      display:grid;place-items:center;
+      color:#fff;font-size:.86rem;font-weight:900;
+      background:linear-gradient(135deg,var(--g-blue),var(--g-orange));
+    }
+    .included-item strong{display:block;color:var(--g-ink);margin-bottom:2px;}
+    .included-item span{display:block;color:var(--g-muted);font-size:.94rem;line-height:1.45;}
+
+    .stat-stack{display:grid;gap:16px;}
+    .stat-card{
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(135deg,#06142f,#0b2d68);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 48px rgba(6,20,47,.16);
+    }
+    .stat-card strong{
+      display:block;
+      font-size:clamp(1.7rem,2.7vw,2.55rem);
+      color:#fff;
+      letter-spacing:-.055em;
+      margin-bottom:3px;
+    }
+    .stat-card span{color:#d1def2;line-height:1.5;}
+    .stat-card.orange{background:linear-gradient(135deg,#ff6a00,#ff9b1a);}
+    .stat-card.orange span{color:#fff7ed;}
+
+    .plans-section{background:#edf4ff;}
+    .plan-card{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .plan-card.recommended{
+      border:2px solid var(--g-orange);
+      transform:translateY(-10px);
+      box-shadow:0 30px 80px rgba(255,106,0,.18);
+    }
+    .badge{
+      align-self:flex-start;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#fff0df;
+      color:#9d4700;
+      font-size:.73rem;
+      font-weight:950;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+    .price{
+      margin:16px 0 6px;
+      color:var(--g-ink);
+      font-size:clamp(2.2rem,3.2vw,3.1rem);
+      font-weight:950;
+      line-height:.95;
+      letter-spacing:-.06em;
+    }
+    .price small{font-size:.95rem;color:var(--g-muted);font-weight:800;letter-spacing:0;}
+    .plan-card ul{
+      margin:22px 0;
+      padding-left:20px;
+      color:var(--g-muted);
+      line-height:1.75;
+      flex:1;
+    }
+    .fit{
+      margin-top:auto;
+      padding-top:16px;
+      border-top:1px solid var(--g-line);
+      color:var(--g-muted);
+      font-size:.94rem;
+      line-height:1.55;
+    }
+    .plan-tag{
+      display:inline-flex;
+      align-self:flex-start;
+      margin-top:16px;
+      padding:8px 11px;
+      border-radius:12px;
+      background:#f4f7ff;
+      color:var(--g-blue);
+      font-size:.8rem;
+      font-weight:850;
+    }
+
+    .process-card{
+      padding:26px;
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.13);
+    }
+    .process-card h3{color:#fff;}
+    .process-card p{color:#d3e2fa;}
+    .process-step{
+      width:42px;height:42px;
+      border-radius:16px;
+      display:grid;place-items:center;
+      color:#fff;font-weight:950;
+      margin-bottom:18px;
+      background:linear-gradient(135deg,var(--g-blue),var(--g-orange));
+      box-shadow:0 12px 24px rgba(0,0,0,.22);
+    }
+
+    .closing{
+      padding:82px 0;
+      background:#fff;
+    }
+    .closing-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+      padding:42px;
+      border-radius:32px;
+      background:
+        radial-gradient(circle at 88% 20%,rgba(255,106,0,.16),transparent 30%),
+        linear-gradient(135deg,#06142f,#0b2d68 70%,#29105d);
+      color:#fff;
+      box-shadow:var(--g-shadow);
+      overflow:hidden;
+    }
+    .closing-card h2{
+      margin:0;
+      color:#fff;
+      font-size:clamp(2rem,3.2vw,3.65rem);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      max-width:930px;
+    }
+    .closing-card p{
+      color:#d5e4fa;
+      margin:14px 0 0;
+      line-height:1.7;
+      max-width:740px;
+    }
+
+    .footer{
+      background:#06142f;
+      color:#fff;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+    .footer-inner{
+      padding:30px 0;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:22px;
+      align-items:center;
+    }
+    .footer-brand{font-weight:950;letter-spacing:.1em;}
+    .footer-copy{color:#b8c8e2;font-size:.92rem;margin-top:4px;}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
+    .footer-links a{color:#fff;text-decoration:none;font-weight:800;font-size:.92rem;}
+    .footer-links a:hover{color:#ff9b1a;}
+    .footer-right{text-align:right;}
+
+    #grimats-cookie-notice a{color:#ff9b1a;}
+
+    @media(max-width:1050px){
+      .hero-grid,.compare-grid,.included-grid,.closing-card{grid-template-columns:1fr;}
+      .value-grid,.plans-grid,.process-grid{grid-template-columns:repeat(2,1fr);}
+      .hero-card{max-width:720px;}
+      .closing-card{padding:34px;}
+      .footer-inner{grid-template-columns:1fr;text-align:center;}
+      .footer-right{text-align:center;}
+    }
+    @media(max-width:720px){
+      .container{width:min(100% - 28px,1600px);}
+      .hero-baas{padding:118px 0 70px;}
+      .hero-proof,.value-grid,.plans-grid,.process-grid{grid-template-columns:1fr;}
+      .hero-card,.compare-card,.included-card,.plan-card{padding:24px;}
+      .plan-card.recommended{transform:none;}
+      .nav-links a:not(.nav-book){display:none;}
+      .footer-links{gap:12px;}
+    }
+  </style>
+</head>
+
+<body class="evolution-page">
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Inicio GRIMATS">
+      <span class="nav-mark" aria-hidden="true"><img src="assets/images/GRIMATS_isotipo_Transparent.png" alt=""></span>
+      <span class="nav-word">GRIMATS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#valor">Valor</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#planes">Modalidades</a>
+      <a href="g-business-intelligence.html">G‑Business Intelligence</a>
+      <a class="nav-book" href="https://wa.me/18099949227" target="_blank" rel="noopener">Conversemos</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero-baas">
+    <div class="container hero-grid">
+      <div>
+        <div class="brand-chip">G‑Evolution Partners™ + G‑Business Intelligence™</div>
+        <h1>Activa una unidad de BI sin cargar tu estructura fija.</h1>
+        <p class="lead">BI como Servicio de GRIMATS combina estrategia, reportería, automatización, analítica y acompañamiento continuo para convertir datos dispersos en decisiones claras, medibles y accionables.</p>
+        <div class="btn-row hero-actions">
+          <a class="btn btn-primary" href="#planes">Explorar modalidades <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/18099949227" target="_blank" rel="noopener">Hablar con GRIMATS</a>
+        </div>
+        <div class="hero-proof" aria-label="Beneficios principales">
+          <div class="proof-item"><strong>Think</strong><span>Priorizamos indicadores y decisiones que mueven el negocio.</span></div>
+          <div class="proof-item"><strong>Build</strong><span>Construimos reportes, modelos y automatizaciones listas para operar.</span></div>
+          <div class="proof-item"><strong>Grow</strong><span>Acompañamos al equipo para que use la información con disciplina.</span></div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Resumen del servicio">
+        <a class="mini-logo-link" href="g-business-intelligence.html" aria-label="Ver G-Business Intelligence™">
+          <img class="mini-logo" src="assets/images/G-Business_Intelligence.png" alt="G-Business Intelligence™">
+        </a>
+        <h2>Una capacidad, no una persona aislada.</h2>
+        <p>En lugar de depender de una contratación única, accedes a un modelo continuo con perfiles complementarios: negocio, datos, visualización, automatización e inteligencia artificial.</p>
+        <div class="flow-list">
+          <div class="flow-item"><div class="flow-dot">1</div><div><strong>Diagnóstico y priorización</strong><span>Definimos qué información debe existir primero para generar impacto.</span></div></div>
+          <div class="flow-item"><div class="flow-dot">2</div><div><strong>Dashboards y automatización</strong><span>Convertimos datos operativos en reportes ejecutivos y rutinas automáticas.</span></div></div>
+          <div class="flow-item"><div class="flow-dot">3</div><div><strong>Seguimiento continuo</strong><span>Medimos adopción, valor generado y nuevas oportunidades de mejora.</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="valor" class="section soft">
+    <div class="container">
+      <div class="eyebrow">Tecnología que realmente te da resultados</div>
+      <h2 class="section-title">Diseñado para empresas que necesitan visibilidad sin esperar una transformación completa.</h2>
+      <p class="section-intro">El objetivo no es producir reportes por producir. Es crear una rutina de información que ayude a controlar el negocio, detectar oportunidades y tomar mejores decisiones.</p>
+      <div class="value-grid">
+        <article class="value-card"><div class="value-num">01</div><h3>Visibilidad gerencial</h3><p>Indicadores priorizados para que gerencia vea ventas, costos, productividad, cartera, gastos o rentabilidad sin depender de archivos manuales.</p></article>
+        <article class="value-card"><div class="value-num">02</div><h3>Menos carga operativa</h3><p>Automatización gradual de limpieza, actualización y distribución de información para reducir tareas repetitivas y errores de preparación.</p></article>
+        <article class="value-card"><div class="value-num">03</div><h3>Evolución continua</h3><p>Un modelo mensual que permite avanzar por prioridades: primero lo crítico, luego lo estratégico y finalmente lo escalable.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Por qué BI como Servicio</div>
+      <h2 class="section-title">Reduce el riesgo de depender de una sola posición y acelera la entrega de valor.</h2>
+      <div class="compare-grid">
+        <article class="compare-card">
+          <span class="compare-label">Modelo tradicional</span>
+          <h3>Contratar un analista interno</h3>
+          <p>Puede ser una buena decisión cuando ya tienes procesos, herramientas, datos y una ruta clara. Pero al inicio suele concentrar demasiadas funciones en una sola persona.</p>
+          <ul>
+            <li>Capacidad limitada a un perfil específico.</li>
+            <li>Curva de aprendizaje y riesgo de dependencia.</li>
+            <li>Mayor presión para definir prioridades, gobierno y arquitectura desde dentro.</li>
+          </ul>
+        </article>
+        <article class="compare-card featured">
+          <span class="compare-label">Modelo GRIMATS</span>
+          <h3>Activar una unidad de BI como servicio</h3>
+          <p>Accedes a una capacidad flexible que combina visión consultiva, desarrollo, automatización y acompañamiento para producir resultados desde el primer ciclo.</p>
+          <ul>
+            <li>Equipo con perfiles complementarios según prioridad.</li>
+            <li>Mayor velocidad para iniciar dashboards, KPIs y automatizaciones.</li>
+            <li>Roadmap mensual conectado a resultados de negocio.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="incluye" class="section soft">
+    <div class="container">
+      <div class="eyebrow">Qué incluye</div>
+      <h2 class="section-title">Una capacidad mensual para construir, operar y mejorar tu ecosistema de información.</h2>
+      <div class="included-grid">
+        <article class="included-card">
+          <h3>Componentes del servicio</h3>
+          <p>El alcance se prioriza mensualmente según impacto, urgencia y madurez de datos.</p>
+          <div class="included-list">
+            <div class="included-item"><div class="check">✓</div><div><strong>KPIs y tableros ejecutivos</strong><span>Diseño de indicadores, vistas gerenciales y reportes operativos.</span></div></div>
+            <div class="included-item"><div class="check">✓</div><div><strong>Automatización de datos</strong><span>Reducción de archivos manuales, consolidaciones repetitivas y pasos innecesarios.</span></div></div>
+            <div class="included-item"><div class="check">✓</div><div><strong>Modelado y calidad de datos</strong><span>Estructuras más limpias, consistentes y listas para análisis.</span></div></div>
+            <div class="included-item"><div class="check">✓</div><div><strong>Acompañamiento gerencial</strong><span>Sesiones de revisión, priorización y evolución continua.</span></div></div>
+          </div>
+        </article>
+        <div class="stat-stack">
+          <div class="stat-card"><strong>Rápido inicio</strong><span>Ideal para empresas que necesitan reportería sin montar desde cero un departamento completo.</span></div>
+          <div class="stat-card orange"><strong>Escalable</strong><span>La capacidad puede crecer según nuevos procesos, usuarios, fuentes de datos y decisiones.</span></div>
+          <div class="stat-card"><strong>Enfoque práctico</strong><span>Priorizamos información accionable sobre complejidad técnica innecesaria.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planes" class="section plans-section">
+    <div class="container">
+      <div class="eyebrow">Modalidades mensuales</div>
+      <h2 class="section-title">Comienza con la capacidad que necesitas hoy y evoluciona según resultados.</h2>
+      <p class="section-intro">Los montos son referencias base. El alcance final se define según volumen de fuentes, complejidad de reportes, frecuencia de actualización y nivel de acompañamiento.</p>
+      <div class="plans-grid">
+        <article class="plan-card">
+          <h3>BI Esencial</h3>
+          <div class="price">RD$20K <small>/ mes</small></div>
+          <p>Para empresas que necesitan ordenar y administrar su ecosistema de reportería con una capacidad mensual controlada.</p>
+          <ul>
+            <li>Roadmap mensual de prioridades y mejoras.</li>
+            <li>Equivalente a un analista senior dedicado por 1 semana al mes.</li>
+            <li>Administración funcional del ecosistema de BI.</li>
+            <li>Seguimiento de avances, pendientes y próximos pasos.</li>
+          </ul>
+          <div class="fit">Ideal para mantener la reportería activa, organizada y bajo una ruta clara sin contratar una posición fija completa.</div>
+          <span class="plan-tag">1 semana senior / mes</span>
+        </article>
+
+        <article class="plan-card recommended">
+          <div class="badge">Recomendado</div>
+          <h3>BI Evolución</h3>
+          <div class="price">RD$50K <small>/ mes</small></div>
+          <p>Para empresas que quieren acelerar la evolución de BI, reducir carga manual y fortalecer la estrategia de información.</p>
+          <ul>
+            <li>Todo lo incluido en BI Esencial.</li>
+            <li>Equivalente a 3 semanas de un analista senior al mes.</li>
+            <li>Roadmap trimestral de evolución y priorización.</li>
+            <li>SLA de emergencias incluido.</li>
+            <li>Acompañamiento en el desarrollo de la estrategia de BI de la empresa.</li>
+          </ul>
+          <div class="fit">Ideal para organizaciones que necesitan mayor continuidad, soporte ante urgencias y dirección estratégica para su ecosistema analítico.</div>
+          <span class="plan-tag">3 semanas senior / mes</span>
+        </article>
+
+        <article class="plan-card">
+          <h3>BI Estratégico</h3>
+          <div class="price">RD$80K <small>/ mes</small></div>
+          <p>Para convertir BI y AI en capacidades estratégicas, gestionadas con mayor profundidad, continuidad y visión de madurez.</p>
+          <ul>
+            <li>Equivalente a un analista senior semi dedicado full time.</li>
+            <li>Acompañamiento para evolucionar en los niveles de madurez de BI y AI.</li>
+            <li>Gobierno, arquitectura y mejora continua del ecosistema de información.</li>
+            <li>Mayor capacidad de ejecución, seguimiento ejecutivo y gestión de iniciativas.</li>
+            <li>Priorización de oportunidades de automatización, analítica e inteligencia artificial.</li>
+          </ul>
+          <div class="fit">Ideal para empresas que quieren hacer de BI y AI una ventaja competitiva sostenible, no solo un conjunto de reportes.</div>
+          <span class="plan-tag">Senior semi dedicado full time</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container">
+      <div class="eyebrow">Método de trabajo</div>
+      <h2 class="section-title">Un ciclo mensual simple: priorizar, construir, medir y evolucionar.</h2>
+      <p class="section-intro">La operación se mantiene enfocada en resultados concretos, no en una lista infinita de requerimientos sin orden.</p>
+      <div class="process-grid">
+        <article class="process-card"><div class="process-step">1</div><h3>Priorizamos</h3><p>Identificamos decisiones, indicadores y dolores operativos con mayor impacto.</p></article>
+        <article class="process-card"><div class="process-step">2</div><h3>Construimos</h3><p>Desarrollamos reportes, modelos, automatizaciones o mejoras según el ciclo definido.</p></article>
+        <article class="process-card"><div class="process-step">3</div><h3>Validamos</h3><p>Revisamos resultados con usuarios clave, ajustamos interpretación y usabilidad.</p></article>
+        <article class="process-card"><div class="process-step">4</div><h3>Evolucionamos</h3><p>Definimos el siguiente bloque de valor y fortalecemos la adopción.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="contacto">
+    <div class="container">
+      <div class="closing-card">
+        <div>
+          <div class="eyebrow">Próximo paso</div>
+          <h2>En una conversación breve identificamos la primera oportunidad de alto impacto.</h2>
+          <p>Validamos tus fuentes de datos, dolores de reportería, prioridades gerenciales y modalidad recomendada antes de comprometer una implementación extensa.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://wa.me/18099949227" target="_blank" rel="noopener">Conversemos <span aria-hidden="true">→</span></a>
+          <a class="btn btn-light" href="mailto:Ventas@grimats.com">Ventas@grimats.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand"><a href="index.html" aria-label="Inicio GRIMATS">GRIMATS</a></div>
+      <div class="footer-copy">Tecnología que realmente te da resultados.</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="g-evolution-partners.html">G‑Evolution Partners</a>
+      <a href="g-business-intelligence.html">G‑Business Intelligence</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+    </div>
+    <div class="footer-right">
+      <div class="footer-copy">© 2026 GRIMATS</div>
+      <div class="footer-copy">Santo Domingo, República Dominicana</div>
+    </div>
+  </div>
+</footer>
+
+<!-- GRIMATS - Aviso simple de cookies -->
+<div id="grimats-cookie-notice" style="
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 99999;
+  display: none;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #06142f;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  padding: 18px 20px;
+  font-family: Arial, sans-serif;">
+  <div style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+    <div style="flex:1 1 620px;">
+      <strong style="font-size:16px;color:#ffffff;">Uso de cookies</strong>
+      <p style="margin:6px 0 0; line-height:1.45; color:#dbe7ff;">
+        Este sitio utiliza cookies y herramientas de medición para analizar el tráfico,
+        mejorar la experiencia y entender el interés en nuestros servicios. Al continuar
+        navegando en grimats.com, aceptas su uso conforme a nuestra
+        <a href="politica-privacidad.html" style="color:#ff8a00; text-decoration:underline;">
+          Política de Privacidad
+        </a>.
+      </p>
+    </div>
+
+    <button type="button" onclick="grimatsAcceptCookieNotice()" style="
+      border:0;
+      background:linear-gradient(90deg, #005cff, #ff6a00);
+      color:#ffffff;
+      padding:11px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:800;
+    ">
+      Entendido
+    </button>
+  </div>
+</div>
+
+<script>
+  function grimatsAcceptCookieNotice() {
+    localStorage.setItem("grimats_cookie_notice", "accepted");
+    document.getElementById("grimats-cookie-notice").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const notice = localStorage.getItem("grimats_cookie_notice");
+    if (notice !== "accepted") {
+      document.getElementById("grimats-cookie-notice").style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
