@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="referrer" content="no-referrer" />
+  <title>PuntoFlex 360 | Demo visual no indexable</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --surface: #fffaf4;
+      --surface-2: #ffffff;
+      --surface-3: #fff2df;
+      --ink: #1e1712;
+      --muted: #756b61;
+      --soft: #dfd4c8;
+      --line: #e7dccf;
+      --primary: #8b3dff;
+      --primary-dark: #5d24c7;
+      --primary-soft: #efe3ff;
+      --mint: #24b47e;
+      --mint-soft: #dff8ed;
+      --amber: #f6a529;
+      --amber-soft: #fff1d3;
+      --danger: #dc4c4c;
+      --danger-soft: #ffe2e2;
+      --blue: #2684ff;
+      --blue-soft: #e4f0ff;
+      --brown: #7a4a28;
+      --brown-soft: #f4e6da;
+      --shadow: 0 18px 55px rgba(58, 44, 34, .12);
+      --shadow-sm: 0 10px 30px rgba(58, 44, 34, .08);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --sidebar: 310px;
+      --topbar: 74px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(139, 61, 255, .16), transparent 32rem),
+        radial-gradient(circle at 82% 0%, rgba(36, 180, 126, .12), transparent 30rem),
+        linear-gradient(135deg, #fffaf4 0%, #f7f4ee 40%, #f1eee8 100%);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .demo-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 18px 16px 18px 18px;
+      border-right: 1px solid rgba(231, 220, 207, .8);
+      background: rgba(255, 250, 244, .88);
+      backdrop-filter: blur(20px);
+      overflow-y: auto;
+      z-index: 30;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 10px 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 14px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #ff7ac8 60%, #ffc166);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      box-shadow: 0 12px 24px rgba(139, 61, 255, .26);
+    }
+
+    .brand h1 {
+      font-size: 17px;
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -.04em;
+    }
+
+    .brand p {
+      color: var(--muted);
+      margin: 4px 0 0;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid rgba(139, 61, 255, .18);
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .pill.mint { background: var(--mint-soft); color: #08764e; border-color: rgba(36, 180, 126, .22); }
+    .pill.amber { background: var(--amber-soft); color: #89530c; border-color: rgba(246, 165, 41, .24); }
+    .pill.blue { background: var(--blue-soft); color: #145eb8; border-color: rgba(38, 132, 255, .2); }
+    .pill.danger { background: var(--danger-soft); color: #a53030; border-color: rgba(220, 76, 76, .22); }
+    .pill.brown { background: var(--brown-soft); color: var(--brown); border-color: rgba(122, 74, 40, .18); }
+    .pill.gray { background: #f1eee8; color: #5e554d; border-color: #ded5ca; }
+
+    .role-panel {
+      margin: 14px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+      border-radius: 18px;
+    }
+
+    .role-panel label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .role-panel select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 10px 12px;
+      color: var(--ink);
+      font-weight: 750;
+      outline: none;
+    }
+
+    .nav-section { margin: 12px 0; }
+
+    .nav-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #5c5046;
+      padding: 11px 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 900;
+      border-radius: 12px;
+    }
+
+    .nav-title:hover { background: rgba(139, 61, 255, .06); }
+
+    .nav-items {
+      display: grid;
+      gap: 4px;
+      padding: 0 4px 0 8px;
+      max-height: 600px;
+      overflow: hidden;
+      transition: max-height .25s ease, opacity .2s ease;
+    }
+
+    .nav-section.collapsed .nav-items { max-height: 0; opacity: .35; }
+    .nav-section.collapsed .chev { transform: rotate(-90deg); }
+    .chev { transition: transform .2s ease; }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: #3a3028;
+      padding: 10px;
+      border-radius: 14px;
+      font-weight: 750;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .nav-link:hover { background: rgba(139, 61, 255, .07); }
+    .nav-link.active {
+      background: linear-gradient(135deg, rgba(139,61,255,.14), rgba(255,122,200,.10));
+      color: var(--primary-dark);
+      box-shadow: inset 0 0 0 1px rgba(139, 61, 255, .16);
+    }
+
+    .nav-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 5px 12px rgba(54,39,24,.05);
+      flex: 0 0 auto;
+    }
+
+    .nav-link.active .nav-icon { border-color: rgba(139,61,255,.28); background: var(--primary-soft); }
+
+    .main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      height: var(--topbar);
+      z-index: 25;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 22px;
+      border-bottom: 1px solid rgba(231, 220, 207, .82);
+      background: rgba(247, 244, 238, .82);
+      backdrop-filter: blur(18px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 900;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 620px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      height: 46px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 0 44px 0 46px;
+      outline: none;
+      font-weight: 650;
+      box-shadow: 0 8px 22px rgba(58, 44, 34, .05);
+    }
+
+    .search .magnify {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 15px;
+      padding: 11px 14px;
+      font-weight: 850;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 12px 26px rgba(139, 61, 255, .22);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      white-space: nowrap;
+    }
+
+    .btn:hover { filter: brightness(.98); transform: translateY(-1px); }
+    .btn.secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 18px rgba(58,44,34,.06);
+    }
+    .btn.mint { background: linear-gradient(135deg, var(--mint), #0e8e63); box-shadow: 0 12px 26px rgba(36,180,126,.22); }
+    .btn.amber { background: linear-gradient(135deg, #ffbc4b, #f18a00); box-shadow: 0 12px 26px rgba(246,165,41,.22); }
+    .btn.danger { background: linear-gradient(135deg, #ff6a6a, #c43131); box-shadow: 0 12px 26px rgba(220,76,76,.20); }
+    .btn.blue { background: linear-gradient(135deg, var(--blue), #075bc5); box-shadow: 0 12px 26px rgba(38,132,255,.20); }
+    .btn.ghost { background: transparent; color: var(--primary-dark); border: 1px solid rgba(139,61,255,.22); box-shadow: none; }
+    .btn.small { padding: 8px 10px; border-radius: 12px; min-height: 34px; font-size: 12px; }
+
+    .content {
+      padding: 22px;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .notice {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 18px;
+    }
+
+    .notice strong { font-size: 14px; }
+    .notice span { color: var(--muted); font-size: 13px; font-weight: 650; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(420px, .9fr);
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .hero-card,
+    .card,
+    .panel {
+      background: rgba(255, 250, 244, .78);
+      border: 1px solid rgba(231, 220, 207, .9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: clamp(24px, 4vw, 44px);
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      inset: -70px -60px auto auto;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,61,255,.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    h2, h3, h4, p { margin-top: 0; }
+
+    .hero-card h2 {
+      margin: 0;
+      font-size: clamp(38px, 5.4vw, 78px);
+      line-height: .92;
+      letter-spacing: -.075em;
+      max-width: 900px;
+    }
+
+    .hero-card .lead {
+      margin: 18px 0 0;
+      color: #5b5046;
+      font-size: clamp(17px, 1.6vw, 21px);
+      line-height: 1.48;
+      max-width: 840px;
+      font-weight: 610;
+    }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .mini-stat {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      min-height: 96px;
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .mini-stat span { color: var(--muted); font-weight: 700; font-size: 12px; }
+
+    .device-card {
+      padding: 22px;
+      min-height: 360px;
+      background: linear-gradient(160deg, rgba(31,23,18,.94), rgba(65,40,82,.93));
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .device-card:after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -90px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255,193,102,.35), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .mock-pos {
+      position: relative;
+      border-radius: 25px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 14px;
+      z-index: 1;
+      backdrop-filter: blur(16px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), 0 20px 45px rgba(0,0,0,.22);
+    }
+
+    .mock-pos-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .dotrow { display: flex; gap: 6px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #ff7a7a; }
+    .dot:nth-child(2) { background: #ffd166; }
+    .dot:nth-child(3) { background: #54d18a; }
+
+    .mock-screen {
+      display: grid;
+      grid-template-columns: 1fr 170px;
+      gap: 12px;
+    }
+
+    .mock-categories {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mock-tile {
+      min-height: 86px;
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .mock-tile .emoji { font-size: 28px; margin-bottom: 8px; display: block; }
+    .mock-tile b { display: block; line-height: 1.1; }
+    .mock-tile small { color: rgba(255,255,255,.65); font-weight: 650; }
+
+    .mock-cart {
+      border-radius: 18px;
+      background: rgba(255,255,255,.92);
+      color: var(--ink);
+      padding: 12px;
+    }
+
+    .cart-line, .cart-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 750;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e0d7ca;
+    }
+    .cart-total { border-bottom: 0; font-size: 16px; color: var(--primary-dark); }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 7px;
+      font-size: clamp(26px, 3vw, 42px);
+      letter-spacing: -.055em;
+      line-height: 1;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+      font-weight: 650;
+      line-height: 1.45;
+      max-width: 820px;
+    }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .grid.sidebar-layout { grid-template-columns: minmax(0, 1fr) 390px; }
+    .grid.pos-layout { grid-template-columns: minmax(0, 1fr) 420px; }
+
+    .card, .panel { padding: 18px; }
+    .card.flat { box-shadow: none; background: rgba(255,255,255,.72); }
+    .card h3, .panel h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      letter-spacing: -.035em;
+    }
+    .card p, .panel p {
+      color: var(--muted);
+      font-weight: 620;
+      line-height: 1.44;
+      margin-bottom: 12px;
+    }
+
+    .metric-card {
+      min-height: 142px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card:after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      top: -42px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(139,61,255,.08);
+    }
+
+    .metric-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; z-index: 1; }
+    .metric-label { color: var(--muted); font-size: 12px; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; }
+    .metric-value { font-size: 32px; letter-spacing: -.055em; font-weight: 950; margin: 12px 0 4px; z-index: 1; }
+    .metric-help { color: var(--muted); font-size: 13px; font-weight: 650; z-index: 1; }
+
+    .spark {
+      height: 36px;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      z-index: 1;
+    }
+    .spark span {
+      width: 10px;
+      border-radius: 999px 999px 3px 3px;
+      background: linear-gradient(180deg, rgba(139,61,255,.7), rgba(139,61,255,.24));
+      display: block;
+    }
+
+    .table-wrap { overflow-x: auto; border-radius: 18px; border: 1px solid var(--line); background: #fff; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { text-align: left; padding: 13px 14px; border-bottom: 1px solid #eee5da; vertical-align: top; }
+    th { color: #6a5f55; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; background: #fbf7f2; font-weight: 900; }
+    td { font-weight: 680; font-size: 14px; }
+    tbody tr:hover { background: #fffaf4; }
+    tr:last-child td { border-bottom: 0; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .muted { color: var(--muted); font-weight: 650; }
+
+    .bar-list { display: grid; gap: 12px; }
+    .bar-row { display: grid; gap: 7px; }
+    .bar-row .bar-meta { display:flex; justify-content:space-between; gap: 10px; font-size: 13px; font-weight: 800; }
+    .bar-track { height: 12px; border-radius: 999px; background: #efe8df; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--primary), #ff7ac8); }
+    .bar-fill.mint { background: linear-gradient(90deg, var(--mint), #75d89d); }
+    .bar-fill.amber { background: linear-gradient(90deg, #ffbc4b, #ff8b2b); }
+    .bar-fill.blue { background: linear-gradient(90deg, var(--blue), #60c0ff); }
+
+    .split-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .big-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      background: var(--primary-soft);
+      border: 1px solid rgba(139,61,255,.18);
+    }
+
+    .feature-list { display: grid; gap: 10px; margin-top: 12px; }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid var(--line);
+      font-weight: 700;
+      color: #3f362e;
+      line-height: 1.35;
+    }
+    .check {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--mint-soft);
+      color: #08764e;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .pos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .product-tile {
+      min-height: 132px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 20px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 22px rgba(58,44,34,.05);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .product-tile:hover { transform: translateY(-3px); box-shadow: 0 15px 32px rgba(58,44,34,.1); }
+    .product-tile .emoji { font-size: 32px; }
+    .product-tile b { font-size: 15px; letter-spacing: -.02em; line-height: 1.15; }
+    .product-tile small { color: var(--muted); font-weight: 700; }
+
+    .cart-panel { position: sticky; top: calc(var(--topbar) + 18px); }
+    .cart-items { display: grid; gap: 10px; margin: 14px 0; }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 15px;
+    }
+    .cart-item b { display:block; line-height: 1.16; }
+    .cart-item small { color: var(--muted); font-weight: 650; }
+    .cart-summary {
+      background: #211912;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+    .sum-row { display:flex; justify-content:space-between; gap: 10px; padding: 6px 0; color: rgba(255,255,255,.78); font-weight: 750; }
+    .sum-row.total { color: #fff; font-size: 24px; font-weight: 950; border-top: 1px solid rgba(255,255,255,.18); margin-top: 8px; padding-top: 12px; }
+
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .tab {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 13px;
+    }
+    .tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .invoice-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 20px;
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+    .invoice-top { display:flex; align-items:flex-start; justify-content:space-between; gap: 12px; }
+    .invoice-id { font-size: 22px; font-weight: 950; letter-spacing: -.045em; }
+    .invoice-meta { color: var(--muted); font-size: 13px; font-weight: 650; }
+    .timeline { display: grid; gap: 12px; position: relative; padding-left: 26px; }
+    .timeline:before { content:""; position:absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: #e7dccf; }
+    .step { position: relative; }
+    .step:before { content:""; position:absolute; left: -25px; top: 2px; width: 16px; height:16px; border-radius:50%; background: var(--mint); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+    .step.pending:before { background: var(--amber); }
+    .step.blocked:before { background: var(--danger); }
+    .step b { display:block; font-size: 14px; }
+    .step span { color: var(--muted); font-weight: 650; font-size: 13px; }
+
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 12px;
+      outline: none;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .field textarea { min-height: 92px; resize: vertical; }
+
+    .kanban { display:grid; grid-template-columns: repeat(4, minmax(230px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 6px; }
+    .kanban-col { background: rgba(255,255,255,.62); border:1px solid var(--line); border-radius: 20px; padding: 12px; min-height: 360px; }
+    .kanban-col h3 { font-size: 15px; margin-bottom: 12px; display:flex; justify-content:space-between; align-items:center; }
+    .kanban-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:12px; margin-bottom:10px; box-shadow:0 6px 18px rgba(58,44,34,.05); }
+    .kanban-card b { display:block; margin-bottom: 6px; }
+    .kanban-card small { display:block; color:var(--muted); font-weight:650; line-height:1.35; }
+
+    .matrix { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .matrix-item { padding:14px; border:1px solid var(--line); border-radius:18px; background:#fff; }
+    .matrix-item b { display:block; font-size:15px; margin-bottom:6px; }
+    .matrix-item span { color:var(--muted); font-weight:650; font-size:13px; line-height:1.35; display:block; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+    .flow-step {
+      position: relative;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px;
+      min-height: 130px;
+    }
+    .flow-step:not(:last-child):after {
+      content: "→";
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 950;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      border-radius: 999px;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+    }
+    .flow-step strong { display:block; font-size: 15px; margin-bottom: 8px; }
+    .flow-step span { color:var(--muted); font-weight:650; line-height:1.35; font-size:13px; }
+
+    .mobile-overlay { display:none; }
+
+    .toast {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #211912;
+      color: #fff;
+      padding: 14px 16px;
+      border-radius: 16px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.24);
+      z-index: 90;
+      display: none;
+      max-width: min(420px, calc(100vw - 44px));
+      font-weight: 750;
+      line-height: 1.35;
+    }
+    .toast.show { display: block; animation: toast-in .18s ease; }
+    @keyframes toast-in { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(31,23,18,.42);
+      backdrop-filter: blur(8px);
+      display: none;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+    .modal-backdrop.show { display: flex; }
+    .modal {
+      width: min(760px, 100%);
+      max-height: min(86vh, 840px);
+      overflow: auto;
+      background: var(--surface);
+      border-radius: 26px;
+      box-shadow: 0 30px 100px rgba(0,0,0,.28);
+      border: 1px solid var(--line);
+      padding: 22px;
+    }
+    .modal-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom: 16px; }
+    .modal-head h3 { font-size: 27px; margin:0; letter-spacing:-.05em; }
+    .modal-close { border:1px solid var(--line); background:#fff; border-radius:14px; padding: 9px 12px; font-weight:900; }
+
+    .print-ticket {
+      background: #fff;
+      border: 1px dashed #cabfaf;
+      border-radius: 18px;
+      padding: 18px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .ticket-row { display:flex; justify-content:space-between; gap: 10px; padding: 4px 0; border-bottom: 1px dashed #eee0cf; }
+    .ticket-row:last-child { border-bottom: 0; }
+
+    .hidden { display: none !important; }
+    .mb-0 { margin-bottom: 0 !important; }
+    .mt-10 { margin-top: 10px; }
+    .mt-14 { margin-top: 14px; }
+    .mt-18 { margin-top: 18px; }
+    .mt-24 { margin-top: 24px; }
+
+    @media (max-width: 1280px) {
+      :root { --sidebar: 292px; }
+      .hero { grid-template-columns: 1fr; }
+      .device-card { min-height: auto; }
+      .grid.pos-layout, .grid.sidebar-layout { grid-template-columns: 1fr; }
+      .cart-panel { position: static; }
+      .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow-step:not(:last-child):after { display: none; }
+    }
+
+    @media (max-width: 980px) {
+      .demo-shell { grid-template-columns: 1fr; }
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-102%);
+        width: min(92vw, 330px);
+        transition: transform .22s ease;
+      }
+      body.sidebar-open .sidebar { transform: translateX(0); }
+      .mobile-overlay {
+        display:block;
+        position:fixed;
+        inset:0;
+        background: rgba(31,23,18,.35);
+        z-index: 20;
+        opacity:0;
+        pointer-events:none;
+        transition: opacity .18s ease;
+      }
+      body.sidebar-open .mobile-overlay { opacity:1; pointer-events:auto; }
+      .mobile-toggle { display: inline-flex; }
+      .topbar { padding: 12px 14px; }
+      .search { max-width: none; }
+      .top-actions .role-badge { display: none; }
+      .content { padding: 16px; }
+      .hero-mini-grid, .grid.three, .grid.two, .form-grid, .matrix { grid-template-columns: 1fr; }
+      .pos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .mock-screen { grid-template-columns: 1fr; }
+      .section-head { flex-direction: column; }
+    }
+
+    @media (max-width: 580px) {
+      .topbar { height: auto; align-items: stretch; flex-direction: column; }
+      .search input { height: 42px; }
+      .top-actions { width: 100%; flex-wrap: wrap; }
+      .top-actions .btn { flex: 1; }
+      .hero-card { min-height: auto; padding: 22px; }
+      .hero-card h2 { font-size: 44px; }
+      .hero-mini-grid { grid-template-columns: 1fr 1fr; }
+      .grid.four { grid-template-columns: 1fr; }
+      .pos-grid { grid-template-columns: 1fr; }
+      .kanban { grid-template-columns: 1fr; }
+      table { min-width: 680px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="demo-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">PF</div>
+        <div>
+          <h1>PuntoFlex 360</h1>
+          <p>POS flexible · Multi-sucursal</p>
+        </div>
+      </div>
+
+      <div class="role-panel">
+        <label>Vista del usuario</label>
+        <select id="roleSelect">
+          <option value="global">Administrador global</option>
+          <option value="sucursal">Administrador de sucursal</option>
+          <option value="operador">Operador / Cajera</option>
+        </select>
+      </div>
+
+      <nav id="nav"></nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-toggle" id="mobileToggle">☰ Menú</button>
+        <div class="search">
+          <span class="magnify">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Buscar factura, RNC, producto, sucursal, NCF, orden de compra..." />
+        </div>
+        <div class="top-actions">
+          <span class="pill mint role-badge" id="branchBadge">Sucursal: Naco</span>
+          <span class="pill amber role-badge">Demo no indexable</span>
+          <button class="btn secondary small" data-action="open-checklist">Checklist</button>
+          <button class="btn small" data-route="pos">Abrir POS</button>
+        </div>
+      </header>
+
+      <section class="content" id="app"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <span class="pill blue">Prototipo visual</span>
+          <h3 id="modalTitle" class="mt-10">Detalle</h3>
+        </div>
+        <button class="modal-close" id="modalClose">Cerrar</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const currency = new Intl.NumberFormat('es-DO', { style: 'currency', currency: 'DOP', maximumFractionDigits: 0 });
+    const pct = (n) => `${n.toFixed(1)}%`;
+
+    const state = {
+      route: 'inicio',
+      role: 'global',
+      branch: 'Naco',
+      cart: [
+        { name: 'Helado 2 bolas', type: 'Receta', qty: 2, price: 180, stockRule: 'Consume 120g base + topping' },
+        { name: 'Combo Familiar', type: 'Combo', qty: 1, price: 650, stockRule: '4 pintas + 2 toppings + funda' }
+      ],
+      paymentCorrectionSaved: false,
+      deviceStatus: 'Conectado',
+      ecfStatus: 'Validado DGII'
+    };
+
+    const navGroups = [
+      { title: 'Inicio', items: [
+        { id: 'inicio', icon: '🏠', label: 'Panel ejecutivo' },
+        { id: 'mapa', icon: '🧭', label: 'Mapa del sistema' },
+        { id: 'implementacion', icon: '🚀', label: 'Implementación' }
+      ]},
+      { title: 'Operación de caja', items: [
+        { id: 'pos', icon: '🧾', label: 'Venta rápida POS' },
+        { id: 'cierre', icon: '💼', label: 'Turnos y cuadre' },
+        { id: 'correccion-cobro', icon: '🔁', label: 'Corrección de cobro' },
+        { id: 'facturas', icon: '📄', label: 'Facturas y e-CF' }
+      ]},
+      { title: 'Comercial y sucursales', items: [
+        { id: 'clientes', icon: '🏢', label: 'Clientes / RNC' },
+        { id: 'sucursales', icon: '🏬', label: 'Sucursales' },
+        { id: 'precios', icon: '🏷️', label: 'Listas de precio' },
+        { id: 'delivery', icon: '🛵', label: 'Pedidos / delivery' }
+      ]},
+      { title: 'Inventario y producción', items: [
+        { id: 'inventario', icon: '📦', label: 'Inventario ERP' },
+        { id: 'recetas', icon: '🍨', label: 'Recetas y combos' },
+        { id: 'produccion', icon: '⚙️', label: 'Producción' },
+        { id: 'transferencias', icon: '🚚', label: 'Transferencias' }
+      ]},
+      { title: 'Compras y finanzas', items: [
+        { id: 'compras', icon: '🛒', label: 'Compras' },
+        { id: 'contabilidad', icon: '📚', label: 'Contabilidad básica' },
+        { id: 'estado-resultados', icon: '📈', label: 'Estado resultados' },
+        { id: 'bancos', icon: '🏦', label: 'Bancos y conciliación' }
+      ]},
+      { title: 'Integraciones y control', items: [
+        { id: 'pagos', icon: '💳', label: 'Pagos y Verifone' },
+        { id: 'dgii', icon: '🏛️', label: 'DGII / 606-607-608' },
+        { id: 'reporteria', icon: '📊', label: 'Reportería BI' },
+        { id: 'usuarios', icon: '🔐', label: 'Usuarios y auditoría' },
+        { id: 'fase2', icon: '🍽️', label: 'Fase 2 restaurante' }
+      ]}
+    ];
+
+    const branches = [
+      { name: 'Naco', sales: 432500, tickets: 1218, avg: 355, margin: 61.2, status: 'Activa', stock: 92 },
+      { name: 'Piantini', sales: 386200, tickets: 1042, avg: 371, margin: 58.8, status: 'Activa', stock: 81 },
+      { name: 'Santiago', sales: 512900, tickets: 1506, avg: 341, margin: 62.4, status: 'Activa', stock: 76 },
+      { name: 'Bávaro', sales: 298300, tickets: 862, avg: 346, margin: 55.1, status: 'Alerta inventario', stock: 44 }
+    ];
+
+    const inventoryRows = [
+      { sku: 'MP-BASE-VAN', item: 'Base vainilla premium', type: 'Materia prima', branch: 'Central', stock: '84.5 kg', min: '35 kg', cost: 235, state: 'OK' },
+      { sku: 'MP-CACAO', item: 'Cacao orgánico', type: 'Materia prima', branch: 'Central', stock: '18.2 kg', min: '20 kg', cost: 420, state: 'Reorden' },
+      { sku: 'PT-PINTA-FR', item: 'Pinta fresa 16oz', type: 'Producto terminado', branch: 'Naco', stock: '124 und', min: '80 und', cost: 98, state: 'OK' },
+      { sku: 'INS-CUCHARA', item: 'Cucharas biodegradables', type: 'Insumo', branch: 'Bávaro', stock: '260 und', min: '500 und', cost: 1.8, state: 'Bloquear venta combo' },
+      { sku: 'TOP-OREO', item: 'Topping galleta', type: 'Ingrediente', branch: 'Piantini', stock: '7.4 kg', min: '8 kg', cost: 180, state: 'Alerta' }
+    ];
+
+    const recipes = [
+      { code: 'REC-H2B', name: 'Helado 2 bolas', yield: '1 servicio', cost: 72, price: 180, margin: 60, components: ['Base helado 120g', 'Topping 18g', 'Vaso 1 und', 'Cuchara 1 und'] },
+      { code: 'REC-BAT', name: 'Batida premium', yield: '16oz', cost: 105, price: 260, margin: 59.6, components: ['Base helado 90g', 'Leche 180ml', 'Sirope 20ml', 'Vaso 16oz'] },
+      { code: 'COM-FAM', name: 'Combo Familiar', yield: '1 combo', cost: 350, price: 650, margin: 46.2, components: ['Pinta x4', 'Topping x2', 'Funda térmica x1'] }
+    ];
+
+    const purchaseRows = [
+      { doc: 'OC-2026-1182', supplier: 'Lácteos del Valle', status: 'Pendiente recepción', amount: 183500, eta: 'Hoy 3:00 PM', effect: 'No afecta inventario hasta recepción' },
+      { doc: 'OC-2026-1179', supplier: 'Empaques Eco RD', status: 'Recibida parcial', amount: 72500, eta: '60% recibido', effect: 'Entrada parcial + CxP provisional' },
+      { doc: 'GAS-2026-044', supplier: 'Energía / Servicios', status: 'Contabilizado', amount: 38500, eta: 'Cierre agosto', effect: 'Gasto operativo sucursal Naco' }
+    ];
+
+    const invoiceRows = [
+      { doc: 'E31-00000481', client: 'Consumidor Final', branch: 'Naco', amount: 1180, method: 'Efectivo', status: 'e-CF aceptado', issue: 'Sin novedad' },
+      { doc: 'E32-00000154', client: 'Dulce Norte SRL', branch: 'Santiago', amount: 18250, method: 'Tarjeta', status: 'e-CF aceptado', issue: 'Crédito fiscal' },
+      { doc: 'E31-00000482', client: 'Consumidor Final', branch: 'Piantini', amount: 740, method: 'Efectivo', status: 'Pendiente corrección cobro', issue: 'Operador marcó efectivo; pago fue tarjeta' }
+    ];
+
+    const pnlRows = [
+      { label: 'Ventas netas', naco: 432500, piantini: 386200, santiago: 512900, bavaro: 298300, total: 1629900 },
+      { label: 'Costo de venta', naco: -167800, piantini: -159100, santiago: -192900, bavaro: -133900, total: -653700 },
+      { label: 'Utilidad bruta', naco: 264700, piantini: 227100, santiago: 320000, bavaro: 164400, total: 976200 },
+      { label: 'Gastos operativos', naco: -85500, piantini: -74300, santiago: -104400, bavaro: -69300, total: -333500 },
+      { label: 'EBITDA operativo', naco: 179200, piantini: 152800, santiago: 215600, bavaro: 95100, total: 642700 }
+    ];
+
+    const permissions = {
+      global: ['dashboard global', 'todas las sucursales', 'estado resultados', 'configuración', 'DGII', 'compras', 'inventario completo', 'usuarios'],
+      sucursal: ['POS', 'cierre de caja', 'inventario sucursal', 'transferencias', 'reportes sucursal', 'compras solicitadas'],
+      operador: ['POS', 'reimprimir ticket', 'cobrar', 'crear cliente básico', 'solicitar corrección de cobro']
+    };
+
+    function renderNav() {
+      const nav = document.getElementById('nav');
+      nav.innerHTML = navGroups.map((group, idx) => `
+        <div class="nav-section ${idx > 2 ? 'collapsed' : ''}">
+          <button class="nav-title" type="button" data-toggle-section>
+            <span>${group.title}</span><span class="chev">⌄</span>
+          </button>
+          <div class="nav-items">
+            ${group.items.map(item => `
+              <button class="nav-link ${state.route === item.id ? 'active' : ''}" data-route="${item.id}">
+                <span class="nav-icon">${item.icon}</span>
+                <span>${item.label}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function pageShell(title, description, inner, actions = '') {
+      return `
+        <div class="notice">
+          <div>
+            <strong>Demo visual no indexable · Datos simulados</strong><br />
+            <span>Incluye meta robots noindex/nofollow. Para producción conviene complementar con robots.txt y encabezado X-Robots-Tag desde el servidor.</span>
+          </div>
+          <span class="pill amber">Solo mock HTML</span>
+        </div>
+        <div class="section-head">
+          <div>
+            <h2>${title}</h2>
+            <p>${description}</p>
+          </div>
+          <div class="hero-actions">${actions}</div>
+        </div>
+        ${inner}
+      `;
+    }
+
+    function metric(label, value, help, tag = '', spark = [30, 50, 38, 70, 55, 80, 64]) {
+      return `
+        <div class="card metric-card">
+          <div class="metric-top">
+            <div class="metric-label">${label}</div>
+            ${tag ? `<span class="pill ${tag.class || ''}">${tag.text}</span>` : ''}
+          </div>
+          <div>
+            <div class="metric-value">${value}</div>
+            <div class="metric-help">${help}</div>
+          </div>
+          <div class="spark">${spark.map(h => `<span style="height:${h}%"></span>`).join('')}</div>
+        </div>
+      `;
+    }
+
+    function statusPill(text) {
+      const lower = text.toLowerCase();
+      let cls = 'gray';
+      if (lower.includes('ok') || lower.includes('activa') || lower.includes('aceptado') || lower.includes('validado') || lower.includes('conectado') || lower.includes('contabilizado')) cls = 'mint';
+      if (lower.includes('alerta') || lower.includes('pendiente') || lower.includes('parcial') || lower.includes('reorden')) cls = 'amber';
+      if (lower.includes('bloquear') || lower.includes('error') || lower.includes('rechazado')) cls = 'danger';
+      if (lower.includes('dgii') || lower.includes('e-cf')) cls = 'blue';
+      return `<span class="pill ${cls}">${text}</span>`;
+    }
+
+    function renderInicio() {
+      const totalSales = branches.reduce((sum, b) => sum + b.sales, 0);
+      const totalTickets = branches.reduce((sum, b) => sum + b.tickets, 0);
+      const avgTicket = Math.round(totalSales / totalTickets);
+      return `
+        <div class="notice">
+          <div>
+            <strong>Demo visual no indexable · PuntoFlex 360</strong><br />
+            <span>Mock navegable para red de heladerías multi-sucursal, preparado para crecer a restaurantes, cafeterías y operaciones con recetas.</span>
+          </div>
+          <span class="pill amber">Datos simulados</span>
+        </div>
+        <div class="hero">
+          <div class="hero-card">
+            <div class="hero-eyebrow">
+              <span class="pill mint">POS táctil</span>
+              <span class="pill blue">DGII e-CF</span>
+              <span class="pill amber">Inventario ERP</span>
+              <span class="pill brown">Recetas y combos</span>
+            </div>
+            <h2>Punto de venta flexible para sucursales de heladería.</h2>
+            <p class="lead">Una plataforma web para vender, cobrar, facturar electrónicamente, controlar inventario, producir recetas, consolidar reportes y ver el estado de resultados por sucursal o por todo el negocio.</p>
+            <div class="hero-actions">
+              <button class="btn" data-route="pos">Probar pantalla de venta</button>
+              <button class="btn secondary" data-route="estado-resultados">Ver estado de resultados</button>
+              <button class="btn ghost" data-route="mapa">Ver mapa funcional</button>
+            </div>
+            <div class="hero-mini-grid">
+              <div class="mini-stat"><strong>${currency.format(totalSales)}</strong><span>Ventas consolidadas simuladas</span></div>
+              <div class="mini-stat"><strong>${totalTickets.toLocaleString('es-DO')}</strong><span>Tickets del período</span></div>
+              <div class="mini-stat"><strong>${currency.format(avgTicket)}</strong><span>Ticket promedio</span></div>
+              <div class="mini-stat"><strong>4</strong><span>Sucursales ejemplo</span></div>
+            </div>
+          </div>
+          <div class="device-card card">
+            <div class="mock-pos">
+              <div class="mock-pos-top">
+                <div class="dotrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <span class="pill mint">Caja Naco · Turno abierto</span>
+              </div>
+              <div class="mock-screen">
+                <div class="mock-categories">
+                  <div class="mock-tile"><span class="emoji">🍦</span><b>Helados</b><small>Recetas con consumo automático</small></div>
+                  <div class="mock-tile"><span class="emoji">🥤</span><b>Batidas</b><small>Base + leche + vaso</small></div>
+                  <div class="mock-tile"><span class="emoji">🎁</span><b>Combos</b><small>Productos agrupados</small></div>
+                  <div class="mock-tile"><span class="emoji">💳</span><b>Tarjeta</b><small>Verifone / virtual</small></div>
+                </div>
+                <div class="mock-cart">
+                  <b>Ticket #T-482</b>
+                  <div class="cart-line"><span>2x Helado 2 bolas</span><span>360</span></div>
+                  <div class="cart-line"><span>1x Combo familiar</span><span>650</span></div>
+                  <div class="cart-line"><span>ITBIS</span><span>182</span></div>
+                  <div class="cart-total"><span>Total</span><span>1,192</span></div>
+                  <button class="btn small mint" style="width:100%; margin-top:10px" data-action="simulate-payment">Cobrar</button>
+                </div>
+              </div>
+            </div>
+            <div class="grid two mt-18">
+              <div class="card flat"><h3>Control fiscal</h3><p>NCF/e-CF, trazabilidad, anulaciones y reportes 606/607/608.</p></div>
+              <div class="card flat"><h3>Control operativo</h3><p>No permite inventario negativo ni descuadres por documentos incompletos.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid four">
+          ${metric('Ventas hoy', currency.format(186420), '+12.4% vs. ayer · consolidado', { text: 'En vivo', class: 'mint' })}
+          ${metric('Margen bruto', '59.9%', 'Calculado por recetas, combos y costo real', { text: 'Costeo', class: 'blue' }, [40,48,62,52,65,68,72])}
+          ${metric('Alertas inventario', '7', '2 bloquean combos por insumo crítico', { text: 'ERP', class: 'amber' }, [60,38,44,52,30,42,36])}
+          ${metric('e-CF pendientes', '3', 'Cola local preparada para reconexión DGII', { text: 'DGII', class: 'blue' }, [25,45,30,60,35,55,42])}
+        </div>
+
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel">
+            <div class="section-head mb-0">
+              <div>
+                <h2 style="font-size:30px">Ventas por sucursal</h2>
+                <p>Vista para administrador global: compara sucursales, tickets, margen y salud de inventario.</p>
+              </div>
+              <button class="btn secondary small" data-route="sucursales">Abrir sucursales</button>
+            </div>
+            <div class="table-wrap mt-14">
+              <table>
+                <thead><tr><th>Sucursal</th><th class="num">Ventas</th><th class="num">Tickets</th><th class="num">Ticket prom.</th><th class="num">Margen</th><th>Estado</th></tr></thead>
+                <tbody>${branches.map(b => `<tr><td>${b.name}</td><td class="num">${currency.format(b.sales)}</td><td class="num">${b.tickets}</td><td class="num">${currency.format(b.avg)}</td><td class="num">${pct(b.margin)}</td><td>${statusPill(b.status)}</td></tr>`).join('')}</tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Flujos críticos incluidos</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>Un RNC puede tener múltiples sucursales, almacenes, cajas y usuarios.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Recetas descuentan materia prima según regla de consumo.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Combos agrupan productos sin romper inventario ni costeo.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Corrección de método de cobro sin alterar la factura fiscal original.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Pago con dispositivo local, enlace virtual o conciliación manual controlada.</span></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMapa() {
+      return pageShell('Mapa funcional del sistema', 'Arquitectura conceptual del mock: venta, fiscal, inventario, producción, compras, contabilidad y reportería conectados por documentos transaccionales.', `
+        <div class="panel">
+          <div class="flow">
+            <div class="flow-step"><strong>1. Venta POS</strong><span>Cajera selecciona productos, recetas o combos. Valida existencia antes de cobrar.</span></div>
+            <div class="flow-step"><strong>2. Cobro</strong><span>Efectivo, tarjeta local Verifone, link virtual, transferencia o mixto.</span></div>
+            <div class="flow-step"><strong>3. Factura e-CF</strong><span>Emite NCF/e-CF, guarda trazabilidad y maneja reintentos DGII.</span></div>
+            <div class="flow-step"><strong>4. Inventario</strong><span>Descuenta productos, ingredientes o receta; crea kardex automático.</span></div>
+            <div class="flow-step"><strong>5. Contabilidad</strong><span>Asientos automáticos para ventas, costo, impuestos, caja, banco y CxC.</span></div>
+          </div>
+        </div>
+        <div class="grid three mt-18">
+          ${['POS táctil', 'Clientes / RNC', 'Sucursales', 'Inventario ERP', 'Recetas', 'Producción', 'Compras', 'Contabilidad', 'DGII', 'Pagos', 'BI', 'Usuarios'].map((m, i) => `
+            <div class="card split-card">
+              <div class="big-icon">${['🧾','🏢','🏬','📦','🍨','⚙️','🛒','📚','🏛️','💳','📊','🔐'][i]}</div>
+              <div><h3>${m}</h3><p>${moduleDescription(m)}</p><button class="btn secondary small" data-route="${moduleRoute(m)}">Abrir módulo</button></div>
+            </div>`).join('')}
+        </div>
+        <div class="panel mt-18">
+          <h3>Reglas transaccionales tipo ERP</h3>
+          <div class="matrix">
+            <div class="matrix-item"><b>No inventario negativo</b><span>La venta se bloquea si producto, ingrediente o insumo crítico queda por debajo de cero o del mínimo configurado.</span></div>
+            <div class="matrix-item"><b>Documento cerrado no se edita</b><span>Factura aceptada por DGII queda intacta; los cambios crean documentos complementarios controlados.</span></div>
+            <div class="matrix-item"><b>Kardex obligatorio</b><span>Cada entrada, salida, ajuste, transferencia, producción o merma genera movimiento trazable.</span></div>
+            <div class="matrix-item"><b>Contabilidad automática</b><span>Venta, costo, ITBIS, caja, bancos, CxC, CxP y gastos generan asientos base auditables.</span></div>
+          </div>
+        </div>
+      `);
+    }
+
+    function moduleDescription(m) {
+      const map = {
+        'POS táctil': 'Venta rápida por categorías, favoritos, combos, facturación y cobro integrado.',
+        'Clientes / RNC': 'Entidad legal única con múltiples sucursales, condiciones comerciales y contactos.',
+        'Sucursales': 'Cajas, almacenes, usuarios, metas, ventas y rentabilidad por punto físico.',
+        'Inventario ERP': 'Multi-almacén, mínimos, lotes, vencimientos, kardex y bloqueo por descuadre.',
+        'Recetas': 'Productos que consumen ingredientes según formulación y costo estándar/real.',
+        'Producción': 'Órdenes de producción, consumo de insumos, producto terminado y merma.',
+        'Compras': 'Requisiciones, órdenes, recepción, gastos, suplidores y CxP.',
+        'Contabilidad': 'Catálogo básico, asientos automáticos, CxC, CxP, bancos y gastos.',
+        'DGII': 'Facturación electrónica, NCF, 606/607/608, trazabilidad y contingencias.',
+        'Pagos': 'Verifone local, Cardnet/Azul, link virtual, conciliación y correcciones.',
+        'BI': 'Reportería por sucursal y consolidada: ventas, margen, inventario y finanzas.',
+        'Usuarios': 'Roles, permisos, auditoría, aprobaciones y bloqueo de acciones críticas.'
+      };
+      return map[m] || 'Módulo operativo.';
+    }
+    function moduleRoute(m) {
+      const map = { 'POS táctil':'pos','Clientes / RNC':'clientes','Sucursales':'sucursales','Inventario ERP':'inventario','Recetas':'recetas','Producción':'produccion','Compras':'compras','Contabilidad':'contabilidad','DGII':'dgii','Pagos':'pagos','BI':'reporteria','Usuarios':'usuarios' };
+      return map[m] || 'inicio';
+    }
+
+    function renderPOS() {
+      const subtotal = state.cart.reduce((sum, item) => sum + (item.qty * item.price), 0);
+      const tax = subtotal * .18;
+      const total = subtotal + tax;
+      const products = [
+        ['🍦','Helado 1 bola','Receta','120'], ['🍨','Helado 2 bolas','Receta','180'], ['🥤','Batida premium','Receta','260'], ['🍫','Brownie con helado','Combo','320'],
+        ['🎁','Combo Familiar','Combo','650'], ['🍓','Pinta fresa 16oz','Producto','285'], ['🍪','Topping extra','Ingrediente','45'], ['☕','Café frío','Producto','150']
+      ];
+      return pageShell('Venta rápida POS', 'Pantalla táctil para caja física. Maneja productos simples, productos receta, combos, cobro con tarjeta/local o virtual, factura fiscal y descuento automático de inventario.', `
+        <div class="grid pos-layout">
+          <div>
+            <div class="tabs">
+              <button class="tab active">Favoritos</button><button class="tab">Helados</button><button class="tab">Batidas</button><button class="tab">Combos</button><button class="tab">Toppings</button><button class="tab">Delivery</button>
+            </div>
+            <div class="pos-grid">
+              ${products.map(p => `<button class="product-tile" data-add-product="${p[1]}" data-price="${p[3]}"><span class="emoji">${p[0]}</span><div><b>${p[1]}</b><small>${p[2]} · RD$${p[3]}</small></div></button>`).join('')}
+            </div>
+            <div class="grid three mt-18">
+              <div class="card"><h3>Validación inventario</h3><p>Antes de cobrar valida ingredientes, insumos críticos, producto terminado y almacén de la sucursal.</p>${statusPill('Sin inventario negativo')}</div>
+              <div class="card"><h3>Factura fiscal</h3><p>Emite consumidor final, crédito fiscal, gubernamental o nota según configuración DGII.</p>${statusPill(state.ecfStatus)}</div>
+              <div class="card"><h3>Modo sucursal física</h3><p>Permite integración local con impresora, caja, lector y dispositivo de tarjeta.</p>${statusPill('Dispositivo ' + state.deviceStatus)}</div>
+            </div>
+          </div>
+          <aside class="panel cart-panel">
+            <div class="invoice-top">
+              <div><span class="pill mint">Turno #TUR-0826</span><h3 class="mt-10">Ticket en curso</h3></div>
+              <button class="btn secondary small" data-action="clear-cart">Limpiar</button>
+            </div>
+            <div class="cart-items">
+              ${state.cart.map((item, idx) => `<div class="cart-item"><div><b>${item.qty}× ${item.name}</b><small>${item.type} · ${item.stockRule}</small></div><div><b>${currency.format(item.qty * item.price)}</b><button class="btn secondary small mt-10" data-remove-item="${idx}">Quitar</button></div></div>`).join('')}
+            </div>
+            <div class="cart-summary">
+              <div class="sum-row"><span>Subtotal</span><span>${currency.format(subtotal)}</span></div>
+              <div class="sum-row"><span>ITBIS 18%</span><span>${currency.format(tax)}</span></div>
+              <div class="sum-row"><span>Descuento</span><span>${currency.format(0)}</span></div>
+              <div class="sum-row total"><span>Total</span><span>${currency.format(total)}</span></div>
+            </div>
+            <div class="grid two mt-14">
+              <button class="btn mint" data-action="simulate-payment">Cobrar tarjeta</button>
+              <button class="btn amber" data-action="simulate-cash">Cobrar efectivo</button>
+              <button class="btn secondary" data-action="hold-ticket">Pausar venta</button>
+              <button class="btn blue" data-action="print-ticket">Emitir e-CF</button>
+            </div>
+          </aside>
+        </div>
+      `, `<button class="btn secondary" data-route="pagos">Configurar pagos</button><button class="btn" data-route="facturas">Ver facturas</button>`);
+    }
+
+    function renderCierre() {
+      return pageShell('Turnos, caja y cuadre', 'Controla apertura/cierre de turno por operador, efectivo esperado, tarjetas confirmadas, descuadres, caja chica, desembolsos y aprobación del administrador.', `
+        <div class="grid four">
+          ${metric('Efectivo esperado', currency.format(48250), 'Según ventas en efectivo', { text: 'Caja 01', class:'mint' })}
+          ${metric('Tarjeta confirmada', currency.format(92340), 'Autorizaciones recibidas', { text:'Verifone', class:'blue' })}
+          ${metric('Descuadre actual', currency.format(250), 'Pendiente revisión', { text:'Alerta', class:'amber' }, [20,15,25,10,22,12,18])}
+          ${metric('Ventas anuladas', '2', 'Requieren aprobación', { text:'Control', class:'danger' }, [30,24,18,22,16,12,10])}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel">
+            <h3>Detalle de cuadre por método</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Método</th><th class="num">Sistema</th><th class="num">Declarado</th><th class="num">Diferencia</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>Efectivo</td><td class="num">${currency.format(48250)}</td><td class="num">${currency.format(48000)}</td><td class="num">${currency.format(-250)}</td><td>${statusPill('Pendiente explicación')}</td></tr>
+                  <tr><td>Tarjeta local</td><td class="num">${currency.format(92340)}</td><td class="num">${currency.format(92340)}</td><td class="num">${currency.format(0)}</td><td>${statusPill('OK')}</td></tr>
+                  <tr><td>Link virtual</td><td class="num">${currency.format(18200)}</td><td class="num">${currency.format(18200)}</td><td class="num">${currency.format(0)}</td><td>${statusPill('Conciliado')}</td></tr>
+                  <tr><td>Transferencia</td><td class="num">${currency.format(7500)}</td><td class="num">${currency.format(7500)}</td><td class="num">${currency.format(0)}</td><td>${statusPill('Validado')}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Acciones de cierre</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>Bloquea facturas nuevas al cerrar turno.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Genera asiento de caja y depósito pendiente.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Envía alertas al administrador si hay descuadre.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Adjunta comprobante de cierre de Verifone.</span></div>
+            </div>
+            <button class="btn mint mt-18" data-action="close-shift" style="width:100%">Cerrar turno y enviar a revisión</button>
+          </div>
+        </div>
+      `);
+    }
+
+    function renderCorreccionCobro() {
+      return pageShell('Corrección de método de cobro', 'Flujo diseñado para errores operativos: la factura fiscal queda normal e intacta; se genera un documento de corrección de cobro que reclasifica caja/banco con autorización y auditoría.', `
+        <div class="grid sidebar-layout">
+          <div class="panel">
+            <div class="invoice-card">
+              <div class="invoice-top">
+                <div>
+                  <div class="invoice-id">Factura E31-00000482</div>
+                  <div class="invoice-meta">Sucursal Piantini · Cajera Laura M. · Total ${currency.format(740)} · Cliente Consumidor Final</div>
+                </div>
+                ${statusPill('e-CF aceptado')}
+              </div>
+              <div class="timeline">
+                <div class="step"><b>Factura emitida</b><span>Documento fiscal queda protegido. No se edita monto, NCF, cliente ni fecha.</span></div>
+                <div class="step pending"><b>Error detectado</b><span>Operador registró efectivo, pero el cliente pagó con tarjeta.</span></div>
+                <div class="step pending"><b>Documento sugerido</b><span>DC-COBRO-00017 reclasifica de caja efectivo a tarjeta/banco pendiente.</span></div>
+                <div class="step ${state.paymentCorrectionSaved ? '' : 'pending'}"><b>${state.paymentCorrectionSaved ? 'Aprobado y contabilizado' : 'Pendiente aprobación'}</b><span>${state.paymentCorrectionSaved ? 'Asiento contable generado y caja recalculada.' : 'Requiere motivo, voucher y PIN de administrador.'}</span></div>
+              </div>
+            </div>
+            <div class="panel mt-18" style="box-shadow:none;background:#fff">
+              <h3>Formulario rápido de sustitución de cobro</h3>
+              <div class="form-grid">
+                <div class="field"><label>Documento fiscal</label><input value="E31-00000482" readonly /></div>
+                <div class="field"><label>Total factura</label><input value="${currency.format(740)}" readonly /></div>
+                <div class="field"><label>Método registrado</label><select><option>Efectivo</option></select></div>
+                <div class="field"><label>Método correcto</label><select><option>Tarjeta - Verifone local</option><option>Tarjeta - link virtual</option><option>Transferencia</option><option>Mixto</option></select></div>
+                <div class="field"><label>Referencia / voucher</label><input placeholder="Ej. APROB-893014" value="APROB-893014" /></div>
+                <div class="field"><label>PIN administrador</label><input type="password" placeholder="••••" value="1234" /></div>
+                <div class="field" style="grid-column:1/-1"><label>Motivo</label><textarea>Cliente pagó con tarjeta. En caja se marcó efectivo por error operativo.</textarea></div>
+              </div>
+              <div class="hero-actions"><button class="btn mint" data-action="save-payment-correction">Guardar corrección</button><button class="btn secondary" data-action="preview-accounting">Ver asiento sugerido</button></div>
+            </div>
+          </div>
+          <aside class="panel">
+            <h3>Qué NO se cambia</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>La factura fiscal y el e-CF aceptado por DGII permanecen intactos.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>No se altera el NCF ni la secuencia fiscal.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>No se vuelve a descontar inventario.</span></div>
+            </div>
+            <h3 class="mt-18">Qué SÍ se corrige</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>Cuadre de caja por método de pago.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Cuenta contable: caja efectivo → banco/tarjeta por cobrar.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Conciliación con lote del verifone.</span></div>
+            </div>
+          </aside>
+        </div>
+      `);
+    }
+
+    function renderFacturas() {
+      return pageShell('Facturas, notas y e-CF', 'Centro de documentos fiscales: facturas, notas de crédito/débito, comprobantes electrónicos, contingencias DGII y trazabilidad de aceptación.', `
+        <div class="grid four">
+          ${metric('Facturas hoy', '418', 'Consumidor final y crédito fiscal', { text:'NCF', class:'blue' })}
+          ${metric('e-CF aceptados', '415', '99.3% aceptación automática', { text:'DGII', class:'mint' }, [45,52,60,72,78,84,90])}
+          ${metric('Pendientes cola', '3', 'Reintento por conexión', { text:'Contingencia', class:'amber' }, [10,18,14,22,19,25,20])}
+          ${metric('Notas crédito', '4', 'Con aprobación requerida', { text:'Control', class:'danger' }, [16,12,20,10,14,18,8])}
+        </div>
+        <div class="panel mt-18">
+          <div class="section-head mb-0"><div><h2 style="font-size:30px">Documentos recientes</h2><p>Incluye la situación del ejemplo donde el cobro debe corregirse sin modificar la factura.</p></div><button class="btn secondary small" data-route="correccion-cobro">Corregir cobro</button></div>
+          <div class="table-wrap mt-14">
+            <table>
+              <thead><tr><th>Documento</th><th>Cliente</th><th>Sucursal</th><th class="num">Monto</th><th>Método cobro</th><th>Estado fiscal</th><th>Observación</th><th>Acción</th></tr></thead>
+              <tbody>${invoiceRows.map(r => `<tr><td>${r.doc}</td><td>${r.client}</td><td>${r.branch}</td><td class="num">${currency.format(r.amount)}</td><td>${r.method}</td><td>${statusPill(r.status)}</td><td class="muted">${r.issue}</td><td><button class="btn secondary small" data-route="${r.issue.includes('Operador') ? 'correccion-cobro' : 'facturas'}">${r.issue.includes('Operador') ? 'Corregir cobro' : 'Ver'}</button></td></tr>`).join('')}</tbody>
+            </table>
+          </div>
+        </div>
+      `);
+    }
+
+    function renderClientes() {
+      return pageShell('Clientes / RNC con múltiples sucursales', 'Modelo comercial donde un mismo cliente legal puede tener varias ubicaciones, contactos, condiciones de crédito, facturación y reportería por sede.', `
+        <div class="grid sidebar-layout">
+          <div class="panel">
+            <h3>Ficha del cliente RNC</h3>
+            <div class="invoice-card">
+              <div class="invoice-top"><div><div class="invoice-id">Dulce Norte SRL</div><div class="invoice-meta">RNC 1-31-00000-9 · Crédito 30 días · Límite ${currency.format(250000)}</div></div>${statusPill('Activo')}</div>
+              <div class="grid three">
+                <div class="card flat"><h3>Casa matriz</h3><p>Santiago, RD · Contacto financiero y fiscal.</p></div>
+                <div class="card flat"><h3>3 sucursales</h3><p>Santiago Centro, La Vega, Puerto Plata.</p></div>
+                <div class="card flat"><h3>Condiciones</h3><p>Lista mayorista, facturación por sucursal y consolidado mensual.</p></div>
+              </div>
+            </div>
+            <div class="table-wrap mt-18">
+              <table>
+                <thead><tr><th>Sucursal cliente</th><th>Dirección</th><th>Contacto</th><th class="num">Balance CxC</th><th>Facturación</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>Santiago Centro</td><td>Calle del Sol</td><td>Ana Pérez</td><td class="num">${currency.format(38400)}</td><td>Crédito fiscal</td><td>${statusPill('Activo')}</td></tr>
+                  <tr><td>La Vega</td><td>Aut. Duarte Km 4</td><td>José Núñez</td><td class="num">${currency.format(0)}</td><td>Crédito fiscal</td><td>${statusPill('Activo')}</td></tr>
+                  <tr><td>Puerto Plata</td><td>Malecón</td><td>M. García</td><td class="num">${currency.format(12600)}</td><td>Crédito fiscal</td><td>${statusPill('Activo')}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <aside class="panel">
+            <h3>Funciones clave</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>RNC único con varias direcciones fiscales y puntos de entrega.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Estado de cuenta consolidado o por sucursal del cliente.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Condiciones de crédito, descuentos y listas de precio.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Contactos por rol: compras, contabilidad, operaciones.</span></div>
+            </div>
+            <button class="btn mt-18" data-action="new-client" style="width:100%">Nuevo cliente / RNC</button>
+          </aside>
+        </div>
+      `);
+    }
+
+    function renderSucursales() {
+      return pageShell('Gestión de sucursales', 'Cada sucursal tiene cajas, operadores, almacén, metas, inventario, ventas, gastos, rentabilidad y permisos. El administrador global ve todo consolidado.', `
+        <div class="grid four">
+          ${branches.map(b => metric(b.name, currency.format(b.sales), `${b.tickets} tickets · margen ${pct(b.margin)}`, { text: b.status, class: b.status.includes('Alerta') ? 'amber' : 'mint' }, [b.stock*.35, b.stock*.55, b.stock*.45, b.stock*.7, b.stock*.65, b.stock*.8, b.stock])) .join('')}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel">
+            <h3>Configuración operativa por sucursal</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Sucursal</th><th>Cajas</th><th>Almacenes</th><th>Usuarios</th><th>Dispositivo pago</th><th>Impresora</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>Naco</td><td>2</td><td>Venta + producción</td><td>8</td><td>Verifone VX520</td><td>Térmica red</td><td>${statusPill('Activa')}</td></tr>
+                  <tr><td>Piantini</td><td>2</td><td>Venta</td><td>6</td><td>Link virtual + POS físico</td><td>USB local</td><td>${statusPill('Activa')}</td></tr>
+                  <tr><td>Santiago</td><td>3</td><td>Venta + frío</td><td>11</td><td>Verifone ethernet</td><td>Red</td><td>${statusPill('Activa')}</td></tr>
+                  <tr><td>Bávaro</td><td>1</td><td>Venta</td><td>5</td><td>Manual conciliado</td><td>USB local</td><td>${statusPill('Alerta inventario')}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <aside class="panel">
+            <h3>Control multi-sucursal</h3>
+            <div class="bar-list">
+              ${branches.map(b => `<div class="bar-row"><div class="bar-meta"><span>${b.name}</span><span>${b.stock}% salud inventario</span></div><div class="bar-track"><div class="bar-fill ${b.stock < 55 ? 'amber' : 'mint'}" style="width:${b.stock}%"></div></div></div>`).join('')}
+            </div>
+          </aside>
+        </div>
+      `);
+    }
+
+    function renderPrecios() {
+      return pageShell('Listas de precio y promociones', 'Define precios por sucursal, horario, tipo de cliente, canal de venta y combos promocionales sin perder control de margen.', `
+        <div class="grid three">
+          <div class="card"><h3>Lista retail</h3><p>Precio base para consumidor final. Puede variar por sucursal turística o temporada.</p>${statusPill('Activa')}</div>
+          <div class="card"><h3>Lista mayorista</h3><p>Aplicable a clientes RNC con acuerdo comercial y mínimos de compra.</p>${statusPill('Con margen mínimo')}</div>
+          <div class="card"><h3>Happy hour</h3><p>Promoción por rango horario con bloqueo si margen cae debajo de umbral.</p>${statusPill('Programada')}</div>
+        </div>
+        <div class="panel mt-18"><h3>Matriz de precios</h3><div class="table-wrap"><table><thead><tr><th>Producto</th><th>Retail</th><th>Mayorista</th><th>Delivery</th><th>Bávaro turístico</th><th>Margen mínimo</th></tr></thead><tbody><tr><td>Helado 2 bolas</td><td>${currency.format(180)}</td><td>${currency.format(155)}</td><td>${currency.format(205)}</td><td>${currency.format(210)}</td><td>45%</td></tr><tr><td>Combo Familiar</td><td>${currency.format(650)}</td><td>${currency.format(590)}</td><td>${currency.format(710)}</td><td>${currency.format(760)}</td><td>38%</td></tr><tr><td>Batida premium</td><td>${currency.format(260)}</td><td>${currency.format(230)}</td><td>${currency.format(295)}</td><td>${currency.format(310)}</td><td>42%</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderDelivery() {
+      return pageShell('Pedidos, pickup y delivery', 'Extensión ligera para ventas por WhatsApp, teléfono, mostrador o delivery. Mantiene el mismo inventario, facturación y caja.', `
+        <div class="kanban">
+          <div class="kanban-col"><h3>Nuevo <span class="pill gray">3</span></h3><div class="kanban-card"><b>PED-1042 · WhatsApp</b><small>Combo familiar · Pickup Naco · Cliente paga link virtual</small></div><div class="kanban-card"><b>PED-1043 · Teléfono</b><small>2 batidas premium · Delivery interno</small></div></div>
+          <div class="kanban-col"><h3>Preparando <span class="pill amber">2</span></h3><div class="kanban-card"><b>PED-1038</b><small>Cocina recibió orden. Consumo de ingredientes reservado.</small></div></div>
+          <div class="kanban-col"><h3>Listo <span class="pill blue">4</span></h3><div class="kanban-card"><b>PED-1036</b><small>Esperando motorista. Factura pendiente hasta confirmar cobro.</small></div></div>
+          <div class="kanban-col"><h3>Entregado <span class="pill mint">18</span></h3><div class="kanban-card"><b>PED-1029</b><small>Pago conciliado, factura emitida, inventario descontado.</small></div></div>
+        </div>
+      `);
+    }
+
+    function renderInventario() {
+      return pageShell('Inventario con reglas de ERP', 'Inventario multi-sucursal y multi-almacén con kardex, mínimos, lotes, vencimientos, transferencias, bloqueo de negativo y validación por documento.', `
+        <div class="grid four">
+          ${metric('SKUs activos', '1,248', 'Materia prima, terminado e insumos', { text:'Catálogo', class:'blue' })}
+          ${metric('Alertas mínimo', '19', '7 críticas para venta', { text:'Reorden', class:'amber' }, [70,45,62,38,42,30,35])}
+          ${metric('Exactitud conteo', '96.4%', 'Último conteo cíclico', { text:'ERP', class:'mint' }, [50,55,62,69,74,82,90])}
+          ${metric('Bloqueos preventivos', '3', 'Evitan descuadres', { text:'Control', class:'danger' }, [30,22,18,20,16,14,12])}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel">
+            <h3>Existencias y validación</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>SKU</th><th>Producto</th><th>Tipo</th><th>Almacén</th><th>Existencia</th><th>Mínimo</th><th class="num">Costo</th><th>Estado</th></tr></thead>
+                <tbody>${inventoryRows.map(r => `<tr><td>${r.sku}</td><td>${r.item}</td><td>${r.type}</td><td>${r.branch}</td><td>${r.stock}</td><td>${r.min}</td><td class="num">${currency.format(r.cost)}</td><td>${statusPill(r.state)}</td></tr>`).join('')}</tbody>
+              </table>
+            </div>
+          </div>
+          <aside class="panel">
+            <h3>Reglas configurables</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span><span>Bloquear venta si ingrediente o insumo crítico no existe.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Reserva inventario al preparar pedidos o producción.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Kardex por documento: venta, compra, ajuste, merma, producción.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Lotes y vencimiento para productos sensibles.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Conteo cíclico con diferencias sujetas a aprobación.</span></div>
+            </div>
+            <button class="btn amber mt-18" data-action="inventory-test" style="width:100%">Simular bloqueo por inventario</button>
+          </aside>
+        </div>
+      `);
+    }
+
+    function renderRecetas() {
+      return pageShell('Recetas, productos compuestos y combos', 'Define productos vendibles que consumen inventario según reglas: receta por porción, producto terminado, combo de productos y sustituciones permitidas.', `
+        <div class="grid three">
+          ${recipes.map(r => `<div class="card"><div class="invoice-top"><div><span class="pill brown">${r.code}</span><h3 class="mt-10">${r.name}</h3></div><span class="pill mint">Margen ${pct(r.margin)}</span></div><p>Rendimiento: ${r.yield}. Costo estimado ${currency.format(r.cost)} · Precio ${currency.format(r.price)}.</p><div class="feature-list">${r.components.map(c => `<div class="feature-item"><span class="check">✓</span><span>${c}</span></div>`).join('')}</div></div>`).join('')}
+        </div>
+        <div class="panel mt-18">
+          <h3>Cómo descuenta inventario una receta</h3>
+          <div class="flow">
+            <div class="flow-step"><strong>Producto vendido</strong><span>Ej. Helado 2 bolas.</span></div>
+            <div class="flow-step"><strong>Explota receta</strong><span>Consulta ingredientes y cantidades.</span></div>
+            <div class="flow-step"><strong>Valida stock</strong><span>Base, topping, vaso y cuchara disponibles.</span></div>
+            <div class="flow-step"><strong>Descuenta kardex</strong><span>Crea movimientos por cada insumo.</span></div>
+            <div class="flow-step"><strong>Calcula costo</strong><span>Alimenta margen y estado de resultados.</span></div>
+          </div>
+        </div>
+      `, `<button class="btn" data-action="new-recipe">Nueva receta</button><button class="btn secondary" data-route="produccion">Orden producción</button>`);
+    }
+
+    function renderProduccion() {
+      return pageShell('Producción y transformación', 'Para heladería: convertir materias primas en producto terminado, registrar merma, rendimiento real, costo real y disponibilidad para venta por sucursal.', `
+        <div class="kanban">
+          <div class="kanban-col"><h3>Planificada <span class="pill gray">2</span></h3><div class="kanban-card"><b>OP-308 · Base vainilla</b><small>Produce 120 litros · Requiere leche, crema, azúcar, esencia.</small></div><div class="kanban-card"><b>OP-309 · Pinta fresa</b><small>Produce 240 unidades 16oz para Naco/Piantini.</small></div></div>
+          <div class="kanban-col"><h3>En proceso <span class="pill amber">1</span></h3><div class="kanban-card"><b>OP-307 · Chocolate</b><small>Consumo reservado. Merma esperada 2.5%.</small></div></div>
+          <div class="kanban-col"><h3>Control calidad <span class="pill blue">1</span></h3><div class="kanban-card"><b>OP-306 · Sorbete mango</b><small>Pendiente liberación por lote y vencimiento.</small></div></div>
+          <div class="kanban-col"><h3>Liberada <span class="pill mint">8</span></h3><div class="kanban-card"><b>OP-301 · Fresa</b><small>Entró a inventario terminado. Costo real calculado.</small></div></div>
+        </div>
+        <div class="grid three mt-18">
+          <div class="card"><h3>Merma controlada</h3><p>Registra merma esperada vs. real y exige motivo si excede tolerancia.</p>${statusPill('2.1% actual')}</div>
+          <div class="card"><h3>Costo real</h3><p>Integra costo de insumos, rendimiento, merma y empaque.</p>${statusPill('Calculado')}</div>
+          <div class="card"><h3>Producto terminado</h3><p>Entrada automática al almacén seleccionado y disponible para venta.</p>${statusPill('Kardex generado')}</div>
+        </div>
+      `);
+    }
+
+    function renderTransferencias() {
+      return pageShell('Transferencias entre sucursales', 'Movimiento seguro de inventario entre almacenes con solicitud, aprobación, despacho, recepción y diferencias controladas.', `
+        <div class="panel"><div class="flow"><div class="flow-step"><strong>Solicitud</strong><span>Bávaro solicita 500 cucharas y 20 kg base vainilla.</span></div><div class="flow-step"><strong>Aprobación</strong><span>Administrador global valida disponibilidad y prioridad.</span></div><div class="flow-step"><strong>Despacho</strong><span>Salida del almacén central con conduce.</span></div><div class="flow-step"><strong>Recepción</strong><span>Sucursal confirma cantidades recibidas.</span></div><div class="flow-step"><strong>Kardex</strong><span>Salida y entrada quedan enlazadas.</span></div></div></div>
+        <div class="panel mt-18"><h3>Transferencias recientes</h3><div class="table-wrap"><table><thead><tr><th>Documento</th><th>Origen</th><th>Destino</th><th>Productos</th><th>Estado</th><th>Control</th></tr></thead><tbody><tr><td>TR-2026-088</td><td>Central</td><td>Bávaro</td><td>3 SKUs</td><td>${statusPill('En tránsito')}</td><td>Inventario reservado</td></tr><tr><td>TR-2026-085</td><td>Naco</td><td>Piantini</td><td>2 SKUs</td><td>${statusPill('Recibida')}</td><td>Kardex cerrado</td></tr><tr><td>TR-2026-079</td><td>Central</td><td>Santiago</td><td>8 SKUs</td><td>${statusPill('Diferencia menor')}</td><td>Aprobación requerida</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderCompras() {
+      return pageShell('Módulo de compras', 'Gestiona suplidores, requisiciones, órdenes de compra, recepción, gastos, entrada automática a inventario y cuentas por pagar.', `
+        <div class="grid four">
+          ${metric('Órdenes abiertas', '12', '5 pendientes de recepción', { text:'Compras', class:'blue' })}
+          ${metric('CxP corriente', currency.format(624500), 'Suplidores activos', { text:'Finanzas', class:'amber' })}
+          ${metric('Recepciones hoy', '4', 'Entradas parciales permitidas', { text:'Inventario', class:'mint' })}
+          ${metric('Ahorro sugerido', '7.8%', 'Comparación último costo', { text:'BI', class:'mint' })}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel"><h3>Documentos de compra</h3><div class="table-wrap"><table><thead><tr><th>Documento</th><th>Suplidor</th><th>Estado</th><th class="num">Monto</th><th>ETA</th><th>Efecto</th></tr></thead><tbody>${purchaseRows.map(r => `<tr><td>${r.doc}</td><td>${r.supplier}</td><td>${statusPill(r.status)}</td><td class="num">${currency.format(r.amount)}</td><td>${r.eta}</td><td class="muted">${r.effect}</td></tr>`).join('')}</tbody></table></div></div>
+          <aside class="panel"><h3>Flujo compra → inventario → CxP</h3><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>OC no afecta inventario hasta recepción validada.</span></div><div class="feature-item"><span class="check">✓</span><span>Recepción parcial genera entrada parcial y CxP relacionada.</span></div><div class="feature-item"><span class="check">✓</span><span>Factura proveedor genera 606 y asiento contable.</span></div><div class="feature-item"><span class="check">✓</span><span>Variación de costo actualiza costo promedio o estándar según política.</span></div></div><button class="btn mt-18" data-action="new-po" style="width:100%">Nueva orden de compra</button></aside>
+        </div>
+      `);
+    }
+
+    function renderContabilidad() {
+      return pageShell('Contabilidad básica integrada', 'Base contable simple para PyMEs: catálogo de cuentas, asientos automáticos, CxC, CxP, caja, bancos, gastos, costo de venta e impuestos.', `
+        <div class="grid three">
+          <div class="card"><h3>Asientos automáticos</h3><p>Venta, ITBIS, costo de venta, caja, banco, CxC, CxP, compras y gastos.</p>${statusPill('Plantillas activas')}</div>
+          <div class="card"><h3>Catálogo simple</h3><p>Cuentas base parametrizadas por empresa y sucursal para empezar rápido.</p>${statusPill('Editable por contador')}</div>
+          <div class="card"><h3>Cierres mensuales</h3><p>Bloqueo de períodos cerrados y ajustes con aprobación.</p>${statusPill('Agosto abierto')}</div>
+        </div>
+        <div class="panel mt-18"><h3>Asientos recientes</h3><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Origen</th><th>Cuenta</th><th>Débito</th><th>Crédito</th><th>Referencia</th></tr></thead><tbody><tr><td>11/08/2026</td><td>Venta POS</td><td>Caja efectivo</td><td class="num">${currency.format(48250)}</td><td class="num">-</td><td>Turno TUR-0826</td></tr><tr><td>11/08/2026</td><td>Venta POS</td><td>Ingresos por venta</td><td class="num">-</td><td class="num">${currency.format(157983)}</td><td>Facturas E31</td></tr><tr><td>11/08/2026</td><td>Costo venta</td><td>Costo de venta</td><td class="num">${currency.format(63200)}</td><td class="num">-</td><td>Kardex automático</td></tr><tr><td>11/08/2026</td><td>Compra</td><td>Inventario materia prima</td><td class="num">${currency.format(96500)}</td><td class="num">-</td><td>REC-2026-331</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderEstadoResultados() {
+      return pageShell('Estado de resultados por sucursal y consolidado', 'Reporte financiero integrado desde ventas, costo de inventario/recetas, gastos, compras y ajustes contables. Permite ver sucursal individual o negocio completo.', `
+        <div class="grid four">
+          ${metric('Ventas netas', currency.format(1629900), 'Consolidado mensual', { text:'Agosto', class:'blue' })}
+          ${metric('Utilidad bruta', currency.format(976200), 'Margen 59.9%', { text:'Rentable', class:'mint' })}
+          ${metric('Gastos operativos', currency.format(333500), '20.5% de ventas', { text:'Control', class:'amber' }, [60,62,55,58,50,48,46])}
+          ${metric('EBITDA operativo', currency.format(642700), '39.4% margen EBITDA', { text:'Consolidado', class:'mint' })}
+        </div>
+        <div class="panel mt-18">
+          <div class="section-head mb-0"><div><h2 style="font-size:30px">P&L multi-sucursal</h2><p>Formato base para estado de resultados mensual con columnas por sucursal y total consolidado.</p></div><button class="btn secondary small" data-action="export-pnl">Exportar Excel/PDF</button></div>
+          <div class="table-wrap mt-14">
+            <table>
+              <thead><tr><th>Cuenta</th><th class="num">Naco</th><th class="num">Piantini</th><th class="num">Santiago</th><th class="num">Bávaro</th><th class="num">Consolidado</th></tr></thead>
+              <tbody>${pnlRows.map((r, i) => `<tr><td><b>${r.label}</b></td><td class="num">${currency.format(r.naco)}</td><td class="num">${currency.format(r.piantini)}</td><td class="num">${currency.format(r.santiago)}</td><td class="num">${currency.format(r.bavaro)}</td><td class="num"><b>${currency.format(r.total)}</b></td></tr>`).join('')}</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grid three mt-18">
+          <div class="card"><h3>Costeo por receta</h3><p>El costo de venta sale del consumo real o estándar de ingredientes y productos terminados.</p></div>
+          <div class="card"><h3>Gasto por sucursal</h3><p>Renta, energía, nómina y servicios se asignan al centro de costo correspondiente.</p></div>
+          <div class="card"><h3>Consolidado del negocio</h3><p>El administrador global ve la red completa y puede comparar desempeño.</p></div>
+        </div>
+      `);
+    }
+
+    function renderBancos() {
+      return pageShell('Bancos, tarjeta y conciliación', 'Conciliación entre caja, lotes de tarjeta, depósitos bancarios, comisiones del adquirente, transferencias y movimientos manuales aprobados.', `
+        <div class="grid three">
+          <div class="card"><h3>Lotes de tarjeta</h3><p>Concilia ventas Verifone/Cardnet/Azul vs. liquidación bancaria.</p>${statusPill('2 lotes pendientes')}</div>
+          <div class="card"><h3>Depósitos efectivo</h3><p>Relaciona cierre de turno con depósito y diferencias de caja.</p>${statusPill('1 pendiente')}</div>
+          <div class="card"><h3>Comisiones</h3><p>Registra comisiones bancarias/adquirente contra gasto financiero.</p>${statusPill('Automático')}</div>
+        </div>
+        <div class="panel mt-18"><h3>Conciliación sugerida</h3><div class="table-wrap"><table><thead><tr><th>Fuente</th><th>Referencia</th><th class="num">Sistema</th><th class="num">Banco</th><th class="num">Diferencia</th><th>Estado</th></tr></thead><tbody><tr><td>Verifone Naco</td><td>LOTE-77821</td><td class="num">${currency.format(92340)}</td><td class="num">${currency.format(90956)}</td><td class="num">${currency.format(-1384)}</td><td>${statusPill('Comisión detectada')}</td></tr><tr><td>Depósito efectivo</td><td>DEP-5541</td><td class="num">${currency.format(48000)}</td><td class="num">${currency.format(48000)}</td><td class="num">${currency.format(0)}</td><td>${statusPill('Conciliado')}</td></tr><tr><td>Link virtual</td><td>PAY-2219</td><td class="num">${currency.format(18200)}</td><td class="num">${currency.format(18200)}</td><td class="num">${currency.format(0)}</td><td>${statusPill('Conciliado')}</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderPagos() {
+      return pageShell('Integración de pagos y dispositivos físicos', 'Evalúa dos caminos compatibles: cobro local con dispositivo físico en sucursal y cobro virtual mediante link/gateway. Ambos pueden convivir.', `
+        <div class="grid two">
+          <div class="panel">
+            <div class="invoice-top"><div><span class="pill blue">Opción A</span><h3 class="mt-10">Dispositivo físico local</h3></div>${statusPill('Verifone conectado')}</div>
+            <p>Para sucursal física: un agente local instalado en la PC de caja se comunica con el navegador web y con el Verifone/Cardnet/Azul para solicitar cobro, recibir autorización y evitar teclear montos manualmente.</p>
+            <div class="flow" style="grid-template-columns: repeat(3, 1fr)">
+              <div class="flow-step"><strong>Web POS</strong><span>Envía monto y factura.</span></div>
+              <div class="flow-step"><strong>Agente local</strong><span>Bridge seguro en la PC.</span></div>
+              <div class="flow-step"><strong>Verifone</strong><span>Confirma aprobación.</span></div>
+            </div>
+            <div class="feature-list mt-14">
+              <div class="feature-item"><span class="check">✓</span><span>Evita errores de monto en terminal.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Recibe código de autorización y lote.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Permite modo contingencia manual si falla conexión local.</span></div>
+            </div>
+            <button class="btn mint mt-18" data-action="test-device" style="width:100%">Probar cobro local</button>
+          </div>
+          <div class="panel">
+            <div class="invoice-top"><div><span class="pill amber">Opción B</span><h3 class="mt-10">Cobro virtual / link de pago</h3></div>${statusPill('Gateway activo')}</div>
+            <p>Útil para pedidos, delivery, ventas remotas o caja sin dispositivo. El POS genera un link, espera confirmación del gateway y luego finaliza factura/cobro.</p>
+            <div class="flow" style="grid-template-columns: repeat(3, 1fr)">
+              <div class="flow-step"><strong>Genera link</strong><span>Desde POS o pedido.</span></div>
+              <div class="flow-step"><strong>Cliente paga</strong><span>Móvil o web checkout.</span></div>
+              <div class="flow-step"><strong>Webhook</strong><span>Confirma y concilia.</span></div>
+            </div>
+            <div class="feature-list mt-14">
+              <div class="feature-item"><span class="check">✓</span><span>No depende de hardware local.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Bueno para delivery y reservas.</span></div>
+              <div class="feature-item"><span class="check">✓</span><span>Conciliación automática por referencia.</span></div>
+            </div>
+            <button class="btn amber mt-18" data-action="generate-paylink" style="width:100%">Generar link de pago</button>
+          </div>
+        </div>
+        <div class="panel mt-18"><h3>Matriz de decisión</h3><div class="table-wrap"><table><thead><tr><th>Escenario</th><th>Mejor opción</th><th>Ventaja</th><th>Riesgo a controlar</th></tr></thead><tbody><tr><td>Caja física con alto volumen</td><td>Dispositivo físico integrado</td><td>Rapidez y menos errores</td><td>Instalación de agente local/driver</td></tr><tr><td>Delivery o pedido remoto</td><td>Link virtual</td><td>Cliente paga fuera de tienda</td><td>Esperar confirmación antes de despachar</td></tr><tr><td>Falla de internet/adquirente</td><td>Contingencia manual</td><td>No detiene operación</td><td>Reconciliar después con autorización</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderDGII() {
+      return pageShell('DGII, facturación electrónica y reportes fiscales', 'Módulo fiscal para e-CF, NCF, comprobantes, validaciones, contingencia, almacenamiento, trazabilidad y reportes 606, 607, 608.', `
+        <div class="grid four">
+          ${metric('e-CF emitidos', '12,842', 'Mes actual', { text:'DGII', class:'blue' })}
+          ${metric('Tasa aceptación', '99.6%', 'Rechazos controlados', { text:'OK', class:'mint' })}
+          ${metric('606 preliminar', '84%', 'Compras clasificadas', { text:'Cierre', class:'amber' })}
+          ${metric('607 preliminar', '91%', 'Ventas validadas', { text:'Cierre', class:'mint' })}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel"><h3>Cola fiscal</h3><div class="table-wrap"><table><thead><tr><th>Documento</th><th>Tipo</th><th>Sucursal</th><th>Estado</th><th>Último evento</th><th>Acción</th></tr></thead><tbody><tr><td>E31-00000481</td><td>Consumidor final</td><td>Naco</td><td>${statusPill('Aceptado DGII')}</td><td>11/08/2026 10:42</td><td><button class="btn secondary small" data-action="view-xml">XML</button></td></tr><tr><td>E32-00000154</td><td>Crédito fiscal</td><td>Santiago</td><td>${statusPill('Aceptado DGII')}</td><td>11/08/2026 10:45</td><td><button class="btn secondary small" data-action="view-xml">XML</button></td></tr><tr><td>E31-00000488</td><td>Consumidor final</td><td>Bávaro</td><td>${statusPill('Pendiente reintento')}</td><td>Conexión inestable</td><td><button class="btn amber small" data-action="retry-dgii">Reintentar</button></td></tr></tbody></table></div></div>
+          <aside class="panel"><h3>Reportes fiscales</h3><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>606 compras y gastos desde módulo de compras/CxP.</span></div><div class="feature-item"><span class="check">✓</span><span>607 ventas desde facturación fiscal/e-CF.</span></div><div class="feature-item"><span class="check">✓</span><span>608 anulaciones/notas con trazabilidad.</span></div><div class="feature-item"><span class="check">✓</span><span>Validaciones previas de RNC, NCF, ITBIS y tipo de comprobante.</span></div></div><button class="btn blue mt-18" data-action="generate-dgii" style="width:100%">Generar paquete fiscal</button></aside>
+        </div>
+      `);
+    }
+
+    function renderReporteria() {
+      return pageShell('Reportería combinada por sucursal y negocio', 'Dashboard ejecutivo y operativo con ventas, rentabilidad, inventario, productos, combos, operadores, formas de pago, fiscal y compras.', `
+        <div class="grid four">
+          ${metric('Ventas consolidadas', currency.format(1629900), 'Red completa', { text:'BI', class:'blue' })}
+          ${metric('Producto líder', 'Helado 2 bolas', '28% de unidades', { text:'Top SKU', class:'mint' })}
+          ${metric('Sucursal líder', 'Santiago', '31.5% ventas', { text:'Ranking', class:'mint' })}
+          ${metric('Riesgo stock', 'Bávaro', '44% salud inventario', { text:'Atención', class:'amber' })}
+        </div>
+        <div class="grid sidebar-layout mt-18">
+          <div class="panel"><h3>Ventas por categoría</h3><div class="bar-list"><div class="bar-row"><div class="bar-meta"><span>Helados servidos</span><span>${currency.format(642000)}</span></div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div><div class="bar-row"><div class="bar-meta"><span>Combos familiares</span><span>${currency.format(388000)}</span></div><div class="bar-track"><div class="bar-fill mint" style="width:70%"></div></div></div><div class="bar-row"><div class="bar-meta"><span>Batidas</span><span>${currency.format(284000)}</span></div><div class="bar-track"><div class="bar-fill amber" style="width:52%"></div></div></div><div class="bar-row"><div class="bar-meta"><span>Delivery</span><span>${currency.format(192000)}</span></div><div class="bar-track"><div class="bar-fill blue" style="width:38%"></div></div></div></div></div>
+          <aside class="panel"><h3>Reportes incluidos</h3><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>Ventas por sucursal, caja, cajera, producto y hora.</span></div><div class="feature-item"><span class="check">✓</span><span>Margen por receta, combo y categoría.</span></div><div class="feature-item"><span class="check">✓</span><span>Estado de resultados por sucursal y consolidado.</span></div><div class="feature-item"><span class="check">✓</span><span>Rotación, merma, vencimiento y reorden de inventario.</span></div><div class="feature-item"><span class="check">✓</span><span>DGII, cobros, conciliación bancaria y auditoría.</span></div></div></aside>
+        </div>
+      `);
+    }
+
+    function renderUsuarios() {
+      const roleLabel = state.role === 'global' ? 'Administrador global' : state.role === 'sucursal' ? 'Administrador sucursal' : 'Operador / cajera';
+      return pageShell('Usuarios, roles y auditoría', 'Permisos separados por rol para proteger caja, facturación, inventario, contabilidad, configuración y acciones críticas como anulaciones o correcciones de cobro.', `
+        <div class="grid sidebar-layout">
+          <div class="panel"><h3>Permisos de la vista actual: ${roleLabel}</h3><div class="grid three">${permissions[state.role].map(p => `<div class="card flat"><h3>${p}</h3><p>Permiso habilitado para este rol en el mock.</p>${statusPill('Permitido')}</div>`).join('')}</div></div>
+          <aside class="panel"><h3>Acciones con aprobación</h3><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>Anular factura o emitir nota de crédito.</span></div><div class="feature-item"><span class="check">✓</span><span>Corregir método de cobro después de cierre.</span></div><div class="feature-item"><span class="check">✓</span><span>Ajustar inventario o registrar merma extraordinaria.</span></div><div class="feature-item"><span class="check">✓</span><span>Cambiar precios, descuentos o lista comercial.</span></div></div></aside>
+        </div>
+        <div class="panel mt-18"><h3>Auditoría reciente</h3><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Usuario</th><th>Rol</th><th>Evento</th><th>Referencia</th><th>Resultado</th></tr></thead><tbody><tr><td>11/08/2026 10:58</td><td>Laura M.</td><td>Operador</td><td>Solicitó corrección de cobro</td><td>E31-00000482</td><td>${statusPill('Pendiente')}</td></tr><tr><td>11/08/2026 10:40</td><td>Carlos R.</td><td>Admin sucursal</td><td>Cerró turno</td><td>TUR-0826</td><td>${statusPill('En revisión')}</td></tr><tr><td>11/08/2026 09:15</td><td>María G.</td><td>Admin global</td><td>Aprobó transferencia</td><td>TR-2026-088</td><td>${statusPill('Aprobado')}</td></tr></tbody></table></div></div>
+      `);
+    }
+
+    function renderFase2() {
+      return pageShell('Fase 2: restaurante, cafetería y cocina', 'El core del POS queda flexible para crecer después a restaurante: mesas, meseros, comandas, cocina, delivery avanzado, propinas y producción de platos.', `
+        <div class="grid three">
+          <div class="card split-card"><div class="big-icon">🍽️</div><div><h3>Mesas y salones</h3><p>Mapa de mesas, cuentas separadas, unión de mesas, reservas y cambio de mesero.</p></div></div>
+          <div class="card split-card"><div class="big-icon">👨‍🍳</div><div><h3>KDS cocina</h3><p>Pantalla de cocina con tiempos, prioridades, estados y preparación por estación.</p></div></div>
+          <div class="card split-card"><div class="big-icon">🧑‍🍳</div><div><h3>Meseros</h3><p>App móvil o web para tomar pedidos, enviarlos a cocina y cerrar cuenta.</p></div></div>
+          <div class="card split-card"><div class="big-icon">🥘</div><div><h3>Recetas de platos</h3><p>El mismo motor de recetas maneja ingredientes, mermas y costo real de platos.</p></div></div>
+          <div class="card split-card"><div class="big-icon">💵</div><div><h3>Propinas</h3><p>Distribución de propinas por mesero, turno, sucursal y forma de pago.</p></div></div>
+          <div class="card split-card"><div class="big-icon">🛵</div><div><h3>Delivery avanzado</h3><p>Rutas, motoristas, tiempos, canales externos y conciliación de comisiones.</p></div></div>
+        </div>
+        <div class="panel mt-18"><h3>Decisión de arquitectura</h3><p>El MVP para heladerías debe construir bien el motor de venta, inventario, recetas, combos, fiscal, cobro y reportería. Así la fase restaurante no sería otro sistema: sería una extensión natural sobre la misma base transaccional.</p></div>
+      `);
+    }
+
+    function renderImplementacion() {
+      return pageShell('Implementación sugerida del MVP', 'Backlog visual para pasar de mock a producto: prioriza operación de heladería y deja restaurante como fase 2.', `
+        <div class="kanban">
+          <div class="kanban-col"><h3>Fase 0 · Diseño <span class="pill blue">Mock</span></h3><div class="kanban-card"><b>Demo navegable</b><small>Pantallas, flujo POS, módulos y reglas funcionales.</small></div><div class="kanban-card"><b>Validación cliente</b><small>Confirmar procesos reales de caja, inventario y facturación.</small></div></div>
+          <div class="kanban-col"><h3>Fase 1 · MVP Heladería <span class="pill mint">Core</span></h3><div class="kanban-card"><b>POS + cobro + factura</b><small>Venta rápida, e-CF, turnos, caja y corrección de cobro.</small></div><div class="kanban-card"><b>Inventario + recetas</b><small>Consumo automático, combos, compras y kardex.</small></div></div>
+          <div class="kanban-col"><h3>Fase 1.5 · Finanzas <span class="pill amber">Gestión</span></h3><div class="kanban-card"><b>Estado resultados</b><small>Ventas, costo, gastos, margen por sucursal y consolidado.</small></div><div class="kanban-card"><b>Reportería BI</b><small>Dashboard operativo y gerencial.</small></div></div>
+          <div class="kanban-col"><h3>Fase 2 · Restaurante <span class="pill brown">Extensión</span></h3><div class="kanban-card"><b>Mesas + comandas</b><small>Meseros, cocina, salones, propinas y KDS.</small></div><div class="kanban-card"><b>Delivery avanzado</b><small>Pedidos, rutas, canales externos y conciliación.</small></div></div>
+        </div>
+        <div class="panel mt-18"><h3>Conectores backend previstos</h3><div class="matrix"><div class="matrix-item"><b>API transaccional</b><span>ventas, facturas, cobros, cierres, inventario y contabilidad.</span></div><div class="matrix-item"><b>Base de datos</b><span>RNC, sucursales, productos, recetas, kardex, documentos fiscales.</span></div><div class="matrix-item"><b>Agente local</b><span>impresora, caja, lector, Verifone y confirmaciones físicas.</span></div><div class="matrix-item"><b>Servicios externos</b><span>DGII/e-CF, adquirente de pagos, email/WhatsApp y BI.</span></div></div></div>
+      `);
+    }
+
+    function renderFallbackModule(id) {
+      const titles = {
+        'compras':'Módulo de compras', 'contabilidad':'Contabilidad básica', 'estado-resultados':'Estado de resultados', 'bancos':'Bancos', 'pagos':'Pagos', 'dgii':'DGII', 'reporteria':'Reportería', 'usuarios':'Usuarios'
+      };
+      return pageShell(titles[id] || 'Módulo', 'Vista en construcción dentro del mock.', `<div class="panel"><p>Módulo reservado.</p></div>`);
+    }
+
+    const routeRenderers = {
+      inicio: renderInicio,
+      mapa: renderMapa,
+      implementacion: renderImplementacion,
+      pos: renderPOS,
+      cierre: renderCierre,
+      'correccion-cobro': renderCorreccionCobro,
+      facturas: renderFacturas,
+      clientes: renderClientes,
+      sucursales: renderSucursales,
+      precios: renderPrecios,
+      delivery: renderDelivery,
+      inventario: renderInventario,
+      recetas: renderRecetas,
+      produccion: renderProduccion,
+      transferencias: renderTransferencias,
+      compras: renderCompras,
+      contabilidad: renderContabilidad,
+      'estado-resultados': renderEstadoResultados,
+      bancos: renderBancos,
+      pagos: renderPagos,
+      dgii: renderDGII,
+      reporteria: renderReporteria,
+      usuarios: renderUsuarios,
+      fase2: renderFase2
+    };
+
+    function render() {
+      renderNav();
+      const app = document.getElementById('app');
+      const renderer = routeRenderers[state.route] || (() => renderFallbackModule(state.route));
+      app.innerHTML = renderer();
+      document.getElementById('roleSelect').value = state.role;
+      document.getElementById('branchBadge').textContent = state.role === 'global' ? 'Vista global' : state.role === 'sucursal' ? 'Sucursal: Naco' : 'Caja: Naco #01';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      wireDynamicActions();
+    }
+
+    function navigate(route) {
+      state.route = route;
+      location.hash = route;
+      document.body.classList.remove('sidebar-open');
+      render();
+    }
+
+    function wireDynamicActions() {
+      document.querySelectorAll('[data-route]').forEach(el => {
+        el.onclick = () => navigate(el.getAttribute('data-route'));
+      });
+      document.querySelectorAll('[data-toggle-section]').forEach(btn => {
+        btn.onclick = () => btn.closest('.nav-section').classList.toggle('collapsed');
+      });
+      document.querySelectorAll('[data-add-product]').forEach(btn => {
+        btn.onclick = () => {
+          const name = btn.getAttribute('data-add-product');
+          const price = Number(btn.getAttribute('data-price'));
+          const type = name.includes('Combo') ? 'Combo' : ['Helado 1 bola','Helado 2 bolas','Batida premium'].includes(name) ? 'Receta' : 'Producto';
+          state.cart.push({ name, type, qty: 1, price, stockRule: type === 'Receta' ? 'Consume ingredientes configurados' : type === 'Combo' ? 'Desagrupa productos del combo' : 'Descuenta SKU directo' });
+          showToast(`${name} agregado. Inventario validado antes de cobrar.`);
+          render();
+        };
+      });
+      document.querySelectorAll('[data-remove-item]').forEach(btn => {
+        btn.onclick = () => {
+          state.cart.splice(Number(btn.getAttribute('data-remove-item')), 1);
+          showToast('Producto removido del ticket.');
+          render();
+        };
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => toast.classList.remove('show'), 3600);
+    }
+
+    function openModal(title, body) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalBody').innerHTML = body;
+      document.getElementById('modalBackdrop').classList.add('show');
+      document.getElementById('modalBackdrop').setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('show');
+      document.getElementById('modalBackdrop').setAttribute('aria-hidden', 'true');
+    }
+
+    document.addEventListener('click', (event) => {
+      const actionEl = event.target.closest('[data-action]');
+      if (!actionEl) return;
+      const action = actionEl.getAttribute('data-action');
+      if (action === 'simulate-payment') {
+        state.deviceStatus = 'Conectado';
+        openModal('Cobro con tarjeta autorizado', `<div class="print-ticket"><div class="ticket-row"><span>Dispositivo</span><b>Verifone local</b></div><div class="ticket-row"><span>Monto</span><b>${currency.format(1192)}</b></div><div class="ticket-row"><span>Autorización</span><b>APROB-893014</b></div><div class="ticket-row"><span>Lote</span><b>LOTE-77821</b></div><div class="ticket-row"><span>Acción siguiente</span><b>Emitir e-CF</b></div></div><p class="mt-14 muted">En producción este botón llamaría al agente local instalado en la PC de caja y esperaría confirmación del dispositivo físico.</p>`);
+      }
+      if (action === 'simulate-cash') showToast('Cobro en efectivo registrado. Se actualizó efectivo esperado del turno.');
+      if (action === 'clear-cart') { state.cart = []; showToast('Ticket limpiado.'); render(); }
+      if (action === 'hold-ticket') showToast('Venta pausada. Queda como ticket pendiente del turno.');
+      if (action === 'print-ticket') openModal('Factura e-CF simulada', `<div class="print-ticket"><center><b>PUNTOFLEX 360</b><br>Sucursal Naco<br>RNC 1-00-00000-0<br>e-CF E31-00000489</center><br><div class="ticket-row"><span>Helado 2 bolas x2</span><b>${currency.format(360)}</b></div><div class="ticket-row"><span>Combo Familiar x1</span><b>${currency.format(650)}</b></div><div class="ticket-row"><span>ITBIS</span><b>${currency.format(182)}</b></div><div class="ticket-row"><span>TOTAL</span><b>${currency.format(1192)}</b></div><br><center>Estado DGII: Aceptado</center></div>`);
+      if (action === 'save-payment-correction') { state.paymentCorrectionSaved = true; showToast('Corrección guardada: factura intacta, cobro reclasificado y asiento generado.'); render(); }
+      if (action === 'preview-accounting') openModal('Asiento sugerido de corrección', `<div class="table-wrap"><table><thead><tr><th>Cuenta</th><th>Débito</th><th>Crédito</th></tr></thead><tbody><tr><td>Banco / Tarjetas por depositar</td><td class="num">${currency.format(740)}</td><td class="num">-</td></tr><tr><td>Caja efectivo</td><td class="num">-</td><td class="num">${currency.format(740)}</td></tr></tbody></table></div><p class="mt-14 muted">Documento DC-COBRO-00017 queda enlazado a E31-00000482 sin modificar la factura fiscal.</p>`);
+      if (action === 'inventory-test') openModal('Venta bloqueada por inventario', `<p>El combo seleccionado requiere cucharas biodegradables. La sucursal Bávaro tiene 260 unidades y el mínimo configurado es 500. La regla ERP evita vender combos que generen consumo no permitido.</p><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>Opción 1: solicitar transferencia desde almacén central.</span></div><div class="feature-item"><span class="check">✓</span><span>Opción 2: autorizar sustitución de insumo.</span></div><div class="feature-item"><span class="check">✓</span><span>Opción 3: bloquear solo combos afectados, no toda la caja.</span></div></div>`);
+      if (action === 'test-device') showToast('Prueba local enviada al Verifone. Autorización simulada recibida.');
+      if (action === 'generate-paylink') openModal('Link de pago generado', `<div class="print-ticket"><div class="ticket-row"><span>Pedido</span><b>PED-1042</b></div><div class="ticket-row"><span>Monto</span><b>${currency.format(650)}</b></div><div class="ticket-row"><span>Referencia</span><b>PAY-360-1042</b></div><div class="ticket-row"><span>Estado</span><b>Esperando confirmación</b></div></div><p class="mt-14 muted">En producción se mostraría URL/QR del gateway y se confirmaría por webhook antes de cerrar cobro.</p>`);
+      if (action === 'retry-dgii') showToast('Reintento DGII ejecutado. Documento enviado a cola de validación.');
+      if (action === 'generate-dgii') showToast('Paquete fiscal preliminar 606/607/608 generado para revisión.');
+      if (action === 'view-xml') openModal('XML e-CF simulado', `<pre style="white-space:pre-wrap;background:#211912;color:#fff;padding:16px;border-radius:16px;overflow:auto">&lt;eCF&gt;\n  &lt;Encabezado&gt;E31-00000481&lt;/Encabezado&gt;\n  &lt;Emisor&gt;PuntoFlex Demo&lt;/Emisor&gt;\n  &lt;Estado&gt;Aceptado DGII&lt;/Estado&gt;\n&lt;/eCF&gt;</pre>`);
+      if (action === 'open-checklist') openModal('Checklist para pasar de mock a backend', `<div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>Definir modelo de datos: empresa/RNC, sucursales, cajas, almacenes, usuarios.</span></div><div class="feature-item"><span class="check">✓</span><span>Construir POS transaccional con validación de inventario antes de cobro.</span></div><div class="feature-item"><span class="check">✓</span><span>Integrar e-CF/DGII y reportes 606/607/608.</span></div><div class="feature-item"><span class="check">✓</span><span>Crear motor de recetas, combos y kardex.</span></div><div class="feature-item"><span class="check">✓</span><span>Definir integración local con Verifone o gateway virtual.</span></div><div class="feature-item"><span class="check">✓</span><span>Crear estado de resultados por sucursal y consolidado.</span></div></div>`);
+      if (['close-shift','new-client','new-recipe','new-po','export-pnl'].includes(action)) showToast('Acción simulada en el mock. Lista para conectar al backend.');
+    });
+
+    document.getElementById('roleSelect').addEventListener('change', (event) => {
+      state.role = event.target.value;
+      showToast(`Vista cambiada a ${event.target.options[event.target.selectedIndex].text}.`);
+      render();
+    });
+
+    document.getElementById('mobileToggle').addEventListener('click', () => document.body.classList.add('sidebar-open'));
+    document.getElementById('mobileOverlay').addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('modalBackdrop').addEventListener('click', (event) => { if (event.target.id === 'modalBackdrop') closeModal(); });
+    document.getElementById('globalSearch').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        const q = event.target.value.trim();
+        if (!q) return;
+        openModal('Búsqueda global simulada', `<p>Resultado para <b>${q}</b></p><div class="feature-list"><div class="feature-item"><span class="check">✓</span><span>Factura E31-00000482 encontrada en Piantini.</span></div><div class="feature-item"><span class="check">✓</span><span>Producto relacionado con receta y kardex.</span></div><div class="feature-item"><span class="check">✓</span><span>Disponible para auditoría, contabilidad y reportes.</span></div></div>`);
+      }
+    });
+
+    function init() {
+      const hash = location.hash.replace('#','');
+      if (hash && routeRenderers[hash]) state.route = hash;
+      render();
+    }
+
+    init();
+  </script>
+</body>
+</html>
