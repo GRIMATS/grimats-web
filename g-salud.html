@@ -547,16 +547,29 @@
     .addon-group-head .icon { width: 20px; height: 20px; }
     .addon-group-head h4 { margin: 0; color: var(--navy); font-size: 18px; }
     .addon-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+    .addon-grid.two-column { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .addon-grid.three-column { grid-template-columns: repeat(3,minmax(0,1fr)); }
     .addon-card { min-height: 150px; padding: 16px; border-radius: 16px; border: 1px solid #e2eaf5; background: #f9fbfe; }
     .addon-card h5 { margin: 0; color: var(--navy); font-size: 13px; line-height: 1.35; }
     .addon-price { margin-top: 12px; color: var(--blue); font-size: 18px; font-weight: 950; letter-spacing: -.02em; }
     .addon-price.quote { font-size: 15px; }
     .addon-unit { display: block; margin-top: 3px; color: #6f7e94; font-size: 9.5px; font-weight: 750; }
     .addon-card p { margin: 11px 0 0; color: #65758d; font-size: 10.5px; line-height: 1.45; }
+    .accounting-group .addon-group-head span { color: #8b4b11; background: #fff5eb; }
+    .billing-group .addon-group-head span { color: var(--green); background: var(--green-soft); }
+    .addon-callout {
+      margin: -2px 0 16px; padding: 14px 16px; border-radius: 15px; border: 1px solid #bfe8d8;
+      color: #31705b; background: #f0fbf7; font-size: 11.5px; line-height: 1.55;
+    }
+    .addon-callout strong { color: #146147; }
+    .integrated-price {
+      display: block; margin-top: 10px; padding: 8px 10px; border-radius: 10px;
+      color: #146147; background: var(--green-soft); font-size: 10.5px; font-weight: 850;
+    }
 
     @media (max-width: 1040px) {
       .foundation-items { grid-template-columns: repeat(3,1fr); }
-      .addon-grid { grid-template-columns: repeat(2,1fr); }
+      .addon-grid, .addon-grid.two-column, .addon-grid.three-column { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 820px) {
       .pricing-header, .addons-intro { grid-template-columns: 1fr; align-items: start; }
@@ -576,7 +589,7 @@
       .price-card h3 { font-size: 25px; }
       .plan-price strong { font-size: 54px; }
       .plan-capacity { grid-template-columns: 1fr 1fr; }
-      .addon-grid { grid-template-columns: 1fr; }
+      .addon-grid, .addon-grid.two-column, .addon-grid.three-column { grid-template-columns: 1fr; }
       .addon-card { min-height: 0; }
     }
 
@@ -996,7 +1009,7 @@
         <div class="pricing-tabs reveal" role="tablist" aria-label="Seleccionar planes o complementos">
           <button class="pricing-tab" id="pricing-tab-consultorios" type="button" role="tab" aria-selected="true" aria-controls="pricing-panel-consultorios" data-pricing-tab="consultorios">Planes para consultorios</button>
           <button class="pricing-tab" id="pricing-tab-clinicas" type="button" role="tab" aria-selected="false" aria-controls="pricing-panel-clinicas" data-pricing-tab="clinicas">Planes para clínicas</button>
-          <button class="pricing-tab" id="pricing-tab-complementos" type="button" role="tab" aria-selected="false" aria-controls="pricing-panel-complementos" data-pricing-tab="complementos">Complementos</button>
+          <button class="pricing-tab" id="pricing-tab-complementos" type="button" role="tab" aria-selected="false" aria-controls="pricing-panel-complementos" data-pricing-tab="complementos">Complementos y servicios</button>
         </div>
 
         <div class="pricing-panel active" id="pricing-panel-consultorios" role="tabpanel" aria-labelledby="pricing-tab-consultorios" data-pricing-panel="consultorios">
@@ -1099,7 +1112,7 @@
 
         <div class="pricing-panel" id="pricing-panel-complementos" role="tabpanel" aria-labelledby="pricing-tab-complementos" data-pricing-panel="complementos" hidden>
           <div class="addons-intro reveal">
-            <div><h3>Complementos y capacidad adicional</h3><p>Amplía el plan cuando aumenten tus profesionales, espacios, comunicaciones o necesidades operativas. Los importes numéricos se muestran en USD.</p></div>
+            <div><h3>Complementos y servicios adicionales</h3><p>Amplía el plan cuando aumenten tus profesionales, espacios o comunicaciones, y añade servicios contables o facturación electrónica según tu operación. Los importes numéricos se muestran en USD.</p></div>
             <span class="addons-badge">Todo expresado en USD</span>
           </div>
           <div class="addon-groups">
@@ -1127,11 +1140,27 @@
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-box"></use></svg></span><h4 id="addon-services-title">Módulos y servicios</h4></div>
               <div class="addon-grid">
                 <article class="addon-card"><h5>Portal del paciente</h5><div class="addon-price">US$10</div><span class="addon-unit">por portal y consultorio</span><p>Activa el autoservicio del paciente como parte del alcance contratado.</p></article>
-                <article class="addon-card"><h5>Facturador electrónico</h5><div class="addon-price">US$40</div><span class="addon-unit">por RNC</span><p>Complemento que contempla hasta 1,000 facturas.</p></article>
-                <article class="addon-card"><h5>Factura electrónica adicional</h5><div class="addon-price">US$1.25</div><span class="addon-unit">por factura sobre 1,000</span><p>Requiere el proceso de normalización correspondiente de la DGII.</p></article>
                 <article class="addon-card"><h5>WhatsApp marketing</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">según proveedor y categoría</span><p>No utiliza la tarifa de mensajes utility.</p></article>
                 <article class="addon-card"><h5>Migración de datos</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto</span><p>Según volumen, calidad y formato; el documento contempla contrato anual pagado por adelantado.</p></article>
                 <article class="addon-card"><h5>Kiosco, pantalla e impresoras</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto e implantación</span><p>Incluye evaluación de hardware, configuración e implantación. El set tecnológico puede mensualizarse durante el primer año.</p></article>
+              </div>
+            </section>
+
+            <section class="addon-group accounting-group reveal" aria-labelledby="addon-accounting-title">
+              <div class="addon-group-head"><span><svg class="icon"><use href="#i-file"></use></svg></span><h4 id="addon-accounting-title">Servicios contables</h4></div>
+              <div class="addon-grid two-column">
+                <article class="addon-card"><h5>Normalización y comprobantes fiscales</h5><div class="addon-price">US$220</div><span class="addon-unit">servicio puntual</span><p>Normalización, revisión y generación de comprobantes fiscales con el acompañamiento de una profesional contable.</p></article>
+                <article class="addon-card"><h5>Servicio contable mensual</h5><div class="addon-price">US$275–365</div><span class="addon-unit">por mes · según nivel de facturación</span><p>Revisión contable recurrente y gestión de los registros correspondientes ante la DGII.</p></article>
+              </div>
+            </section>
+
+            <section class="addon-group billing-group reveal" aria-labelledby="addon-billing-title">
+              <div class="addon-group-head"><span><svg class="icon"><use href="#i-wallet"></use></svg></span><h4 id="addon-billing-title">Facturador electrónico</h4></div>
+              <div class="addon-callout"><strong>Beneficio por integración GRIMATS:</strong> cada nivel recibe un 20 % de descuento en la mensualidad cuando el facturador está conectado o se utiliza dentro de una aplicación o servicio de GRIMATS. El descuento no aplica a las facturas adicionales.</div>
+              <div class="addon-grid three-column">
+                <article class="addon-card"><h5>Tier 1 · Fiscal Esencial</h5><div class="addon-price">US$35</div><span class="addon-unit">por mes · hasta 1,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$28/mes</span><p>Después de las 1,000 facturas incluidas: US$0.023 por cada factura adicional.</p></article>
+                <article class="addon-card"><h5>Tier 2 · Fiscal Negocio</h5><div class="addon-price">US$73</div><span class="addon-unit">por mes · hasta 5,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$58.40/mes</span><p>Después de las 5,000 facturas incluidas: US$0.014 por cada factura adicional.</p></article>
+                <article class="addon-card"><h5>Tier 3 · Fiscal Volumen</h5><div class="addon-price">US$145</div><span class="addon-unit">por mes · hasta 15,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$116/mes</span><p>Después de las 15,000 facturas incluidas: US$0.009 por cada factura adicional.</p></article>
               </div>
             </section>
           </div>
