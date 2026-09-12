@@ -458,6 +458,20 @@
     }
     .pricing-available::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 
+    .trial-promo {
+      position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+      margin-top: 27px; padding: 18px 20px; border-radius: 20px; border: 1px solid #a8dfcc;
+      color: #245d4c; background: linear-gradient(135deg, #effbf7, #f8fffc); box-shadow: 0 12px 30px rgba(28,139,104,.09);
+    }
+    .trial-promo-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 14px; color: #fff; background: var(--green); }
+    .trial-promo-icon .icon { width: 22px; height: 22px; }
+    .trial-promo strong { display: block; color: #125741; font-size: 17px; letter-spacing: -.01em; }
+    .trial-promo p { margin: 4px 0 0; font-size: 12px; line-height: 1.55; }
+    .trial-promo-scope {
+      padding: 9px 12px; border-radius: 999px; border: 1px solid #bfe8d8; white-space: nowrap;
+      color: #146147; background: #fff; font-size: 10.5px; font-weight: 900;
+    }
+
     .plan-foundation {
       position: relative; z-index: 1; margin-top: 35px; padding: 23px 25px; border-radius: 23px;
       color: #fff; background: linear-gradient(135deg, var(--navy), #0b3f8e 68%, var(--blue)); box-shadow: var(--shadow-md);
@@ -514,6 +528,10 @@
     .plan-price .currency { align-self: flex-start; margin-top: 12px; color: var(--blue); font-size: 17px; font-weight: 900; }
     .plan-price strong { font-size: 60px; line-height: .86; letter-spacing: -.065em; }
     .plan-price .period { color: var(--muted); font-size: 13px; font-weight: 750; padding-bottom: 4px; }
+    .plan-trial {
+      width: max-content; max-width: 100%; margin-top: 14px; padding: 8px 11px; border-radius: 11px;
+      color: #146147; background: var(--green-soft); border: 1px solid #bfe8d8; font-size: 10.5px; font-weight: 900;
+    }
     .plan-capacity { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-top: 25px; }
     .capacity-item { min-height: 74px; padding: 12px 9px; border-radius: 14px; border: 1px solid #e2eaf5; background: #f8fbff; }
     .capacity-item strong { display: block; color: var(--navy); font-size: 18px; letter-spacing: -.02em; }
@@ -575,6 +593,8 @@
     @media (max-width: 820px) {
       .pricing-header, .addons-intro { grid-template-columns: 1fr; align-items: start; }
       .pricing-currency { width: max-content; min-width: 130px; }
+      .trial-promo { grid-template-columns: auto 1fr; }
+      .trial-promo-scope { grid-column: 1 / -1; width: max-content; }
       .pricing-grid { grid-template-columns: 1fr; }
       .price-card { min-height: 0; }
     }
@@ -584,6 +604,8 @@
       .plan-foundation { padding: 21px 18px; }
       .plan-foundation-head { display: block; }
       .plan-foundation-head span { display: block; margin-top: 7px; }
+      .trial-promo { grid-template-columns: 1fr; padding: 18px; }
+      .trial-promo-scope { grid-column: auto; white-space: normal; }
       .foundation-items { grid-template-columns: 1fr 1fr; }
       .foundation-item { min-height: 75px; }
       .price-card { padding: 24px 20px; border-radius: 22px; }
@@ -995,6 +1017,12 @@
           <div class="pricing-currency reveal"><span>Moneda de referencia</span><strong>USD</strong></div>
         </div>
 
+        <div class="trial-promo reveal" role="note" aria-label="Prueba gratuita de G-Salud">
+          <span class="trial-promo-icon"><svg class="icon"><use href="#i-clock"></use></svg></span>
+          <div><strong>Prueba G-Salud gratis durante 30 días</strong><p>Los nuevos clientes pueden probar, junto con sus médicos y pacientes, todas las funciones incluidas en el plan base seleccionado.</p></div>
+          <span class="trial-promo-scope">Solo planes base · No aplica a add-ons</span>
+        </div>
+
         <div class="plan-foundation reveal">
           <div class="plan-foundation-head"><strong>Base funcional incluida en todos los planes</strong><span>Elige el nivel de capacidad que necesita tu equipo.</span></div>
           <div class="foundation-items">
@@ -1020,6 +1048,7 @@
               <h3>Consultorio Esencial</h3>
               <p class="plan-audience">Para un médico individual o un consultorio pequeño que necesita ordenar su jornada.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>85</strong><span class="period">/ mes</span></div>
+              <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>2</strong><span>Médicos incluidos</span></div>
                 <div class="capacity-item"><strong>1</strong><span>Usuario administrativo</span></div>
@@ -1034,7 +1063,7 @@
               </ul>
               <div class="usage-label">Capacidad mensual incluida*</div>
               <div class="usage-chips"><span class="usage-chip"><b>3,000</b> correos</span><span class="usage-chip"><b>300</b> WhatsApp utility</span><span class="usage-chip"><b>1,000</b> acciones de IA</span></div>
-              <div class="plan-action"><a class="btn btn-secondary plan-link" data-plan-name="Consultorio Esencial — US$85/mes" href="#">Elegir este plan <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+              <div class="plan-action"><a class="btn btn-secondary plan-link" data-plan-name="Consultorio Esencial — US$85/mes" href="#">Probar 30 días gratis <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
             </article>
 
             <article class="price-card emphasis reveal">
@@ -1042,6 +1071,7 @@
               <h3>Consultorio Equipo</h3>
               <p class="plan-audience">Para un grupo médico o un consultorio compartido con más profesionales y apoyo administrativo.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>200</strong><span class="period">/ mes</span></div>
+              <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>5</strong><span>Médicos incluidos</span></div>
                 <div class="capacity-item"><strong>3</strong><span>Usuarios administrativos</span></div>
@@ -1056,7 +1086,7 @@
               </ul>
               <div class="usage-label">Capacidad mensual incluida*</div>
               <div class="usage-chips"><span class="usage-chip"><b>9,000</b> correos</span><span class="usage-chip"><b>1,000</b> WhatsApp utility</span><span class="usage-chip"><b>2,000</b> acciones de IA</span></div>
-              <div class="plan-action"><a class="btn btn-primary plan-link" data-plan-name="Consultorio Equipo — US$200/mes" href="#">Elegir este plan <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+              <div class="plan-action"><a class="btn btn-primary plan-link" data-plan-name="Consultorio Equipo — US$200/mes" href="#">Probar 30 días gratis <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
             </article>
           </div>
           <div class="pricing-note reveal"><strong>*Sobre comunicaciones e IA:</strong> las capacidades incluidas se renuevan cada mes. El consumo adicional se factura según las tarifas de complementos y las condiciones del proveedor correspondiente.</div>
@@ -1069,6 +1099,7 @@
               <h3>Clínica</h3>
               <p class="plan-audience">Para una clínica mediana con varios médicos, áreas operativas y una administración coordinada.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>450</strong><span class="period">/ mes</span></div>
+              <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>10</strong><span>Médicos incluidos</span></div>
                 <div class="capacity-item"><strong>6</strong><span>Usuarios administrativos</span></div>
@@ -1083,7 +1114,7 @@
               </ul>
               <div class="usage-label">Capacidad mensual incluida*</div>
               <div class="usage-chips"><span class="usage-chip"><b>15,000</b> correos</span><span class="usage-chip"><b>2,500</b> WhatsApp utility</span><span class="usage-chip"><b>4,000</b> acciones de IA</span></div>
-              <div class="plan-action"><a class="btn btn-primary plan-link" data-plan-name="Clínica — US$450/mes" href="#">Elegir este plan <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+              <div class="plan-action"><a class="btn btn-primary plan-link" data-plan-name="Clínica — US$450/mes" href="#">Probar 30 días gratis <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
             </article>
 
             <article class="price-card reveal">
@@ -1091,6 +1122,7 @@
               <h3>Red Clínica</h3>
               <p class="plan-audience">Para un grupo médico o una red que necesita coordinar múltiples centros bajo una sola operación.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>900</strong><span class="period">/ mes</span></div>
+              <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>20+</strong><span>Médicos incluidos</span></div>
                 <div class="capacity-item"><strong>12</strong><span>Usuarios administrativos</span></div>
@@ -1105,7 +1137,7 @@
               </ul>
               <div class="usage-label">Capacidad mensual incluida*</div>
               <div class="usage-chips"><span class="usage-chip"><b>30,000</b> correos</span><span class="usage-chip"><b>5,000</b> WhatsApp utility</span><span class="usage-chip"><b>6,000</b> acciones de IA</span></div>
-              <div class="plan-action"><a class="btn btn-secondary plan-link" data-plan-name="Red Clínica — US$900/mes" href="#">Elegir este plan <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+              <div class="plan-action"><a class="btn btn-secondary plan-link" data-plan-name="Red Clínica — US$900/mes" href="#">Probar 30 días gratis <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
             </article>
           </div>
           <div class="pricing-note reveal"><strong>*Configuración del servicio:</strong> portal, comunicaciones, IA y demás módulos se activan según el plan contratado. Las conexiones automáticas con ARS y terceros se cotizan luego de evaluar sus requisitos técnicos y contractuales.</div>
@@ -1113,7 +1145,7 @@
 
         <div class="pricing-panel" id="pricing-panel-complementos" role="tabpanel" aria-labelledby="pricing-tab-complementos" data-pricing-panel="complementos" hidden>
           <div class="addons-intro reveal">
-            <div><h3>Complementos y servicios adicionales</h3><p>Amplía el plan cuando aumenten tus profesionales, espacios o comunicaciones, y añade servicios contables o facturación electrónica según tu operación. Los importes numéricos se muestran en USD.</p></div>
+            <div><h3>Complementos y servicios adicionales</h3><p>Amplía el plan cuando aumenten tus profesionales, espacios o comunicaciones, y añade servicios contables o facturación electrónica según tu operación. Los importes numéricos se muestran en USD. La prueba gratuita de 30 días no aplica a estos add-ons.</p></div>
             <span class="addons-badge">Todo expresado en USD</span>
           </div>
           <div class="addon-groups">
@@ -1234,6 +1266,7 @@
         </aside>
         <div class="faq-list">
           <article class="faq-item reveal"><button class="faq-question" type="button" aria-expanded="false"><span>¿Cómo se calculan los precios?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Las tarifas mensuales se muestran en USD y corresponden a la capacidad incluida en cada plan. La propuesta final detalla complementos, implementación, impuestos e integraciones específicas para tu operación.</p></div></div></article>
+          <article class="faq-item reveal"><button class="faq-question" type="button" aria-expanded="false"><span>¿Qué incluye la prueba gratuita de 30 días?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>La promoción está disponible para nuevos clientes y cubre durante 30 días las funciones del plan base seleccionado para su operación con médicos y pacientes. No aplica a add-ons, complementos ni servicios adicionales, que se facturan por separado.</p></div></div></article>
           <article class="faq-item reveal open"><button class="faq-question" type="button" aria-expanded="true"><span>¿G-Salud sirve tanto para consultorios como para clínicas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. El enfoque para consultorios prioriza agenda, recepción, pacientes, seguros e historia clínica. El enfoque para clínicas añade coordinación de múltiples centros, consultorios, profesionales y vistas consolidadas según autorización.</p></div></div></article>
           <article class="faq-item reveal"><button class="faq-question" type="button" aria-expanded="false"><span>¿Puedo utilizarlo desde el celular o una tableta?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>La experiencia está diseñada para adaptarse a escritorio, tableta y móvil, de modo que el equipo pueda consultar y operar según el dispositivo disponible.</p></div></div></article>
           <article class="faq-item reveal"><button class="faq-question" type="button" aria-expanded="false"><span>¿Cómo ayuda a evitar pacientes duplicados?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>G-Salud utiliza una búsqueda segura antes de crear registros y vincula a la misma persona con diferentes centros sin generar copias innecesarias.</p></div></div></article>
@@ -1371,7 +1404,7 @@
 
       qa('.plan-link').forEach(link => {
         const plan = link.dataset.planName;
-        link.href = `https://wa.me/18099949227?text=${encodeURIComponent(`Hola GRIMATS, quiero contratar el plan ${plan} de G-Salud.`)}`;
+        link.href = `https://wa.me/18099949227?text=${encodeURIComponent(`Hola GRIMATS, quiero iniciar la prueba gratis de 30 días del plan ${plan} de G-Salud.`)}`;
         link.target = '_blank';
         link.rel = 'noopener';
       });
