@@ -581,6 +581,8 @@
     .plan-price .currency { align-self: flex-start; margin-top: 12px; color: var(--blue); font-size: 17px; font-weight: 900; }
     .plan-price strong { font-size: 60px; line-height: .86; letter-spacing: -.065em; }
     .plan-price .period { color: var(--muted); font-size: 13px; font-weight: 750; padding-bottom: 4px; }
+    .tax-note { display: block; margin-top: 8px; color: #5f6f86; font-size: 9.5px; font-weight: 750; line-height: 1.4; }
+    .plan-price + .tax-note { margin-top: 10px; }
     .plan-trial {
       width: max-content; max-width: 100%; margin-top: 14px; padding: 8px 11px; border-radius: 11px;
       color: #146147; background: var(--green-soft); border: 1px solid #bfe8d8; font-size: 10.5px; font-weight: 900;
@@ -1118,6 +1120,7 @@
               <h3>Consultorio Esencial</h3>
               <p class="plan-audience">Para un médico individual o un consultorio pequeño que necesita ordenar su jornada.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>90</strong><span class="period">/ mes</span></div>
+              <span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span>
               <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>2</strong><span>Médicos incluidos</span></div>
@@ -1127,7 +1130,8 @@
               </div>
               <ul class="plan-list">
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Pacientes ilimitados.</span></li>
-                <li><svg class="icon"><use href="#i-check"></use></svg><span>20 GB de almacenamiento.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>10 GB para datos clínicos estructurados.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>20 GB para archivos, imágenes y documentos.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Soporte estándar.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Facturación electrónica disponible como complemento.</span></li>
               </ul>
@@ -1141,6 +1145,7 @@
               <h3>Consultorio Equipo</h3>
               <p class="plan-audience">Para un grupo médico o un consultorio compartido con más profesionales y apoyo administrativo.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>205</strong><span class="period">/ mes</span></div>
+              <span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span>
               <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>5</strong><span>Médicos incluidos</span></div>
@@ -1150,7 +1155,8 @@
               </div>
               <ul class="plan-list">
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Pacientes ilimitados.</span></li>
-                <li><svg class="icon"><use href="#i-check"></use></svg><span>60 GB de almacenamiento.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>30 GB para datos clínicos estructurados.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>60 GB para archivos, imágenes y documentos.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Soporte prioritario básico.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Mayor capacidad para agendas y trabajo compartido.</span></li>
               </ul>
@@ -1169,6 +1175,7 @@
               <h3>Clínica</h3>
               <p class="plan-audience">Para una clínica mediana con varios médicos, áreas operativas y una administración coordinada.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>455</strong><span class="period">/ mes</span></div>
+              <span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span>
               <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>10</strong><span>Médicos incluidos</span></div>
@@ -1178,7 +1185,8 @@
               </div>
               <ul class="plan-list">
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Pacientes ilimitados.</span></li>
-                <li><svg class="icon"><use href="#i-check"></use></svg><span>100 GB de almacenamiento.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>75 GB para datos clínicos estructurados.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>100 GB para archivos, imágenes y documentos.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Soporte prioritario.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Portal de clínica configurado para la operación del centro.</span></li>
               </ul>
@@ -1192,6 +1200,7 @@
               <h3>Red Clínica</h3>
               <p class="plan-audience">Para un grupo médico o una red que necesita coordinar múltiples centros bajo una sola operación.</p>
               <div class="plan-price"><span class="currency">US$</span><strong>905</strong><span class="period">/ mes</span></div>
+              <span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span>
               <div class="plan-trial">30 días gratis para nuevos clientes</div>
               <div class="plan-capacity">
                 <div class="capacity-item"><strong>20+</strong><span>Médicos incluidos</span></div>
@@ -1201,7 +1210,8 @@
               </div>
               <ul class="plan-list">
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Pacientes ilimitados.</span></li>
-                <li><svg class="icon"><use href="#i-check"></use></svg><span>200 GB de almacenamiento.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>200 GB para datos clínicos estructurados.</span></li>
+                <li><svg class="icon"><use href="#i-check"></use></svg><span>200 GB para archivos, imágenes y documentos.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Soporte con SLA y alcance personalizado.</span></li>
                 <li><svg class="icon"><use href="#i-check"></use></svg><span>Portal multicentro según los módulos contratados.</span></li>
               </ul>
@@ -1222,39 +1232,39 @@
             <section class="addon-group reveal" aria-labelledby="addon-growth-title">
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-users"></use></svg></span><h4 id="addon-growth-title">Equipo y capacidad</h4></div>
               <div class="addon-grid">
-                <article class="addon-card"><h5>Médico adicional</h5><div class="addon-price">US$10</div><span class="addon-unit">por médico / mes</span><p>El mismo médico en varios consultorios del cliente cuenta una sola vez.</p></article>
-                <article class="addon-card"><h5>Usuario administrativo adicional</h5><div class="addon-price">US$5</div><span class="addon-unit">por usuario / mes</span><p>Para secretaría, recepción o administración.</p></article>
-                <article class="addon-card"><h5>Consultorio o cubículo adicional</h5><div class="addon-price">US$45</div><span class="addon-unit">por espacio / mes</span><p>Sujeto a la capacidad del plan; puede requerir un cambio de nivel.</p></article>
-                <article class="addon-card"><h5>Centro adicional</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">o cambio a Red Clínica</span><p>Se evalúa según el número de centros y el alcance requerido.</p></article>
+                <article class="addon-card"><h5>Médico adicional</h5><div class="addon-price">US$10</div><span class="addon-unit">por médico / mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>El mismo médico en varios consultorios del cliente cuenta una sola vez.</p></article>
+                <article class="addon-card"><h5>Usuario administrativo adicional</h5><div class="addon-price">US$5</div><span class="addon-unit">por usuario / mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Para secretaría, recepción o administración.</p></article>
+                <article class="addon-card"><h5>Consultorio o cubículo adicional</h5><div class="addon-price">US$45</div><span class="addon-unit">por espacio / mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Sujeto a la capacidad del plan; puede requerir un cambio de nivel.</p></article>
+                <article class="addon-card"><h5>Centro adicional</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">o cambio a Red Clínica</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Se evalúa según el número de centros y el alcance requerido.</p></article>
               </div>
             </section>
 
             <section class="addon-group reveal" aria-labelledby="addon-consumption-title">
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-bell"></use></svg></span><h4 id="addon-consumption-title">Comunicaciones, almacenamiento e IA</h4></div>
               <div class="addon-grid">
-                <article class="addon-card"><h5>WhatsApp utility adicional</h5><div class="addon-price">US$2.50</div><span class="addon-unit">por 100 mensajes</span><p>Aplica después de consumir la bolsa del plan. Marketing se cotiza aparte.</p></article>
-                <article class="addon-card"><h5>Correo adicional</h5><div class="addon-price">US$2</div><span class="addon-unit">por 3,000 correos</span><p>Aplica después de consumir la bolsa mensual incluida.</p></article>
-                <article class="addon-card"><h5>Almacenamiento adicional</h5><div class="addon-price">US$0.25</div><span class="addon-unit">por GB / mes</span><p>Para documentos, imágenes y almacenamiento adicional.</p></article>
-                <article class="addon-card"><h5>IA clínica</h5><div class="addon-price">US$8</div><span class="addon-unit">por 1,000 acciones</span><p>Amplía la capacidad mensual incluida para las funciones de asistencia contratadas.</p></article>
-                <article class="addon-card addon-card-wide"><h5>Número empresarial para G-Salud</h5><div class="addon-price">US$20</div><span class="addon-unit">por número / mes</span><p>Si el consultorio no cuenta con un número empresarial compatible para integrar, GRIMATS puede facilitar uno. Funcionará como línea de la flota del consultorio, canal de notificaciones y, si se requiere, para la gestión de la IA del sistema. Como alternativa, recomendamos adquirir el número con su proveedor local y facilitárnoslo para la integración.</p></article>
+                <article class="addon-card"><h5>WhatsApp utility adicional</h5><div class="addon-price">US$2.50</div><span class="addon-unit">por 100 mensajes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Aplica después de consumir la bolsa del plan. Marketing se cotiza aparte.</p></article>
+                <article class="addon-card"><h5>Correo adicional</h5><div class="addon-price">US$2</div><span class="addon-unit">por 3,000 correos</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Aplica después de consumir la bolsa mensual incluida.</p></article>
+                <article class="addon-card"><h5>Almacenamiento adicional de archivos</h5><div class="addon-price">US$0.25</div><span class="addon-unit">por GB / mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Para ampliar la capacidad de archivos, imágenes y documentos; no aplica a los datos clínicos estructurados.</p></article>
+                <article class="addon-card"><h5>IA clínica</h5><div class="addon-price">US$8</div><span class="addon-unit">por 1,000 acciones</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Amplía la capacidad mensual incluida para las funciones de asistencia contratadas.</p></article>
+                <article class="addon-card addon-card-wide"><h5>Número empresarial para G-Salud</h5><div class="addon-price">US$20</div><span class="addon-unit">por número / mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Si el consultorio no cuenta con un número empresarial compatible para integrar, GRIMATS puede facilitar uno. Funcionará como línea de la flota del consultorio, canal de notificaciones y, si se requiere, para la gestión de la IA del sistema. Como alternativa, recomendamos adquirir el número con su proveedor local y facilitárnoslo para la integración.</p></article>
               </div>
             </section>
 
             <section class="addon-group reveal" aria-labelledby="addon-services-title">
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-box"></use></svg></span><h4 id="addon-services-title">Módulos y servicios</h4></div>
               <div class="addon-grid">
-                <article class="addon-card"><h5>Portal del paciente</h5><div class="addon-price">US$10</div><span class="addon-unit">por portal y consultorio</span><p>Activa el autoservicio del paciente como parte del alcance contratado.</p></article>
-                <article class="addon-card"><h5>WhatsApp marketing</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">según proveedor y categoría</span><p>No utiliza la tarifa de mensajes utility.</p></article>
-                <article class="addon-card"><h5>Migración de datos</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto</span><p>Según volumen, calidad y formato; el documento contempla contrato anual pagado por adelantado.</p></article>
-                <article class="addon-card"><h5>Kiosco, pantalla e impresoras</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto e implantación</span><p>Incluye evaluación de hardware, configuración e implantación. El set tecnológico puede mensualizarse durante el primer año.</p></article>
+                <article class="addon-card"><h5>Portal del paciente</h5><div class="addon-price">US$10</div><span class="addon-unit">por portal y consultorio</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Activa el autoservicio del paciente como parte del alcance contratado.</p></article>
+                <article class="addon-card"><h5>WhatsApp marketing</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">según proveedor y categoría</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>No utiliza la tarifa de mensajes utility.</p></article>
+                <article class="addon-card"><h5>Migración de datos</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Según volumen, calidad y formato; el documento contempla contrato anual pagado por adelantado.</p></article>
+                <article class="addon-card"><h5>Kiosco, pantalla e impresoras</h5><div class="addon-price quote">Cotización en USD</div><span class="addon-unit">proyecto e implantación</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Incluye evaluación de hardware, configuración e implantación. El set tecnológico puede mensualizarse durante el primer año.</p></article>
               </div>
             </section>
 
             <section class="addon-group accounting-group reveal" aria-labelledby="addon-accounting-title">
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-file"></use></svg></span><h4 id="addon-accounting-title">Servicios contables</h4></div>
               <div class="addon-grid two-column">
-                <article class="addon-card"><h5>Normalización y comprobantes fiscales</h5><div class="addon-price">US$220</div><span class="addon-unit">servicio puntual</span><p>Normalización, revisión y generación de comprobantes fiscales con el acompañamiento de una profesional contable.</p></article>
-                <article class="addon-card"><h5>Servicio contable mensual</h5><div class="addon-price">US$275–365</div><span class="addon-unit">por mes · según nivel de facturación</span><p>Revisión contable recurrente y gestión de los registros correspondientes ante la DGII.</p></article>
+                <article class="addon-card"><h5>Normalización y comprobantes fiscales</h5><div class="addon-price">US$220</div><span class="addon-unit">servicio puntual</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Normalización, revisión y generación de comprobantes fiscales con el acompañamiento de una profesional contable.</p></article>
+                <article class="addon-card"><h5>Servicio contable mensual</h5><div class="addon-price">US$275–365</div><span class="addon-unit">por mes · según nivel de facturación</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Revisión contable recurrente y gestión de los registros correspondientes ante la DGII.</p></article>
               </div>
             </section>
 
@@ -1262,9 +1272,9 @@
               <div class="addon-group-head"><span><svg class="icon"><use href="#i-wallet"></use></svg></span><h4 id="addon-billing-title">Facturador electrónico</h4></div>
               <div class="addon-callout"><strong>Beneficio por integración GRIMATS:</strong> cada nivel recibe un 20 % de descuento en la mensualidad cuando el facturador está conectado o se utiliza dentro de una aplicación o servicio de GRIMATS. El descuento no aplica a las facturas adicionales.</div>
               <div class="addon-grid three-column">
-                <article class="addon-card"><h5>Tier 1 · Fiscal Esencial</h5><div class="addon-price">US$35</div><span class="addon-unit">por mes · hasta 1,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$28/mes</span><p>Después de las 1,000 facturas incluidas: US$0.023 por cada factura adicional.</p></article>
-                <article class="addon-card"><h5>Tier 2 · Fiscal Negocio</h5><div class="addon-price">US$73</div><span class="addon-unit">por mes · hasta 5,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$58.40/mes</span><p>Después de las 5,000 facturas incluidas: US$0.014 por cada factura adicional.</p></article>
-                <article class="addon-card"><h5>Tier 3 · Fiscal Volumen</h5><div class="addon-price">US$145</div><span class="addon-unit">por mes · hasta 15,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$116/mes</span><p>Después de las 15,000 facturas incluidas: US$0.009 por cada factura adicional.</p></article>
+                <article class="addon-card"><h5>Tier 1 · Fiscal Esencial</h5><div class="addon-price">US$35</div><span class="addon-unit">por mes · hasta 1,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$28/mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Después de las 1,000 facturas incluidas: US$0.023 por cada factura adicional.</p></article>
+                <article class="addon-card"><h5>Tier 2 · Fiscal Negocio</h5><div class="addon-price">US$73</div><span class="addon-unit">por mes · hasta 5,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$58.40/mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Después de las 5,000 facturas incluidas: US$0.014 por cada factura adicional.</p></article>
+                <article class="addon-card"><h5>Tier 3 · Fiscal Volumen</h5><div class="addon-price">US$145</div><span class="addon-unit">por mes · hasta 15,000 facturas</span><span class="integrated-price">Integrado con GRIMATS: US$116/mes</span><span class="tax-note">Aplican tarifas impositivas según el formulario de declaración y las regulaciones del país.</span><p>Después de las 15,000 facturas incluidas: US$0.009 por cada factura adicional.</p></article>
               </div>
             </section>
           </div>
