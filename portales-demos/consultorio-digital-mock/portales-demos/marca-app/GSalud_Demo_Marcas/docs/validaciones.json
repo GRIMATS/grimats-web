@@ -1,0 +1,300 @@
+{
+  "date": "2026-09-17",
+  "environment": "Chromium headless; same HTML/CSS/JS and images embedded for rendering. File and local HTTP URL navigation are blocked by container browser policy. No production test.",
+  "static": {
+    "salud-propuestas.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    },
+    "g-salud.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    },
+    "propuestas/atria-salud.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    },
+    "propuestas/cliniva.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    },
+    "propuestas/medinexa.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    },
+    "propuestas/saluvia.html": {
+      "duplicate_ids": [],
+      "one_h1": true,
+      "assets_checked": true,
+      "noindex": true
+    }
+  },
+  "render": [
+    {
+      "page": "salud-propuestas.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "salud-propuestas.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "salud-propuestas.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "salud-propuestas.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "salud-propuestas.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "g-salud.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "g-salud.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "g-salud.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "g-salud.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "g-salud.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "atria-salud.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "atria-salud.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "atria-salud.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "atria-salud.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "atria-salud.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "cliniva.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "cliniva.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "cliniva.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "cliniva.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "cliniva.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "medinexa.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "medinexa.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "medinexa.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "medinexa.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "medinexa.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "saluvia.html",
+      "width": 320,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "saluvia.html",
+      "width": 390,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "saluvia.html",
+      "width": 768,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "saluvia.html",
+      "width": 1024,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    },
+    {
+      "page": "saluvia.html",
+      "width": 1440,
+      "horizontal_overflow": false,
+      "all_images_loaded": true
+    }
+  ],
+  "interactions": [
+    {
+      "page": "g-salud.html",
+      "contact_dialog": true,
+      "product_link_points_to_gallery": true
+    },
+    {
+      "page": "atria-salud.html",
+      "plan_filters": true,
+      "catalogue_prices_correct": true,
+      "three_mock_views": true,
+      "four_journey_steps": true,
+      "estimate_90_100_105_150_135_205_455": true,
+      "red_quote_not_unlimited": true,
+      "invalid_input_handled": true,
+      "contact_dialog_and_escaped_URL": true,
+      "faq": true,
+      "brand_selector_destination": true,
+      "mobile_menu": true
+    },
+    {
+      "page": "cliniva.html",
+      "plan_filters": true,
+      "catalogue_prices_correct": true,
+      "three_mock_views": true,
+      "four_journey_steps": true,
+      "estimate_90_100_105_150_135_205_455": true,
+      "red_quote_not_unlimited": true,
+      "invalid_input_handled": true,
+      "contact_dialog_and_escaped_URL": true,
+      "faq": true,
+      "brand_selector_destination": true,
+      "mobile_menu": true
+    },
+    {
+      "page": "medinexa.html",
+      "plan_filters": true,
+      "catalogue_prices_correct": true,
+      "three_mock_views": true,
+      "four_journey_steps": true,
+      "estimate_90_100_105_150_135_205_455": true,
+      "red_quote_not_unlimited": true,
+      "invalid_input_handled": true,
+      "contact_dialog_and_escaped_URL": true,
+      "faq": true,
+      "brand_selector_destination": true,
+      "mobile_menu": true
+    },
+    {
+      "page": "saluvia.html",
+      "plan_filters": true,
+      "catalogue_prices_correct": true,
+      "three_mock_views": true,
+      "four_journey_steps": true,
+      "estimate_90_100_105_150_135_205_455": true,
+      "red_quote_not_unlimited": true,
+      "invalid_input_handled": true,
+      "contact_dialog_and_escaped_URL": true,
+      "faq": true,
+      "brand_selector_destination": true,
+      "mobile_menu": true
+    }
+  ],
+  "errors": [],
+  "static_link_issues": [],
+  "result": "PASS for static checks, embedded browser rendering and interactions. Deployment remains pending.",
+  "standalone": {
+    "all_six_pages_navigable": true,
+    "brand_switcher": true,
+    "anchor_preservation": true,
+    "mobile_menu": true,
+    "calculator": true,
+    "contact_dialog": true,
+    "tested_via": "self-contained HTML loaded through page.set_content; same iframe router as delivered file",
+    "script_errors": []
+  }
+}
