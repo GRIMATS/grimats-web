@@ -27,3 +27,11 @@ Buenas prácticas:
 - Versiona cambios: `git add . && git commit -m "chore: reorganizar assets"`.
 - Mantén placeholders en `assets/images/` con nombres claros (ej. `pending-poster.svg`).
 
+URLs limpias:
+
+- En enlaces internos, usa la ruta sin `.html` (por ejemplo, `/g-academy`).
+- GitHub Pages sirve esas rutas directamente desde el archivo HTML correspondiente.
+- `js/clean-url.js` limpia en el navegador cualquier URL antigua que termine en `.html`.
+- Mantén las etiquetas `canonical` y `sitemap.xml` sin la extensión.
+- Para redirecciones HTTP 301 reales desde las URLs antiguas se requiere una capa de redirección delante de GitHub Pages, como Cloudflare.
+

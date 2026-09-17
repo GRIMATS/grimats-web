@@ -54,4 +54,4 @@ document.querySelectorAll('[data-demo]').forEach(el=>el.addEventListener('click'
 }));
 
 const login=document.getElementById('demo-login');
-if(login){login.addEventListener('click',()=>location.href='dashboard.html')}
+if(login){login.addEventListener('click',()=>location.href='dashboard')}
