@@ -1,0 +1,21 @@
+<svg viewBox="0 0 780 520" xmlns="http://www.w3.org/2000/svg">
+<rect width="780" height="520" fill="#f1fcf2"/>
+<g transform="translate(130 72)">
+<polygon points="180,0 360,90 180,180 0,90" fill="#0d7b43"/>
+<polygon points="0,90 180,180 180,360 0,270" fill="#0a5f33"/>
+<polygon points="180,180 360,90 360,270 180,360" fill="#1aa35d"/>
+<path d="M48 116 L176 180 L176 308 L48 244 Z" fill="#c8ef9b" opacity="0.9"/>
+<path d="M182 180 L308 118 L308 244 L182 308 Z" fill="#7ed185"/>
+<path d="M92 136 L142 160 L94 184 L42 160 Z" fill="#f7f1d9"/>
+<path d="M228 142 L274 162 L228 186 L182 166 Z" fill="#f7f1d9"/>
+<path d="M120 206 C130 194,146 194,154 204" stroke="#2a8d50" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M246 212 C258 194,272 194,282 208" stroke="#2a8d50" stroke-width="8" fill="none" stroke-linecap="round"/>
+<circle cx="452" cy="110" r="50" fill="#ffd75f"/>
+<g transform="translate(388 204)">
+<ellipse cx="92" cy="150" rx="62" ry="16" fill="#000" opacity="0.15"/>
+<rect x="82" y="28" width="34" height="82" rx="10" fill="#6D370E"/>
+<path d="M50 28 C82 0,112 0,144 28 C126 30,108 42,100 62 C90 46,72 34,50 28Z" fill="#0d7b43"/>
+<path d="M34 50 C66 24,96 26,118 48 C98 50,84 68,80 90 C66 76,52 60,34 50Z" fill="#54ba63"/>
+<path d="M104 50 C136 24,166 26,188 48 C168 50,154 68,150 90 C136 76,122 60,104 50Z" fill="#54ba63"/>
+</g>
+</g></svg>

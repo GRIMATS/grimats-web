@@ -1,0 +1,63 @@
+FERTIDOMSA — CUATRO PROPUESTAS WEB DE DEMOSTRACIÓN
+Preparado por GRIMATS / G-Presencia IA
+
+DATOS Y PÁGINAS DE PRUEBA — NO USAR EN PRODUCTIVO — RIESGO
+Material para revisar dirección visual, contenido y recorrido. No es un sitio operativo.
+
+CÓMO ABRIR
+1. Extrae el ZIP completo.
+2. Abre ABRIR_COMPARADOR.html en un navegador de escritorio.
+3. Elige una propuesta. Los controles permiten alternar escritorio, tableta y móvil.
+4. También puedes abrir cada HTML individual con doble clic.
+No requiere instalar software, servidor local, cuenta, librerías ni acceso a internet.
+Las imágenes, el CSS y el JavaScript están incluidos dentro de cada HTML.
+Los HTML individuales pueden compartirse por separado y siguen funcionando sin conexión.
+
+ARCHIVOS
+01_Raiz_Productiva_DEMO.html — estilo cálido, humano y editorial.
+02_Respaldo_Tecnico_DEMO.html — diseño ordenado, comercial y catálogo filtrable.
+03_Crecimiento_Premium_DEMO.html — dirección sobria y editorial, verde profundo.
+04_Futuro_Agro_Sostenible_DEMO.html — dirección fresca y modular; guía visual simulada.
+ABRIR_COMPARADOR.html — contiene las cuatro páginas; también funciona de manera independiente.
+
+INTERACCIONES
+- Menú adaptable para móvil y navegación por secciones.
+- Preguntas frecuentes desplegables.
+- Solicitudes de cotización, asesoría y WhatsApp completamente simuladas.
+- Filtros de categorías en Respaldo Técnico.
+- Selector de cultivo de ejemplo en Futuro Agro Sostenible.
+- Diálogo de advertencia con explicación de riesgos.
+
+SEGURIDAD Y LÍMITES DE LA DEMO
+No contiene claves, credenciales, integraciones, formularios conectados, analítica,
+píxeles, almacenamiento local, cookies ni solicitudes de red.
+No se incluye teléfono ni correo real accionable. No se envían mensajes.
+No hay inventario, precios, pagos, pedidos, reservas ni atención comercial activa.
+Los datos de los ejemplos están predefinidos. No introduzcas información real.
+La página incluye etiquetas noindex/nofollow y política CSP que bloquea conexiones
+y envío de formularios. Noindex NO es autenticación ni control de acceso.
+Los bloqueos técnicos reducen operaciones accidentales, no convierten el prototipo
+en una aplicación lista para producción. No desplegar públicamente sin validación.
+
+FUENTES Y TRATAMIENTO
+- MANUEL DE IDENTIDAD CORPORATIVA FERTIDOMSA.pdf: páginas 4–8 para identidad.
+- Fotografías de campo extraídas del manual (portada y páginas 7/9).
+- G-Presencia IA(1-2)(2).xlsx: Sheet1, respuestas 1 y 2, como contexto de negocio.
+- GRIMATS_FERTIDOMSA_Manual_Extraido_y_4_Propuestas_Identidad.docx: cuatro rutas.
+- Logotipo GRIMATS tomado del membrete de la solicitud previamente preparada.
+Se conserva el logotipo FERTIDOMSA, sin rediseñar sus formas ni reconstruir letras.
+Las fotografías son referencias: no se atribuyen a instalaciones, fincas, personal
+o resultados reales del negocio. Verificar derechos de uso antes de una publicación.
+La redacción de presentación y los flujos visuales son propuestas de GRIMATS.
+Las categorías, el acompañamiento, la ubicación y el horario proceden del formulario,
+pero no son una confirmación de condiciones operativas o comerciales actuales.
+No se reproducen promesas de cosecha, rentabilidad, equivalencia o garantías no validadas.
+La palabra “Sostenible” nombra una ruta conceptual; no acredita desempeño ambiental,
+certificaciones, prácticas verificadas ni herramientas tecnológicas implementadas.
+No se incluyen archivos de tipografías. Se emplean fuentes del sistema del dispositivo.
+
+ANTES DE UNA EVENTUAL VERSIÓN PRODUCTIVA
+Aprobar dirección visual y contenidos; confirmar datos públicos, servicios, catálogo,
+condiciones comerciales y alcance de asesoría; validar autorizaciones y derechos de
+materiales; desarrollar backend, privacidad, seguridad y pruebas de integraciones.
+Mantener esta carpeta separada del código y datos de producción.

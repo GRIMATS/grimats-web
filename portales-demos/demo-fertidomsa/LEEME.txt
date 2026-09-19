@@ -1,0 +1,15 @@
+FERTIDOMSA · Catálogo de referencias visuales (actualizado)
+
+Abra `abrir-catalogo.html` en su navegador.
+
+Contenido incluido:
+- 16 demos HTML de las rondas previas
+- 6 referencias fotográficas en PNG original
+- Inventario actualizado y pendientes
+
+Resumen:
+- Total esperado: 24
+- Total incluido: 22
+- Pendientes: 2
+
+Aviso: contenido de demostración, no usar en productivo.

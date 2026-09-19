@@ -1,0 +1,28 @@
+<svg viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#081710"/><stop offset="100%" stop-color="#051018"/></linearGradient></defs>
+<rect width="820" height="520" fill="url(#bg)"/>
+<g stroke="#0aff8a22">
+<line x1="0" y1="0" x2="0" y2="520" /><line x1="40" y1="0" x2="40" y2="520" /><line x1="80" y1="0" x2="80" y2="520" /><line x1="120" y1="0" x2="120" y2="520" /><line x1="160" y1="0" x2="160" y2="520" /><line x1="200" y1="0" x2="200" y2="520" /><line x1="240" y1="0" x2="240" y2="520" /><line x1="280" y1="0" x2="280" y2="520" /><line x1="320" y1="0" x2="320" y2="520" /><line x1="360" y1="0" x2="360" y2="520" /><line x1="400" y1="0" x2="400" y2="520" /><line x1="440" y1="0" x2="440" y2="520" /><line x1="480" y1="0" x2="480" y2="520" /><line x1="520" y1="0" x2="520" y2="520" /><line x1="560" y1="0" x2="560" y2="520" /><line x1="600" y1="0" x2="600" y2="520" /><line x1="640" y1="0" x2="640" y2="520" /><line x1="680" y1="0" x2="680" y2="520" /><line x1="720" y1="0" x2="720" y2="520" /><line x1="760" y1="0" x2="760" y2="520" /><line x1="800" y1="0" x2="800" y2="520" /><line x1="0" y1="0" x2="820" y2="0" /><line x1="0" y1="40" x2="820" y2="40" /><line x1="0" y1="80" x2="820" y2="80" /><line x1="0" y1="120" x2="820" y2="120" /><line x1="0" y1="160" x2="820" y2="160" /><line x1="0" y1="200" x2="820" y2="200" /><line x1="0" y1="240" x2="820" y2="240" /><line x1="0" y1="280" x2="820" y2="280" /><line x1="0" y1="320" x2="820" y2="320" /><line x1="0" y1="360" x2="820" y2="360" /><line x1="0" y1="400" x2="820" y2="400" /><line x1="0" y1="440" x2="820" y2="440" /><line x1="0" y1="480" x2="820" y2="480" /><line x1="0" y1="520" x2="820" y2="520" /></g>
+<g>
+<circle cx="628" cy="110" r="74" fill="#00ff9944"/>
+<circle cx="628" cy="110" r="34" fill="#7affc544"/>
+<rect x="72" y="80" width="320" height="360" rx="28" fill="#0b1c18" stroke="#1ae9a177"/>
+<rect x="428" y="80" width="320" height="168" rx="28" fill="#0b1c18" stroke="#1ae9a177"/>
+<rect x="428" y="272" width="320" height="168" rx="28" fill="#0b1c18" stroke="#1ae9a177"/>
+<text x="102" y="130" font-size="26" font-family="Arial" font-weight="700" fill="#80ffd0">Crop Command</text>
+<text x="102" y="168" font-size="80" font-family="Arial" font-weight="900" fill="#ffffff">FERTI</text>
+<text x="102" y="234" font-size="80" font-family="Arial" font-weight="900" fill="#00ff99">DOMSA</text>
+<g>
+ <circle cx="540" cy="158" r="44" fill="#0d3025" stroke="#42ffb7"/>
+ <path d="M540 194 C528 164, 536 142, 556 122" stroke="#7affc5" stroke-width="5" fill="none" stroke-linecap="round"/>
+ <path d="M538 192 C514 182, 500 170, 492 150" stroke="#7affc5" stroke-width="5" fill="none" stroke-linecap="round"/>
+</g>
+<text x="604" y="148" font-size="16" font-family="Arial" fill="#9ae7c7">Estado del cultivo</text>
+<text x="604" y="174" font-size="28" font-family="Arial" font-weight="700" fill="#fff">Óptimo</text>
+<rect x="604" y="188" width="92" height="10" rx="5" fill="#17372e"/><rect x="604" y="188" width="76" height="10" rx="5" fill="#00ff99"/>
+<text x="468" y="320" font-size="24" font-family="Arial" font-weight="700" fill="#fff">Canales de atención</text>
+<rect x="466" y="348" width="120" height="54" rx="16" fill="#0e2d23" stroke="#1ae9a177"/>
+<rect x="602" y="348" width="120" height="54" rx="16" fill="#0e2d23" stroke="#1ae9a177"/>
+<text x="490" y="380" font-size="18" font-family="Arial" fill="#c5fff0">WhatsApp</text>
+<text x="639" y="380" font-size="18" font-family="Arial" fill="#c5fff0">Cotizar</text>
+</g></svg>

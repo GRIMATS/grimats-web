@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FERTIDOMSA · Propuesta Book 02 · Respaldo Técnico</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#eef4f0;--ink:#11251a;--accent:#00652A;--card:rgba(255,255,255,.82);--card-line:rgba(0,101,42,.14);--card-soft:#f6fbf8;--pill:#eaf7ef;--pill-line:#c8e7d1;--cta1:#00652A;--cta2:#0f7f4f;}
+
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.45;color:var(--ink);background:var(--bg)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1220px,calc(100% - 40px));margin:0 auto}
+.demo-warning{position:relative;z-index:20;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center;padding:12px 18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:linear-gradient(90deg,#781212,#b91c1c,#7f1d1d);color:#fff;border-bottom:2px solid rgba(255,255,255,.25)}
+.demo-warning-bottom{margin-top:40px;border-top:2px solid rgba(255,255,255,.2);border-bottom:none}
+.demo-chip{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.74);backdrop-filter: blur(16px);border-bottom:1px solid rgba(255,255,255,.2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:18px}.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:600}.nav-links a{opacity:.86}.nav-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:14px;font-weight:800;letter-spacing:.02em;border:1px solid transparent;transition:.25s transform,.25s box-shadow,.25s background;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.btn:hover{transform:translateY(-2px)}
+.hero{position:relative;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;min-height:720px;padding:60px 0 70px}.hero-copy h1{font-size:clamp(42px,6vw,78px);line-height:.96;margin:18px 0 18px;letter-spacing:-.04em}.hero-copy p.lead{font-size:clamp(17px,2.2vw,22px);opacity:.92;max-width:760px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.hero-metrics{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}.metric{min-width:140px;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.18);backdrop-filter: blur(14px);border:1px solid rgba(255,255,255,.2);box-shadow:0 18px 40px rgba(0,0,0,.16)}.metric strong{display:block;font-size:28px}
+.card-3d{position:relative;padding:24px;border-radius:28px;background:var(--card);border:1px solid var(--card-line);box-shadow:0 30px 80px rgba(0,0,0,.16);transform-style:preserve-3d}.card-3d:before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent 35%,transparent 65%,rgba(255,255,255,.15));pointer-events:none}.float{animation:float 7s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.section{padding:88px 0}.section h2{font-size:clamp(30px,4vw,50px);line-height:1;margin:0 0 16px;letter-spacing:-.03em}.eyebrow{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.feature{padding:26px;border-radius:24px;background:var(--card-soft);border:1px solid var(--card-line);box-shadow:0 15px 35px rgba(0,0,0,.08)}.feature h3{margin:10px 0 8px;font-size:22px}
+.product-chip{display:inline-flex;padding:10px 14px;border-radius:999px;background:var(--pill);border:1px solid var(--pill-line);font-weight:700;font-size:14px;margin:8px 8px 0 0}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center}.cta-box{padding:30px;border-radius:34px;background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;box-shadow:0 30px 80px rgba(0,0,0,.18)}
+.footer{padding:24px 0 50px;font-size:14px;opacity:.86}.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}.kpi{padding:18px;border-radius:18px;background:var(--card-soft);border:1px solid var(--card-line)}.kpi span{display:block;font-size:13px;opacity:.72;text-transform:uppercase;letter-spacing:.12em}.kpi strong{display:block;margin-top:8px;font-size:26px}
+.watermark{position:absolute;right:-50px;bottom:20px;font-size:110px;font-weight:900;line-height:.9;letter-spacing:-.06em;color:rgba(255,255,255,.06);transform:rotate(-12deg);pointer-events:none;user-select:none}
+.mock-badge{position:absolute;left:0;bottom:0;padding:12px 16px;border-radius:0 16px 0 18px;background:rgba(0,0,0,.72);color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.logo-wrap{display:flex;align-items:center;gap:14px;font-weight:900}.logo-wrap img{height:44px}.hero-visual{position:relative;min-height:600px;display:grid;place-items:center}
+.orb{position:absolute;border-radius:999px;filter:blur(12px);opacity:.65}.orba{width:180px;height:180px;left:10%;top:12%}.orbb{width:140px;height:140px;right:6%;top:20%}.orbc{width:220px;height:220px;right:12%;bottom:8%}
+.mock-screen{position:relative;padding:20px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.74));border:1px solid rgba(255,255,255,.6);box-shadow:0 40px 100px rgba(0,0,0,.22);width:min(100%,540px);transform:perspective(1200px) rotateY(-8deg) rotateX(6deg)}
+.mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.dots{display:flex;gap:8px}.dots i{width:10px;height:10px;border-radius:999px;display:block;background:#ddd}
+.mock-card{padding:18px;border-radius:22px;background:rgba(255,255,255,.84);box-shadow:0 18px 35px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.05);margin-bottom:16px}.mock-bar{height:12px;border-radius:999px;background:linear-gradient(90deg,var(--cta1),var(--cta2));margin-bottom:14px}.mock-list{display:grid;gap:10px}.mock-list div{height:13px;border-radius:999px;background:#e8ecec}
+.notice{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.18);font-size:14px}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.pillar{padding:18px;border-radius:24px;background:var(--card);border:1px solid var(--card-line)}
+@media (max-width:980px){.hero-grid,.split,.grid-3,.grid-2,.pillars,.kpi-strip{grid-template-columns:1fr}.hero-visual{min-height:380px}.watermark{font-size:70px;right:-20px}.nav-inner{flex-direction:column;align-items:flex-start}.nav-links,.nav-cta{width:100%}.mock-screen{transform:none}}
+
+.hero{background:radial-gradient(circle at 10% 20%, #00652A22, transparent 24%),radial-gradient(circle at 90% 16%, #2aa46a22, transparent 18%),radial-gradient(circle at 80% 80%, #7fc89f22, transparent 22%),linear-gradient(135deg, #eef4f0, #eef4f0);}
+.orba{background:#00652A}.orbb{background:#2aa46a}.orbc{background:#7fc89f}
+.hero-frame{position:absolute;inset:40px;border:1px solid rgba(255,255,255,.24);border-radius:32px;pointer-events:none}
+.icon-sq{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;font-weight:900;box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,.25),transparent)}
+</style>
+</head>
+<body style="">
+
+<div class="demo-warning demo-warning-top">
+  <strong>PÁGINA DEMO / DATOS DE PRUEBA</strong>
+  <span>NO USAR EN PRODUCTIVO</span>
+  <span>RIESGO: el contenido es demostrativo y requiere validación comercial, legal y operativa.</span>
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo-wrap"><img src="assets/logo_standard.svg" alt="FERTIDOMSA"> <span>FERTIDOMSA</span></a>
+    <div class="nav-links"><a href="#productos">Productos</a><a href="#acompanamiento">Acompañamiento</a><a href="#cobertura">Cobertura</a><a href="#contacto">Contacto</a></div>
+    <div class="nav-cta"><a class="btn" style="background:var(--cta1);color:#fff" href="#contacto">Solicitar cotización</a></div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-frame"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="demo-chip">Alineada al book · Book 02 · Respaldo Técnico</span>
+      <h1>Una marca agrícola más sólida, técnica y lista para cotizar.</h1>
+      <p class="lead">Esta versión mantiene colores y símbolos del manual, pero los organiza en una experiencia digital más corporativa, útil para web, catálogo y campañas.</p>
+      <div class="notice" style="margin-top:18px"><strong>Propuesta de demo:</strong> Es la opción más balanceada entre identidad actual, confianza y venta técnica.</div>
+      <div class="hero-actions">
+        <a class="btn" style="background:var(--cta1);color:#fff" href="#contacto">Pedir cotización</a>
+        <a class="btn" style="background:transparent;border-color:rgba(0,0,0,.12);color:var(--ink)" href="#productos">Ver líneas de productos</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric"><strong>5</strong><span>Líneas destacadas</span></div>
+        <div class="metric"><strong>+RD</strong><span>Cobertura nacional</span></div>
+        <div class="metric"><strong>Demo</strong><span>Modo prueba</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orb orba"></div><div class="orb orbb"></div><div class="orb orbc"></div>
+      <div class="mock-screen float">
+        <div class="mock-badge">No productivo</div>
+        <div class="mock-top"><div class="dots"><i></i><i></i><i></i></div><span class="demo-chip" style="font-size:10px;padding:6px 10px">Página demo</span></div>
+        <div class="mock-card" style="display:flex;align-items:center;gap:18px">
+          <img src="assets/logo_standard.svg" alt="Logo" style="width:160px">
+          <div><strong style="font-size:20px">Insumos confiables y orientación técnica para decisiones de campo.</strong><p style="margin:8px 0 0">Estructura demostrativa para discutir dirección creativa.</p></div>
+        </div>
+        <div class="mock-card"><div class="mock-bar"></div><div class="mock-list"><div></div><div style="width:78%"></div><div style="width:63%"></div></div></div>
+        <div class="mock-card" style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div style="padding:14px;border-radius:18px;background:var(--pill)"><strong>Productos</strong><p style="margin:8px 0 0">Herbicidas, fungicidas, insecticidas.</p></div><div style="padding:14px;border-radius:18px;background:var(--pill)"><strong>Asesoría</strong><p style="margin:8px 0 0">Acompañamiento y seguimiento en campo.</p></div></div>
+      </div>
+      <div class="watermark">DEMO<br>RISK</div>
+    </div>
+  </div>
+</section>
+<section class="section" id="productos">
+  <div class="container split">
+    <div>
+      <div class="eyebrow">Portafolio de prueba</div>
+      <h2>Así podría presentarse la oferta principal de FERTIDOMSA</h2>
+      <p>Basado en el cuestionario recibido: venta y distribución de insumos agrícolas, con prioridad en categorías de control fitosanitario y nutrición vegetal. El contenido es demostrativo y no constituye publicación final.</p>
+      <div><span class="product-chip">Herbicidas</span><span class="product-chip">Fungicidas</span><span class="product-chip">Insecticidas</span><span class="product-chip">Fertilizantes foliares</span><span class="product-chip">Fertilizantes granulados</span></div>
+      <div class="kpi-strip">
+        <div class="kpi"><span>Canal principal</span><strong>WhatsApp</strong></div>
+        <div class="kpi"><span>Meta de la web</span><strong>Cotizar</strong></div>
+        <div class="kpi"><span>Horario</span><strong>7-6</strong></div>
+        <div class="kpi"><span>Ubicación</span><strong>SC</strong></div>
+      </div>
+    </div>
+    <div class="card-3d">
+      <div class="eyebrow">Vista de demo</div>
+      <h3 style="font-size:30px;margin:10px 0 14px">Bloque destacado de categorías</h3>
+      <p>Sección demostrativa para listar líneas de productos, beneficios, fichas o entradas hacia un catálogo posterior.</p>
+      <div class="grid-2" style="margin-top:18px">
+        <div class="feature"><div class="icon-sq">H</div><h3>Herbicidas</h3><p>Control y manejo según línea autorizada.</p></div>
+        <div class="feature"><div class="icon-sq">F</div><h3>Fungicidas</h3><p>Protección para distintos escenarios productivos.</p></div>
+        <div class="feature"><div class="icon-sq">I</div><h3>Insecticidas</h3><p>Bloque demostrativo de soluciones fitosanitarias.</p></div>
+        <div class="feature"><div class="icon-sq">N</div><h3>Nutrición</h3><p>Foliares y granulados, con espacio para futuras fichas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="acompanamiento">
+  <div class="container">
+    <div class="eyebrow">Diferencial</div>
+    <h2>La propuesta visual resalta que FERTIDOMSA no solo vende: acompaña.</h2>
+    <p>El formulario del cliente enfatiza el seguimiento en campo como un valor central. Por eso todas las propuestas reservan un bloque fuerte para asesoría, cercanía y orientación técnica.</p>
+    <div class="grid-3" style="margin-top:22px"><div class="feature"><div class="eyebrow">Servicio</div><h3>Orientación técnica en campo</h3><p>Bloque demostrativo para visualizar cómo FERTIDOMSA podría presentar esta capacidad en una web comercial.</p></div><div class="feature"><div class="eyebrow">Servicio</div><h3>Seguimiento al productor</h3><p>Bloque demostrativo para visualizar cómo FERTIDOMSA podría presentar esta capacidad en una web comercial.</p></div><div class="feature"><div class="eyebrow">Servicio</div><h3>Atención a distribuidores</h3><p>Bloque demostrativo para visualizar cómo FERTIDOMSA podría presentar esta capacidad en una web comercial.</p></div></div>
+    <div class="pillars"><div class="pillar"><h3>Presentación profesional</h3><p>Texto demostrativo que muestra el enfoque visual de esta propuesta.</p></div><div class="pillar"><h3>Categorías claras</h3><p>Texto demostrativo que muestra el enfoque visual de esta propuesta.</p></div><div class="pillar"><h3>Mejor para captación y cotización</h3><p>Texto demostrativo que muestra el enfoque visual de esta propuesta.</p></div></div>
+  </div>
+</section>
+<section class="section" id="cobertura">
+  <div class="container split">
+    <div class="cta-box">
+      <div class="eyebrow" style="color:#fff">Cobertura</div>
+      <h2 style="margin-top:12px;color:#fff">Una presencia que puede hablarle a todo el país</h2>
+      <p>Cobertura nacional con foco en Santo Domingo, San Cristóbal, Monte Plata, el Este, Bonao y Ocoa.</p>
+      <div class="notice"><strong>Uso demo:</strong> este mapa/cobertura debe validarse antes de pasar a versión productiva.</div>
+    </div>
+    <div class="card-3d">
+      <div class="eyebrow">Mensaje de prueba</div>
+      <h3 style="font-size:30px;margin:10px 0 14px">Texto sugerido para home</h3>
+      <p>“En FERTIDOMSA trabajamos para que productores y distribuidores encuentren insumos agrícolas y acompañamiento técnico con una atención cercana, clara y confiable.”</p>
+      <p style="margin-top:16px"><strong>Importante:</strong> este copy es de muestra y debe aprobarse antes de publicar.</p>
+      <img src="assets/seal.svg" alt="Sello demo" style="width:150px;margin-top:14px;opacity:.88">
+    </div>
+  </div>
+</section>
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="grid-2">
+      <div class="card-3d">
+        <div class="eyebrow">Contacto demostrativo</div>
+        <h2>Solicita una cotización</h2>
+        <p>Bloque de prueba para mostrar el enfoque de conversión de esta propuesta.</p>
+        <div class="grid-2" style="margin-top:10px">
+          <div class="feature"><h3>WhatsApp / Teléfono</h3><p>+1 829-861-0344</p></div>
+          <div class="feature"><h3>Correo</h3><p>jenry@fertidomsa.com</p></div>
+          <div class="feature"><h3>Horario</h3><p>Lunes a sábado · 7:00 a. m. a 6:00 p. m.</p></div>
+          <div class="feature"><h3>Dirección</h3><p>Carretera principal Los Cacaos, sector El Llano, San Cristóbal, R.D.</p></div>
+        </div>
+      </div>
+      <div class="card-3d">
+        <div class="eyebrow">Aviso crítico</div>
+        <h2>Datos y página de prueba</h2>
+        <p><strong>No usar en productivo.</strong> Esta página es una maqueta HTML de discusión creativa. Toda promesa comercial, precios, tiempos de entrega, garantías, formularios, dominios y conexiones deben ser revisados antes de publicar.</p>
+        <ul>
+          <li>Contenido demostrativo.</li>
+          <li>Sin pasarela, sin backend, sin integraciones reales.</li>
+          <li>Se usa para validar estilo, estructura y narrativa.</li>
+          <li>Requiere aprobación final del cliente.</li>
+        </ul>
+        <div class="hero-actions"><a class="btn" style="background:var(--cta1);color:#fff" href="index.html">Volver al índice</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-warning demo-warning-bottom">
+  <strong>ADVERTENCIA:</strong> DATOS Y PÁGINA DE PRUEBA · NO USAR EN PRODUCTIVO · RIESGO: contenido demostrativo, promesas, precios, tiempos de entrega y condiciones deben validarse antes de publicar.
+</div>
+
+<footer class="footer"><div class="container">Mock demo HTML · Book 02 · Respaldo Técnico · FERTIDOMSA / GRIMATS</div></footer>
+</body>
+</html>

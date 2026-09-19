@@ -4,7 +4,7 @@
     {
       "label": "Desarrollo: iniciar servidor local",
       "type": "process",
-      "command": "pwsh.exe",
+      "command": "powershell.exe",
       "args": [
         "-NoProfile",
         "-ExecutionPolicy",
@@ -32,9 +32,9 @@
       }
     },
     {
-      "label": "Deploy: staging a main",
+      "label": "Deploy: Staging a main",
       "type": "process",
-      "command": "pwsh.exe",
+      "command": "powershell.exe",
       "args": [
         "-NoProfile",
         "-ExecutionPolicy",
