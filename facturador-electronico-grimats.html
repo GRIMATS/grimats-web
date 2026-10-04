@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; img-src 'self' data: https: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self' https: data:; connect-src 'self' https: https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self' https://www.googletagmanager.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; upgrade-insecure-requests">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), interest-cohort=()">
-<meta name="description" content="Facturación electrónica GRIMATS, powered by G-Business Intelligence. Planes por RNC con acceso por API o con facturador GRIMATS en República Dominicana.">
+<meta name="description" content="Facturación electrónica GRIMATS, powered by G-Business Intelligence. Planes por RNC con emisión, integración de compras y gastos, acceso por API o facturador GRIMATS en República Dominicana.">
 <title>Facturación Electrónica · Powered by G-Business Intelligence | GRIMATS</title>
   <link rel="canonical" href="https://grimats.com/facturador-electronico-grimats">
 <link rel="stylesheet" href="css/grimats-subpages.css">
@@ -104,6 +104,13 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif}
 </style>
 <style>
 .booking-note{font-size:11px;line-height:1.7;color:#cfe1f0;margin-top:14px;padding:11px 12px;border:1px solid #36536e;border-radius:8px;background:#0e2a4a}
+.purchase-quota{margin-top:12px;padding:14px 15px;border:1px solid #cfe4f2;border-radius:11px;background:#f2f9fd;display:grid;grid-template-columns:auto 1fr;gap:2px 11px;align-items:center}
+.purchase-quota strong{grid-row:1 / span 2;color:var(--navy);font-size:24px;line-height:1;font-weight:780;letter-spacing:-.035em}
+.purchase-quota span{color:#385b78;font-size:10px;font-weight:700;line-height:1.35}
+.purchase-quota small{color:#637d93;font-size:9px;line-height:1.45}
+.pricing-notes .purchase-note{padding-top:9px;border-top:1px solid #dbe7f0}
+@media(max-width:900px) and (min-width:681px){.purchase-quota{grid-template-columns:1fr}.purchase-quota strong{grid-row:auto}.purchase-quota span{margin-top:4px}}
+@media(max-width:680px){.purchase-quota{grid-template-columns:auto 1fr;padding:15px 17px}.purchase-quota strong{font-size:27px}.purchase-quota span{font-size:11px}.purchase-quota small{font-size:10px}}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -160,41 +167,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="app-footer"><svg class="icon " aria-hidden="true"><use href="#i-info"></use></svg> Datos simulados. Esta vista no emite documentos fiscales.</div></div></div></div>
 <div class="floating-pill"><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg><div><strong>Del XML al seguimiento.</strong><p>Una experiencia conectada, de principio a fin.</p></div></div>
 </div></div>
-<div class="product-promise"><div><svg class="icon " aria-hidden="true"><use href="#i-doc"></use></svg> Emisión y seguimiento de e-CF</div><div><svg class="icon " aria-hidden="true"><use href="#i-link"></use></svg> API o facturador GRIMATS</div><div><svg class="icon " aria-hidden="true"><use href="#i-team"></use></svg> Planes para cada volumen</div><div><svg class="icon " aria-hidden="true"><use href="#i-chart"></use></svg> Control del consumo mensual</div></div>
+<div class="product-promise"><div><svg class="icon " aria-hidden="true"><use href="#i-doc"></use></svg> Emisión y seguimiento de e-CF</div><div><svg class="icon " aria-hidden="true"><use href="#i-link"></use></svg> API o facturador GRIMATS</div><div><svg class="icon " aria-hidden="true"><use href="#i-team"></use></svg> Planes para cada volumen</div><div><svg class="icon " aria-hidden="true"><use href="#i-chart"></use></svg> Compras y gastos integrados</div></div>
 </div></section>
 <section id="solucion" class="section features" aria-labelledby="solution-title"><div class="container"><div class="section-head-row"><div class="section-heading"><div class="eyebrow">Menos procesos sueltos</div><h2 id="solution-title">Del comprobante al resultado.<br>Sin perder el hilo.</h2></div><p>Una solución diseñada para conectar emisión, documentos y seguimiento. Sin convertir tu día a día en una tarea técnica.</p></div>
 <div class="feature-grid"><article class="feature-card"><div class="icon-tile"><svg class="icon " aria-hidden="true"><use href="#i-doc"></use></svg></div><h3>Factura desde<br>donde trabajas.</h3><p>Un portal para tu negocio o una API para tu aplicación. Mantén tu experiencia de trabajo y conecta la operación fiscal.</p><div class="feature-foot"><span class="small-tag">Portal web</span><span class="small-tag">API de integración</span></div></article>
 <article class="feature-card"><div class="icon-tile"><svg class="icon " aria-hidden="true"><use href="#i-clock"></use></svg></div><h3>Conoce el estado.<br>No lo adivines.</h3><p>Consulta envíos, resultados y documentos que requieren atención. Sigue el recorrido de cada comprobante desde un solo lugar.</p><div class="feature-foot"><span class="small-tag">Seguimiento</span><span class="small-tag">Historial</span></div></article>
-<article class="feature-card"><div class="icon-tile"><svg class="icon " aria-hidden="true"><use href="#i-shield"></use></svg></div><h3>Orden para tu equipo.<br>Visibilidad para ti.</h3><p>XML, PDF y notas vinculadas, con acceso por roles y trazabilidad como parte del diseño de la solución.</p><div class="feature-foot"><span class="small-tag">Documentos</span><span class="small-tag">Roles y auditoría</span></div></article></div>
-<div class="value-strip"><span><svg class="icon " aria-hidden="true"><use href="#i-chart"></use></svg> <b>Más que emitir:</b> entiende tu consumo y centraliza tu operación.</span><a href="#proceso" class="text-link">Conoce el proceso de implementación <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+<article class="feature-card"><div class="icon-tile"><svg class="icon " aria-hidden="true"><use href="#i-shield"></use></svg></div><h3>Compras y gastos.<br>En el mismo flujo.</h3><p>Integra facturas de compras y comprobantes de gastos para reunir documentos, seguimiento y trazabilidad en una sola operación.</p><div class="feature-foot"><span class="small-tag">Facturas de compras</span><span class="small-tag">Comprobantes de gastos</span></div></article></div>
+<div class="value-strip"><span><svg class="icon " aria-hidden="true"><use href="#i-chart"></use></svg> <b>Más que emitir:</b> conecta ventas, compras y gastos en una sola operación.</span><a href="#proceso" class="text-link">Conoce el proceso de implementación <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
 </div></section>
 <section id="integradores" class="section integrator-section" aria-labelledby="integrator-title"><div class="container integrator-grid"><div><div class="eyebrow">Para empresas de software e integradores</div><h2 id="integrator-title">Tu aplicación.<br>Tu experiencia.<br><em>Nuestro motor fiscal.</em></h2><p class="lead">Si integras facturación electrónica para terceros, revisamos contigo el modelo técnico, el volumen y el alcance comercial antes de definir un esquema.</p><div class="integrator-points"><span><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> Evaluación técnica</span><span><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> Esquema según volumen</span><span><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> Alcance acordado</span></div><div class="btn-row"><a class="btn btn-orange" href="#contacto" data-contact-mode="integrador">Contáctanos para validar el esquema <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a></div><p class="fine">No existe un plan estándar para integradores de software de terceros. Cada propuesta se valida según la necesidad.</p></div>
 <div class="integration-card"><div class="integration-top"><span>Una conexión. Más posibilidades.</span><span class="tag">ARQUITECTURA PROPUESTA</span></div><div class="api-pipeline"><div class="pipe-node"><div class="node-icon"><svg class="icon " aria-hidden="true"><use href="#i-code"></use></svg></div><span>Tu aplicación</span></div><svg class="icon pipe-arrow" aria-hidden="true"><use href="#i-arrow"></use></svg><div class="pipe-node main"><div class="node-icon"><svg class="icon " aria-hidden="true"><use href="#i-doc"></use></svg></div><span>API GRIMATS</span></div><svg class="icon pipe-arrow" aria-hidden="true"><use href="#i-arrow"></use></svg><div class="pipe-node"><div class="node-icon"><svg class="icon " aria-hidden="true"><use href="#i-link"></use></svg></div><span>Servicios DGII</span></div></div><div class="pipeline-code"><div class="code-comment">// Flujo conceptual, no contrato de API</div><div><span>01</span> Recibir y validar el documento</div><div><span>02</span> Firmar y transmitir</div><div><span>03</span> Consultar el resultado fiscal</div><div><span>04</span> Notificar a <b>tu aplicación</b></div></div><div class="partner-kpis"><div><strong>A medida</strong><small>Según necesidad y volumen</small></div><div><strong>Contacto</strong><small>Validación técnica y comercial</small></div></div></div>
 </div></section>
-<section id="planes" class="section pricing" aria-labelledby="pricing-title"><div class="container"><div class="section-heading"><div class="eyebrow">Planes y precios</div><h2 id="pricing-title">Una tarifa clara.<br>Un plan para tu operación.</h2><p>Compara el precio mensual por API con la modalidad que incluye el facturador GRIMATS.</p></div>
+<section id="planes" class="section pricing" aria-labelledby="pricing-title"><div class="container"><div class="section-heading"><div class="eyebrow">Planes y precios</div><h2 id="pricing-title">Una tarifa clara.<br>Ventas, compras y gastos conectados.</h2><p>Compara el precio mensual por API o con el facturador GRIMATS. Todos los planes incluyen capacidad para integrar comprobantes de compras y gastos.</p></div>
 <div class="pricing-controls js-only"><div class="segmented" role="group" aria-label="Modalidad del servicio"><button type="button" id="pricing-mode-api" aria-pressed="true" data-mode-tab="api"><svg class="icon " aria-hidden="true"><use href="#i-code"></use></svg> Precio API</button><button type="button" id="pricing-mode-facturador" aria-pressed="false" data-mode-tab="facturador"><svg class="icon " aria-hidden="true"><use href="#i-doc"></use></svg> Con facturador GRIMATS</button></div><p class="wholesale-label" id="pricing-mode-label">Mostrando la mensualidad con acceso por API.</p></div>
 <div class="pricing-panel" id="panel-planes" tabindex="0"><h3 class="no-js-title">Planes individuales por RNC</h3><div class="plans-grid"><article class="plan-card" data-plan-card="mi-negocio">
    <div class="plan-caption">Para comenzar</div><h3>Facturador Mi Negocio</h3><p class="plan-desc">Para pequeños negocios que necesitan emitir y dar seguimiento a sus comprobantes.</p>
    <div class="price-box"><div class="price" data-price="mi-negocio">US$30</div><div class="price-unit" data-price-unit>API / RNC / mes</div></div>
-   <div class="quota"><strong>500</strong><span>facturas incluidas / mes</span></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$30</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$30</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.0275</b> por factura adicional</span></li></ul>
+   <div class="quota"><strong>500</strong><span>facturas incluidas / mes</span></div><div class="purchase-quota"><strong>250</strong><span>comprobantes de compras y gastos incluidos</span><small>Adicionales: US$6 por cada paquete de 250</small></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$30</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$30</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.0275</b> por factura adicional</span></li></ul>
    <a class="btn btn-outline plan-cta" href="#contacto" data-choose="mi-negocio">Consultar Mi Negocio <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a>
   </article>
 <article class="plan-card featured" data-plan-card="esencial">
    <div class="plan-caption">Empieza con lo esencial</div><h3>Fiscal Esencial</h3><p class="plan-desc">Para profesionales y negocios que quieren organizar su emisión.</p>
    <div class="price-box"><div class="price" data-price="esencial">US$45</div><div class="price-unit" data-price-unit>API / RNC / mes</div></div>
-   <div class="quota"><strong>1,000</strong><span>facturas incluidas / mes</span></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$45</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$55</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.025</b> por factura adicional</span></li></ul>
+   <div class="quota"><strong>1,000</strong><span>facturas incluidas / mes</span></div><div class="purchase-quota"><strong>250</strong><span>comprobantes de compras y gastos incluidos</span><small>Adicionales: US$6 por cada paquete de 250</small></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$45</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$55</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.025</b> por factura adicional</span></li></ul>
    <a class="btn btn-blue plan-cta" href="#contacto" data-choose="esencial">Consultar Esencial <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a>
   </article>
 <article class="plan-card" data-plan-card="negocio">
    <div class="plan-caption">Para una operación frecuente</div><h3>Fiscal Negocio</h3><p class="plan-desc">Más capacidad para acompañar el movimiento de tu empresa.</p>
    <div class="price-box"><div class="price" data-price="negocio">US$75</div><div class="price-unit" data-price-unit>API / RNC / mes</div></div>
-   <div class="quota"><strong>2,500</strong><span>facturas incluidas / mes</span></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$75</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$85</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.022</b> por factura adicional</span></li></ul>
+   <div class="quota"><strong>2,500</strong><span>facturas incluidas / mes</span></div><div class="purchase-quota"><strong>625</strong><span>comprobantes de compras y gastos incluidos</span><small>Adicionales: US$6 por cada paquete de 250</small></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$75</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$85</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.022</b> por factura adicional</span></li></ul>
    <a class="btn btn-outline plan-cta" href="#contacto" data-choose="negocio">Consultar Negocio <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a>
   </article>
 <article class="plan-card" data-plan-card="volumen">
    <div class="plan-caption">Para un mayor volumen</div><h3>Fiscal Volumen</h3><p class="plan-desc">Una capacidad amplia para operaciones con más documentos.</p>
    <div class="price-box"><div class="price" data-price="volumen">US$160</div><div class="price-unit" data-price-unit>API / RNC / mes</div></div>
-   <div class="quota"><strong>6,000</strong><span>facturas incluidas / mes</span></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$160</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$170</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.015</b> por factura adicional</span></li></ul>
+   <div class="quota"><strong>6,000</strong><span>facturas incluidas / mes</span></div><div class="purchase-quota"><strong>1,500</strong><span>comprobantes de compras y gastos incluidos</span><small>Adicionales: US$6 por cada paquete de 250</small></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>1 RNC emisor</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>API: <b>US$160</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Con facturador: <b>US$170</b> / mes</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span><b>US$0.015</b> por factura adicional</span></li></ul>
    <a class="btn btn-outline plan-cta" href="#contacto" data-choose="volumen">Consultar Volumen <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a>
   </article>
 <article class="plan-card" data-plan-card="empresarial">
@@ -208,13 +215,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div class="price-box"><div class="price">Contactar</div><div class="price-unit">para validar el esquema</div></div>
    <div class="quota"><strong>A evaluar</strong><span>según integración y volumen</span></div><ul class="plan-list"><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Revisión técnica</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Validación comercial</span></li><li><svg class="icon " aria-hidden="true"><use href="#i-check"></use></svg> <span>Propuesta según alcance</span></li></ul>
    <a class="btn btn-outline plan-cta" href="#contacto" data-contact-mode="integrador">Validar esquema <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-  </article></div><div class="pricing-notes"><p><strong>Modalidades:</strong> el precio API corresponde al acceso para conectar tu sistema; el precio con facturador GRIMATS incluye el uso del portal de facturación.</p><p>Los excedentes se cobran por cada factura adicional a la capacidad mensual incluida. Implementación, certificados, desarrollos, impuestos y servicios especiales se cotizan por separado.</p></div></div>
-<p class="pricing-caption">Precios en dólares estadounidenses (USD), antes de impuestos aplicables. Las facturas incluidas no se acumulan entre meses.<br>El acceso a la API no incluye desarrollar el conector de tu sistema. Integradores de software de terceros requieren validación previa.</p>
+  </article></div><div class="pricing-notes"><p><strong>Modalidades:</strong> el precio API corresponde al acceso para conectar tu sistema; el precio con facturador GRIMATS incluye el uso del portal de facturación.</p><p class="purchase-note"><strong>Compras y gastos:</strong> cada plan incluye la integración de la cantidad indicada. Al superar ese cupo, se agregan paquetes completos de 250 comprobantes por US$6 cada uno.</p><p>Los excedentes de emisión se cobran por cada factura adicional a la capacidad mensual incluida. Implementación, certificados, desarrollos, impuestos y servicios especiales se cotizan por separado.</p></div></div>
+<p class="pricing-caption">Precios en dólares estadounidenses (USD), antes de impuestos aplicables. Las capacidades incluidas no se acumulan entre meses.<br>El acceso a la API no incluye desarrollar el conector de tu sistema. Integradores de software de terceros requieren validación previa.</p>
 </div></section>
-<section id="calculadora" class="section calculator-section" aria-labelledby="calc-title"><div class="container"><div class="section-head-row"><div class="section-heading"><div class="eyebrow">Calculadora de mensualidad</div><h2 id="calc-title">No adivines tu costo.<br>Calcula tu escenario.</h2></div><p>Compara los cuatro planes con tu consumo y la modalidad que necesitas: API o facturador GRIMATS.</p></div>
+<section id="calculadora" class="section calculator-section" aria-labelledby="calc-title"><div class="container"><div class="section-head-row"><div class="section-heading"><div class="eyebrow">Calculadora de mensualidad</div><h2 id="calc-title">No adivines tu costo.<br>Calcula tu escenario.</h2></div><p>Compara los cuatro planes con tus facturas emitidas y comprobantes de compras y gastos, por API o con el facturador GRIMATS.</p></div>
 <div class="calc-layout js-only"><div class="calc-controls"><div class="segmented" role="group" aria-label="Modalidad de cálculo"><button type="button" data-calc-mode="api" aria-pressed="true">Precio API</button><button type="button" data-calc-mode="facturador" aria-pressed="false">Con facturador</button></div>
 <div class="field"><label for="calc-plan">Plan que deseas evaluar</label><select id="calc-plan"><option value="auto">Sugerir el menor costo mensual</option></select></div>
 <div class="field" style="margin-top:20px"><label for="calc-docs" id="calc-docs-label">Facturas emitidas en el mes · 1 RNC</label><input type="number" inputmode="numeric" id="calc-docs" value="500" min="0" max="10000000" step="1"><p class="field-help" id="calc-docs-help">Facturas de producción incluidas y adicionales.</p></div>
+<div class="field"><label for="calc-purchases">Comprobantes de compras y gastos en el mes</label><input type="number" inputmode="numeric" id="calc-purchases" value="250" min="0" max="10000000" step="1"><p class="field-help">Los excedentes se calculan en paquetes completos de 250 por US$6.</p></div>
 <p id="calc-mode-note">Calculando la mensualidad para acceso por API.</p>
 </div><div class="calc-result" aria-live="polite" aria-atomic="true"><div class="result-top"><span>Tu mensualidad estimada</span><span class="tag">ANTES DE IMPUESTOS</span></div><h3 id="result-plan">Facturador Mi Negocio</h3><div class="result-money" id="result-money">US$30</div><div class="result-unit" id="result-unit">API / RNC / mes</div><div class="result-details" id="result-details"></div><p id="result-capacity" class="result-capacity"></p><p id="calc-error" class="calc-error" hidden></p><div class="btn-row"><a class="btn btn-orange" id="consult-scenario" href="https://outlook.office.com/bookwithme/user/a749bb16489f4aa08db8534616dc85f6@GRIMATS.COM/meetingtype/LlP7TdpyR0mCNdWellxTpA2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener noreferrer" aria-describedby="booking-note">Agenda una conversación <svg class="icon " aria-hidden="true"><use href="#i-arrow"></use></svg></a><button type="button" class="btn btn-dark-outline" id="copy-scenario"><svg class="icon " aria-hidden="true"><use href="#i-copy"></use></svg> Copiar</button></div><p class="booking-note" id="booking-note">Al abrir la agenda copiaremos tu simulación. Pégala en el campo <strong>Notas</strong> de la reserva para revisarla contigo.</p><p class="fine">Estimación recurrente. Implementación, certificados, impuestos y servicios especiales no incluidos. No reserva capacidad ni constituye una oferta contractual.</p></div></div>
 <div class="calc-comparison js-only" id="calc-comparison" aria-label="Comparación de planes por costo"></div><p class="calc-legend js-only">La sugerencia compara únicamente los cargos mensuales calculados; la capacidad técnica y las condiciones de operación se validan por separado.</p>
@@ -225,6 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <details class="faq-item"><summary>¿Necesito reemplazar mi sistema actual?</summary><p>No necesariamente. La propuesta contempla un facturador web independiente y una API para integrar la operación en otra aplicación. Hay que evaluar tu sistema; desarrollar o adaptar ese conector es un alcance distinto del acceso a la API.</p></details>
 <details class="faq-item"><summary>¿Qué diferencia hay entre el precio API y el precio con facturador?</summary><p>El precio API corresponde al acceso para integrar la facturación en tu propio sistema. La modalidad con facturador GRIMATS incluye el portal para emitir y dar seguimiento a los comprobantes. La implementación de conectores nuevos se cotiza por separado.</p></details>
 <details class="faq-item"><summary>¿Qué cuenta como un documento facturable?</summary><p>En esta propuesta comercial, cada documento de producción aceptado se cuenta una sola vez. Una nota de crédito o débito aceptada cuenta por separado. Los reintentos, consultas de estado, acuses, copias PDF y pruebas no añaden cargos de emisión; tampoco se devuelve el consumo de una factura por emitir una nota de crédito. Pruebas y solicitudes técnicas quedan sujetas a límites de uso.</p></details>
+<details class="faq-item"><summary>¿Cómo se calculan los comprobantes de compras y gastos?</summary><p>Cada plan incluye un cupo mensual independiente para integrar comprobantes de compras y gastos. Si el consumo supera ese cupo, la capacidad adicional se agrega en paquetes completos de 250 comprobantes por US$6 cada uno; una fracción de paquete se redondea al paquete siguiente.</p></details>
 <details class="faq-item"><summary>¿Hay planes estándar para integradores de software de terceros?</summary><p>No. Los integradores deben contactarnos para validar el esquema técnico y comercial según su modelo, volumen y alcance.</p></details>
 <details class="faq-item"><summary>¿La mensualidad incluye certificado e implementación?</summary><p>No. Se cotizan aparte el certificado digital, los conectores nuevos, el acompañamiento de certificación, las migraciones y la implementación aplicable. Las condiciones de soporte, almacenamiento y conservación documental deben quedar expresas en la contratación.</p></details>
 <details class="faq-item"><summary>¿Puedo ofrecerlo bajo la marca de mi aplicación?</summary><p>Podemos evaluar esa modalidad como un esquema especial para integradores de software de terceros. La viabilidad, responsabilidades y condiciones se validan antes de presentar una propuesta. No se transfiere la propiedad del motor ni una autorización fiscal. Cada contribuyente conserva sus requisitos de habilitación. <a href="https://dgii.gov.do/cicloContribuyente/facturacion/comprobantesFiscalesElectronicosE-CF/Paginas/default.aspx" target="_blank" rel="noopener noreferrer">Consultar los requisitos publicados por la DGII.</a></p></details>
@@ -238,7 +247,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 'use strict';
 /* Monetary values use thousandths of USD; fractional mills preserve US$0.0275 exactly. */
-const CATALOG = [{"id":"mi-negocio","name":"Facturador Mi Negocio","apiBase":30000,"facturadorBase":30000,"docs":500,"extraDoc":27.5},{"id":"esencial","name":"Fiscal Esencial","apiBase":45000,"facturadorBase":55000,"docs":1000,"extraDoc":25},{"id":"negocio","name":"Fiscal Negocio","apiBase":75000,"facturadorBase":85000,"docs":2500,"extraDoc":22},{"id":"volumen","name":"Fiscal Volumen","apiBase":160000,"facturadorBase":170000,"docs":6000,"extraDoc":15}];
+const CATALOG = [{"id":"mi-negocio","name":"Facturador Mi Negocio","apiBase":30000,"facturadorBase":30000,"docs":500,"extraDoc":27.5,"purchaseDocs":250,"purchasePackDocs":250,"purchasePackPrice":6000},{"id":"esencial","name":"Fiscal Esencial","apiBase":45000,"facturadorBase":55000,"docs":1000,"extraDoc":25,"purchaseDocs":250,"purchasePackDocs":250,"purchasePackPrice":6000},{"id":"negocio","name":"Fiscal Negocio","apiBase":75000,"facturadorBase":85000,"docs":2500,"extraDoc":22,"purchaseDocs":625,"purchasePackDocs":250,"purchasePackPrice":6000},{"id":"volumen","name":"Fiscal Volumen","apiBase":160000,"facturadorBase":170000,"docs":6000,"extraDoc":15,"purchaseDocs":1500,"purchasePackDocs":250,"purchasePackPrice":6000}];
 const CONTACT = Object.freeze({email:'Ventas@grimats.com'});
 const $ = (id) => document.getElementById(id);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
@@ -247,7 +256,7 @@ const integer = (n) => integerFormat.format(n);
 const currency = (mills) => {const amount=mills/1000;return 'US$'+new Intl.NumberFormat('en-US', {
  minimumFractionDigits:Number.isInteger(amount)?0:2, maximumFractionDigits:4
 }).format(amount);};
-const state = {mode:'api',plan:'auto',quantities:{docs:500},result:null,summary:''};
+const state = {mode:'api',plan:'auto',quantities:{docs:500,purchases:250},result:null,summary:''};
 let toastTimer;
 function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),3600);}
 function computeQuote(plan,mode,quantities){
@@ -255,7 +264,11 @@ function computeQuote(plan,mode,quantities){
  const capacity=plan.docs;
  const excessDocs=Math.max(0,quantities.docs-capacity);
  const docCharge=excessDocs*plan.extraDoc;
- return {plan,mode,base,capacity,excessDocs,docCharge,total:base+docCharge};
+ const purchaseCapacity=plan.purchaseDocs;
+ const excessPurchases=Math.max(0,quantities.purchases-purchaseCapacity);
+ const purchasePacks=Math.ceil(excessPurchases/plan.purchasePackDocs);
+ const purchaseCharge=purchasePacks*plan.purchasePackPrice;
+ return {plan,mode,base,capacity,excessDocs,docCharge,purchaseCapacity,excessPurchases,purchasePacks,purchaseCharge,total:base+docCharge+purchaseCharge};
 }
 function readWhole(id,min,max){
  const field=$(id);const v=field.valueAsNumber;
@@ -265,6 +278,7 @@ function readWhole(id,min,max){
 }
 function saveQuantities(){
  if($('calc-docs').value!=='')state.quantities.docs=$('calc-docs').value;
+ if($('calc-purchases').value!=='')state.quantities.purchases=$('calc-purchases').value;
 }
 function populatePlanSelect(){
  const s=$('calc-plan');s.replaceChildren();
@@ -282,7 +296,7 @@ function setMode(mode,{scroll=false,remember=true}={}){
  $('calc-mode-note').textContent=mode==='api'?'Calculando la mensualidad para acceso por API.':'Calculando la mensualidad con el facturador GRIMATS.';
  CATALOG.forEach(p=>{document.querySelector('[data-price="'+p.id+'"]').textContent=currency(mode==='api'?p.apiBase:p.facturadorBase);});
  $$('[data-price-unit]').forEach(el=>el.textContent=mode==='api'?'API / RNC / mes':'Facturador / RNC / mes');
- $('calc-docs').value=state.quantities.docs;updateQuote();
+ $('calc-docs').value=state.quantities.docs;$('calc-purchases').value=state.quantities.purchases;updateQuote();
  if(scroll)$('planes').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function addResultRow(label,amount){
@@ -297,20 +311,24 @@ function createSummary(q,quantities){
  'Plan: '+q.plan.name,'Facturas mensuales: '+integer(quantities.docs),
  'Mensualidad base: '+currency(q.base),'Facturas incluidas: '+integer(q.capacity),
  'Tarifa por factura adicional: '+currency(q.plan.extraDoc),
- 'Facturas adicionales: '+integer(q.excessDocs)+' · '+currency(q.docCharge)];
+ 'Facturas adicionales: '+integer(q.excessDocs)+' · '+currency(q.docCharge),
+ 'Comprobantes de compras y gastos mensuales: '+integer(quantities.purchases),
+ 'Comprobantes de compras y gastos incluidos: '+integer(q.purchaseCapacity),
+ 'Paquetes adicionales de compras y gastos: '+integer(q.purchasePacks)+' x '+integer(q.plan.purchasePackDocs)+' · '+currency(q.purchaseCharge)];
  lines.push('TOTAL MENSUAL ESTIMADO: '+currency(q.total),'No incluye impuestos, implementación, certificados ni servicios especiales.',
  'Propuesta sujeta a validación de alcance, capacidad y habilitación fiscal.');return lines.join('\n');
 }
 function updateQuote(){
  const docs=readWhole('calc-docs',0,10000000);
- if(docs===null){
+ const purchases=readWhole('calc-purchases',0,10000000);
+ if(docs===null || purchases===null){
   state.result=null;state.summary='';$('result-plan').textContent='Revisa las cantidades';$('result-money').textContent='—';
   $('result-details').replaceChildren();$('result-capacity').textContent='';$('calc-comparison').replaceChildren();
-  $('calc-error').textContent='Introduce una cantidad entera entre 0 y 10,000,000 facturas. No se calculan consumos negativos ni fracciones.';
+  $('calc-error').textContent='Introduce cantidades enteras entre 0 y 10,000,000. No se calculan consumos negativos ni fracciones.';
   $('calc-error').hidden=false;$('copy-scenario').disabled=true;$('consult-scenario').setAttribute('aria-disabled','true');return;
  }
  $('calc-error').hidden=true;$('copy-scenario').disabled=false;$('consult-scenario').removeAttribute('aria-disabled');
- const quantities={docs};state.quantities=quantities;
+ const quantities={docs,purchases};state.quantities=quantities;
  const quotes=CATALOG.map(p=>computeQuote(p,state.mode,quantities));
  const cheapest=quotes.reduce((best,q)=>q.total<best.total?q:best);
  const chosen=$('calc-plan').value;
@@ -322,7 +340,8 @@ function updateQuote(){
  $('result-details').replaceChildren();
  addResultRow('Mensualidad base',currency(q.base));
  addResultRow(integer(q.excessDocs)+' facturas adicionales',currency(q.docCharge));
- $('result-capacity').textContent='Capacidad incluida: '+integer(q.capacity)+' facturas. Tarifa adicional: '+currency(q.plan.extraDoc)+' por factura.';
+ addResultRow(integer(q.purchasePacks)+' paquetes adicionales de compras y gastos',currency(q.purchaseCharge));
+ $('result-capacity').textContent='Incluye '+integer(q.capacity)+' facturas emitidas y '+integer(q.purchaseCapacity)+' comprobantes de compras y gastos. Emisión adicional: '+currency(q.plan.extraDoc)+' por factura. Compras y gastos adicionales: '+currency(q.plan.purchasePackPrice)+' por cada '+integer(q.plan.purchasePackDocs)+'.';
  $('calc-comparison').replaceChildren();
  quotes.forEach(item=>{const el=document.createElement('span');el.textContent=item.plan.name+' · '+currency(item.total);if(item.total===cheapest.total){el.className='best';el.textContent+=' · menor costo';}$('calc-comparison').append(el);});
 }
@@ -363,6 +382,7 @@ $$('[data-choose]').forEach(link=>link.addEventListener('click',()=>{
 }));
 $('calc-plan').addEventListener('change',()=>{state.plan=$('calc-plan').value;updateQuote();});
 $('calc-docs').addEventListener('input',updateQuote);
+$('calc-purchases').addEventListener('input',updateQuote);
 $('copy-scenario').addEventListener('click',async()=>{if(!state.summary)return;toast(await copyText(state.summary)?'Escenario copiado. Puedes compartirlo con el equipo.':'No se pudo copiar. Consulta el escenario para prepararlo por correo.');});
 $('consult-scenario').addEventListener('click',e=>{
  if(!state.result){e.preventDefault();return;}
