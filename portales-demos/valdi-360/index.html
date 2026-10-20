@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es-DO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="VALDI 360 · Portal demo que integra carwash, repuestos, bar, taller y grúa en una sola operación.">
+<link rel="canonical" href="https://grimats.com/portales-demos/valdi-360/">
+<title>VALDI 360 · Centro Integral de Servicios | GRIMATS</title>
+<style>
+  :root{--ink:#182a33;--muted:#62716f;--paper:#f5f3ed;--card:#fff;--line:#dedfd6;--green:#275c4b;--orange:#ef8d49;--nav:#132f2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--green)}a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}aside{position:fixed;inset:0 auto 0 0;width:245px;background:var(--nav);color:#f6f4ec;padding:30px 23px;overflow:auto}.brand{font-size:27px;letter-spacing:-1px;font-weight:850}.brand small{display:block;font-size:12px;letter-spacing:2px;color:#a8c9bc;margin-top:3px}.nav-label{font-size:11px;letter-spacing:2px;color:#a5b8af;margin:35px 0 12px}nav a{display:block;padding:10px 12px;margin:3px 0;color:#d9e6df;border-radius:8px;text-decoration:none;font-size:14px}nav a:hover{background:#27463e;color:white}.sidebar-note{font-size:12px;color:#a9c0b4;border-top:1px solid #3b554c;padding-top:18px;margin-top:30px}main{max-width:1220px;margin-left:245px;padding:46px 5vw 72px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--green);text-transform:uppercase}h1{font-size:clamp(32px,4vw,49px);line-height:1.1;letter-spacing:-2px;margin:12px 0 20px;max-width:780px}h1 span{font-weight:450}h2{font-size:25px;line-height:1.25;letter-spacing:-.7px;margin:0 0 16px}h3{font-size:17px;line-height:1.35;margin:27px 0 10px}p{margin:0 0 15px}header .lead{font-size:19px;color:var(--muted);max-width:760px}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.pill{font-size:12px;font-weight:700;border:1px solid #cbd7cb;padding:4px 11px;border-radius:20px;background:#ecf1e9;color:var(--green)}section{margin-top:34px;padding:28px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 16px #172b2310}section> :last-child{margin-bottom:0}.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:20px;border-radius:12px;background:#f3f5ee}.step-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--green);color:white;font-weight:800;margin-bottom:13px}.step h3{margin:0 0 9px}.step p{font-size:14px;color:#54635d;margin:0}.notice{border-left:4px solid var(--orange);background:#fff4e9;padding:14px 18px;border-radius:0 9px 9px 0;margin:20px 0;color:#704321}.note{background:#edf3ee;border:1px solid #d7e3d8;border-radius:10px;padding:16px 19px;margin:20px 0}.example{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;background:var(--nav);color:#eaf3ee;border-radius:12px;padding:22px;margin-top:20px}.example h3{color:white;margin-top:0}.example strong{color:#ffbb80}.bill{border-left:1px solid #688578;padding-left:22px}.bill-row{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin:5px 0}.bill-total{border-top:1px solid #688578;padding-top:8px;margin-top:10px;font-size:18px;font-weight:800}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:#f4f5f0}td:first-child{font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:#edf1eb;border:1px solid #dce4da;padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#152d2b;color:#d7eee1;padding:20px;border-radius:11px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55;font-size:13px;overflow:auto}pre code{background:none;border:0;color:inherit;padding:0;font-size:inherit}ul,ol{padding-left:23px;margin-top:12px}li{margin:7px 0}.fine{font-size:13px;color:var(--muted)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}.two-col h3{margin-top:0}footer{margin-top:30px;display:flex;justify-content:space-between;gap:18px;font-size:12px;color:var(--muted)}button{font:inherit;font-size:13px;border:1px solid #c3cdc3;border-radius:8px;padding:8px 13px;background:#fff;color:var(--green);cursor:pointer}.file-link{font-size:13px;font-weight:700;text-decoration:none;display:inline-block;margin-right:18px}
+  @media(max-width:980px){aside{width:205px;padding:26px 16px}main{margin-left:205px;padding:30px 25px}.step-grid{grid-template-columns:1fr}.example,.two-col{grid-template-columns:1fr}.bill{border-left:0;padding-left:0;border-top:1px solid #688578;padding-top:12px}}
+  @media(max-width:650px){aside{position:static;width:auto;padding:20px}.brand small{display:inline;font-size:10px;margin-left:12px}.nav-label,.sidebar-note{display:none}nav{display:flex;overflow:auto;margin-top:12px;gap:6px}nav a{white-space:nowrap;padding:7px 9px;font-size:12px}main{margin-left:0;padding:27px 16px}section{padding:21px 16px;border-radius:12px}h1{letter-spacing:-1.2px}header .lead{font-size:17px}footer{flex-direction:column}th,td{padding:10px 8px}pre{padding:14px;font-size:12px}}
+  @media print{@page{size:A4;margin:15mm}body{background:white;font-size:10pt;line-height:1.5}aside,button,.file-link{display:none}main{margin:0;padding:0;max-width:none}section{box-shadow:none;margin-top:20px;padding:18px;border-color:#bbb;break-inside:avoid}h1{font-size:29pt}h2{font-size:17pt}h3{font-size:12pt}header .lead{font-size:12pt}pre{white-space:pre-wrap;font-size:8pt;background:#f3f3f3;color:#222;border:1px solid #ddd}.example{background:#eef2ef;color:#172b23}.example h3,.example strong{color:#172b23}.pill{font-size:9pt}table{font-size:8.5pt}tr{break-inside:avoid}.fine,footer{font-size:8pt}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body>
+<aside aria-label="Índice de la guía">
+  <div class="brand">VALDI<span style="color:#ffb778">.</span><small>360 · SALCEDO</small></div>
+  <div class="nav-label">GUÍA DE USO E INTEGRACIÓN</div>
+  <nav>
+    <a href="#inicio">01 · Empezar</a>
+    <a href="#modulos">02 · Cinco servicios</a>
+    <a href="#controles">03 · Prevenir errores</a>
+    <a href="#estructura">04 · Archivos y motor</a>
+    <a href="#datos">05 · Modelo común</a>
+    <a href="#api">06 · Backend propuesto</a>
+    <a href="#conexion">07 · Conectar y verificar</a>
+  </nav>
+  <p class="sidebar-note">Documento para el dueño del negocio y su desarrollador.<br><br>Precios y operaciones ilustrativos en pesos dominicanos.</p>
+</aside>
+<main>
+<header>
+  <div class="eyebrow">GRIMATS · Demo funcional</div>
+  <h1>Cinco servicios.<br><span>Una sola cuenta.</span></h1>
+  <p class="lead">VALDI 360 reúne carwash, repuestos, bar, taller y grúa en un mismo flujo: recibir el servicio, ver qué sigue y cobrar desde una caja central.</p>
+  <div class="pills"><span class="pill">HTML autónomo</span><span class="pill">Español claro</span><span class="pill">RD$ / DOP</span><span class="pill">Datos de demostración</span></div>
+</header>
+
+<section id="inicio">
+  <h2>01 · Empieza por un servicio</h2>
+  <p>Abre <strong>Demo-Valdi-V1-Salcedo.html</strong> en un navegador moderno. El demo funciona con sus recursos incluidos; conserva los cambios en ese navegador cuando su almacenamiento está disponible.</p>
+  <p>La entrega incluye inicio visual, registro de servicios en tres pasos, tableros de trabajo, catálogos, mesas del bar, cuentas abiertas, caja con abonos y cobros, historial de recibos, resumen del negocio y consulta de existencias. El inventario es de consulta; las órdenes ajustan las existencias según sus reglas.</p>
+  <div class="step-grid">
+    <div class="step"><span class="step-number">1</span><h3>Recibe al cliente</h3><p>Escoge carwash, repuestos, bar, taller o grúa. Selecciona lo que necesita y completa los datos que pide el servicio.</p></div>
+    <div class="step"><span class="step-number">2</span><h3>Usa la misma cuenta</h3><p>Vincula el nuevo consumo a una cuenta abierta o crea una cuenta. Verifica nombre, vehículo o mesa antes de guardar.</p></div>
+    <div class="step"><span class="step-number">3</span><h3>Avanza y cobra</h3><p>Marca el avance del trabajo. En caja se reúne todo; cuando los servicios están listos, registra el pago y revisa el cambio.</p></div>
+  </div>
+  <div class="example">
+    <div><h3>Un recorrido que ya viene preparado</h3><p><strong>Luis Peña · G593821</strong> tiene un lavado y dos refrescos en la misma cuenta, listos para cobrar. Abre su cuenta en caja y prueba un pago de RD$1,000 en efectivo.</p><p style="margin-bottom:0">La cuenta debe cerrar con <strong>RD$300 de cambio</strong>. El lavado y el bar conservan su origen aunque se cobren juntos.</p></div>
+    <div class="bill"><div class="bill-row"><span>Lavado completo</span><span>RD$500</span></div><div class="bill-row"><span>2 refrescos × RD$100</span><span>RD$200</span></div><div class="bill-row bill-total"><span>Total</span><span>RD$700</span></div><div class="bill-row"><span>Recibido</span><span>RD$1,000</span></div><div class="bill-row"><span>Cambio</span><span>RD$300</span></div></div>
+  </div>
+  <div class="notice"><strong>Alcance de esta entrega.</strong> Los pagos son registros de demostración. No se envían transacciones bancarias, mensajes ni comprobantes a terceros. El resumen de cobro no es un NCF ni un e-CF emitido por la DGII.</div>
+  <p class="fine">Los datos del navegador no se comparten entre dispositivos. Usa la exportación JSON antes de reiniciar los datos de ejemplo. El almacenamiento local no sustituye una base de datos ni un respaldo del negocio.</p>
+</section>
+
+<section id="modulos">
+  <h2>02 · Un flujo corto para cada área</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Área</th><th>Flujo operativo</th><th>Dato que evita confusiones</th></tr></thead>
+    <tbody>
+      <tr><td>Carwash</td><td>En espera → Lavando → Listo</td><td>Vehículo, placa o referencia y servicio elegido.</td></tr>
+      <tr><td>Repuestos</td><td>Por entregar → Entregado</td><td>Producto, cantidad, existencia y confirmación de compatibilidad.</td></tr>
+      <tr><td>Bar</td><td>Por preparar → Preparando → Servido</td><td>Cuenta o mesa correcta y cantidades de cada bebida.</td></tr>
+      <tr><td>Taller</td><td>Por aprobar → En reparación → Listo</td><td>Trabajo y autorización del cliente antes de empezar.</td></tr>
+      <tr><td>Grúa</td><td>Por salir → En camino → Trasladando → Entregado</td><td>Recogida, destino y contacto para localizar el servicio.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="fine" style="margin-top:16px">Los textos de pantalla pueden abreviarse para facilitar la operación. Los valores internos de los estados aparecen en la sección del motor.</p>
+  <p>Una cuenta puede reunir servicios de varias áreas. Cada orden conserva su propio avance, sus líneas y su origen. Cobrar la cuenta no debe sustituir el seguimiento de lo que está haciendo cada trabajador.</p>
+</section>
+
+<section id="controles">
+  <h2>03 · Controles para prevenir errores</h2>
+  <div class="two-col">
+    <div><h3>Al recibir y trabajar</h3><ul><li>Un producto pertenece a un módulo y debe tener una cantidad válida. Bar y Repuestos admiten de 1 a 99 unidades por artículo; cada servicio individual de carwash o taller se agrega una vez por pedido.</li><li>Grúa exige un servicio principal. Los kilómetros adicionales (1 a 99) se suman a ese servicio; no se pueden facturar solos. Ejemplo: traslado RD$2,500 + 5 km × RD$80 = RD$2,900.</li><li>Las existencias se comprueban y descuentan una sola vez al registrar productos de inventario.</li><li>Repuestos requiere confirmar la compatibilidad: <code>meta.compatibilityConfirmed === true</code>.</li><li>Un trabajo del taller pendiente de aprobación necesita la acción de autorizar; no puede saltarse con el avance normal.</li><li>Las cancelaciones requieren motivo y conservan su rastro. Si los artículos ya están en preparación o fueron entregados, el encargado debe resolver devolución o merma; el demo bloquea su reposición automática.</li></ul></div>
+    <div><h3>Al cobrar</h3><ul><li>La liquidación completa exige que los servicios activos estén listos y exista saldo pendiente.</li><li>Un abono puede registrarse antes de terminar el trabajo. Pagar no marca el trabajo como listo.</li><li>El efectivo distingue lo recibido, lo aplicado a la cuenta y el cambio.</li><li>Tarjeta y transferencia requieren referencia; su importe no debe exceder el saldo.</li><li>Una misma operación de cobro debe conservar su clave de idempotencia para evitar duplicados. Una cuenta con pagos registrados no permite cancelar órdenes: la V1 no implementa devoluciones.</li></ul></div>
+  </div>
+  <div class="note"><strong>Alcance del control.</strong> El demo valida en JavaScript para guiar al operador. En producción, el servidor debe repetir y reforzar estas reglas dentro de transacciones; un navegador no es una autoridad de precios, stock, permisos o cobros.</div>
+</section>
+
+<section id="estructura">
+  <h2>04 · Archivos y motor de la demostración</h2>
+  <div class="table-wrap"><table><thead><tr><th>Archivo</th><th>Uso</th></tr></thead><tbody>
+    <tr><td><code>Demo-Valdi-V1-Salcedo.html</code></td><td>Demo completo para abrir y presentar. CSS, interfaz y motor incluidos en un solo HTML.</td></tr>
+    <tr><td><code>src/domain.js</code></td><td>Catálogo, estado y reglas del negocio, separado para mantener y conectar el proyecto.</td></tr>
+    <tr><td><code>src/shell.html</code>, <code>src/styles.css</code>, <code>src/visuals.js</code></td><td>Estructura base, diseño y recursos visuales del demo.</td></tr>
+    <tr><td><code>src/app.js</code></td><td>Controlador de pantalla, formularios, cuentas, cobros y recibos.</td></tr>
+    <tr><td><code>src/home-view.js</code>, <code>src/ops-views.js</code>, <code>src/business-views.js</code></td><td>Vistas de inicio, operación, caja, resumen e inventario.</td></tr>
+    <tr><td><code>src/backend-adapter.example.js</code></td><td>Ejemplo real de cliente HTTP. No está conectado al demo y no llama a la red al cargarse.</td></tr>
+    <tr><td><code>build.py</code></td><td>Reúne las fuentes editables en el HTML autónomo y genera la misma versión en <code>dist/index.html</code>.</td></tr>
+    <tr><td><code>docs/guia-integracion.html</code></td><td>Esta guía: recorrido de uso, modelo común y propuesta de conexión.</td></tr>
+  </tbody></table></div>
+  <p style="margin-top:16px">Después de editar las fuentes, abre una terminal en la carpeta del proyecto y ejecuta <code>python build.py</code> para actualizar el HTML que presentas. El script usa únicamente la biblioteca estándar de Python. Para abrir y usar el HTML ya generado basta el navegador.</p>
+  <h3>Interfaz pública del motor</h3>
+  <p>El módulo expone <code>window.ValdiDomain</code>, con <code>createStore()</code>, <code>MODULES</code>, <code>STAGES</code> y <code>seedState()</code>. El almacén local es síncrono; sus métodos devuelven copias de los datos y sus errores tienen <code>code</code> y un mensaje en español. La clave de almacenamiento es <code>valdi.salcedo.demo.v1</code>; <code>createStore({ storage, key })</code> permite cambiar el proveedor o la clave.</p>
+  <p class="fine"><code>store.persistenceStatus</code> informa <code>saved</code> (guardado), <code>memory-only</code> (solo esta sesión), <code>recovered</code> (se cargó una demostración nueva porque el guardado no pudo recuperarse) o <code>conflict</code> (otra pestaña cambió los datos). En conflicto, el motor bloquea nuevas escrituras hasta actualizar la página; esto no sustituye el control de concurrencia de un servidor.</p>
+  <pre><code>const store = ValdiDomain.createStore();
+const stop = store.subscribe(snapshot =&gt; render(snapshot));
+const cuentaExistente = store.getState().accounts.find(a =&gt; a.status === 'open');
+
+const order = store.createOrder({
+  accountId: cuentaExistente.id,
+  module: 'bar',
+  items: [{ catalogId: 'bar-soda', quantity: 2 }],
+  meta: { table: 'Mesa 2' },
+  idempotencyKey: 'operacion-unica-conservada-para-reintentos'
+});
+
+const summary = store.getAccountSummary(order.accountId);
+const payload = store.getBillingPayload(order.accountId);
+// stop() retira la suscripción cuando la pantalla se destruye.</code></pre>
+  <div class="table-wrap"><table><thead><tr><th>Método</th><th>Responsabilidad</th></tr></thead><tbody>
+    <tr><td><code>getState()</code>, <code>subscribe(fn)</code></td><td>Consultar el estado y escuchar cambios locales.</td></tr>
+    <tr><td><code>createAccount(input)</code></td><td>Crear una cuenta común para el cliente.</td></tr>
+    <tr><td><code>createOrder(input)</code></td><td>Crear una orden y sus líneas, en una cuenta existente o nueva.</td></tr>
+    <tr><td><code>advanceOrder(id)</code>, <code>approveOrder(id)</code></td><td>Aplicar la siguiente transición válida o autorizar el taller.</td></tr>
+    <tr><td><code>cancelOrder(id, reason)</code></td><td>Cancelar con motivo y ajustar los efectos correspondientes.</td></tr>
+    <tr><td><code>getAccountSummary(id)</code></td><td>Obtener total, pagos, saldo y estado de la cuenta.</td></tr>
+    <tr><td><code>recordPayment(input)</code></td><td>Registrar efectivo, tarjeta o transferencia; liquidación o abono.</td></tr>
+    <tr><td><code>getBillingPayload(id)</code></td><td>Preparar el documento JSON común para el futuro módulo de facturación.</td></tr>
+    <tr><td><code>exportData()</code>, <code>reset()</code></td><td>Exportar el estado o recuperar la demostración inicial.</td></tr>
+  </tbody></table></div>
+  <h3>Estados internos de las órdenes</h3>
+  <pre><code>carwash:   waiting → washing → ready
+repuestos: pending → ready
+bar:       pending → preparing → ready
+taller:    approval → working → ready
+grua:      pending → dispatched → loaded → ready
+
+cancelled: estado de una orden cancelada, fuera del flujo normal.
+approveOrder: taller approval → working.
+meta.approved === true: permite crear un trabajo ya autorizado.</code></pre>
+  <h3>Semántica del pago</h3>
+  <pre><code>store.recordPayment({
+  accountId: cuenta.id,
+  method: 'cash',             // cash | card | transfer
+  amountCents: 100000,        // RD$1,000 recibidos en efectivo
+  reference: '',              // obligatoria para card/transfer
+  mode: 'full',               // full | deposit
+  idempotencyKey: 'cobro-unico-conservado-para-reintentos'
+});</code></pre>
+  <p>En la <strong>solicitud</strong>, <code>amountCents</code> representa efectivo recibido con <code>cash</code> y el importe que se aplica con <code>card</code> o <code>transfer</code>. En el <strong>objeto de pago guardado</strong>, <code>amountCents</code> siempre es el importe aplicado, <code>receivedCents</code> es lo recibido y <code>changeCents</code> es el cambio. Para la cuenta de RD$700 y RD$1,000 en efectivo, estos campos son <code>70000</code>, <code>100000</code> y <code>30000</code>.</p>
+  <p>En efectivo, el exceso sobre el saldo se devuelve como cambio, incluso en un abono. Una cuenta queda pagada cuando los servicios activos están listos y su total está cubierto. <code>exportData()</code> devuelve un objeto; usa <code>JSON.stringify()</code> al escribirlo como archivo.</p>
+  <h3>Recibos que conservan el momento del pago</h3>
+  <p>Los nuevos pagos incluyen <code>payment.snapshot</code>, una copia de la identificación del cliente, las líneas y los totales al registrar el pago. Así, agregar otro servicio o recibir un segundo abono no modifica el contenido del primer recibo.</p>
+  <pre><code>payment.snapshot = {
+  accountName, accountCode, plate,
+  totalCents,
+  paidBeforeCents,
+  paidAfterCents,       // paidBeforeCents + payment.amountCents
+  balanceAfterCents,    // totalCents - paidAfterCents
+  lines: [{
+    id, catalogId, name, quantity,
+    unitPriceCents, lineTotalCents, module,
+    orderId, orderCode, orderStatus
+  }]
+};
+// Saldo antes del pago: totalCents - paidBeforeCents.</code></pre>
+  <p class="fine">El campo es aditivo y los datos anteriores sin <code>snapshot</code> siguen siendo compatibles. Al imprimir un recibo con copia histórica, utiliza esa copia. Si se reconstruye uno sin ella desde la cuenta actual, debe identificarse como reconstruido. El futuro servidor debe generar y proteger esta copia dentro de la misma transacción del cobro.</p>
+</section>
+
+<section id="datos">
+  <h2>05 · Un modelo común para facturar</h2>
+  <p>Todos los módulos deben generar líneas en la misma estructura. Facturación lee esas líneas y sus orígenes para producir un único cobro. Los importes se almacenan como <strong>enteros en centavos de DOP</strong>: RD$500 se representa con <code>50000</code>.</p>
+  <div class="table-wrap"><table><thead><tr><th>Entidad propuesta</th><th>Campos principales</th><th>Propósito</th></tr></thead><tbody>
+    <tr><td><code>accounts</code></td><td>ID, tenant, cliente, contacto, vehículo/mesa, estado de pago, versión.</td><td>Una cuenta común que agrupa el consumo.</td></tr>
+    <tr><td><code>orders</code></td><td>ID, account ID, módulo, estado operativo, metadatos, autorización, fechas.</td><td>Trabajo independiente de cada área.</td></tr>
+    <tr><td><code>order_lines</code></td><td>ID, order ID, catálogo, descripción y precio al vender, cantidad, total, <code>originModule</code>, <code>originOrderId</code>.</td><td>Importes facturables con trazabilidad.</td></tr>
+    <tr><td><code>payments</code></td><td>ID, account ID, método, recibido, aplicado, cambio, referencia, usuario, fecha y copia histórica del recibo.</td><td>Registro de cobros y abonos, separado de las órdenes.</td></tr>
+    <tr><td><code>catalog</code></td><td>ID, módulo, nombre, precio, control de inventario, disponibilidad.</td><td>Precios y productos cuya autoridad reside en el servidor.</td></tr>
+    <tr><td><code>stock_movements</code></td><td>ID, catálogo, cantidad con signo, origen y movimiento compensado.</td><td>Controlar cada entrada, salida o reversión una sola vez.</td></tr>
+    <tr><td><code>audit_events</code></td><td>ID, tenant, actor, acción, entidad, cambios y fecha.</td><td>Historial de operaciones y motivos.</td></tr>
+    <tr><td><code>idempotency_keys</code></td><td>Tenant, clave, tipo de operación, hash de solicitud y resultado.</td><td>Repetir una petición sin volver a cobrar o descontar stock.</td></tr>
+  </tbody></table></div>
+  <p class="fine" style="margin-top:16px">Esta tabla propone el esquema de producción. No implica que el demo incluya base de datos, migraciones, autenticación o aislamiento multiempresa.</p>
+  <h3>Repuesto instalado en el taller: una sola venta</h3>
+  <p>En esta V1, el taller registra la mano de obra y las piezas se agregan desde <strong>Repuestos a la misma cuenta</strong>. Cada pieza conserva una sola línea facturable y un solo descuento de stock. Facturación no vuelve a descontar inventario al cobrar: liquida las líneas ya registradas.</p>
+  <p>En una ampliación de integración interna, enlaza la orden de repuestos con el trabajo del taller sin copiar ni volver a facturar sus líneas. La entrega al mecánico es un movimiento interno, no una segunda venta.</p>
+  <div class="note"><strong>Unidad de integración.</strong> Conserva IDs estables por cuenta, orden, línea y pago. El par <code>originModule</code> + <code>originOrderId</code> identifica la procedencia; el ID de la línea evita duplicar artículos de una misma orden.</div>
+  <h3>Exportación a facturación</h3>
+  <p><code>getBillingPayload(accountId)</code> es el punto de salida común. Incluye versión del esquema, negocio, cuenta, moneda, líneas, totales, órdenes, pagos, fecha de generación y referencia. Reutiliza el JSON del motor como base y versiona cualquier cambio de contrato. Los impuestos, numeración fiscal, firma y envío a la DGII requieren su propia implementación validada.</p>
+  <pre><code>// Campos reales de la exportación V1, abreviados para mostrar el contrato.
+{
+  schemaVersion: 1,
+  demo: true,
+  reference: 'CT-001',
+  currency: 'DOP',
+  business: { name: 'VALDI 360' },
+  account: { /* cuenta completa */ },
+  orders: [ /* id, code, module, status, meta, createdAt */ ],
+  lines: [{
+    id: 'order-luis-wash-line-1',
+    originOrderId: 'order-luis-wash',
+    originOrderCode: 'ORD-001',
+    originModule: 'carwash',
+    sourceOrderId: 'order-luis-wash',
+    sourceOrderCode: 'ORD-001',
+    sourceModule: 'carwash',
+    catalogId: 'wash-basic',
+    description: 'Lavado completo',
+    quantity: 1,
+    unitPriceCents: 50000,
+    lineTotalCents: 50000
+  } /* más líneas */],
+  totals: { totalCents: 70000, paidCents: 0, balanceCents: 70000 },
+  payments: [],
+  ready: true,
+  canPay: true,
+  generatedAt: 'fecha ISO 8601'
+}</code></pre>
+  <p class="fine">Los campos <code>origin*</code> y <code>source*</code> contienen la misma procedencia en esta V1. Son alias de integración, no líneas o ventas adicionales. El ejemplo abrevia objetos y omite la línea de refrescos; exporta la cuenta desde la interfaz para obtener el JSON íntegro.</p>
+</section>
+
+<section id="api">
+  <h2>06 · Contrato HTTP propuesto</h2>
+  <p>El archivo <code>src/backend-adapter.example.js</code> implementa un cliente <code>fetch</code> para estas rutas. <strong>Son endpoints propuestos; esta entrega no levanta ni conecta un servidor.</strong> Todas las respuestas de éxito pueden usar <code>{ data, meta: { requestId, revision } }</code> y los errores <code>{ error: { code, message, details }, meta }</code>.</p>
+  <div class="table-wrap"><table><thead><tr><th>Método y ruta</th><th>Operación</th><th>Entrada principal</th></tr></thead><tbody>
+    <tr><td><code>GET /bootstrap</code></td><td>Estado inicial autorizado</td><td>Sesión del usuario; devolver solo datos permitidos.</td></tr>
+    <tr><td><code>GET /catalog</code></td><td>Catálogo vigente</td><td>Ámbito de empresa resuelto por el servidor.</td></tr>
+    <tr><td><code>POST /accounts</code></td><td>Crear cuenta</td><td>Datos del cliente y referencia de vehículo/mesa.</td></tr>
+    <tr><td><code>POST /orders</code></td><td>Crear servicio</td><td><code>accountId?</code>, <code>customer?</code>, <code>module</code>, <code>items</code>, <code>meta</code>.</td></tr>
+    <tr><td><code>POST /orders/:id/advance</code></td><td>Avanzar trabajo</td><td>Versión esperada, si se usa concurrencia optimista.</td></tr>
+    <tr><td><code>POST /orders/:id/approve</code></td><td>Autorizar taller</td><td>Evidencia/referencia de autorización acordada.</td></tr>
+    <tr><td><code>POST /orders/:id/cancel</code></td><td>Cancelar</td><td><code>reason</code> obligatorio.</td></tr>
+    <tr><td><code>GET /accounts/:id</code></td><td>Consultar cuenta</td><td>Devuelve resumen, órdenes, líneas y pagos autorizados.</td></tr>
+    <tr><td><code>POST /payments</code></td><td>Registrar cobro o abono</td><td><code>accountId</code>, <code>method</code>, <code>amountCents</code>, <code>reference</code>, <code>mode</code>.</td></tr>
+    <tr><td><code>GET /accounts/:id/billing-payload</code></td><td>Exportar a facturación</td><td>Payload común de una cuenta.</td></tr>
+    <tr><td><code>GET /export</code></td><td>Exportar datos permitidos</td><td>Restringir a roles autorizados.</td></tr>
+  </tbody></table></div>
+  <p class="fine" style="margin-top:16px">Prefijo sugerido: <code>/api/valdi/v1</code>. No hay endpoint de reinicio de producción; <code>reset()</code> pertenece a la demostración local.</p>
+  <h3>Escrituras y reintentos</h3>
+  <p>El adapter exige la cabecera <code>Idempotency-Key</code> en cada escritura. Genera una clave por intención del operador y reutilízala para reintentar la misma solicitud. El servidor debe guardar el resultado de forma atómica y rechazar una misma clave con otro contenido.</p>
+  <p>Un timeout no demuestra que un pago haya fallado: el servidor pudo procesarlo antes de perderse la respuesta. El adapter marca <code>outcomeUnknown</code> para estos casos y no repite pagos automáticamente. La interfaz debe conservar la clave, consultar la cuenta y conciliar el resultado antes de permitir otra operación.</p>
+  <h3>Transacciones que necesita el servidor</h3>
+  <ol><li><strong>Crear orden:</strong> validar sesión, cuenta, catálogo y existencia; fijar precios; crear orden y líneas; registrar stock e idempotencia dentro de una sola transacción.</li><li><strong>Cancelar:</strong> verificar el estado y los cobros, registrar motivo, revertir una sola vez los movimientos aplicables y dejar auditoría.</li><li><strong>Cobrar:</strong> bloquear o comprobar la versión de la cuenta, recalcular total y saldo, validar el método, registrar pago, cambio y estado de cuenta de forma atómica.</li></ol>
+</section>
+
+<section id="conexion">
+  <h2>07 · Conectar el backend sin perder el flujo simple</h2>
+  <p>Una siguiente etapa compatible con el proyecto GRIMATS es implementar el backend con <strong>Supabase local en Docker</strong>. El esquema y las operaciones transaccionales pueden evolucionar allí antes de habilitar un entorno compartido. Este paquete no incluye esa instalación ni las migraciones.</p>
+  <pre><code>// Ejemplo propuesto: se ejecuta cuando exista un backend compatible.
+// Este archivo NO está cargado por la interfaz de demostración.
+const api = ValdiBackendExample.createBackendAdapter({
+  baseUrl: '/api/valdi/v1',
+  credentials: 'include',       // sesión con cookie, si así se implementa
+  timeoutMs: 15000
+  // getCsrfToken: () =&gt; obtenerTokenCsrfDeLaSesion(),
+  // getAccessToken: () =&gt; sesion.getAccessToken() // alternativa con token
+});
+
+const operationId = ValdiBackendExample.makeIdempotencyKey();
+try {
+  const result = await api.recordPayment({
+    accountId: cuenta.id,
+    method: 'cash', amountCents: 100000,
+    reference: '', mode: 'full',
+    idempotencyKey: operationId
+  });
+  const snapshot = await api.getState();
+  render(snapshot);
+} catch (error) {
+  // Mostrar el error junto a la acción y conservar operationId.
+  // Si outcomeUnknown, consultar y conciliar antes de otro cobro.
+  mostrarError(error.message);
+}</code></pre>
+  <p>El motor actual responde inmediatamente y el adapter HTTP devuelve promesas. La conexión requiere modificar los controladores de pantalla para esperar las respuestas, mostrar carga, deshabilitar una acción en curso, tratar errores y refrescar el estado autorizado. <strong>Cambiar una URL no convierte el demo en una aplicación lista para producción.</strong></p>
+  <ul><li><strong>Identidad y permisos:</strong> resolver usuario y empresa desde una sesión autenticada; separar caja, operación y administración. Aplicar RLS en PostgreSQL y autorizar también las funciones/endpoints del servidor.</li><li><strong>Credenciales:</strong> nunca incluir claves de administración o <code>service_role</code> en HTML. Si se usan cookies, configurar protección CSRF, HTTPS y las políticas de origen correspondientes.</li><li><strong>Dinero y catálogo:</strong> recalcular precios y totales en el servidor y conservar el precio histórico de cada línea. Validar enteros, cantidades y límites.</li><li><strong>Actualización entre dispositivos:</strong> implementar recarga, suscripciones o sincronización desde el backend. La suscripción local del demo no transmite cambios a otra caja.</li><li><strong>Datos iniciales:</strong> separar las cuentas ficticias de la operación real; acordar importación de catálogo y stock inicial.</li><li><strong>Respaldo y auditoría:</strong> implementar copias verificables, historial de cambios y restauración; restringir la exportación a quien corresponda.</li></ul>
+  <h3>Prueba de aceptación al conectar</h3>
+  <p>Verifica una cuenta con lavado y bar, un pago parcial, efectivo con cambio, una referencia obligatoria, repuesto sin existencia, reparación sin autorización y cancelación con motivo. Desde dos sesiones, intenta el último artículo y un mismo cobro al mismo tiempo: el backend debe conservar un único resultado válido y un saldo correcto.</p>
+  <p class="fine">Los eventos locales de auditoría incluyen <code>ACCOUNT_CREATED</code>, <code>ORDER_CREATED</code>, <code>ORDER_ADVANCED</code>, <code>ORDER_APPROVED</code>, <code>ORDER_CANCELLED</code>, <code>PAYMENT_RECORDED</code> y <code>DEMO_RESET</code>. El historial del navegador es editable; una auditoría de producción debe protegerse en el servidor.</p>
+</section>
+
+<footer><span>GRIMATS · VALDI 360 · Guía de la entrega V1</span><button type="button" onclick="window.print()">Imprimir esta guía</button></footer>
+</main>
+</body>
+</html>
