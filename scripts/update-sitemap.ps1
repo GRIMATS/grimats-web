@@ -6,12 +6,22 @@ Generates extensionless production URLs for GitHub Pages.
 $BaseUrl = 'https://grimats.com/'
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
 $htmlFiles = Get-ChildItem -Path $ProjectRoot -Filter *.html -Recurse |
-    Where-Object { $_.FullName -notmatch "[\\/]\.git[\\/]" }
+    Where-Object { $_.FullName -notmatch "[\\/]\.git[\\/]" } |
+    Where-Object {
+        $relativePath = ($_.FullName.Substring($ProjectRoot.Length) -replace '^[\\/]+', '').Replace('\','/')
+        if ($relativePath -like 'portales-demos/propuesta-*') {
+            return $false
+        }
+
+        # Las páginas privadas declaran noindex y nunca deben filtrarse al sitemap.
+        $html = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+        $html -notmatch '(?is)<meta\s+[^>]*name\s*=\s*["'']robots["''][^>]*content\s*=\s*["''][^"'']*\bnoindex\b'
+    }
 
 [xml]$sitemap = "<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'></urlset>"
 
 foreach($file in $htmlFiles){
-    $rel = [System.IO.Path]::GetRelativePath($ProjectRoot, $file.FullName).Replace('\','/')
+    $rel = ($file.FullName.Substring($ProjectRoot.Length) -replace '^[\\/]+', '').Replace('\','/')
 
     if ($rel -eq 'index.html') {
         $rel = ''
