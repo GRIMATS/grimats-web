@@ -171,32 +171,43 @@
           return;
         }
 
-        setState('loading', 'Descifrando la propuesta, el demo y el video…', 'loading');
+        setState('loading', 'Descifrando la propuesta, el demo, el video y el documento…', 'loading');
 
         try {
-          const [bundleResource, videoResource] = await Promise.all([
+          const [bundleResource, videoResource, pdfResource] = await Promise.all([
             fetchEncryptedResource('./contenido.bin'),
             fetchEncryptedResource('./video.bin'),
+            fetchEncryptedResource('./propuesta.bin'),
           ]);
-          if (!bundleResource.salt.every((byte, index) => byte === videoResource.salt[index])) {
+          const samePackage = [videoResource, pdfResource].every(resource =>
+            bundleResource.salt.every((byte, index) => byte === resource.salt[index]),
+          );
+          if (!samePackage) {
             throw new Error('Los recursos privados no pertenecen al mismo paquete.');
           }
           const cryptoKey = await deriveCryptoKey(passphrase, bundleResource.salt);
-          const [bundleBuffer, videoBuffer] = await Promise.all([
+          const [bundleBuffer, videoBuffer, pdfBuffer] = await Promise.all([
             decryptResource(bundleResource, cryptoKey),
             decryptResource(videoResource, cryptoKey),
+            decryptResource(pdfResource, cryptoKey),
           ]);
 
           const bundle = JSON.parse(new TextDecoder().decode(bundleBuffer));
           if (bundle.version !== 1 || typeof bundle.proposalHtml !== 'string' || typeof bundle.demoHtml !== 'string') {
             throw new Error('El contenido privado no tiene la versión esperada.');
           }
+          const pdfHeader = new TextDecoder('ascii').decode(pdfBuffer.slice(0, 5));
+          if (pdfHeader !== '%PDF-') {
+            throw new Error('El documento privado no tiene el formato esperado.');
+          }
 
           const demoUrl = createObjectUrl(bundle.demoHtml, 'text/html;charset=utf-8');
           const videoUrl = createObjectUrl(videoBuffer, 'video/mp4');
+          const pdfUrl = createObjectUrl(pdfBuffer, 'application/pdf');
           const proposalHtml = bundle.proposalHtml
             .replaceAll('__DEMO_URL__', demoUrl)
-            .replaceAll('__VIDEO_URL__', videoUrl);
+            .replaceAll('__VIDEO_URL__', videoUrl)
+            .replaceAll('__PDF_URL__', pdfUrl);
           const proposalUrl = createObjectUrl(proposalHtml, 'text/html;charset=utf-8');
 
           document.title = bundle.title || 'Archivo 360 | Propuesta privada de GRIMATS';
